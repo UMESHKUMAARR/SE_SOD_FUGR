@@ -282,7 +282,6 @@ FUNCTION /PSYNG/SW_API_ANALY_RES_DET_OP.
 
   IF logging_flag = 'X' OR logging_flag = '1'.
 
-*   Do not use TRANSPORTING NO FIELDS here because header line is needed.
     READ TABLE users INDEX 1.
     IF sy-subrc = 0.
       l_firstuser = users-bname.
@@ -302,7 +301,6 @@ FUNCTION /PSYNG/SW_API_ANALY_RES_DET_OP.
 *-----------------------------------------------------------------------
 * INPUT USER CLEANUP
 *-----------------------------------------------------------------------
-* DELETE ADJACENT DUPLICATES is only reliable after SORT.
   SORT users BY bname.
   DELETE ADJACENT DUPLICATES FROM users COMPARING bname.
 

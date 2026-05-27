@@ -1521,6 +1521,14 @@
 *&  PN-17852 Performance Optimization
 *&---------------------------------------------------------------------*
 
+*&---------------------------------------------------------------------*
+*&  Include           /PSYNG/LSW_API_IMPF02
+*&  Function Group    /PSYNG/SW_API_IMP
+*&  Description       SE API - Analysis Result Detail Output Optimized
+*&---------------------------------------------------------------------*
+*&  PN-17852 Performance Optimization
+*&---------------------------------------------------------------------*
+
 *======================================================================*
 * CLASS lcl_authdet_bulk_cache
 *======================================================================*
@@ -1559,6 +1567,7 @@ CLASS lcl_authdet_bulk_cache IMPLEMENTATION.
     DATA: lt_caut       TYPE TABLE OF /psyng/swrescaut,
           ls_caut       TYPE /psyng/swrescaut,
           ls_fpr        TYPE /psyng/swresfpr,
+          lt_fpr_key    TYPE ty_tt_fprprof,
           ls_flat       TYPE ty_caut_flat,
           ls_sysmap     TYPE /psyng/swresisys,
           lt_idx_tcode  TYPE HASHED TABLE OF /psyng/swresitcd
@@ -1599,59 +1608,43 @@ CLASS lcl_authdet_bulk_cache IMPLEMENTATION.
             vbaindex    TYPE i,
             authindex   TYPE i,
           END OF ls_authdet,
-          lv_cur_sys  TYPE /psyng/swrescaut-sys,
-          lv_cur_fun  TYPE /psyng/swrescaut-funindex,
-          lv_cur_prof TYPE /psyng/swrescaut-profileindex.
-
-    DATA: lr_sys  TYPE RANGE OF /psyng/swrescaut-sys,
-          lr_fun  TYPE RANGE OF /psyng/swrescaut-funindex,
-          lr_prof TYPE RANGE OF /psyng/swrescaut-profileindex,
-          ls_sys  LIKE LINE OF lr_sys,
-          ls_fun  LIKE LINE OF lr_fun,
-          ls_prof LIKE LINE OF lr_prof.
+          lv_cur_sys    TYPE /psyng/swrescaut-sys,
+          lv_cur_fun    TYPE /psyng/swrescaut-funindex,
+          lv_cur_prof   TYPE /psyng/swrescaut-profileindex.
 
     REFRESH gt_bulk.
     CLEAR gf_initialized.
 
     CHECK NOT it_fprprof[] IS INITIAL.
 
-    ls_sys-sign  = 'I'.
-    ls_sys-option  = 'EQ'.
-    ls_fun-sign  = 'I'.
-    ls_fun-option  = 'EQ'.
-    ls_prof-sign = 'I'.
-    ls_prof-option = 'EQ'.
+*-----------------------------------------------------------------------
+* Exact auth-cache key selection.
+* Avoids cross-combination over-fetch from SYS x FUNINDEX x PROFILEINDEX.
+*-----------------------------------------------------------------------
+    lt_fpr_key[] = it_fprprof[].
 
-    LOOP AT it_fprprof INTO ls_fpr.
-      ls_sys-low  = ls_fpr-sys.
-      APPEND ls_sys TO lr_sys.
+    SORT lt_fpr_key BY sys funindex profileindex.
+    DELETE ADJACENT DUPLICATES FROM lt_fpr_key
+      COMPARING sys funindex profileindex.
 
-      ls_fun-low  = ls_fpr-funindex.
-      APPEND ls_fun TO lr_fun.
-
-      ls_prof-low = ls_fpr-profileindex.
-      APPEND ls_prof TO lr_prof.
-    ENDLOOP.
-
-    SORT lr_sys BY low.
-    SORT lr_fun BY low.
-    SORT lr_prof BY low.
-
-    DELETE ADJACENT DUPLICATES FROM lr_sys COMPARING low.
-    DELETE ADJACENT DUPLICATES FROM lr_fun COMPARING low.
-    DELETE ADJACENT DUPLICATES FROM lr_prof COMPARING low.
+    CHECK NOT lt_fpr_key[] IS INITIAL.
 
     SELECT *
       FROM /psyng/swrescaut
       INTO TABLE lt_caut
-      WHERE aid = i_aid
-        AND sys IN lr_sys
-        AND funindex IN lr_fun
-        AND profileindex IN lr_prof
-      ORDER BY sys funindex profileindex dataindex.
+      FOR ALL ENTRIES IN lt_fpr_key
+      WHERE aid          = i_aid
+        AND sys          = lt_fpr_key-sys
+        AND funindex     = lt_fpr_key-funindex
+        AND profileindex = lt_fpr_key-profileindex.
 
     CHECK NOT lt_caut[] IS INITIAL.
 
+    SORT lt_caut BY sys funindex profileindex dataindex.
+
+*-----------------------------------------------------------------------
+* Index texts.
+*-----------------------------------------------------------------------
     SELECT *
       FROM /psyng/swresitcd
       INTO TABLE lt_idx_tcode
@@ -1686,6 +1679,9 @@ CLASS lcl_authdet_bulk_cache IMPLEMENTATION.
       INTO TABLE lt_functions
       WHERE aid = i_aid.
 
+*-----------------------------------------------------------------------
+* Build flattened authorization cache.
+*-----------------------------------------------------------------------
     CLEAR: lv_cur_sys, lv_cur_fun, lv_cur_prof, lv_data.
 
     LOOP AT lt_caut INTO ls_caut.
@@ -1844,6 +1840,17 @@ CLASS lcl_authdet_bulk_cache IMPLEMENTATION.
 
     SORT gt_bulk BY sys funindex profileindex.
 
+    FREE: lt_caut,
+          lt_fpr_key,
+          lt_records,
+          lt_idx_tcode,
+          lt_idx_object,
+          lt_idx_field,
+          lt_idx_auth,
+          lt_idx_vba,
+          lt_profiles,
+          lt_functions.
+
     gf_initialized = 'X'.
 
   ENDMETHOD.
@@ -1853,7 +1860,8 @@ CLASS lcl_authdet_bulk_cache IMPLEMENTATION.
 
     DATA: ls_flat       TYPE ty_caut_flat,
           ls_authdet    TYPE /psyng/seres_authdetail,
-          lv_bulk_start TYPE sy-tabix.
+          lv_bulk_start TYPE sy-tabix,
+          lv_prev       TYPE sy-tabix.
 
     READ TABLE gt_bulk INTO ls_flat
       WITH KEY sys          = i_sys
@@ -1866,6 +1874,27 @@ CLASS lcl_authdet_bulk_cache IMPLEMENTATION.
     ENDIF.
 
     lv_bulk_start = sy-tabix.
+
+*   Binary search with duplicates may not return first matching row.
+*   Move backward to the beginning of the key block.
+    WHILE lv_bulk_start GT 1.
+
+      lv_prev = lv_bulk_start - 1.
+
+      READ TABLE gt_bulk INTO ls_flat INDEX lv_prev.
+      IF sy-subrc <> 0.
+        EXIT.
+      ENDIF.
+
+      IF ls_flat-sys          <> i_sys
+      OR ls_flat-funindex     <> i_funindex
+      OR ls_flat-profileindex <> i_profileindex.
+        EXIT.
+      ENDIF.
+
+      lv_bulk_start = lv_prev.
+
+    ENDWHILE.
 
     LOOP AT gt_bulk INTO ls_flat FROM lv_bulk_start.
 
@@ -2081,8 +2110,7 @@ FORM get_analy_res_users
     SORT lt_user_tmp BY bname.
 
     LOOP AT lt_users_orig INTO ls_users_orig.
-*   Skip wildcard entries — they resolved correctly via CP option
-*   No point looking for '195*' literally in resolved user list
+
       IF ls_users_orig-bname CS '*' OR ls_users_orig-bname CS '+'.
         CONTINUE.
       ENDIF.
@@ -2560,14 +2588,15 @@ FORM get_output_new_se
         lv_comp_agr    TYPE agr_define-agr_name,
         lf_direct_role TYPE flag,
         lf_profauth    TYPE flag,
-        lv_cur_confun  TYPE i,
-        lv_fpr_start   TYPE i,
+        lv_cur_confun  TYPE sy-tabix,
+        lv_fpr_start   TYPE sy-tabix,
         lv_prev_con    TYPE /psyng/swrescon-conindex,
         lv_prev_uix    TYPE /psyng/swrescon-userindex,
         lv_user_ok     TYPE flag,
         lv_con_ok      TYPE flag,
         lt_comprole_pc TYPE STANDARD TABLE OF /psyng/swresucom,
-        lv_compr_start TYPE i.
+        lv_compr_start TYPE sy-tabix,
+        lv_prev        TYPE sy-tabix.
 
   SORT: it_usercon BY conindex userindex,
         it_confun  BY conindex,
@@ -2618,7 +2647,26 @@ FORM get_output_new_se
         BINARY SEARCH.
 
       IF sy-subrc = 0.
+
         lv_cur_confun = sy-tabix.
+
+        WHILE lv_cur_confun GT 1.
+
+          lv_prev = lv_cur_confun - 1.
+
+          READ TABLE it_confun INTO ls_confun INDEX lv_prev.
+          IF sy-subrc <> 0.
+            EXIT.
+          ENDIF.
+
+          IF ls_confun-conindex <> ls_usercon-conindex.
+            EXIT.
+          ENDIF.
+
+          lv_cur_confun = lv_prev.
+
+        ENDWHILE.
+
       ELSE.
         lv_cur_confun = 0.
       ENDIF.
@@ -2662,6 +2710,24 @@ FORM get_output_new_se
       ENDIF.
 
       lv_fpr_start = sy-tabix.
+
+      WHILE lv_fpr_start GT 1.
+
+        lv_prev = lv_fpr_start - 1.
+
+        READ TABLE it_fprprof INTO ls_fprprof INDEX lv_prev.
+        IF sy-subrc <> 0.
+          EXIT.
+        ENDIF.
+
+        IF ls_fprprof-userindex <> ls_usercon-userindex
+        OR ls_fprprof-funindex  <> ls_confun-funindex.
+          EXIT.
+        ENDIF.
+
+        lv_fpr_start = lv_prev.
+
+      ENDWHILE.
 
       LOOP AT it_fprprof INTO ls_fprprof FROM lv_fpr_start.
 
@@ -2713,6 +2779,24 @@ FORM get_output_new_se
           IF sy-subrc = 0.
 
             lv_compr_start = sy-tabix.
+
+            WHILE lv_compr_start GT 1.
+
+              lv_prev = lv_compr_start - 1.
+
+              READ TABLE lt_comprole_pc INTO ls_comprole INDEX lv_prev.
+              IF sy-subrc <> 0.
+                EXIT.
+              ENDIF.
+
+              IF ls_comprole-userindex <> ls_usercon-userindex
+              OR ls_comprole-roleindex <> ls_profrole-roleindex.
+                EXIT.
+              ENDIF.
+
+              lv_compr_start = lv_prev.
+
+            ENDWHILE.
 
             LOOP AT lt_comprole_pc INTO ls_comprole FROM lv_compr_start.
 
@@ -2850,14 +2934,15 @@ FORM get_output_old_se
         lv_comp_agr    TYPE agr_define-agr_name,
         lf_direct_role TYPE flag,
         lf_profauth    TYPE flag,
-        lv_cur_confun  TYPE i,
-        lv_fpr_start   TYPE i,
+        lv_cur_confun  TYPE sy-tabix,
+        lv_fpr_start   TYPE sy-tabix,
         lv_prev_con    TYPE /psyng/swrescon-conindex,
         lv_prev_uix    TYPE /psyng/swrescon-userindex,
         lv_user_ok     TYPE flag,
         lv_con_ok      TYPE flag,
         lt_comprole_pc TYPE STANDARD TABLE OF /psyng/swresucom,
-        lv_compr_start TYPE i.
+        lv_compr_start TYPE sy-tabix,
+        lv_prev        TYPE sy-tabix.
 
   SORT: it_usercon    BY conindex userindex,
         it_confun     BY conindex,
@@ -2909,7 +2994,26 @@ FORM get_output_old_se
         BINARY SEARCH.
 
       IF sy-subrc = 0.
+
         lv_cur_confun = sy-tabix.
+
+        WHILE lv_cur_confun GT 1.
+
+          lv_prev = lv_cur_confun - 1.
+
+          READ TABLE it_confun INTO ls_confun INDEX lv_prev.
+          IF sy-subrc <> 0.
+            EXIT.
+          ENDIF.
+
+          IF ls_confun-conindex <> ls_usercon-conindex.
+            EXIT.
+          ENDIF.
+
+          lv_cur_confun = lv_prev.
+
+        ENDWHILE.
+
       ELSE.
         lv_cur_confun = 0.
       ENDIF.
@@ -2953,6 +3057,24 @@ FORM get_output_old_se
       ENDIF.
 
       lv_fpr_start = sy-tabix.
+
+      WHILE lv_fpr_start GT 1.
+
+        lv_prev = lv_fpr_start - 1.
+
+        READ TABLE it_funprofile INTO ls_funprofile INDEX lv_prev.
+        IF sy-subrc <> 0.
+          EXIT.
+        ENDIF.
+
+        IF ls_funprofile-userindex <> ls_usercon-userindex
+        OR ls_funprofile-funindex  <> ls_confun-funindex.
+          EXIT.
+        ENDIF.
+
+        lv_fpr_start = lv_prev.
+
+      ENDWHILE.
 
       LOOP AT it_funprofile INTO ls_funprofile FROM lv_fpr_start.
 
@@ -3012,6 +3134,24 @@ FORM get_output_old_se
           IF sy-subrc = 0.
 
             lv_compr_start = sy-tabix.
+
+            WHILE lv_compr_start GT 1.
+
+              lv_prev = lv_compr_start - 1.
+
+              READ TABLE lt_comprole_pc INTO ls_comprole INDEX lv_prev.
+              IF sy-subrc <> 0.
+                EXIT.
+              ENDIF.
+
+              IF ls_comprole-userindex <> ls_usercon-userindex
+              OR ls_comprole-roleindex <> ls_profrole-roleindex.
+                EXIT.
+              ENDIF.
+
+              lv_compr_start = lv_prev.
+
+            ENDWHILE.
 
             LOOP AT lt_comprole_pc INTO ls_comprole FROM lv_compr_start.
 

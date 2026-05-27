@@ -251,7 +251,7 @@ TYPES: BEGIN OF ty_caut_flat,
          sysid        TYPE /psyng/swresisys-sysid,
        END OF ty_caut_flat.
 
-TYPES: ty_tt_authdetail   TYPE STANDARD TABLE OF /psyng/seres_authdetail.
+TYPES: ty_tt_authdetail    TYPE STANDARD TABLE OF /psyng/seres_authdetail.
 TYPES: ty_tt_outputdet_ext TYPE TABLE OF ty_outputdet_ext.
 
 TYPES:
@@ -295,7 +295,6 @@ DATA: g_start TYPE /psyng/dec11,
 
 DATA: gt_routput_sum TYPE TABLE OF /psyng/sw_out_routput.
 
-*--Macro for Logging into a structure of type BAPIRET2
 DEFINE log.
   &1-type    = &2.
   &1-id      = &3.
@@ -303,7 +302,6 @@ DEFINE log.
   append &1.
 END-OF-DEFINITION.
 
-*--Macro for Logging into a structure of type BAPIRET2
 DEFINE log_v.
   &1-type    = &2.
   &1-id      = &3.
