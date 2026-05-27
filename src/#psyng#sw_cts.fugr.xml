@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>SW SE : Transport System Integration</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>/PSYNG/LSW_CTSTOP</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/SAPLSW_CTS</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>/PSYNG/SW_TRANSPORT_CHECK</FUNCNAME>
+     <SHORT_TEXT>Security Weaver : Check Transport for Role Issues</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_REQUEST</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>TRKORR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_OWNER</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>TR_AS4USER</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_TYPE</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>TRFUNCTION</TYP>
+      </RSIMP>
+     </IMPORT>
+     <CHANGING>
+      <RSCHA>
+       <PARAMETER>TEXT</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>AS4TEXT</TYP>
+      </RSCHA>
+     </CHANGING>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_ATTRIBUTES</PARAMETER>
+       <TYP>TRATTRIBUTES</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_OBJECTS</PARAMETER>
+       <TYP>TR_OBJECTS</TYP>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>CANCEL</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_REQUEST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Request/task</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_OWNER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Owner of a request or task</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_TYPE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Type of request/task</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ATTRIBUTES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Request Attributes</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_OBJECTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Objects</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>TEXT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Short text describing R/3 Repository objects</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CANCEL</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>Cancel Request Release</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+   <I18N_TPOOL>
+    <item>
+     <LANGUAGE>D</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Security Weaver Separations Enforcer</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>erlaubt keine Freigabe von Rollen, die</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Konflikte nicht.</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>F</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Security Weaver Separations Enforcer</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>doesn&apos;t allow releasing roles that</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>contain conflicts.</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>I</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Security Weaver Separations Enforcer</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>doesn&apos;t allow releasing roles that</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>contain conflicts.</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>N</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Security Weaver Separations Enforcer</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>doesn&apos;t allow releasing roles that</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>contain conflicts.</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>P</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Separations Enforcer Security Weaver</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>não permite liberar perfis que</ENTRY>
+       <LENGTH>30</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>contém conflitos.</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>S</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Security Weaver Aplicación de separaciones</ENTRY>
+       <LENGTH>42</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>no permite liberar roles que</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>contener conflictos.</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>V</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Security Weaver Separations Enforcer</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>doesn&apos;t allow releasing roles that</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>contain conflicts.</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>Z</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Security Weaver Separations Enforcer</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>doesn&apos;t allow releasing roles that</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>contain conflicts.</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+   </I18N_TPOOL>
+  </asx:values>
+ </asx:abap>
+</abapGit>

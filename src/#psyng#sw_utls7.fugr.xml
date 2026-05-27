@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>SE : Level 2 and 3 SOD Analysis</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>/PSYNG/LSW_UTLS7F01</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/LSW_UTLS7TOP</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/SAPLSW_UTLS7</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>/PSYNG/SW_098</FUNCNAME>
+     <SHORT_TEXT>SE : Level 2 SOD Analysis from Level 1 SOD Analysis</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_HIST_START</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>DATS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_HIST_END</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>DATS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_USE_TA</PARAMETER>
+       <DEFAULT>&apos; &apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_RESULTS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SOD_OUTPUT_ORG</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FUNCRESULTS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_OUTPUT_ORG</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FUNCTTRAN</PARAMETER>
+       <DBSTRUCT>/PSYNG/FUNCTTRAN</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CONFDET</PARAMETER>
+       <DBSTRUCT>/PSYNG/CONFDET</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FAOBJ</PARAMETER>
+       <DBSTRUCT>/PSYNG/FAOBJ2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_HIST_START</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Start date for history</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_HIST_END</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>End date for history</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_USE_TA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Use TA historical data</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_RESULTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW : SOD output with function and org level</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FUNCRESULTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW : Function scan output with org level</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FUNCTTRAN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Functions and Transactions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONFDET</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Conflict Details</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FAOBJ</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Object Definition</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_099</FUNCNAME>
+     <SHORT_TEXT>SE : Level 3 SOD Analysis</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_HIST_START</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>DATS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_HIST_END</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>DATS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_DETAILS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_CHANGEDOCS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_TABLOG</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_BY_FUNCTION</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_BY_CONFLICT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_USE_TA</PARAMETER>
+       <DEFAULT>&apos; &apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_RESULTS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SOD_OUTPUT_ORG</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_USERS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SEL_OPTS_XUBNAME</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_DETAILS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_LEVEL3_DETAILS</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CONFS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SEL_OPTS_CONID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_FUNCTTRAN</PARAMETER>
+       <DBSTRUCT>/PSYNG/FUNCTTRAN</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CONFDET</PARAMETER>
+       <DBSTRUCT>/PSYNG/CONFDET</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FUNCRESULTS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_OUTPUT_ORG</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FUNCTTRAN</PARAMETER>
+       <DBSTRUCT>/PSYNG/FUNCTTRAN</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CONFDET</PARAMETER>
+       <DBSTRUCT>/PSYNG/CONFDET</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CONFLICTS</PARAMETER>
+       <DBSTRUCT>/PSYNG/CONFLICT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_RFC</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SEL_OPTS_RFCDEST</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FAOBJ</PARAMETER>
+       <DBSTRUCT>/PSYNG/FAOBJ2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_HIST_START</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Start date for history</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_HIST_END</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>End date for history</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_DETAILS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Show Details</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_CHANGEDOCS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Include Change Documents</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_TABLOG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Include Table Logging</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_BY_FUNCTION</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Analyze by Function</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_BY_CONFLICT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Analyze by conflict</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_USE_TA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Use TA historical data</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_RESULTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW : SOD output with function and org level</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_USERS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options User ID (XUBNAME)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_DETAILS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE : Level 3 SOD Analysis Details</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONFS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Conflict ID (/PSYNG/CONFLICT_ID)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_FUNCTTRAN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Functions and Transactions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CONFDET</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Conflict Details</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FUNCRESULTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW : Function scan output with org level</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FUNCTTRAN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Functions and Transactions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONFDET</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Conflict Details</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONFLICTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Conflict Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_RFC</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: RFCDEST Selection Options</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FAOBJ</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Object Definition</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_100</FUNCNAME>
+     <SHORT_TEXT>SE : Level 4 SOD Analysis</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_HIST_START</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>DATS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_HIST_END</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>DATS</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_RESULTS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SOD_OUTPUT_ORG</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_USERS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SEL_OPTS_XUBNAME</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CONFS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SEL_OPTS_CONID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_HIST_START</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Start date for history</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_HIST_END</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>End date for history</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_RESULTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW : SOD output with function and org level</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_USERS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options User ID (XUBNAME)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONFS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Conflict ID (/PSYNG/CONFLICT_ID)</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_104</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SE : Level 3 analysis - Prepare data for display</SHORT_TEXT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ET_DETAILS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_LEVEL3_DISPLAY</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_DETAILS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_LEVEL3_DETAILS</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_RFC</PARAMETER>
+       <DBSTRUCT>RFCDES</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>ET_DETAILS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE : Level 3 SOD Analysis output format</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_DETAILS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE : Level 3 SOD Analysis Details</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_RFC</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Destination table for Remote Function Call</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_105</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SE : Level 3 SOD analysis - Get Change Doc Detail</SHORT_TEXT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ET_TABLE_INFO</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_LEVEL3_TABINFO</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_TABLE_KEYS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_LEVEL3_KEYS</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CDPOS</PARAMETER>
+       <DBSTRUCT>CDPOS</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_DETAILS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_LEVEL3_DETAILS</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>ET_TABLE_INFO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE : Level 3 SOD Analysis - Table Information</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_TABLE_KEYS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE : Level 3 SOD Analysis - Key Information</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CDPOS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Change document items</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_DETAILS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE : Level 3 SOD Analysis Details</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_106</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SE : Level 3 SOD analysis - Get Table Logging Detail</SHORT_TEXT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ET_TABLE_INFO</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_LEVEL3_TABINFO</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_TABLE_KEYS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_LEVEL3_KEYS</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_DBLOG</PARAMETER>
+       <DBSTRUCT>/PSYNG/DBLOG</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_DETAILS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_LEVEL3_DETAILS</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>ET_TABLE_INFO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE : Level 3 SOD Analysis - Table Information</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_TABLE_KEYS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE : Level 3 SOD Analysis - Key Information</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_DBLOG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Change document items</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_DETAILS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE : Level 3 SOD Analysis Details</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

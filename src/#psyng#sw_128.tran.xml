@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_TRAN" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TSTC>
+    <TCODE>/PSYNG/SW_128</TCODE>
+    <PGMNA>/PSYNG/SW_128</PGMNA>
+    <DYPNO>1000</DYPNO>
+    <CINFO>hA==</CINFO>
+   </TSTC>
+   <TSTCC>
+    <TCODE>/PSYNG/SW_128</TCODE>
+   </TSTCC>
+   <TSTCT>
+    <SPRSL>E</SPRSL>
+    <TCODE>/PSYNG/SW_128</TCODE>
+    <TTEXT>SE: Extract SOD details offline</TTEXT>
+   </TSTCT>
+   <AUTHORIZATIONS>
+    <TSTCA>
+     <TCODE>/PSYNG/SW_128</TCODE>
+     <OBJCT>Y&amp;SW_RPOUG</OBJCT>
+     <FIELD>CLASS</FIELD>
+    </TSTCA>
+    <TSTCA>
+     <TCODE>/PSYNG/SW_128</TCODE>
+     <OBJCT>Y&amp;SW_RPOUG</OBJCT>
+     <FIELD>Y&amp;SW_COMP</FIELD>
+    </TSTCA>
+    <TSTCA>
+     <TCODE>/PSYNG/SW_128</TCODE>
+     <OBJCT>Y&amp;SW_RPOUG</OBJCT>
+     <FIELD>Y&amp;SW_VRSIO</FIELD>
+    </TSTCA>
+   </AUTHORIZATIONS>
+   <I18N_TPOOL>
+    <TSTCT>
+     <SPRSL>D</SPRSL>
+     <TTEXT>SE: SOD-Details offline extrahieren</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>F</SPRSL>
+     <TTEXT>SE: Extract SOD details offline</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>I</SPRSL>
+     <TTEXT>SE: Extract SOD details offline</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>N</SPRSL>
+     <TTEXT>SE: Extract SOD details offline</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>P</SPRSL>
+     <TTEXT>SE: Extrair detalhes SOD offline</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>S</SPRSL>
+     <TTEXT>SE: Extraer detalles SOD offline</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>V</SPRSL>
+     <TTEXT>SE: Extract SOD details offline</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>Z</SPRSL>
+     <TTEXT>SE: Extract SOD details offline</TTEXT>
+    </TSTCT>
+   </I18N_TPOOL>
+  </asx:values>
+ </asx:abap>
+</abapGit>

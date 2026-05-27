@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>SW : SOD Detailed FunctionScan utilities</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>/PSYNG/LSW_UTLS_3BF01</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/LSW_UTLS_3BTOP</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/SAPLSW_UTLS_3B</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>/PSYNG/SW_FUNC_USER_DETAIL_42</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SW : Detailed Function Scan by User</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IF_SHOWCOMP</PARAMETER>
+       <DEFAULT>&apos;&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_SHOWPCOM</PARAMETER>
+       <DEFAULT>&apos;&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_EXLCKUSR</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_VALIDUSR</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_OUTVDATE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_ORGCHK</PARAMETER>
+       <DEFAULT>&apos;&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_SODVRSIO</PARAMETER>
+       <DEFAULT>&apos;000&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_CONFIG_SET</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SECONFID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_ORG_FIELD</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_EXCLUDE_ER_ROLES</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_BNAME</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_BNAME</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CONFDET</PARAMETER>
+       <DBSTRUCT>/PSYNG/CONFDET</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FUNCTTRAN</PARAMETER>
+       <DBSTRUCT>/PSYNG/FUNCTTRAN</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FAOBJ</PARAMETER>
+       <DBSTRUCT>/PSYNG/FAOBJ2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SWSODORGM</PARAMETER>
+       <DBSTRUCT>/PSYNG/SWSODORGM</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_OUTPUTDET</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_FUNC_SCAN_DET</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_ACTGROUPS</PARAMETER>
+       <TYPES>O</TYPES>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SW_SEL_OPTS_AGR_NAME</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_PROFILES</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SEL_OPTS_PROFILE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_USERTYPE</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SEL_OPTS_USRTYP</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CLASS</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_CLASS</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_USER_PROF</PARAMETER>
+       <DBSTRUCT>/PSYNG/SE_USER_PROF_ROLE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FAOBJ_ORG</PARAMETER>
+       <DBSTRUCT>/PSYNG/FAOBJ2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_ORGLVL</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SEL_OPTS_ORG</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IF_SHOWCOMP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_SHOWPCOM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_EXLCKUSR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Flag for lock user check</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_VALIDUSR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_OUTVDATE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_ORGCHK</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_SODVRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_CONFIG_SET</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Configuration Set ID</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_ORG_FIELD</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_EXCLUDE_ER_ROLES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Exclude Roles assigned by ER</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_BNAME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for User IDs</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONFDET</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Conflict Details</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FUNCTTRAN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Functions and Transactions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FAOBJ</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Object Definition</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SWSODORGM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW SOD Organizational Values Matrix</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_OUTPUTDET</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Result of detailed Function scan without texts</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ACTGROUPS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Role Name (AGR_NAME)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_PROFILES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Profile Selection Options (XUPROFNAME)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_USERTYPE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options User type (USRTYP)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CLASS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for User group</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_USER_PROF</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - User profile Role assignment</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FAOBJ_ORG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Object Definition</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ORGLVL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Org level abb (/PSYNG/DORG_ABB)</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_USER_PROFILE_ROLE</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SW : Get role for user profile assignment</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IF_SHOWCOMP</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_USER_PROF</PARAMETER>
+       <DBSTRUCT>/PSYNG/SE_USER_PROF_ROLE</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IF_SHOWCOMP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_USER_PROF</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - User profile Role assignment</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DOCT" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DOC>
+    <item>
+     <DOKIL>
+      <ID>TX</ID>
+      <OBJECT>/PSYNG/SE_CONFSETACC_SCR_DOC</OBJECT>
+      <LANGU>D</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0001</VERSION>
+      <TXTLINES>00005</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SE_CONFSETACC_SCR_DOC</TDNAME>
+      <TDID>TX</TDID>
+      <TDSPRAS>D</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00001</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Zugriff zum Anlegen/Veröffentlichen von KonfigSets verwalten</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Auf diesem Bild wird der Benutzerzugriff zum Anlegen/Veröffentlichen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>von KonfigSets gepflegt. Auf diesem Pflegebild werden die Benutzer zum</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Anlegen/Veröffentlichen von KonfigSets gemäß der definierten Kombination</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>aus Freigabe-, Options- und System-ID-Feldern beschränkt.</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>TX</ID>
+      <OBJECT>/PSYNG/SE_CONFSETACC_SCR_DOC</OBJECT>
+      <LANGU>E</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0008</VERSION>
+      <MASTERLANG>X</MASTERLANG>
+      <TXTLINES>00005</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SE_CONFSETACC_SCR_DOC</TDNAME>
+      <TDID>TX</TDID>
+      <TDSPRAS>E</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00008</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Manage Access to Create/Publish Configuration Set</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>This screen is used to maintain the user access to Create/Publish</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Configuration Set. This screen maintenance restricts the User(s) to</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Create/Publish the Configuration Set as per the defined combination of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Sign, Option and System ID fields.</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+   </DOC>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SUSO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TOBJ>
+    <OBJCT>Y&amp;SW_CTROL</OBJCT>
+    <FIEL1>ACTVT</FIEL1>
+    <FIEL2>Y&amp;SW_VRSIO</FIEL2>
+    <OCLSS>Y&amp;SW</OCLSS>
+   </TOBJ>
+   <TOBJT>
+    <LANGU>E</LANGU>
+    <OBJECT>Y&amp;SW_CTROL</OBJECT>
+    <TTEXT>Security Weaver - Conflict Repository - Critical Roles</TTEXT>
+   </TOBJT>
+   <TOBJVORFLG>
+    <OBJCT>Y&amp;SW_CTROL</OBJCT>
+   </TOBJVORFLG>
+   <TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_CTROL</BROBJ>
+     <ACTVT>01</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_CTROL</BROBJ>
+     <ACTVT>02</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_CTROL</BROBJ>
+     <ACTVT>03</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_CTROL</BROBJ>
+     <ACTVT>04</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_CTROL</BROBJ>
+     <ACTVT>06</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_CTROL</BROBJ>
+     <ACTVT>21</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_CTROL</BROBJ>
+     <ACTVT>DL</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_CTROL</BROBJ>
+     <ACTVT>UL</ACTVT>
+    </TACTZ>
+   </TACTZ>
+  </asx:values>
+ </asx:abap>
+</abapGit>

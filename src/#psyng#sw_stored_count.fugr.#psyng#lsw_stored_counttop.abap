@@ -1,0 +1,3 @@
+FUNCTION-POOL /PSYNG/SW_STORED_COUNT.       "MESSAGE-ID ..
+
+* INCLUDE /PSYNG/LSW_STORED_COUNTD...        " Local class definition

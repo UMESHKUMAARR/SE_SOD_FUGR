@@ -1,0 +1,559 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DOCT" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DOC>
+    <item>
+     <DOKIL>
+      <ID>TX</ID>
+      <OBJECT>/PSYNG/SE_CONFLICT_ORIGIN</OBJECT>
+      <LANGU>D</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0001</VERSION>
+      <TXTLINES>00010</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SE_CONFLICT_ORIGIN</TDNAME>
+      <TDID>TX</TDID>
+      <TDSPRAS>D</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00001</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Konfliktherkunft</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Mit den Ankreuzfeldern zur Konfliktherkunft wird bestimmt, welche der</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>bei der Analyse gefundenen Konflikte angezeigt werden.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Lokal: Anzeige der Konflikte, die nur durch Berechtigungen im lokalen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>System (in dem die Analyse gestartet wird) verursacht werden.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Remote: Anzeige der Konflikte, die nur durch Berechtigungen in einem</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Remote-System (in dem nicht die Analyse gestartet wird) verursacht</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>werden.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Über.: Anzeige der Konflikte, die durch Berechtigungen in mehreren</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Systemen verursacht werden.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>TX</ID>
+      <OBJECT>/PSYNG/SE_CONFLICT_ORIGIN</OBJECT>
+      <LANGU>E</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0004</VERSION>
+      <MASTERLANG>X</MASTERLANG>
+      <TXTLINES>00010</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SE_CONFLICT_ORIGIN</TDNAME>
+      <TDID>TX</TDID>
+      <TDSPRAS>E</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00004</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Conflict Origin</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>The conflict origin checkboxes determine which of the conflicts that</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>were found in the analysis will be displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Local : Conflicts that are only caused by authorizations in the local</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>system (the system where the analysis is started from) are displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Remote : Conflicts that are only caused by authorizations on a remote</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>system (not the system where the analysis is started from) are</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Cross : Conflicts that are caused by authorizations from multiple</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>systems are displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>TX</ID>
+      <OBJECT>/PSYNG/SE_CONFLICT_ORIGIN</OBJECT>
+      <LANGU>F</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0004</VERSION>
+      <TXTLINES>00010</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SE_CONFLICT_ORIGIN</TDNAME>
+      <TDID>TX</TDID>
+      <TDSPRAS>F</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00004</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Conflict Origin</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>The conflict origin checkboxes determine which of the conflicts that</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>were found in the analysis will be displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Local : Conflicts that are only caused by authorizations in the local</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>system (the system where the analysis is started from) are displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Remote : Conflicts that are only caused by authorizations on a remote</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>system (not the system where the analysis is started from) are</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Cross : Conflicts that are caused by authorizations from multiple</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>systems are displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>TX</ID>
+      <OBJECT>/PSYNG/SE_CONFLICT_ORIGIN</OBJECT>
+      <LANGU>I</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0004</VERSION>
+      <TXTLINES>00010</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SE_CONFLICT_ORIGIN</TDNAME>
+      <TDID>TX</TDID>
+      <TDSPRAS>I</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00004</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Conflict Origin</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>The conflict origin checkboxes determine which of the conflicts that</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>were found in the analysis will be displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Local : Conflicts that are only caused by authorizations in the local</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>system (the system where the analysis is started from) are displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Remote : Conflicts that are only caused by authorizations on a remote</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>system (not the system where the analysis is started from) are</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Cross : Conflicts that are caused by authorizations from multiple</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>systems are displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>TX</ID>
+      <OBJECT>/PSYNG/SE_CONFLICT_ORIGIN</OBJECT>
+      <LANGU>N</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0004</VERSION>
+      <TXTLINES>00010</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SE_CONFLICT_ORIGIN</TDNAME>
+      <TDID>TX</TDID>
+      <TDSPRAS>N</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00004</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Conflict Origin</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>The conflict origin checkboxes determine which of the conflicts that</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>were found in the analysis will be displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Local : Conflicts that are only caused by authorizations in the local</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>system (the system where the analysis is started from) are displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Remote : Conflicts that are only caused by authorizations on a remote</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>system (not the system where the analysis is started from) are</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Cross : Conflicts that are caused by authorizations from multiple</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>systems are displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>TX</ID>
+      <OBJECT>/PSYNG/SE_CONFLICT_ORIGIN</OBJECT>
+      <LANGU>P</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0004</VERSION>
+      <TXTLINES>00010</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SE_CONFLICT_ORIGIN</TDNAME>
+      <TDID>TX</TDID>
+      <TDSPRAS>P</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00004</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Conflict Origin</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>The conflict origin checkboxes determine which of the conflicts that</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>were found in the analysis will be displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Local : Conflicts that are only caused by authorizations in the local</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>system (the system where the analysis is started from) are displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Remote : Conflicts that are only caused by authorizations on a remote</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>system (not the system where the analysis is started from) are</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Cross : Conflicts that are caused by authorizations from multiple</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>systems are displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>TX</ID>
+      <OBJECT>/PSYNG/SE_CONFLICT_ORIGIN</OBJECT>
+      <LANGU>S</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0004</VERSION>
+      <TXTLINES>00010</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SE_CONFLICT_ORIGIN</TDNAME>
+      <TDID>TX</TDID>
+      <TDSPRAS>S</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00004</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Conflict Origin</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>The conflict origin checkboxes determine which of the conflicts that</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>were found in the analysis will be displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Local : Conflicts that are only caused by authorizations in the local</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>system (the system where the analysis is started from) are displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Remote : Conflicts that are only caused by authorizations on a remote</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>system (not the system where the analysis is started from) are</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Cross : Conflicts that are caused by authorizations from multiple</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>systems are displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>TX</ID>
+      <OBJECT>/PSYNG/SE_CONFLICT_ORIGIN</OBJECT>
+      <LANGU>V</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0004</VERSION>
+      <TXTLINES>00010</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SE_CONFLICT_ORIGIN</TDNAME>
+      <TDID>TX</TDID>
+      <TDSPRAS>V</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00004</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Conflict Origin</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>The conflict origin checkboxes determine which of the conflicts that</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>were found in the analysis will be displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Local : Conflicts that are only caused by authorizations in the local</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>system (the system where the analysis is started from) are displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Remote : Conflicts that are only caused by authorizations on a remote</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>system (not the system where the analysis is started from) are</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Cross : Conflicts that are caused by authorizations from multiple</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>systems are displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>TX</ID>
+      <OBJECT>/PSYNG/SE_CONFLICT_ORIGIN</OBJECT>
+      <LANGU>Z</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0004</VERSION>
+      <TXTLINES>00010</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SE_CONFLICT_ORIGIN</TDNAME>
+      <TDID>TX</TDID>
+      <TDSPRAS>Z</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00004</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Conflict Origin</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>The conflict origin checkboxes determine which of the conflicts that</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>were found in the analysis will be displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Local : Conflicts that are only caused by authorizations in the local</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>system (the system where the analysis is started from) are displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Remote : Conflicts that are only caused by authorizations on a remote</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>system (not the system where the analysis is started from) are</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Cross : Conflicts that are caused by authorizations from multiple</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>systems are displayed.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+   </DOC>
+  </asx:values>
+ </asx:abap>
+</abapGit>

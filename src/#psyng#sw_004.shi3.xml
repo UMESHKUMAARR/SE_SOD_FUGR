@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SHI3" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TREE_HEAD>
+    <ID>/PSYNG/SW_004</ID>
+    <TYPE>BMENU</TYPE>
+    <NODE_ID>/PSYNG/SW_004_T</NODE_ID>
+    <MASTERLANG>E</MASTERLANG>
+    <BUFFERMODE>1</BUFFERMODE>
+    <BUFFERVAR>NRT</BUFFERVAR>
+   </TREE_HEAD>
+   <TREE_TITLES>
+    <TTREET>
+     <SPRAS>Z</SPRAS>
+     <ID>/PSYNG/SW_004</ID>
+     <TEXT>Download data for central web reporting</TEXT>
+     <TEXT_CAP>DOWNLOAD DATA FOR CENTRAL WEB REPORTING</TEXT_CAP>
+    </TTREET>
+    <TTREET>
+     <SPRAS>V</SPRAS>
+     <ID>/PSYNG/SW_004</ID>
+     <TEXT>Download data for central web reporting</TEXT>
+     <TEXT_CAP>DOWNLOAD DATA FOR CENTRAL WEB REPORTING</TEXT_CAP>
+    </TTREET>
+    <TTREET>
+     <SPRAS>S</SPRAS>
+     <ID>/PSYNG/SW_004</ID>
+     <TEXT>Descarga de datos para informes web centrales</TEXT>
+     <TEXT_CAP>DESCARGA DE DATOS PARA INFORMES WEB CENTRALES</TEXT_CAP>
+    </TTREET>
+    <TTREET>
+     <SPRAS>P</SPRAS>
+     <ID>/PSYNG/SW_004</ID>
+     <TEXT>Download de dados para o central de relatórios web</TEXT>
+     <TEXT_CAP>DOWNLOAD DE DADOS PARA O CENTRAL DE RELATÓRIOS WEB</TEXT_CAP>
+    </TTREET>
+    <TTREET>
+     <SPRAS>N</SPRAS>
+     <ID>/PSYNG/SW_004</ID>
+     <TEXT>Download data for central web reporting</TEXT>
+     <TEXT_CAP>DOWNLOAD DATA FOR CENTRAL WEB REPORTING</TEXT_CAP>
+    </TTREET>
+    <TTREET>
+     <SPRAS>I</SPRAS>
+     <ID>/PSYNG/SW_004</ID>
+     <TEXT>Download data for central web reporting</TEXT>
+     <TEXT_CAP>DOWNLOAD DATA FOR CENTRAL WEB REPORTING</TEXT_CAP>
+    </TTREET>
+    <TTREET>
+     <SPRAS>F</SPRAS>
+     <ID>/PSYNG/SW_004</ID>
+     <TEXT>Download data for central web reporting</TEXT>
+     <TEXT_CAP>DOWNLOAD DATA FOR CENTRAL WEB REPORTING</TEXT_CAP>
+    </TTREET>
+    <TTREET>
+     <SPRAS>E</SPRAS>
+     <ID>/PSYNG/SW_004</ID>
+     <TEXT>Download data for central web reporting</TEXT>
+     <TEXT_CAP>DOWNLOAD DATA FOR CENTRAL WEB REPORTING</TEXT_CAP>
+    </TTREET>
+    <TTREET>
+     <SPRAS>D</SPRAS>
+     <ID>/PSYNG/SW_004</ID>
+     <TEXT>Daten für zentrales Web-Reporting herunterladen</TEXT>
+     <TEXT_CAP>Daten für zentrales Web-Reporting herunterladen</TEXT_CAP>
+    </TTREET>
+   </TREE_TITLES>
+  </asx:values>
+ </asx:abap>
+</abapGit>

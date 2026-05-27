@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SUSO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TOBJ>
+    <OBJCT>Y&amp;SW_ADMIN</OBJCT>
+    <FIEL1>Y&amp;SW_ADMF</FIEL1>
+    <OCLSS>Y&amp;SW</OCLSS>
+   </TOBJ>
+   <TOBJT>
+    <LANGU>E</LANGU>
+    <OBJECT>Y&amp;SW_ADMIN</OBJECT>
+    <TTEXT>Security Weaver - Administrative Functions</TTEXT>
+   </TOBJT>
+   <TOBJVORFLG>
+    <OBJCT>Y&amp;SW_ADMIN</OBJCT>
+   </TOBJVORFLG>
+  </asx:values>
+ </asx:abap>
+</abapGit>

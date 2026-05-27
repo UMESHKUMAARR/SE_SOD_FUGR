@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_NSPC" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <NSPC>
+    <NAMESPACE>/PSYNG/</NAMESPACE>
+    <REPLICENSE>11276094532056265184</REPLICENSE>
+   </NSPC>
+   <NSPC_TEXT>
+    <SPRAS>E</SPRAS>
+    <DESCRIPTN>Pathlock Inc.</DESCRIPTN>
+    <OWNER>Pathlock Inc.</OWNER>
+   </NSPC_TEXT>
+   <CVERS>
+    <COMPONENT>PSYNG</COMPONENT>
+    <RELEASE>20A</RELEASE>
+    <EXTRELEASE>0000</EXTRELEASE>
+    <COMP_TYPE>C</COMP_TYPE>
+   </CVERS>
+   <CVERS_REF>
+    <COMPONENT>PSYNG</COMPONENT>
+    <LANGU>E</LANGU>
+    <DESC_TEXT>Security Weaver Software</DESC_TEXT>
+   </CVERS_REF>
+  </asx:values>
+ </asx:abap>
+</abapGit>

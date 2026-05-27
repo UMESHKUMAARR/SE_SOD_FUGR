@@ -1,0 +1,682 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>Message class for IBS ruleset import for SW</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>No XML data available to convert</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>No XML data available to transform</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>No ABAP data available to process</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Error attempting to upload the selected file (&amp;1)</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Error trying to convert BINARY to STRING</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>&amp;1 occurrences were deleted with REGEX (&lt;/?asx:[^&lt;]*&gt;).</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>&amp;1 dates were converted</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>&amp;1 time information was converted</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Errors due to structural differences</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Error due to type differences (&amp;1)</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Error when trying to convert XML data into ABAP data</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Error inserting the data into the database</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>The data check was negative</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>There are &amp;1 (&gt;1) entries in the import structure</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>The check class was not found</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Error instantiating Check class.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>Structure difference: Expected: &amp;1 / Found: &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>The database tables have been emptied</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>The XML data was transferred to the database tables.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>Entries with the same key already exist.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>020</MSGNR>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>100</MSGNR>
+     <TEXT>CHECK - empty field detected</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>101</MSGNR>
+     <TEXT>CHECK - missing dependency detected (&amp;1)</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>102</MSGNR>
+     <TEXT>CHECK - multiple matrix headers detected</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>103</MSGNR>
+     <TEXT>CHECK - illegal value detected in Boolean field</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>104</MSGNR>
+     <TEXT>CHECK - incorrect AUTH_GROUP detected for specific OBJECT</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>105</MSGNR>
+     <TEXT>CHECK - illegal character detected in AUTH_GROUP</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>106</MSGNR>
+     <TEXT>CHECK - different OBJECTS detected for the same AUTH_GROUP</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>107</MSGNR>
+     <TEXT>CHECK - illegal content detected in SEARCHTYPE</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>108</MSGNR>
+     <TEXT>CHECK - Single field object with SEARCHTYPE not equal to &quot;OR&quot; detected</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>109</MSGNR>
+     <TEXT>CHECK - Field value with &quot;*&quot; detected for FIELD &quot;ACTVT&quot;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>110</MSGNR>
+     <TEXT>CHECK - Field value with &quot;*&quot; at the end not recognized</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>111</MSGNR>
+     <TEXT>CHECK - no entry for &quot;S_SERVICE&quot; found in table USOBHASH</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>112</MSGNR>
+     <TEXT>CHECK - Entries with the same key in PSYNG database &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>113</MSGNR>
+     <TEXT>CHECK - &amp;1 entries deleted from PSYNG database &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>114</MSGNR>
+     <TEXT>CHECK - Missing PROBLEM_TEXT detected</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>115</MSGNR>
+     <TEXT>CHECK - Missing SOLUTION_TEXT detected</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>200</MSGNR>
+     <TEXT>No authorization for this transaction</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>300</MSGNR>
+     <TEXT>CONV - Failed to INSERT into PSYNG database &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>301</MSGNR>
+     <TEXT>CONV - Error creating SO10 texts (&amp;1, &amp;2, &amp;3)</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>302</MSGNR>
+     <TEXT>CONV - The intermediate tables have been emptied!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <MSGNR>303</MSGNR>
+     <TEXT>CONV - The conversion was successful!</TEXT>
+    </T100>
+   </T100>
+   <I18N_LANGS>
+    <LANGU>S</LANGU>
+   </I18N_LANGS>
+   <T100T>
+    <T100T>
+     <SPRSL>S</SPRSL>
+     <ARBGB>/PSYNG/SW_RULESET</ARBGB>
+     <STEXT>Clase de mensaje para la importación de conjuntos de reglas</STEXT>
+    </T100T>
+   </T100T>
+   <T100_TEXTS>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>000</MSGNR>
+     <TEXT>Keine XML-Daten zum Konvertieren verfügbar</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>001</MSGNR>
+     <TEXT>Keine XML-Daten zum Transformieren verfügbar</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>002</MSGNR>
+     <TEXT>Keine ABAP-Daten zum Verarbeiten verfügbar</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>003</MSGNR>
+     <TEXT>Fehler beim Hochladen der ausgewählten Datei (&amp;1)</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>004</MSGNR>
+     <TEXT>Fehler beim Konvertieren von BINARY in STRING</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>005</MSGNR>
+     <TEXT>&amp;1 Vorkommen wurde mit REGEX gelöscht (&lt;/?asx:[^&lt;]*&gt;).</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>006</MSGNR>
+     <TEXT>&amp;1 Daten wurden konvertiert</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>007</MSGNR>
+     <TEXT>&amp;1 Zeitinformationen wurden konvertiert</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>008</MSGNR>
+     <TEXT>Fehler aufgrund von Strukturunterschieden</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>009</MSGNR>
+     <TEXT>Fehler aufgrund von Typunterschieden (&amp;1)</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>010</MSGNR>
+     <TEXT>Fehler beim Konvertieren von XML-Daten in ABAP-Daten</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>011</MSGNR>
+     <TEXT>Fehler beim Einfügen der Daten in die Datenbank</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>012</MSGNR>
+     <TEXT>Die Datenprüfung war negativ</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>013</MSGNR>
+     <TEXT>Es gibt &amp;1 (&gt;1) Einträge in der Importstruktur</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>014</MSGNR>
+     <TEXT>Die Prüfklasse wurde nicht gefunden</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>015</MSGNR>
+     <TEXT>Fehler beim Instanziieren der Prüfklasse.</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>016</MSGNR>
+     <TEXT>Strukturunterschied: Erwartet: &amp;1 / Gefunden: &amp;2</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>017</MSGNR>
+     <TEXT>Die Datenbanktabellen wurden geleert</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>018</MSGNR>
+     <TEXT>Die XML-Daten wurden an Datenbanktabellen übertragen.</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>019</MSGNR>
+     <TEXT>Einträge mit demselben Schlüssel sind bereits vorhanden.</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>100</MSGNR>
+     <TEXT>PRÜFUNG - leeres Feld erkannt</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>101</MSGNR>
+     <TEXT>PRÜFUNG - fehlende Abhängigkeit erkannt (&amp;1)</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>102</MSGNR>
+     <TEXT>PRÜFUNG - mehrere Matrixköpfe erkannt</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>103</MSGNR>
+     <TEXT>PRÜFUNG - ungültiger Wert in booleschem Feld erkannt</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>104</MSGNR>
+     <TEXT>PRÜFUNG - ungültige AUTH_GROUP für bestimmtes OBJECT erkannt</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>105</MSGNR>
+     <TEXT>PRÜFUNG - ungültiges Zeichen in AUTH_GROUP erkannt</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>106</MSGNR>
+     <TEXT>PRÜFUNG - unterschiedliche OBJECTS für gleiche AUTH_GROUP erkannt</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>107</MSGNR>
+     <TEXT>PRÜFUNG - ungültiger Inhalt in SEARCHTYPE erkannt</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>108</MSGNR>
+     <TEXT>PRÜFUNG - Einzelfeldobjekt mit SEARCHTYPE ungleich &quot;OR&quot; erkannt</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>109</MSGNR>
+     <TEXT>PRÜFUNG - Feldwert mit &quot;*&quot; für Feld &quot;ACTVT&quot; erkannt</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>110</MSGNR>
+     <TEXT>PRÜFUNG - Feldwert mit &quot;*&quot; am Ende nicht erkannt</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>111</MSGNR>
+     <TEXT>PRÜFUNG - kein Eintrag für &quot;S_SERVICE&quot;  in Tabelle USOBHASH gefunden</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>112</MSGNR>
+     <TEXT>PRÜFUNG - Einträge mit gleichem Schlüssel in PSYNG-Datenbank &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>113</MSGNR>
+     <TEXT>PRÜFUNG - &amp;1 Einträge aus PSYNG-Datenbank &amp;2 gelöscht</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>114</MSGNR>
+     <TEXT>PRÜFUNG - fehlenden PROBLEM_TEXT erkannt</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>115</MSGNR>
+     <TEXT>PRÜFUNG - fehlenden SOLUTION_TEXT erkannt</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>200</MSGNR>
+     <TEXT>Keine Berechtigung für diese Transaktion</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>300</MSGNR>
+     <TEXT>KONV. - Fehler bei INSERT in PSYNG-Datenbank &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>301</MSGNR>
+     <TEXT>KONV. - Fehler beim Anlegen con SO10-Texten (&amp;1, &amp;2, &amp;3)</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>302</MSGNR>
+     <TEXT>KONV. - Die Zwischentabellen wurden geleert!</TEXT>
+    </item>
+    <item>
+     <SPRSL>D</SPRSL>
+     <MSGNR>303</MSGNR>
+     <TEXT>KONV. - Die Konvertierung war erfolgreich!</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>000</MSGNR>
+     <TEXT>No hay datos XML disponibles para transformar</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>001</MSGNR>
+     <TEXT>No hay datos XML disponibles para transformar</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>002</MSGNR>
+     <TEXT>No hay datos ABAP disponibles para procesar</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>003</MSGNR>
+     <TEXT>Error al intentar cargar el archivo seleccionado (&amp;1)</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>004</MSGNR>
+     <TEXT>Error al intentar convertir BINARY a STRING</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>005</MSGNR>
+     <TEXT>Las ocurrencias de &amp;1 se eliminaron con REGEX (&lt;/?asx:[^&lt;]*&gt;).</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>006</MSGNR>
+     <TEXT>&amp;1 fechas fueron convertidas</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>007</MSGNR>
+     <TEXT>&amp;1 información horaria convertida</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>008</MSGNR>
+     <TEXT>Errores debidos a diferencias estructurales</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>009</MSGNR>
+     <TEXT>Error debido a diferencias de tipo (&amp;1)</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>010</MSGNR>
+     <TEXT>Error al intentar convertir datos XML en datos ABAP</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>011</MSGNR>
+     <TEXT>Error al insertar los datos en la base de datos</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>012</MSGNR>
+     <TEXT>La comprobación de datos fue negativa</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>013</MSGNR>
+     <TEXT>Hay &amp;1 (&gt;1) entradas en la estructura de importación</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>014</MSGNR>
+     <TEXT>No se ha encontrado la clase Check</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>015</MSGNR>
+     <TEXT>Error al instanciar la clase Check.</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>016</MSGNR>
+     <TEXT>Diferencia de estructura: Esperada: &amp;1 / Encontrada: &amp;2</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>017</MSGNR>
+     <TEXT>Se han vaciado las tablas de la base de datos</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>018</MSGNR>
+     <TEXT>Los datos XML se han transferido a las tablas de la base de datos.</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>019</MSGNR>
+     <TEXT>Ya existen entradas con la misma clave.</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>100</MSGNR>
+     <TEXT>CHECK - campo vacío detectado</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>101</MSGNR>
+     <TEXT>CHECK - se ha detectado que falta una relación (&amp;1)</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>102</MSGNR>
+     <TEXT>CHECK - Se han detectado varias cabeceras de matriz</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>103</MSGNR>
+     <TEXT>CHECK - Se ha detectado un valor ilegal en un campo booleano</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>104</MSGNR>
+     <TEXT>CHECK - Se ha detectado un AUTH_GROUP incorrecto para un OBJETO específic</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>105</MSGNR>
+     <TEXT>CHECK - Carácter ilegal detectado en AUTH_GROUP</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>106</MSGNR>
+     <TEXT>CHECK - OBJETOS diferentes detectados para el mismo AUTH_GROUP</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>107</MSGNR>
+     <TEXT>CHECK - contenido ilegal detectado en SEARCHTYPE</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>108</MSGNR>
+     <TEXT>CHECK - Objeto de campo Ãºnico con SEARCHTYPE no igual a Â«ORÂ» detectado</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>109</MSGNR>
+     <TEXT>CHECK - Valor de campo con Â«*Â» detectado para FIELD Â«ACTVTÂ».</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>110</MSGNR>
+     <TEXT>CHECK - Valor de campo con Â«*Â» al final no reconocido</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>112</MSGNR>
+     <TEXT>CHECK - Entradas con la misma clave en la base de datos PSYNG &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>113</MSGNR>
+     <TEXT>CHECK - Entradas &amp;1 eliminadas de la base de datos PSYNG &amp;2</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>114</MSGNR>
+     <TEXT>CHECK - Se ha detectado la falta de PROBLEM_TEXT</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>115</MSGNR>
+     <TEXT>CHECK - Se ha detectado que falta SOLUTION_TEXT</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>200</MSGNR>
+     <TEXT>No hay autorización para esta transacción</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>300</MSGNR>
+     <TEXT>CONV - Error al insertar en la base de datos PSYNG &amp;1</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>301</MSGNR>
+     <TEXT>CONV - Error al crear textos SO10 (&amp;1, &amp;2, &amp;3)</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>302</MSGNR>
+     <TEXT>CONV - ¡Se han vaciado las tablas intermedias!</TEXT>
+    </item>
+    <item>
+     <SPRSL>S</SPRSL>
+     <MSGNR>303</MSGNR>
+     <TEXT>CONV - ¡La conversión se ha realizado correctamente!</TEXT>
+    </item>
+   </T100_TEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

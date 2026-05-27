@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CHDO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <CHDO>
+    <REPORTS_GENERATED>
+     <TCDRPS>
+      <OBJECT>/PSYNG/SECONFIG</OBJECT>
+      <REPORTNAME>/PSYNG/SECONFIG</REPORTNAME>
+      <TEXTCASE>X</TEXTCASE>
+      <ARBGEB>CD</ARBGEB>
+      <FEHLERNR>600</FEHLERNR>
+      <FGRP>/PSYNG/SE_CDCGF</FGRP>
+      <PREFIX>/PSYNG/Y</PREFIX>
+      <UPDATE_FLG>2</UPDATE_FLG>
+     </TCDRPS>
+    </REPORTS_GENERATED>
+    <OBJECTS>
+     <TCDOBS>
+      <OBJECT>/PSYNG/SECONFIG</OBJECT>
+      <TABNAME>/PSYNG/SWCONFIG</TABNAME>
+      <DOCUDEL>X</DOCUDEL>
+      <DOCUINS>X</DOCUINS>
+     </TCDOBS>
+     <TCDOBS>
+      <OBJECT>/PSYNG/SECONFIG</OBJECT>
+      <TABNAME>/PSYNG/SWINVISBL</TABNAME>
+      <DOCUDEL>X</DOCUDEL>
+      <DOCUINS>X</DOCUINS>
+     </TCDOBS>
+    </OBJECTS>
+    <OBJECTS_TEXT>
+     <TCDOBTS>
+      <SPRAS>D</SPRAS>
+      <OBJECT>/PSYNG/SECONFIG</OBJECT>
+      <OBTEXT>SE: Änderungsbelegkonfiguration</OBTEXT>
+     </TCDOBTS>
+     <TCDOBTS>
+      <SPRAS>E</SPRAS>
+      <OBJECT>/PSYNG/SECONFIG</OBJECT>
+      <OBTEXT>SE : Change Document Configuration</OBTEXT>
+     </TCDOBTS>
+     <TCDOBTS>
+      <SPRAS>P</SPRAS>
+      <OBJECT>/PSYNG/SECONFIG</OBJECT>
+      <OBTEXT>SE : Change Document Configuration</OBTEXT>
+     </TCDOBTS>
+     <TCDOBTS>
+      <SPRAS>S</SPRAS>
+      <OBJECT>/PSYNG/SECONFIG</OBJECT>
+      <OBTEXT>SE : Change Document Configuration</OBTEXT>
+     </TCDOBTS>
+    </OBJECTS_TEXT>
+   </CHDO>
+  </asx:values>
+ </asx:abap>
+</abapGit>

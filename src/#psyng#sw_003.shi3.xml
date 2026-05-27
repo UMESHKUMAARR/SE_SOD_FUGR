@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SHI3" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TREE_HEAD>
+    <ID>/PSYNG/SW_003</ID>
+    <TYPE>BMENU</TYPE>
+    <NODE_ID>/PSYNG/SW_003_T</NODE_ID>
+    <MASTERLANG>E</MASTERLANG>
+    <BUFFERMODE>1</BUFFERMODE>
+   </TREE_HEAD>
+   <TREE_TITLES>
+    <TTREET>
+     <SPRAS>Z</SPRAS>
+     <ID>/PSYNG/SW_003</ID>
+     <TEXT>Security Weaver: POC Area Menu to add Report by Cust</TEXT>
+     <TEXT_CAP>SECURITY WEAVER: POC AREA MENU TO ADD REPORT BY CUST</TEXT_CAP>
+    </TTREET>
+    <TTREET>
+     <SPRAS>V</SPRAS>
+     <ID>/PSYNG/SW_003</ID>
+     <TEXT>Security Weaver: POC Area Menu to add Report by Cust</TEXT>
+     <TEXT_CAP>SECURITY WEAVER: POC AREA MENU TO ADD REPORT BY CUST</TEXT_CAP>
+    </TTREET>
+    <TTREET>
+     <SPRAS>S</SPRAS>
+     <ID>/PSYNG/SW_003</ID>
+     <TEXT>Security Weaver: POC Menú de Área para agregar Informe por Cliente</TEXT>
+     <TEXT_CAP>SECURITY WEAVER: POC MENÚ DE ÁREA PARA AGREGAR INFORME POR CLIENTE</TEXT_CAP>
+    </TTREET>
+    <TTREET>
+     <SPRAS>P</SPRAS>
+     <ID>/PSYNG/SW_003</ID>
+     <TEXT>Security Weaver: POC Menu Área para adic.Relatório por Cust</TEXT>
+     <TEXT_CAP>SECURITY WEAVER: POC MENU ÁREA PARA ADIC.RELATÓRIO POR CUST</TEXT_CAP>
+    </TTREET>
+    <TTREET>
+     <SPRAS>N</SPRAS>
+     <ID>/PSYNG/SW_003</ID>
+     <TEXT>Security Weaver: POC Area Menu to add Report by Cust</TEXT>
+     <TEXT_CAP>SECURITY WEAVER: POC AREA MENU TO ADD REPORT BY CUST</TEXT_CAP>
+    </TTREET>
+    <TTREET>
+     <SPRAS>I</SPRAS>
+     <ID>/PSYNG/SW_003</ID>
+     <TEXT>Security Weaver: POC Area Menu to add Report by Cust</TEXT>
+     <TEXT_CAP>SECURITY WEAVER: POC AREA MENU TO ADD REPORT BY CUST</TEXT_CAP>
+    </TTREET>
+    <TTREET>
+     <SPRAS>F</SPRAS>
+     <ID>/PSYNG/SW_003</ID>
+     <TEXT>Security Weaver: POC Area Menu to add Report by Cust</TEXT>
+     <TEXT_CAP>SECURITY WEAVER: POC AREA MENU TO ADD REPORT BY CUST</TEXT_CAP>
+    </TTREET>
+    <TTREET>
+     <SPRAS>E</SPRAS>
+     <ID>/PSYNG/SW_003</ID>
+     <TEXT>Security Weaver: POC Area Menu to add Report by Cust</TEXT>
+     <TEXT_CAP>SECURITY WEAVER: POC AREA MENU TO ADD REPORT BY CUST</TEXT_CAP>
+    </TTREET>
+    <TTREET>
+     <SPRAS>D</SPRAS>
+     <ID>/PSYNG/SW_003</ID>
+     <TEXT>Security Weaver: POC Bereichsmenü Report nach Kunde zufügen</TEXT>
+     <TEXT_CAP>Security Weaver: POC Bereichsmenü Report nach Kunde zufügen</TEXT_CAP>
+    </TTREET>
+   </TREE_TITLES>
+  </asx:values>
+ </asx:abap>
+</abapGit>

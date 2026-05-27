@@ -1,0 +1,15 @@
+
+DATA: UPD_ICDTXT_CRIT_OBJ        TYPE C.
+DATA: BEGIN OF ICDTXT_CRIT_OBJ        OCCURS 20.
+        INCLUDE STRUCTURE CDTXT.
+DATA: END OF ICDTXT_CRIT_OBJ       .
+
+TABLES: */PSYNG/CRIPROF                , /PSYNG/CRIPROF                .
+DATA: UPD_PSYNG_CRIPROF                  TYPE C.
+
+TABLES: */PSYNG/CRIROLES               , /PSYNG/CRIROLES               .
+DATA: UPD_PSYNG_CRIROLES                 TYPE C.
+
+TABLES: */PSYNG/CRITCODES              , /PSYNG/CRITCODES              .
+DATA: UPD_PSYNG_CRITCODES                TYPE C.
+

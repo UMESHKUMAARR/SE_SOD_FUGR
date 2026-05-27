@@ -1,0 +1,1970 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>/PSYNG/CL_SW_RULESET_CONVSN</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>SE: Ruleset conversion</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>036</KEY>
+     <ENTRY>Replace conflicts &amp; functions</ENTRY>
+     <LENGTH>58</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>119</KEY>
+     <ENTRY>Function Header</ENTRY>
+     <LENGTH>25</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>120</KEY>
+     <ENTRY>Owner :</ENTRY>
+     <LENGTH>17</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>121</KEY>
+     <ENTRY>Not Found</ENTRY>
+     <LENGTH>19</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>122</KEY>
+     <ENTRY>Application Area :</ENTRY>
+     <LENGTH>29</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>123</KEY>
+     <ENTRY>No errors found in file</ENTRY>
+     <LENGTH>46</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>124</KEY>
+     <ENTRY>Function details</ENTRY>
+     <LENGTH>26</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>125</KEY>
+     <ENTRY>SOD Function ID :</ENTRY>
+     <LENGTH>27</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>126</KEY>
+     <ENTRY>Tcode :</ENTRY>
+     <LENGTH>17</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>127</KEY>
+     <ENTRY>Function texts:</ENTRY>
+     <LENGTH>25</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>128</KEY>
+     <ENTRY>Object details</ENTRY>
+     <LENGTH>24</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>129</KEY>
+     <ENTRY>Function ID :</ENTRY>
+     <LENGTH>23</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>130</KEY>
+     <ENTRY>Field :</ENTRY>
+     <LENGTH>17</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>131</KEY>
+     <ENTRY>OBJ_OR:</ENTRY>
+     <LENGTH>17</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>132</KEY>
+     <ENTRY>Sensitivity level :</ENTRY>
+     <LENGTH>29</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>137</KEY>
+     <ENTRY>Conflict ID :</ENTRY>
+     <LENGTH>23</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>162</KEY>
+     <ENTRY>VALUESET:</ENTRY>
+     <LENGTH>19</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>163</KEY>
+     <ENTRY>Cannot be blank or 000</ENTRY>
+     <LENGTH>44</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>205</KEY>
+     <ENTRY>Tcode is not linked to the function</ENTRY>
+     <LENGTH>70</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>B00</KEY>
+     <ENTRY>SOD Version</ENTRY>
+     <LENGTH>21</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>L07</KEY>
+     <ENTRY>Deleting data is not allowed;records are locked.</ENTRY>
+     <LENGTH>96</LENGTH>
+    </item>
+   </TPOOL>
+   <I18N_TPOOL>
+    <item>
+     <LANGUAGE>D</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>036</KEY>
+       <ENTRY>Konflikte und Funktionen ersetzen</ENTRY>
+       <LENGTH>58</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>119</KEY>
+       <ENTRY>Funktionskopf</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>120</KEY>
+       <ENTRY>Verantwortlicher:</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>121</KEY>
+       <ENTRY>Nicht gefunden</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>122</KEY>
+       <ENTRY>Applikationsbereich:</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>123</KEY>
+       <ENTRY>Keine Fehler in Datei gefunden</ENTRY>
+       <LENGTH>46</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>124</KEY>
+       <ENTRY>Funktionsdetails</ENTRY>
+       <LENGTH>26</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>125</KEY>
+       <ENTRY>SOD-Funktions-ID:</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>126</KEY>
+       <ENTRY>TCode:</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>127</KEY>
+       <ENTRY>Funktionstexte:</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>128</KEY>
+       <ENTRY>Objektdetails</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>129</KEY>
+       <ENTRY>Funktions-ID</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>130</KEY>
+       <ENTRY>Feld:</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>131</KEY>
+       <ENTRY>OBJ_OR:</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>132</KEY>
+       <ENTRY>Sensitivitätsebene:</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>137</KEY>
+       <ENTRY>Konflikt-ID:</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>162</KEY>
+       <ENTRY>WERTEMENGE:</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>163</KEY>
+       <ENTRY>Kann nicht leer oder 000 sein</ENTRY>
+       <LENGTH>44</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>205</KEY>
+       <ENTRY>TCode nicht mit Funktion verknüpft</ENTRY>
+       <LENGTH>70</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>B00</KEY>
+       <ENTRY>SOD-Version</ENTRY>
+       <LENGTH>21</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>S</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>036</KEY>
+       <ENTRY>Reemplazar conflictos y funciones</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>119</KEY>
+       <ENTRY>Cabecera de la función</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>120</KEY>
+       <ENTRY>Propietario :</ENTRY>
+       <LENGTH>13</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>121</KEY>
+       <ENTRY>No encontrado</ENTRY>
+       <LENGTH>13</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>122</KEY>
+       <ENTRY>Área de aplicación :</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>123</KEY>
+       <ENTRY>No se han encontrado errores en el archivo</ENTRY>
+       <LENGTH>42</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>124</KEY>
+       <ENTRY>Detalles de la función</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>125</KEY>
+       <ENTRY>ID de función SOD :</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>126</KEY>
+       <ENTRY>Transacción :</ENTRY>
+       <LENGTH>13</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>127</KEY>
+       <ENTRY>Textos de la función:</ENTRY>
+       <LENGTH>21</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>128</KEY>
+       <ENTRY>Detalles del objeto</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>129</KEY>
+       <ENTRY>Función ID :</ENTRY>
+       <LENGTH>12</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>130</KEY>
+       <ENTRY>Campo :</ENTRY>
+       <LENGTH>7</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>131</KEY>
+       <ENTRY>OBJ_OR:</ENTRY>
+       <LENGTH>7</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>132</KEY>
+       <ENTRY>Nivel de sensibilidad :</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>137</KEY>
+       <ENTRY>ID de conflicto :</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>162</KEY>
+       <ENTRY>VALUESET:</ENTRY>
+       <LENGTH>9</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>163</KEY>
+       <ENTRY>No puede estar en blanco ni ser 000</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>205</KEY>
+       <ENTRY>Transacción no vinculada a la función</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>B00</KEY>
+       <ENTRY>Versión SOD</ENTRY>
+       <LENGTH>11</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+   </I18N_TPOOL>
+   <DESCRIPTIONS_CLASS>
+    <SEOCLASSTX>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SE: Conversión de reglas</DESCRIPT>
+    </SEOCLASSTX>
+   </DESCRIPTIONS_CLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>CHECKER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Abstratc class for ruleset check</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CHECKER</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Clase Abstratc para la comprobación del conjunto de reglas</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DATA</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Import structure for IBS XML data</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DATA</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Estructura de importación de datos XML IBS</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DELETE_DB</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DELETE_DB</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Casilla de verificación general (X o espacio)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LOGGER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Class to capture ruleset log&apos;s</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LOGGER</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Clase para capturar los registros del conjunto de reglas</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_LOCK</CMPNAME>
+     <SCONAME>EF_LOCKED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Flag</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_LOCK</CMPNAME>
+     <SCONAME>EF_LOCKED</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Bandera General</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_LOCK</CMPNAME>
+     <SCONAME>I_OBJECT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>30 Characters</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_LOCK</CMPNAME>
+     <SCONAME>I_OBJECT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>30 Caracteres</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_LOCK</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SOD Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_LOCK</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Versión SOD</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>DELETE_DB</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>DELETE_DB</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Casilla de verificación general (X o espacio)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONVERT_DATA</CMPNAME>
+     <SCONAME>EXP_LOG</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>TT for /PSYNG/SW_GT_LOG</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONVERT_DATA</CMPNAME>
+     <SCONAME>EXP_LOG</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>TT para /PSYNG/SW_GT_LOG</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONVERT_DATA</CMPNAME>
+     <SCONAME>I_EXSTNG</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Flag</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONVERT_DATA</CMPNAME>
+     <SCONAME>I_EXSTNG</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>General Flag</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONVERT_DATA</CMPNAME>
+     <SCONAME>I_OVRWRT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Flag</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONVERT_DATA</CMPNAME>
+     <SCONAME>I_OVRWRT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>General Flag</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONVERT_DATA</CMPNAME>
+     <SCONAME>I_SKP_VALD</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Flag</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONVERT_DATA</CMPNAME>
+     <SCONAME>I_SKP_VALD</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>General Flag</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONVERT_DATA</CMPNAME>
+     <SCONAME>I_TESTRUN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Flag</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONVERT_DATA</CMPNAME>
+     <SCONAME>I_TESTRUN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>General Flag</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONVERT_DATA</CMPNAME>
+     <SCONAME>I_VRSN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SOD Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONVERT_DATA</CMPNAME>
+     <SCONAME>I_VRSN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Versión SOD</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONVERT_DATA</CMPNAME>
+     <SCONAME>I_VRS_DESC</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Description</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONVERT_DATA</CMPNAME>
+     <SCONAME>I_VRS_DESC</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Descripción</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_ALL</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Import structure for IBS XML data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_ALL</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Estructura de importación de datos XML IBS</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_ALL</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_ALL</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Casilla de verificación general (X o espacio)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_ALL</CMPNAME>
+     <SCONAME>I_CHKBOX</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_ALL</CMPNAME>
+     <SCONAME>I_CHKBOX</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Casilla de verificación general (X o espacio)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_ALL</CMPNAME>
+     <SCONAME>I_OVERWRITE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_ALL</CMPNAME>
+     <SCONAME>I_OVERWRITE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Casilla de verificación general (X o espacio)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_ALL</CMPNAME>
+     <SCONAME>I_TEST</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_ALL</CMPNAME>
+     <SCONAME>I_TEST</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Casilla de verificación general (X o espacio)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_ALL</CMPNAME>
+     <SCONAME>I_VALD</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_ALL</CMPNAME>
+     <SCONAME>I_VALD</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Casilla de verificación general (X o espacio)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_ALL</CMPNAME>
+     <SCONAME>I_VRSIO</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SOD Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_ALL</CMPNAME>
+     <SCONAME>I_VRSIO</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Versión SOD</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_ALL</CMPNAME>
+     <SCONAME>I_VRSIO_DESC</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Description</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_ALL</CMPNAME>
+     <SCONAME>I_VRSIO_DESC</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Descripción</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_ALL</CMPNAME>
+     <SCONAME>OUT_LOG</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>TT for /PSYNG/SW_GT_LOG</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_ALL</CMPNAME>
+     <SCONAME>OUT_LOG</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>TT para /PSYNG/SW_GT_LOG</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CONFLICT_DETAILS</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW : Table Type for /PSYNG/SW_CONF_D</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CONFLICT_DETAILS</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW : Tipo de tabla para /PSYNG/SW_CONF_D</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CONFLICT_DETAILS</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Import structure for IBS XML data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CONFLICT_DETAILS</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Estructura de importación para datos IBS XML</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CONFLICT_DETAILS</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CONFLICT_DETAILS</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>General Casilla de verificación (X o espacio)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CONFLICT_DETAILS</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SOD Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CONFLICT_DETAILS</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Versión SOD</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CONFLICT_HEADER</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW : Table Type for /PSYNG/SW_CONF_H</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CONFLICT_HEADER</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Tipo de tabla para /PSYNG/SW_CONF_H</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CONFLICT_HEADER</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Import structure for IBS XML data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CONFLICT_HEADER</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Estructura de importación de datos XML IBS</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CONFLICT_HEADER</CMPNAME>
+     <SCONAME>GT_LOG</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Log Table for /PSYNG/SW_IBS_RULES_CNVRSN</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CONFLICT_HEADER</CMPNAME>
+     <SCONAME>GT_LOG</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tabla de registro para /PSYNG/SW_IBS_RULES_CNVRSN</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CONFLICT_HEADER</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CONFLICT_HEADER</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>General Casilla de verificación (X o espacio)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CONFLICT_HEADER</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SOD Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CONFLICT_HEADER</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Versión SOD</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CONFLICT_TEXT</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW : Table Type for /PSYNG/SW_CONF_T</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CONFLICT_TEXT</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Tipo de tabla para /PSYNG/SW_CONF_T</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CONFLICT_TEXT</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Import structure for IBS XML data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CONFLICT_TEXT</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Estructura de importación de datos XML IBS</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CONFLICT_TEXT</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CONFLICT_TEXT</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Casilla general (X o espacio)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CONFLICT_TEXT</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SOD Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_CONFLICT_TEXT</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Versión SOD</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_FUNCTION_DETAILS</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW : table Type for /PSYNG/SW_FUNC_D</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_FUNCTION_DETAILS</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW : Tipo de tabla para /PSYNG/SW_FUNC_D</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_FUNCTION_DETAILS</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Import structure for IBS XML data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_FUNCTION_DETAILS</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Estructura de importación de datos XML IBS</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_FUNCTION_DETAILS</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_FUNCTION_DETAILS</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>General Casilla de verificación (X o espacio)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_FUNCTION_DETAILS</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SOD Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_FUNCTION_DETAILS</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Versión SOD</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_FUNCTION_HEADER</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW : Table Type for /PSYNG/SW_FUNC_H</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_FUNCTION_HEADER</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW : Tipo de tabla para /PSYNG/SW_FUNC_H</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_FUNCTION_HEADER</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Import structure for IBS XML data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_FUNCTION_HEADER</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Estructura de importación para datos IBS XML</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_FUNCTION_HEADER</CMPNAME>
+     <SCONAME>GT_LOG</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>TT for /PSYNG/SW_GT_LOG</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_FUNCTION_HEADER</CMPNAME>
+     <SCONAME>GT_LOG</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>TT para /PSYNG/SW_GT_LOG</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_FUNCTION_HEADER</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_FUNCTION_HEADER</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>General Casilla de verificación (X o espacio)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_FUNCTION_HEADER</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SOD Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_FUNCTION_HEADER</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Versión SOD</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_FUNCTION_TEXT</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW : Table Type for /PSYNG/SW_FUNC_T</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_FUNCTION_TEXT</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Tipo de tabla para /PSYNG/SW_FUNC_T</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_FUNCTION_TEXT</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Import structure for IBS XML data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_FUNCTION_TEXT</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Estructura de importación para datos IBS XML</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_FUNCTION_TEXT</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_FUNCTION_TEXT</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>General Casilla de verificación (X o espacio)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_FUNCTION_TEXT</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SOD Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_FUNCTION_TEXT</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Versión SOD</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_MATRIX_DETAILS</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW : Table Type for /PSYNG/SW_RULE_D</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_MATRIX_DETAILS</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Tipo de tabla para /PSYNG/SW_RULE_D</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_MATRIX_DETAILS</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Import structure for IBS XML data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_MATRIX_DETAILS</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Estructura de importación de datos XML IBS</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_MATRIX_DETAILS</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_MATRIX_DETAILS</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>General Casilla de verificación (X o espacio)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_MATRIX_DETAILS</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SOD Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_MATRIX_DETAILS</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Versión SOD</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_MATRIX_HEADER</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW : Table Type for /PSYNG/SW_RULE_H</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_MATRIX_HEADER</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Tipo de tabla para /PSYNG/SW_RULE_H</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_MATRIX_HEADER</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Import structure for IBS XML data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_MATRIX_HEADER</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Estructura de importación de datos XML IBS</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_MATRIX_HEADER</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_MATRIX_HEADER</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Casilla general (X o espacio)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_MATRIX_HEADER</CMPNAME>
+     <SCONAME>I_VDESC</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Description</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_MATRIX_HEADER</CMPNAME>
+     <SCONAME>I_VDESC</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Descripción</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_MATRIX_HEADER</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SOD Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_MATRIX_HEADER</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Versión SOD</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_MATRIX_TEXT</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW : Table Type for /PSYNG/SW_RULE_T</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_MATRIX_TEXT</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Tipo de tabla para /PSYNG/SW_RULE_T</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_MATRIX_TEXT</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Import structure for IBS XML data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_MATRIX_TEXT</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Estructura de importación de datos XML IBS</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_MATRIX_TEXT</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_MATRIX_TEXT</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Casilla general (X o espacio)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_MATRIX_TEXT</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SOD Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_MATRIX_TEXT</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Versión SOD</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROBLEM_HEADER</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW : Table Type for /PSYNG/SW_RISK_H</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROBLEM_HEADER</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Tipo de tabla para /PSYNG/SW_RISK_H</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROBLEM_HEADER</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Import structure for IBS XML data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROBLEM_HEADER</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Estructura de importación de datos XML IBS</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROBLEM_HEADER</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Import structure for IBS XML data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROBLEM_HEADER</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Estructura de importación de datos XML IBS</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROBLEM_HEADER</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SOD Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROBLEM_HEADER</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Versión SOD</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROBLEM_TEXT</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW : Risk</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROBLEM_TEXT</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Riesgo</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROBLEM_TEXT</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Import structure for IBS XML data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROBLEM_TEXT</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Estructura de importación de datos XML IBS</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROBLEM_TEXT</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROBLEM_TEXT</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>General Casilla de verificación (X o espacio)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROBLEM_TEXT</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SOD Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROBLEM_TEXT</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Versión SOD</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROCESS_HEADER</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW : Table type for /PSYNG/SW_BUSPRO</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROCESS_HEADER</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW : Tipo de tabla para /PSYNG/SW_BUSPRO</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROCESS_HEADER</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Import structure for IBS XML data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROCESS_HEADER</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Estructura de importación de datos XML IBS</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROCESS_HEADER</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROCESS_HEADER</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>General Casilla de verificación (X o espacio)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROCESS_HEADER</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SOD Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROCESS_HEADER</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Versión SOD</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROCESS_TEXT</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW : Table Type for /PSYNG/SW_BUSPRT</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROCESS_TEXT</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW : Tipo de tabla para /PSYNG/SW_BUSPRT</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROCESS_TEXT</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Import structure for IBS XML data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROCESS_TEXT</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Estructura de importación de datos XML IBS</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROCESS_TEXT</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROCESS_TEXT</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>General Casilla de verificación (X o espacio)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROCESS_TEXT</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SOD Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_PROCESS_TEXT</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Versión SOD</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_DETAILS</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW : Table Type for /PSYNG/SW_AUTH_D</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_DETAILS</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Tipo de tabla para /PSYNG/SW_AUTH_D</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_DETAILS</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Import structure for IBS XML data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_DETAILS</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Estructura de importación para datos IBS XML</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_DETAILS</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_DETAILS</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>General Casilla de verificación (X o espacio)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_DETAILS</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SOD Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_DETAILS</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Versión SOD</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_HEADER</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW : Table Type for /PSYNG/SW_AUTH_H</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_HEADER</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW : Tipo de Tabla para /PSYNG/SW_AUTH_H</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_HEADER</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Import structure for IBS XML data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_HEADER</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Estructura de importación para datos IBS XML</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_HEADER</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_HEADER</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Casilla de verificación general (X o espacio)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_HEADER</CMPNAME>
+     <SCONAME>OVRWRT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_HEADER</CMPNAME>
+     <SCONAME>OVRWRT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>General Checkbox (X o Espacio)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_HEADER</CMPNAME>
+     <SCONAME>P_NOVAL</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_HEADER</CMPNAME>
+     <SCONAME>P_NOVAL</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>General Checkbox (X o Espacio)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_HEADER</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SOD Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_HEADER</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Versión SOD</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_HEADER</CMPNAME>
+     <SCONAME>TESTRUN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_HEADER</CMPNAME>
+     <SCONAME>TESTRUN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Casilla de verificación general (X o espacio)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_TEXT</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW : Table Type for /PSYNG/SW_AUTH_T</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_TEXT</CMPNAME>
+     <SCONAME>CONV_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Tipo de tabla para /PSYNG/SW_AUTH_T</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_TEXT</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Import structure for IBS XML data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_TEXT</CMPNAME>
+     <SCONAME>FULL_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Estructura de importación para datos IBS XML</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_TEXT</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_TEXT</CMPNAME>
+     <SCONAME>IS_CONVERTED</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Casilla de verificación general (X o espacio)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_TEXT</CMPNAME>
+     <SCONAME>OVRWRT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_TEXT</CMPNAME>
+     <SCONAME>OVRWRT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Casilla de verificación general (X o espacio)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_TEXT</CMPNAME>
+     <SCONAME>P_NOVAL</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_TEXT</CMPNAME>
+     <SCONAME>P_NOVAL</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Casilla de verificación general (X o espacio)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_TEXT</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SOD Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_TEXT</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Versión SOD</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_TEXT</CMPNAME>
+     <SCONAME>TESTRUN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Checkbox (X or Space)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONV_SEARCH_RULE_TEXT</CMPNAME>
+     <SCONAME>TESTRUN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Casilla de verificación general (X o espacio)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE_DATA</CMPNAME>
+     <SCONAME>IF_LOCK</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>General Flag</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE_DATA</CMPNAME>
+     <SCONAME>IF_LOCK</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Indicador general</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE_DATA</CMPNAME>
+     <SCONAME>I_OBJECT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>30 Characters</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE_DATA</CMPNAME>
+     <SCONAME>I_OBJECT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>30 caracteres</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE_DATA</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SOD Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE_DATA</CMPNAME>
+     <SCONAME>P_VRSN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Versión SOD</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LOG</CMPNAME>
+     <SCONAME>E_GT_LOG</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>TT for /PSYNG/SW_GT_LOG</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LOG</CMPNAME>
+     <SCONAME>E_GT_LOG</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>TT para /PSYNG/SW_GT_LOG</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LOG</CMPNAME>
+     <SCONAME>I_FIELD</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Field name</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LOG</CMPNAME>
+     <SCONAME>I_FIELD</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Nombre de campo</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LOG</CMPNAME>
+     <SCONAME>I_FILE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Local file for upload/download</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LOG</CMPNAME>
+     <SCONAME>I_FILE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Archivo local para carga/descarga</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LOG</CMPNAME>
+     <SCONAME>I_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Text</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LOG</CMPNAME>
+     <SCONAME>I_MESSAGE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Texto del mensaje</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LOG</CMPNAME>
+     <SCONAME>I_OBJECT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Field name</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LOG</CMPNAME>
+     <SCONAME>I_OBJECT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Nombre del campo</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LOG</CMPNAME>
+     <SCONAME>I_OBJECT_ID</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Text</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LOG</CMPNAME>
+     <SCONAME>I_OBJECT_ID</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Texto del mensaje</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LOG</CMPNAME>
+     <SCONAME>I_TYPE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Icon in text fields (substitute display, alias)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LOG</CMPNAME>
+     <SCONAME>I_TYPE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Icono en campos de texto (visualización sustituta, alias)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LOG</CMPNAME>
+     <SCONAME>I_VALUE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Text</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LOG</CMPNAME>
+     <SCONAME>I_VALUE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Texto del mensaje</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>OUTPUT_LOG</CMPNAME>
+     <SCONAME>GT_LOG</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>TT for /PSYNG/SW_GT_LOG</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>OUTPUT_LOG</CMPNAME>
+     <SCONAME>GT_LOG</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>TT para /PSYNG/SW_GT_LOG</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STRING_TO_TLINE</CMPNAME>
+     <SCONAME>LANG</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Language ID</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STRING_TO_TLINE</CMPNAME>
+     <SCONAME>LANG</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>ID de idioma</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STRING_TO_TLINE</CMPNAME>
+     <SCONAME>OUT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>List of SAPscript Lines</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>STRING_TO_TLINE</CMPNAME>
+     <SCONAME>OUT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Lista de líneas SAPscript</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>ATEXTS</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Critical Auths Values</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>ATEXTS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Valores críticos de Auths</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>CTEXTS</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Security Table Texts</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>CTEXTS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Textos de tablas de seguridad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>FTEXTS</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Security Table Texts</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>FTEXTS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Textos de la Tabla de Seguridad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>ICONFDET</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Conflict Details</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>ICONFDET</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Detalles del Conflicto</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>ICONFLICT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Conflict Header</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>ICONFLICT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Cabecera del Conflicto</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>ICONOWNERS</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Conflict Owners</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>ICONOWNERS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Propietarios del Conflicto</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>ICONPMIT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW : Conflict Proposed Mitigations</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>ICONPMIT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW : Mitigación Propuesta de Conflicto</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>ICRITCODES</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Critical Tcodes</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>ICRITCODES</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Transacciones Críticas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>IFAOBJ</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: SOD Object Definition</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>IFAOBJ</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Definición de Objeto SOD</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>IFUNCTION</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Function Definition</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>IFUNCTION</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Definición de Función</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>IFUNCTTRANS</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Functions and Transactions</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>IFUNCTTRANS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Funciones y Transacciones</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>ISWAUDC</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Critical Auths Values</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>ISWAUDC</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Valores Críticos Auths</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>ISWAUDHDR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Critical Auths Header</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>ISWAUDHDR</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Critical Auths Header</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>ISYSCA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Separations Enforcer : Critical Auth. System Filters</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>ISYSCA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Separations Enforcer : Aut. Críticas Critical System Filters</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>ISYSCON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Separations Enforcer : Conflict System Filters</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>ISYSCON</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Separations Enforcer : Filtros del Sistema de Conflictos</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>ISYSFUN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Separations Enforcer : Function System Filters</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>ISYSFUN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Separations Enforcer : Filtros del sistema de funciones</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>ISYSTCD</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Separations Enforcer : Critcal Tcode System Filters</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>ISYSTCD</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Separations Enforcer : Filtros de Sistema de Transacción Cr</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>I_VRSN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SOD Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>I_VRSN</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Versión SOD</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>TTEXTS</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Security Table Texts</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>TTEXTS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Textos de la Tabla de Seguridad</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>VALD_LOG</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Log Table for /PSYNG/SW_IBS_RULES_CNVRSN</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDATION</CMPNAME>
+     <SCONAME>VALD_LOG</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tabla de registro para /PSYNG/SW_IBS_RULES_CNVRSN</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

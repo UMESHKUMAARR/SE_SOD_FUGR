@@ -1,0 +1,1289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>SW: Central Repository</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>/PSYNG/LSW_SOD_OBJS5TOP</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/SAPLSW_SOD_OBJS5</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>/PSYNG/SW_011</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SW: Read &amp; Summarize SOD Scan Summary</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>VRSIO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>SYSID</PARAMETER>
+       <DBFIELD>SY-SYSID</DBFIELD>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>MANDT</PARAMETER>
+       <DBFIELD>SY-MANDT</DBFIELD>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>UA_COUNT</PARAMETER>
+       <TYP>/PSYNG/SW_COUNT</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>U_COUNT</PARAMETER>
+       <TYP>/PSYNG/SW_COUNT</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>SODA_COUNT</PARAMETER>
+       <TYP>/PSYNG/SW_SOD_CONFLICT_COUNT</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>SOD_COUNT</PARAMETER>
+       <TYP>/PSYNG/SW_SOD_CONFLICT_COUNT</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>OLDSTA_DATE</PARAMETER>
+       <TYP>DATUM</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>OLDST_DATE</PARAMETER>
+       <TYP>DATUM</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>CONS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SUM_CONS</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>USERS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SUM_USERS</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>UGROUPS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SUM_UGROUP</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>SYSID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>R/3 System, name of R/3 System</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MANDT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>R/3 System, client number from logon</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>UA_COUNT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Total number of Active users</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>U_COUNT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Total number of users</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>SODA_COUNT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Conflict Count Active Users</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>SOD_COUNT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Conflict Count All Users</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>OLDSTA_DATE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Oldest date for active users</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>OLDST_DATE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Oldest date for all users</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CONS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Summary Conflicts</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>USERS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Summary Users</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>UGROUPS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Summary User Groups</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_051</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Retrieve entire conflict repository (version specific)</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ES_SWSODVERS</PARAMETER>
+       <DBFIELD>/PSYNG/SWSODVERS</DBFIELD>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ET_USER_MIT_TEXT</PARAMETER>
+       <TYP>/PSYNG/MC_USERTEXT_TT</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_FUNID</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_FUNID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CONID</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_CONID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CONTID</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SEL_OPTS_CONTID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_TCODE</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_TCODE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_AUDID</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_SWAUDID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_AGR</PARAMETER>
+       <TYPES>O</TYPES>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SW_SEL_OPTS_AGR_NAME</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_PROFIL</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_PROFILE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CUSCON</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_CONID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CON1</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_CONID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_USRID1</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_RANGE_USERID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CON2</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_CONID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_USRGRP</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_RANGE_USERGRP</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CON3</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_CONID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_ROL_NAM1</PARAMETER>
+       <TYPES>O</TYPES>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SW_SEL_OPTS_AGR_NAME</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CA_OBJID</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_RANGE_CA_OBJID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_USRID2</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_RANGE_USERID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CA_OBJID2</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_RANGE_CA_OBJID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_ROL_NAM</PARAMETER>
+       <TYPES>O</TYPES>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SW_SEL_OPTS_AGR_NAME</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_FUNCTION</PARAMETER>
+       <DBSTRUCT>/PSYNG/FUNCTION</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_FUNCTTRAN</PARAMETER>
+       <DBSTRUCT>/PSYNG/FUNCTTRAN</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_FAOBJ</PARAMETER>
+       <DBSTRUCT>/PSYNG/FAOBJ2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CONFLICT</PARAMETER>
+       <DBSTRUCT>/PSYNG/CONFLICT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CONFDET</PARAMETER>
+       <DBSTRUCT>/PSYNG/CONFDET</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_MCHDR</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCHDR</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_MCRVWHDR</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCRVWHDR</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_MCTRAN</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCTRAN</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_MCREPID</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCREPID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_MCAUDITOR</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCAUDITOR</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_MCTEXT</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCRVWTXT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_MCUSER</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCUSER</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_MCUSRGRP</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCUSRGRP</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_MCROLE</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCROLE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_MCCAROLE</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCCAROLE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_MCCAUSER</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCCAUSER</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CRITCODES</PARAMETER>
+       <DBSTRUCT>/PSYNG/CRITCODES</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_SWAUDHDR</PARAMETER>
+       <DBSTRUCT>/PSYNG/SWAUDHDR</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_SWAUDC</PARAMETER>
+       <DBSTRUCT>/PSYNG/SWAUDC2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CRIROLES</PARAMETER>
+       <DBSTRUCT>/PSYNG/CRIROLES</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CRIPROF</PARAMETER>
+       <DBSTRUCT>/PSYNG/CRIPROF</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_TEXTS</PARAMETER>
+       <DBSTRUCT>/PSYNG/TEXTS</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CUSCON</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_CUSCON</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CONOWNER</PARAMETER>
+       <DBSTRUCT>/PSYNG/CONOWNER</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CONFIL</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SYSCON</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_FUNFIL</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SYSFUN</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_TCODEFIL</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SYSTCD</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_AUTHFIL</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SYSCA</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_SWSODORGO</PARAMETER>
+       <DBSTRUCT>/PSYNG/SWSODORGO</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>VERSION_NOT_EXIST</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ES_SWSODVERS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Matrix Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_USER_MIT_TEXT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Table type for Mitigation Justification</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FUNID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for Functions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for Conflict IDs</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONTID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Mitigation Control (/PSYNG/PROPCONTID)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_TCODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for TCodes</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_AUDID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for  Auth Object IDs</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_AGR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Role Name (AGR_NAME)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_PROFIL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for Profiles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CUSCON</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for Conflict IDs</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CON1</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for Conflict IDs</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_USRID1</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options User Id</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CON2</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for Conflict IDs</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_USRGRP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options User Group</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CON3</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for Conflict IDs</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ROL_NAM1</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Role Name (AGR_NAME)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CA_OBJID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Critical Auth Obj Id</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_USRID2</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options User Id</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CA_OBJID2</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Critical Auth Obj Id</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ROL_NAM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Role Name (AGR_NAME)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_FUNCTION</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Function Definition</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_FUNCTTRAN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Functions and Transactions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_FAOBJ</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Object Definition</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CONFLICT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Conflict Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CONFDET</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Conflict Details</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MCHDR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MCRVWHDR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE: Mitigating Controls Review Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MCTRAN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Transactions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MCREPID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Reports</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MCAUDITOR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Auditors</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MCTEXT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Mitigation Justification Text</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MCUSER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Assignment to Users</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MCUSRGRP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Assignment to User Group</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MCROLE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Assignment to Roles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MCCAROLE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Assignment to Cri Auth Roles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MCCAUSER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Assignment to Cri Auth Users</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CRITCODES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Critical Tcodes</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_SWAUDHDR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Critical Auths Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_SWAUDC</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Critical Auths Values</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CRIROLES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Critical Profiles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CRIPROF</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Critical Profiles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_TEXTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Security Table Texts</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CUSCON</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Custom Conflicts</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CONOWNER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Conflict Owners</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CONFIL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Separations Enforcer : Conflict System Filters</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_FUNFIL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Separations Enforcer : Function System Filters</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_TCODEFIL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Separations Enforcer : Critcal Tcode System Filters</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_AUTHFIL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Separations Enforcer : Critical Auth. System Filters</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_SWSODORGO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Override Configuration for Org Level Analysis for SOD</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>VERSION_NOT_EXIST</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>SOD Version does not exist</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_085</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Delete entire conflict repository (version specific)</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_MATRIX</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_MITIGATION</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_MITUSR</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_USRGRP</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_ASSROL</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_AUTUSR</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_AUTROL</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_FUNID</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_FUNID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CONID</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_CONID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CONTID</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SEL_OPTS_CONTID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_TCODE</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_TCODE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_AUDID</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_SWAUDID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_AGR</PARAMETER>
+       <TYPES>O</TYPES>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SW_SEL_OPTS_AGR_NAME</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_PROFIL</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_PROFILE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CUSCON</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_CONID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_TEXTS</PARAMETER>
+       <DBSTRUCT>/PSYNG/TEXTS</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_MCUSER</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCUSER</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_MCUSRGRP</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCUSRGRP</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_MCROLE</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCROLE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_MCCAUSER</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCCAUSER</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_MCCAROLE</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCCAROLE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_MATRIX</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_MITIGATION</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_MITUSR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_USRGRP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_ASSROL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_AUTUSR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_AUTROL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FUNID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for Functions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for Conflict IDs</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONTID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Mitigation Control (/PSYNG/PROPCONTID)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_TCODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for TCodes</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_AUDID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for  Auth Object IDs</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_AGR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Role Name (AGR_NAME)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_PROFIL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for Profiles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CUSCON</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for Conflict IDs</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_TEXTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Security Table Texts</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_MCUSER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Assignment to Users</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_MCUSRGRP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Assignment to User Group</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_MCROLE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Assignment to Roles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_MCCAUSER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Assignment to Cri Auth Users</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_MCCAROLE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Assignment to Cri Auth Roles</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+   <I18N_TPOOL>
+    <item>
+     <LANGUAGE>D</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>E00</KEY>
+       <ENTRY>in Version</ENTRY>
+       <LENGTH>10</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E14</KEY>
+       <ENTRY>Bestimmte Berechtigung zum Löschen kritischer Berecht. fehlt</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E15</KEY>
+       <ENTRY>Bestimmte Berecht. zum Löschen kundenspez. Konflikte fehlt</ENTRY>
+       <LENGTH>58</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E16</KEY>
+       <ENTRY>Bestimmte Berechtigung zum Löschen kritischer TCodes fehlt</ENTRY>
+       <LENGTH>58</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E17</KEY>
+       <ENTRY>Bestimmte Berechtigung zum Löschen kritischer Rollen fehlt</ENTRY>
+       <LENGTH>58</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E18</KEY>
+       <ENTRY>Bestimmte Berechtigung zum Löschen kritischer Profile fehlt</ENTRY>
+       <LENGTH>59</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E19</KEY>
+       <ENTRY>Fehlende Berechtigung zum Löschen der Version</ENTRY>
+       <LENGTH>45</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E20</KEY>
+       <ENTRY>Bestimm. Berech. z. Lösch. v. Ana. auf OrgEb. fehlt</ENTRY>
+       <LENGTH>51</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>F</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>E19</KEY>
+       <ENTRY>Missing authorization to delete version</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E18</KEY>
+       <ENTRY>Missing some authorization to delete Critical Profiles</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E17</KEY>
+       <ENTRY>Missing some authorization to delete Critical Roles</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E16</KEY>
+       <ENTRY>Missing some authorization to delete Critical Tcode</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E15</KEY>
+       <ENTRY>Missing some authorization to delete Custom Conflict</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E14</KEY>
+       <ENTRY>Missing some authorization to delete Critical Authorization</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E00</KEY>
+       <ENTRY>in version</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>I</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>E19</KEY>
+       <ENTRY>Missing authorization to delete version</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E18</KEY>
+       <ENTRY>Missing some authorization to delete Critical Profiles</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E17</KEY>
+       <ENTRY>Missing some authorization to delete Critical Roles</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E16</KEY>
+       <ENTRY>Missing some authorization to delete Critical Tcode</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E15</KEY>
+       <ENTRY>Missing some authorization to delete Custom Conflict</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E14</KEY>
+       <ENTRY>Missing some authorization to delete Critical Authorization</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E00</KEY>
+       <ENTRY>in version</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>N</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>E19</KEY>
+       <ENTRY>Missing authorization to delete version</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E18</KEY>
+       <ENTRY>Missing some authorization to delete Critical Profiles</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E17</KEY>
+       <ENTRY>Missing some authorization to delete Critical Roles</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E16</KEY>
+       <ENTRY>Missing some authorization to delete Critical Tcode</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E15</KEY>
+       <ENTRY>Missing some authorization to delete Custom Conflict</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E14</KEY>
+       <ENTRY>Missing some authorization to delete Critical Authorization</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E00</KEY>
+       <ENTRY>in version</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>P</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>E00</KEY>
+       <ENTRY>na versão</ENTRY>
+       <LENGTH>9</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E14</KEY>
+       <ENTRY>Falta alguma autorização para apagar Autorizações Críticas</ENTRY>
+       <LENGTH>58</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E15</KEY>
+       <ENTRY>Falta alguma autorização p/apagar Conflitos Personalizados</ENTRY>
+       <LENGTH>58</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E16</KEY>
+       <ENTRY>Falta alguma autorização para apagar Transações Críticas</ENTRY>
+       <LENGTH>56</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E17</KEY>
+       <ENTRY>Falta alguma autorização para apagar Perfis Críticos</ENTRY>
+       <LENGTH>52</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E18</KEY>
+       <ENTRY>Falta alguma autorização para apagar Perfis Críticos</ENTRY>
+       <LENGTH>52</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E19</KEY>
+       <ENTRY>Falta autorização para apagar versão</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E20</KEY>
+       <ENTRY>Falta alguma Autorização para excluir Organ Level</ENTRY>
+       <LENGTH>49</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>S</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>E00</KEY>
+       <ENTRY>en versión</ENTRY>
+       <LENGTH>10</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E14</KEY>
+       <ENTRY>Falta autorización para borrar Autorizaciones Críticas</ENTRY>
+       <LENGTH>54</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E15</KEY>
+       <ENTRY>Falta autorización para eliminar Conflictos Personalizados</ENTRY>
+       <LENGTH>58</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E16</KEY>
+       <ENTRY>Falta autorización para eliminar Transacción Crítica</ENTRY>
+       <LENGTH>52</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E17</KEY>
+       <ENTRY>Falta autorización para eliminar Roles Críticos</ENTRY>
+       <LENGTH>47</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E18</KEY>
+       <ENTRY>Falta autorización para eliminar perfiles críticos</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E19</KEY>
+       <ENTRY>Falta autorización para borrar versión</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E20</KEY>
+       <ENTRY>Falta alguna autorización para eliminar Anl de nivel Org.</ENTRY>
+       <LENGTH>57</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>V</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>E19</KEY>
+       <ENTRY>Missing authorization to delete version</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E18</KEY>
+       <ENTRY>Missing some authorization to delete Critical Profiles</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E17</KEY>
+       <ENTRY>Missing some authorization to delete Critical Roles</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E16</KEY>
+       <ENTRY>Missing some authorization to delete Critical Tcode</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E15</KEY>
+       <ENTRY>Missing some authorization to delete Custom Conflict</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E14</KEY>
+       <ENTRY>Missing some authorization to delete Critical Authorization</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E00</KEY>
+       <ENTRY>in version</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>Z</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>E19</KEY>
+       <ENTRY>Missing authorization to delete version</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E18</KEY>
+       <ENTRY>Missing some authorization to delete Critical Profiles</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E17</KEY>
+       <ENTRY>Missing some authorization to delete Critical Roles</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E16</KEY>
+       <ENTRY>Missing some authorization to delete Critical Tcode</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E15</KEY>
+       <ENTRY>Missing some authorization to delete Custom Conflict</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E14</KEY>
+       <ENTRY>Missing some authorization to delete Critical Authorization</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E00</KEY>
+       <ENTRY>in version</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+   </I18N_TPOOL>
+  </asx:values>
+ </asx:abap>
+</abapGit>

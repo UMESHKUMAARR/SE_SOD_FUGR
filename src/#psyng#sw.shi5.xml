@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SHI5" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <SHI5>
+    <HEADER>
+     <EXTENSION>/PSYNG/SW</EXTENSION>
+    </HEADER>
+    <TEXTS>
+     <TTREE_EXTT>
+      <SPRAS>D</SPRAS>
+      <EXTENSION>/PSYNG/SW</EXTENSION>
+      <TEXT>PS: Security Weaver (TM)</TEXT>
+     </TTREE_EXTT>
+     <TTREE_EXTT>
+      <SPRAS>E</SPRAS>
+      <EXTENSION>/PSYNG/SW</EXTENSION>
+      <TEXT>PS: Security Weaver (TM)</TEXT>
+     </TTREE_EXTT>
+     <TTREE_EXTT>
+      <SPRAS>F</SPRAS>
+      <EXTENSION>/PSYNG/SW</EXTENSION>
+      <TEXT>PS: Security Weaver (TM)</TEXT>
+     </TTREE_EXTT>
+     <TTREE_EXTT>
+      <SPRAS>I</SPRAS>
+      <EXTENSION>/PSYNG/SW</EXTENSION>
+      <TEXT>PS: Security Weaver (TM)</TEXT>
+     </TTREE_EXTT>
+     <TTREE_EXTT>
+      <SPRAS>N</SPRAS>
+      <EXTENSION>/PSYNG/SW</EXTENSION>
+      <TEXT>PS: Security Weaver (TM)</TEXT>
+     </TTREE_EXTT>
+     <TTREE_EXTT>
+      <SPRAS>P</SPRAS>
+      <EXTENSION>/PSYNG/SW</EXTENSION>
+      <TEXT>PS: Security Weaver (TM)</TEXT>
+     </TTREE_EXTT>
+     <TTREE_EXTT>
+      <SPRAS>S</SPRAS>
+      <EXTENSION>/PSYNG/SW</EXTENSION>
+      <TEXT>PS: Security Weaver (TM)</TEXT>
+     </TTREE_EXTT>
+     <TTREE_EXTT>
+      <SPRAS>V</SPRAS>
+      <EXTENSION>/PSYNG/SW</EXTENSION>
+      <TEXT>PS: Security Weaver (TM)</TEXT>
+     </TTREE_EXTT>
+     <TTREE_EXTT>
+      <SPRAS>Z</SPRAS>
+      <EXTENSION>/PSYNG/SW</EXTENSION>
+      <TEXT>PS: Security Weaver (TM)</TEXT>
+     </TTREE_EXTT>
+    </TEXTS>
+   </SHI5>
+  </asx:values>
+ </asx:abap>
+</abapGit>

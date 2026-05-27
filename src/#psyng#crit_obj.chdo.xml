@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CHDO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <CHDO>
+    <REPORTS_GENERATED>
+     <TCDRPS>
+      <OBJECT>/PSYNG/CRIT_OBJ</OBJECT>
+      <REPORTNAME>/PSYNG/CRIT_OBJ</REPORTNAME>
+      <TEXTCASE>X</TEXTCASE>
+      <ARBGEB>CD</ARBGEB>
+      <FEHLERNR>600</FEHLERNR>
+      <FGRP>/PSYNG/SE_CDCRIOBJ</FGRP>
+      <PREFIX>/PSYNG/Y</PREFIX>
+      <UPDATE_FLG>2</UPDATE_FLG>
+     </TCDRPS>
+    </REPORTS_GENERATED>
+    <OBJECTS>
+     <TCDOBS>
+      <OBJECT>/PSYNG/CRIT_OBJ</OBJECT>
+      <TABNAME>/PSYNG/CRIPROF</TABNAME>
+     </TCDOBS>
+     <TCDOBS>
+      <OBJECT>/PSYNG/CRIT_OBJ</OBJECT>
+      <TABNAME>/PSYNG/CRIROLES</TABNAME>
+     </TCDOBS>
+     <TCDOBS>
+      <OBJECT>/PSYNG/CRIT_OBJ</OBJECT>
+      <TABNAME>/PSYNG/CRITCODES</TABNAME>
+     </TCDOBS>
+    </OBJECTS>
+    <OBJECTS_TEXT>
+     <TCDOBTS>
+      <SPRAS>D</SPRAS>
+      <OBJECT>/PSYNG/CRIT_OBJ</OBJECT>
+      <OBTEXT>SE: Änderungsbelegobjekt für kritische Trans./Rollen/Profile</OBTEXT>
+     </TCDOBTS>
+     <TCDOBTS>
+      <SPRAS>E</SPRAS>
+      <OBJECT>/PSYNG/CRIT_OBJ</OBJECT>
+      <OBTEXT>SE : Change Doc. object for Critical trans/roles/profiles</OBTEXT>
+     </TCDOBTS>
+     <TCDOBTS>
+      <SPRAS>P</SPRAS>
+      <OBJECT>/PSYNG/CRIT_OBJ</OBJECT>
+      <OBTEXT>SE : Obj.Doc.Mudanças para transações/perfis Críticos</OBTEXT>
+     </TCDOBTS>
+     <TCDOBTS>
+      <SPRAS>S</SPRAS>
+      <OBJECT>/PSYNG/CRIT_OBJ</OBJECT>
+      <OBTEXT>SE : Cambiar Doc. objeto para trans/roles/perfiles Críticos</OBTEXT>
+     </TCDOBTS>
+    </OBJECTS_TEXT>
+   </CHDO>
+  </asx:values>
+ </asx:abap>
+</abapGit>

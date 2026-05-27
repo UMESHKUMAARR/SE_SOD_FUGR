@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_PARA" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TPARA>
+    <PARAMID>/PSYNG/SE_HOMETAB</PARAMID>
+    <PARTEXT>Home tab in Separations Enforcer</PARTEXT>
+   </TPARA>
+   <TPARAT>
+    <PARAMID>/PSYNG/SE_HOMETAB</PARAMID>
+    <SPRACHE>E</SPRACHE>
+    <PARTEXT>Home tab in Separations Enforcer</PARTEXT>
+   </TPARAT>
+  </asx:values>
+ </asx:abap>
+</abapGit>

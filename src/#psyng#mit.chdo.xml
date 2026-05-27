@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CHDO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <CHDO>
+    <REPORTS_GENERATED>
+     <TCDRPS>
+      <OBJECT>/PSYNG/MIT</OBJECT>
+      <REPORTNAME>/PSYNG/MIT</REPORTNAME>
+      <TEXTCASE>X</TEXTCASE>
+      <ARBGEB>CD</ARBGEB>
+      <FEHLERNR>600</FEHLERNR>
+      <FGRP>/PSYNG/SE_CDCMIT</FGRP>
+      <PREFIX>/PSYNG/Y</PREFIX>
+      <UPDATE_FLG>1</UPDATE_FLG>
+     </TCDRPS>
+    </REPORTS_GENERATED>
+    <OBJECTS>
+     <TCDOBS>
+      <OBJECT>/PSYNG/MIT</OBJECT>
+      <TABNAME>/PSYNG/MCAUDITOR</TABNAME>
+      <DOCUD_NOIF>X</DOCUD_NOIF>
+     </TCDOBS>
+     <TCDOBS>
+      <OBJECT>/PSYNG/MIT</OBJECT>
+      <TABNAME>/PSYNG/MCCAROLE</TABNAME>
+      <DOCUD_NOIF>X</DOCUD_NOIF>
+     </TCDOBS>
+     <TCDOBS>
+      <OBJECT>/PSYNG/MIT</OBJECT>
+      <TABNAME>/PSYNG/MCCAUSER</TABNAME>
+      <DOCUD_NOIF>X</DOCUD_NOIF>
+     </TCDOBS>
+     <TCDOBS>
+      <OBJECT>/PSYNG/MIT</OBJECT>
+      <TABNAME>/PSYNG/MCHDR</TABNAME>
+      <DOCUD_NOIF>X</DOCUD_NOIF>
+     </TCDOBS>
+     <TCDOBS>
+      <OBJECT>/PSYNG/MIT</OBJECT>
+      <TABNAME>/PSYNG/MCREPID</TABNAME>
+      <DOCUD_NOIF>X</DOCUD_NOIF>
+     </TCDOBS>
+     <TCDOBS>
+      <OBJECT>/PSYNG/MIT</OBJECT>
+      <TABNAME>/PSYNG/MCROLE</TABNAME>
+      <DOCUD_NOIF>X</DOCUD_NOIF>
+     </TCDOBS>
+     <TCDOBS>
+      <OBJECT>/PSYNG/MIT</OBJECT>
+      <TABNAME>/PSYNG/MCRVWHDR</TABNAME>
+      <DOCUD_NOIF>X</DOCUD_NOIF>
+     </TCDOBS>
+     <TCDOBS>
+      <OBJECT>/PSYNG/MIT</OBJECT>
+      <TABNAME>/PSYNG/MCTRAN</TABNAME>
+      <DOCUD_NOIF>X</DOCUD_NOIF>
+     </TCDOBS>
+     <TCDOBS>
+      <OBJECT>/PSYNG/MIT</OBJECT>
+      <TABNAME>/PSYNG/MCUSER</TABNAME>
+      <DOCUD_NOIF>X</DOCUD_NOIF>
+     </TCDOBS>
+     <TCDOBS>
+      <OBJECT>/PSYNG/MIT</OBJECT>
+      <TABNAME>/PSYNG/MCUSRGRP</TABNAME>
+      <DOCUD_NOIF>X</DOCUD_NOIF>
+     </TCDOBS>
+    </OBJECTS>
+    <OBJECTS_TEXT>
+     <TCDOBTS>
+      <SPRAS>D</SPRAS>
+      <OBJECT>/PSYNG/MIT</OBJECT>
+      <OBTEXT>SE: Änderungsbeleg für Mitigationen</OBTEXT>
+     </TCDOBTS>
+     <TCDOBTS>
+      <SPRAS>E</SPRAS>
+      <OBJECT>/PSYNG/MIT</OBJECT>
+      <OBTEXT>SE: Change document for Mitigations</OBTEXT>
+     </TCDOBTS>
+     <TCDOBTS>
+      <SPRAS>P</SPRAS>
+      <OBJECT>/PSYNG/MIT</OBJECT>
+      <OBTEXT>SE: Documentos de Mudanças para Mitigações</OBTEXT>
+     </TCDOBTS>
+     <TCDOBTS>
+      <SPRAS>S</SPRAS>
+      <OBJECT>/PSYNG/MIT</OBJECT>
+      <OBTEXT>SE: Cambiar documento para Mitigaciones</OBTEXT>
+     </TCDOBTS>
+    </OBJECTS_TEXT>
+   </CHDO>
+  </asx:values>
+ </asx:abap>
+</abapGit>

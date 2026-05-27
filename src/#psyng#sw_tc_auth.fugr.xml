@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Separations Enforcer - Get Matrix Auths</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>/PSYNG/LSW_TC_AUTHF01</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/LSW_TC_AUTHTOP</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/SAPLSW_TC_AUTH</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>/PSYNG/SW_GET_MATRIX_AUTHS</FUNCNAME>
+     <SHORT_TEXT>SE : Get Authoirzations matching SOD Matrix</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>REM_EXECUTION</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>CHAR01</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>RFCDEST</PARAMETER>
+       <DBFIELD>RFCDES-RFCDEST</DBFIELD>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_ADVANCED_ROLE_SIMU</PARAMETER>
+       <DEFAULT>&apos; &apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>TCD</PARAMETER>
+       <DBSTRUCT>/PSYNG/PSSWTCD</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>FAOBJ</PARAMETER>
+       <DBSTRUCT>/PSYNG/FAOBJ2</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>FUNCTTRAN</PARAMETER>
+       <DBSTRUCT>/PSYNG/FUNCTTRAN</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>TCDAUT</PARAMETER>
+       <DBSTRUCT>/PSYNG/PSSWTCDAUT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>UNIQUEAUTHS</PARAMETER>
+       <DBSTRUCT>/PSYNG/UNIQUEAUTHS</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_ADVANCED_ROLE_SIMU</PARAMETER>
+       <DBSTRUCT>AGR_1251</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SIMU_ADD_ROLEAUTH</PARAMETER>
+       <DBSTRUCT>/PSYNG/USERAUTH</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_MATCH_USER_OUT</PARAMETER>
+       <DBSTRUCT>/PSYNG/MATCH_USR</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>REM_EXECUTION</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Remote flag (X = remote, &apos; &apos; = local)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RFCDEST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Logical destination (specified in function call)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_ADVANCED_ROLE_SIMU</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Use Advanced Role imulation</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>TCD</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Transaction Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>FAOBJ</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Object Definition</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>FUNCTTRAN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Functions and Transactions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>TCDAUT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Tcode Auth</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>UNIQUEAUTHS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Unique auths</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ADVANCED_ROLE_SIMU</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Advanced Role Simulation Details</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SIMU_ADD_ROLEAUTH</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Auths of roles by simulating adding roles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MATCH_USER_OUT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Matching Auths and valuesets for users</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

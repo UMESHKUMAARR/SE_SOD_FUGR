@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Dynamic Enhancement Buffer Group</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>/PSYNG/LSW_ENHTOP</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/SAPLSW_ENH</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>/PSYNG/SW_ENH_GET</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Read Dynamic Enhancement Data</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IF_FORCE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EF_UPDATE</PARAMETER>
+       <TYP>FLAG</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_FUNCTTRAN</PARAMETER>
+       <DBSTRUCT>/PSYNG/FUNCTTRAN</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_TCODES</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_PAR_TCODE_OUTPUT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IF_FORCE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Always refresh the buffer</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EF_UPDATE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Buffer Updation flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FUNCTTRAN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Functions and Transactions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_TCODES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: The enhanced tcodes</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_ENH_READ</FUNCNAME>
+     <SHORT_TEXT>Read Dynamic Enhancement Data</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IF_FORCE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EF_UPDATE</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>FLAG</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_FUNCTTRAN</PARAMETER>
+       <DBSTRUCT>/PSYNG/FUNCTTRAN</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_TCODES</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_PAR_TCODE_OUTPUT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IF_FORCE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Always refresh the buffer</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EF_UPDATE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Buffer Updation flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FUNCTTRAN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Functions and Transactions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_TCODES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: The enhanced tcodes</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_ENH_UPDATE</FUNCNAME>
+     <SHORT_TEXT>Update Dynamic Enhancement Data</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EF_SUCCESS</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>FLAG</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_FUNCTTRAN</PARAMETER>
+       <DBSTRUCT>/PSYNG/FUNCTTRAN</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EF_SUCCESS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Flag for Successful return</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FUNCTTRAN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Functions and Transactions</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+   <I18N_TPOOL>
+    <item>
+     <LANGUAGE>D</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Dynamischen Erweiterungspuffer aktualisiert.</ENTRY>
+       <LENGTH>44</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>P</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>tampão melhorias dinâmicas actualizados.</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>S</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Búfer de mejoras dinámicas actualizado.</ENTRY>
+       <LENGTH>39</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+   </I18N_TPOOL>
+  </asx:values>
+ </asx:abap>
+</abapGit>

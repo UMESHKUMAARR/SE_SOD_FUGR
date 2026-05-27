@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SUSO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TOBJ>
+    <OBJCT>Y&amp;SW_CONFD</OBJCT>
+    <FIEL1>ACTVT</FIEL1>
+    <FIEL2>Y&amp;SW_CONID</FIEL2>
+    <FIEL3>Y&amp;SW_FUNCT</FIEL3>
+    <OCLSS>Y&amp;SW</OCLSS>
+   </TOBJ>
+   <TOBJT>
+    <LANGU>E</LANGU>
+    <OBJECT>Y&amp;SW_CONFD</OBJECT>
+    <TTEXT>Security Weaver: Do not use (planned for future)</TTEXT>
+   </TOBJT>
+   <TOBJVORFLG>
+    <OBJCT>Y&amp;SW_CONFD</OBJCT>
+   </TOBJVORFLG>
+   <TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_CONFD</BROBJ>
+     <ACTVT>06</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_CONFD</BROBJ>
+     <ACTVT>76</ACTVT>
+    </TACTZ>
+   </TACTZ>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,1117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DOCT" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DOC>
+    <item>
+     <DOKIL>
+      <ID>TX</ID>
+      <OBJECT>/PSYNG/SW_I000001</OBJECT>
+      <LANGU>D</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0001</VERSION>
+      <TXTLINES>00024</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SW_I000001</TDNAME>
+      <TDID>TX</TDID>
+      <TDSPRAS>D</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00001</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Derzeitige Situation:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Sie möchten diesen SOD-Report im Modus &quot;Detaillierte Ausgabe&quot; für</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>mehr als 50 Benutzer ausführen.  Bei dieser Art der Analyse werden große</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Datenmengen angezeigt, die zu einer deutlich längeren Ausführungszeit</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Analysereport.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Mögliche Beschränkungen:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Ihre SAP-Systeme umfassen eine maximale Laufzeitbegrenzung von</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>[rdisp/max_wprun_time] Sekunden.  Wenn die Reportausführung länger als</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>[rdisp/max_wprun_time] Sekunden dauert, bricht das SAP-System den Report</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>ab und erzeugt einen Kurzdump.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Ihre SAP-Systeme umfassen außerdem eine Begrenzung der Speichergröße</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>(temp. Speicher), die ein Report beim Ausführen beanspruchen darf.  Wenn</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>das vom Report anzuzeigende (oder zu verarbeitende) Datenvolumen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>mehr als den konfigurierten Speicher belegt, bricht das SAP-System den</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Report ab und erzeugt einen Kurzdump.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Diese Begrenzungen im SAP-System sind üblich und gelten für Reports, die</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>über Separations Enforcer (SE) ausgeführt werden.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Empfehlungen:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>SW empfiehlt, den SOD-Report auf Übersichtsebene auszuführen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>und dann jeweils einen Aufriss zu den einzelnen Konflikten vorzunehmen.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Wenn die Detailausgabe für mehrere Benutzer und Konflikte erforderlich</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>ist, führen Sie den Report für eine kleinere Benutzeranzahl aus.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&lt;ZH&gt;Möchten Sie angesichts der möglichen Einschränkungen mit der</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Reportausführung fortfahren?&lt;/&gt;</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>TX</ID>
+      <OBJECT>/PSYNG/SW_I000001</OBJECT>
+      <LANGU>E</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0001</VERSION>
+      <MASTERLANG>X</MASTERLANG>
+      <TXTLINES>00024</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SW_I000001</TDNAME>
+      <TDID>TX</TDID>
+      <TDSPRAS>E</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00001</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Current situation:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>You are about to execute this SOD report in &quot;detailed output&quot; mode for</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>over 50 users.  This type of analysis will display a large amount of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>data and typically result in a much longer execution time for the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>report.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Possible limitations:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Your SAP systems incorporate a maximum runtime limitation of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>[rdisp/max_wprun_time] seconds.  If a report execution is longer than</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>[rdisp/max_wprun_time] seconds, the SAP system will cancel the report</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>and create a short dump.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Your SAP systems also incorporate a limitation on the amount of memory</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>(temporary storage) each report can use while it is running.  If the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>volume of data that the report needs to display (or process) requires</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>more memory than what is configured, the SAP system will cancel the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>report and create a short dump.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>These SAP System  limitations  are normal, and do apply to reports</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>executed from Separations Enforcer (SE).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Recommendations:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Security Weaver recommends to execute the SOD report at the summary</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>level and then drill-down on each conflict one at a time.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>If detailed output is required for multiple users and conflicts, then</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>execute the report in smaller batches of users.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&lt;ZH&gt;Would you like to continue running the report given the possible</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>limitations?&lt;/&gt;</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>TX</ID>
+      <OBJECT>/PSYNG/SW_I000001</OBJECT>
+      <LANGU>F</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0001</VERSION>
+      <TXTLINES>00024</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SW_I000001</TDNAME>
+      <TDID>TX</TDID>
+      <TDSPRAS>F</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00001</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Current situation:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>You are about to execute this SOD report in &quot;detailed output&quot; mode for</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>over 50 users.  This type of analysis will display a large amount of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>data and typically result in a much longer execution time for the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>report.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Possible limitations:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Your SAP systems incorporate a maximum runtime limitation of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>[rdisp/max_wprun_time] seconds.  If a report execution is longer than</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>[rdisp/max_wprun_time] seconds, the SAP system will cancel the report</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>and create a short dump.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Your SAP systems also incorporate a limitation on the amount of memory</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>(temporary storage) each report can use while it is running.  If the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>volume of data that the report needs to display (or process) requires</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>more memory than what is configured, the SAP system will cancel the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>report and create a short dump.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>These SAP System  limitations  are normal, and do apply to reports</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>executed from Separations Enforcer (SE).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Recommendations:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Security Weaver recommends to execute the SOD report at the summary</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>level and then drill-down on each conflict one at a time.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>If detailed output is required for multiple users and conflicts, then</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>execute the report in smaller batches of users.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&lt;ZH&gt;Would you like to continue running the report given the possible</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>limitations?&lt;/&gt;</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>TX</ID>
+      <OBJECT>/PSYNG/SW_I000001</OBJECT>
+      <LANGU>I</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0001</VERSION>
+      <TXTLINES>00024</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SW_I000001</TDNAME>
+      <TDID>TX</TDID>
+      <TDSPRAS>I</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00001</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Current situation:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>You are about to execute this SOD report in &quot;detailed output&quot; mode for</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>over 50 users.  This type of analysis will display a large amount of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>data and typically result in a much longer execution time for the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>report.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Possible limitations:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Your SAP systems incorporate a maximum runtime limitation of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>[rdisp/max_wprun_time] seconds.  If a report execution is longer than</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>[rdisp/max_wprun_time] seconds, the SAP system will cancel the report</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>and create a short dump.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Your SAP systems also incorporate a limitation on the amount of memory</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>(temporary storage) each report can use while it is running.  If the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>volume of data that the report needs to display (or process) requires</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>more memory than what is configured, the SAP system will cancel the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>report and create a short dump.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>These SAP System  limitations  are normal, and do apply to reports</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>executed from Separations Enforcer (SE).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Recommendations:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Security Weaver recommends to execute the SOD report at the summary</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>level and then drill-down on each conflict one at a time.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>If detailed output is required for multiple users and conflicts, then</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>execute the report in smaller batches of users.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&lt;ZH&gt;Would you like to continue running the report given the possible</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>limitations?&lt;/&gt;</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>TX</ID>
+      <OBJECT>/PSYNG/SW_I000001</OBJECT>
+      <LANGU>N</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0001</VERSION>
+      <TXTLINES>00024</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SW_I000001</TDNAME>
+      <TDID>TX</TDID>
+      <TDSPRAS>N</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00001</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Current situation:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>You are about to execute this SOD report in &quot;detailed output&quot; mode for</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>over 50 users.  This type of analysis will display a large amount of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>data and typically result in a much longer execution time for the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>report.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Possible limitations:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Your SAP systems incorporate a maximum runtime limitation of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>[rdisp/max_wprun_time] seconds.  If a report execution is longer than</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>[rdisp/max_wprun_time] seconds, the SAP system will cancel the report</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>and create a short dump.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Your SAP systems also incorporate a limitation on the amount of memory</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>(temporary storage) each report can use while it is running.  If the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>volume of data that the report needs to display (or process) requires</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>more memory than what is configured, the SAP system will cancel the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>report and create a short dump.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>These SAP System  limitations  are normal, and do apply to reports</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>executed from Separations Enforcer (SE).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Recommendations:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Security Weaver recommends to execute the SOD report at the summary</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>level and then drill-down on each conflict one at a time.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>If detailed output is required for multiple users and conflicts, then</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>execute the report in smaller batches of users.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&lt;ZH&gt;Would you like to continue running the report given the possible</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>limitations?&lt;/&gt;</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>TX</ID>
+      <OBJECT>/PSYNG/SW_I000001</OBJECT>
+      <LANGU>P</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0001</VERSION>
+      <TXTLINES>00024</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SW_I000001</TDNAME>
+      <TDID>TX</TDID>
+      <TDSPRAS>P</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00001</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Current situation:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>You are about to execute this SOD report in &quot;detailed output&quot; mode for</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>over 50 users.  This type of analysis will display a large amount of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>data and typically result in a much longer execution time for the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>report.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Possible limitations:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Your SAP systems incorporate a maximum runtime limitation of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>[rdisp/max_wprun_time] seconds.  If a report execution is longer than</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>[rdisp/max_wprun_time] seconds, the SAP system will cancel the report</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>and create a short dump.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Your SAP systems also incorporate a limitation on the amount of memory</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>(temporary storage) each report can use while it is running.  If the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>volume of data that the report needs to display (or process) requires</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>more memory than what is configured, the SAP system will cancel the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>report and create a short dump.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>These SAP System  limitations  are normal, and do apply to reports</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>executed from Separations Enforcer (SE).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Recommendations:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Security Weaver recommends to execute the SOD report at the summary</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>level and then drill-down on each conflict one at a time.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>If detailed output is required for multiple users and conflicts, then</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>execute the report in smaller batches of users.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&lt;ZH&gt;Would you like to continue running the report given the possible</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>limitations?&lt;/&gt;</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>TX</ID>
+      <OBJECT>/PSYNG/SW_I000001</OBJECT>
+      <LANGU>S</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0001</VERSION>
+      <TXTLINES>00024</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SW_I000001</TDNAME>
+      <TDID>TX</TDID>
+      <TDSPRAS>S</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00001</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Current situation:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>You are about to execute this SOD report in &quot;detailed output&quot; mode for</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>over 50 users.  This type of analysis will display a large amount of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>data and typically result in a much longer execution time for the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>report.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Possible limitations:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Your SAP systems incorporate a maximum runtime limitation of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>[rdisp/max_wprun_time] seconds.  If a report execution is longer than</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>[rdisp/max_wprun_time] seconds, the SAP system will cancel the report</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>and create a short dump.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Your SAP systems also incorporate a limitation on the amount of memory</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>(temporary storage) each report can use while it is running.  If the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>volume of data that the report needs to display (or process) requires</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>more memory than what is configured, the SAP system will cancel the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>report and create a short dump.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>These SAP System  limitations  are normal, and do apply to reports</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>executed from Separations Enforcer (SE).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Recommendations:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Security Weaver recommends to execute the SOD report at the summary</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>level and then drill-down on each conflict one at a time.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>If detailed output is required for multiple users and conflicts, then</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>execute the report in smaller batches of users.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&lt;ZH&gt;Would you like to continue running the report given the possible</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>limitations?&lt;/&gt;</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>TX</ID>
+      <OBJECT>/PSYNG/SW_I000001</OBJECT>
+      <LANGU>V</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0001</VERSION>
+      <TXTLINES>00024</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SW_I000001</TDNAME>
+      <TDID>TX</TDID>
+      <TDSPRAS>V</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00001</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Current situation:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>You are about to execute this SOD report in &quot;detailed output&quot; mode for</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>over 50 users.  This type of analysis will display a large amount of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>data and typically result in a much longer execution time for the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>report.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Possible limitations:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Your SAP systems incorporate a maximum runtime limitation of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>[rdisp/max_wprun_time] seconds.  If a report execution is longer than</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>[rdisp/max_wprun_time] seconds, the SAP system will cancel the report</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>and create a short dump.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Your SAP systems also incorporate a limitation on the amount of memory</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>(temporary storage) each report can use while it is running.  If the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>volume of data that the report needs to display (or process) requires</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>more memory than what is configured, the SAP system will cancel the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>report and create a short dump.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>These SAP System  limitations  are normal, and do apply to reports</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>executed from Separations Enforcer (SE).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Recommendations:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Security Weaver recommends to execute the SOD report at the summary</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>level and then drill-down on each conflict one at a time.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>If detailed output is required for multiple users and conflicts, then</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>execute the report in smaller batches of users.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&lt;ZH&gt;Would you like to continue running the report given the possible</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>limitations?&lt;/&gt;</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>TX</ID>
+      <OBJECT>/PSYNG/SW_I000001</OBJECT>
+      <LANGU>Z</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0001</VERSION>
+      <TXTLINES>00024</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SW_I000001</TDNAME>
+      <TDID>TX</TDID>
+      <TDSPRAS>Z</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00001</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Current situation:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>You are about to execute this SOD report in &quot;detailed output&quot; mode for</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>over 50 users.  This type of analysis will display a large amount of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>data and typically result in a much longer execution time for the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>report.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Possible limitations:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Your SAP systems incorporate a maximum runtime limitation of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>[rdisp/max_wprun_time] seconds.  If a report execution is longer than</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>[rdisp/max_wprun_time] seconds, the SAP system will cancel the report</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>and create a short dump.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Your SAP systems also incorporate a limitation on the amount of memory</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>(temporary storage) each report can use while it is running.  If the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>volume of data that the report needs to display (or process) requires</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>more memory than what is configured, the SAP system will cancel the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>report and create a short dump.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>These SAP System  limitations  are normal, and do apply to reports</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>executed from Separations Enforcer (SE).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Recommendations:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Security Weaver recommends to execute the SOD report at the summary</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>level and then drill-down on each conflict one at a time.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>If detailed output is required for multiple users and conflicts, then</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>execute the report in smaller batches of users.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&lt;ZH&gt;Would you like to continue running the report given the possible</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>limitations?&lt;/&gt;</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+   </DOC>
+  </asx:values>
+ </asx:abap>
+</abapGit>

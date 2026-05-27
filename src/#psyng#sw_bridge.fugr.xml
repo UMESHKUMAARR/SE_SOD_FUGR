@@ -1,0 +1,823 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Pathlock bridge</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>/PSYNG/LSW_BRIDGEF01</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/LSW_BRIDGETOP</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/SAPLSW_BRIDGE</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>/PSYNG/SW_BRIDGE_GET_CFG</FUNCNAME>
+     <SHORT_TEXT>Get PLC bridge Config</SHORT_TEXT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>E_HOST</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>STRING</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>E_PORT</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>STRING</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>E_USER</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>STRING</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>E_PASS</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>STRING</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>E_HOST</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_PORT</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_USER</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_PASS</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_GET_PLC_RULESET_IDS</FUNCNAME>
+     <SHORT_TEXT>SW: Get ruleset IDs maintained in Pathlock Cloud</SHORT_TEXT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_PLC_RSETS</PARAMETER>
+       <TYP>/PSYNG/SW_PLCRSET_TT</TYP>
+      </RSEXP>
+     </EXPORT>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>NO_DATA_FOUND</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>ET_PLC_RSETS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: PLC Ruleset Header Information</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NO_DATA_FOUND</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>No ruleset ID&apos;s found</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_INCOMPATIBLE_OBJECTS</FUNCNAME>
+     <SHORT_TEXT>Incomapitable Objects</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_SYSID</PARAMETER>
+       <TYP>/PSYNG/API_SYSID</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ET_INCOM_OBJ</PARAMETER>
+       <DBSTRUCT>/PSYNG/INCO_OBJECT</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>NO_DATA_FOUND</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_SYSID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Pathlock bridge system ID</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_INCOM_OBJ</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Incompaitable Objects</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Parameter</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NO_DATA_FOUND</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>No data found</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_PULL_MIT_CONT_PLC</FUNCNAME>
+     <SHORT_TEXT>Pull Mitigation Controls From PLC</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_CONTROL_HEADERS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_USE_PUSH</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_CONTROL_ASSIGN</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_MIT_CONT_HEAD_PLC</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/PSYNG/SW_MIT_CONT_HEAD_PLC_TT</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ET_MIT_CONT_ASSIGN</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/PSYNG/SW_MIT_EMP_VLATION_TT</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ET_MESSAGES</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_CONTROL_HEADERS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Pull Mitigation Control Headers From PLC</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_USE_PUSH</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>X = FM is being used while pushing data</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_CONTROL_ASSIGN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Pull Mitigation Employee Vilations From PLC</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MIT_CONT_HEAD_PLC</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Table type for mitigation control header info from PLC</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MIT_CONT_ASSIGN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Store Mitigated Employee Violation Pathlock Cloud</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MESSAGES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Parameter</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_PUSH_MIT_CONT_PLC</FUNCNAME>
+     <SHORT_TEXT>Push Mitigation Controls To PLC</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_CONTROL_HEADERS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_CONTROL_ASSIGN</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ET_MESSAGES</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_MCHDR</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCHDR</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_MCUSER</PARAMETER>
+       <DBSTRUCT>/PSYNG/DA_SW_MCUSER</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_CONTROL_HEADERS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Push Mitigation Control Headers To PLC</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_CONTROL_ASSIGN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Pull Mitigation Control Assignments To PLC</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MESSAGES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Parameter</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MCHDR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Mitigation control definitions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MCUSER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Dashboard : Mitigating Controls Assignment to Users</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_READ_API_CONF</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Read API conflict</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IF_TESTMODE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_PBRIDGE_CON</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_PBRIDGE_CON_TXT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_PBRIDGE_CON_DETAIL</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_PLCVRS</PARAMETER>
+       <TYP>/PSYNG/SW_PLC_RULESET</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EF_SUCCESS</PARAMETER>
+       <TYP>FLAG</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ET_MESSAGES</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_PBRIDGE_CON</PARAMETER>
+       <DBSTRUCT>/PSYNG/API_CONF</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_PBRIDGE_CON_TXT</PARAMETER>
+       <DBSTRUCT>/PSYNG/API_CONF_TXT</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_PBRIDGE_CON_DETAIL</PARAMETER>
+       <DBSTRUCT>/PSYNG/API_CONF_DETAILS</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>NO_DATA_FOUND</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IF_TESTMODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_PBRIDGE_CON</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_PBRIDGE_CON_TXT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_PBRIDGE_CON_DETAIL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_PLCVRS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE: PLC Ruleset ID</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EF_SUCCESS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MESSAGES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Parameter</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_PBRIDGE_CON</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Pathlock bridge conflict</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_PBRIDGE_CON_TXT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Pathlock Bridge Conflict Text</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_PBRIDGE_CON_DETAIL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Pathlock Bridge Conflict details</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NO_DATA_FOUND</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>No data found</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_READ_API_FUNC</FUNCNAME>
+     <SHORT_TEXT>Read API conflict</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IF_TESTMODE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_PBRIDGE_FUN</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_PBRIDGE_FUN_OBJ</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_PBRIDGE_FUN_DETAIL</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_SYSID</PARAMETER>
+       <TYP>/PSYNG/API_SYSID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_PLCVRS</PARAMETER>
+       <TYP>/PSYNG/SW_PLC_RULESET</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EF_SUCCESS</PARAMETER>
+       <TYP>FLAG</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ET_MESSAGES</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_PBRIDGE_FUN</PARAMETER>
+       <DBSTRUCT>/PSYNG/PBRIDGE_FUN</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_PBRIDGE_FUN_DETAIL</PARAMETER>
+       <DBSTRUCT>/PSYNG/PBRIDGE_FUNC_DETAIL</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_PBRIDGE_FUN_OBJ</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_PBRIDGE_FUN_OBJ</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>NO_DATA_FOUND</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IF_TESTMODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_PBRIDGE_FUN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_PBRIDGE_FUN_OBJ</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_PBRIDGE_FUN_DETAIL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_SYSID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Pathlock bridge system ID</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_PLCVRS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE: PLC Ruleset ID</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EF_SUCCESS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MESSAGES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Parameter</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_PBRIDGE_FUN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Pathlock bridge functions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_PBRIDGE_FUN_DETAIL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Pathlock bridge functions detail</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_PBRIDGE_FUN_OBJ</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Pathlock bridge functions objects</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NO_DATA_FOUND</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>No data found</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_READ_PBRIDGE_SYSTEMS</FUNCNAME>
+     <SHORT_TEXT>Read Pathlock Bridge Systems</SHORT_TEXT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EF_SUCCESS</PARAMETER>
+       <TYP>FLAG</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ET_PBRIDGE_SYSTEM</PARAMETER>
+       <DBSTRUCT>/PSYNG/PBRIDGE_SYSTEMS</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>EF_SUCCESS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_PBRIDGE_SYSTEM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Pathlock Bridge System Information</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_WRT_RULE_PBRIDGE_SD</FUNCNAME>
+     <SHORT_TEXT>Pathlock Bridge System Dependent Upload Ruleset</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IF_ACTVT_MOD</PARAMETER>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_ACTVTMOD_OVRWRT</PARAMETER>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_GRP_CMP</PARAMETER>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_GRPCMP_OVRWRT</PARAMETER>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_ACTVTMOD_B64</PARAMETER>
+       <TYP>STRING</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_GRPCMP_B64</PARAMETER>
+       <TYP>STRING</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_SYSTEM</PARAMETER>
+       <TYP>/PSYNG/BRIDGE_SYSTEM</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ET_MESSAGES</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IF_ACTVT_MOD</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_ACTVTMOD_OVRWRT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_GRP_CMP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_GRPCMP_OVRWRT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_ACTVTMOD_B64</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>string data type</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_GRPCMP_B64</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>string data type</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_SYSTEM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>System names in Pathlock bridge</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MESSAGES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Parameter</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_WRT_RULE_PBRIDGE_SI</FUNCNAME>
+     <SHORT_TEXT>Uploading system independent ruleset to pathlock bridge</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IF_SCHEMA</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_ACT_GRP</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_RULES</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_RULES_OVRWRT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_ACTVT_MOD_VALUES</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_MIT_CONT_HEADER</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_MIT_ASSIGN</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_SCHEMA_B64</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>STRING</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_GROUP_B64</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>STRING</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_ACTMODVAL_B64</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>STRING</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_RULE_B64</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>STRING</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_MCDEF_B64</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>STRING</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_MCASSIGN_B64</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>STRING</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>L_SCHEMA_COUNT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>INT4</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>L_RULES_COUNT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>INT4</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>L_GROUP_COUNT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>INT4</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>L_MODE_COUNT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>INT4</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ET_MESSAGES</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IF_SCHEMA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_ACT_GRP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_RULES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_RULES_OVRWRT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_ACTVT_MOD_VALUES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_MIT_CONT_HEADER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_MIT_ASSIGN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_SCHEMA_B64</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>string data type</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_GROUP_B64</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>string data type</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_ACTMODVAL_B64</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>string data type</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_RULE_B64</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>string data type</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_MCDEF_B64</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>string data type</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_MCASSIGN_B64</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>string data type</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>L_SCHEMA_COUNT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural Number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>L_RULES_COUNT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural Number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>L_GROUP_COUNT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural Number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>L_MODE_COUNT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural Number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MESSAGES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Parameter</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>SE: TA history integration in SOD report</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>/PSYNG/LSW_UTLS8TOP</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/SAPLSW_UTLS8</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>/PSYNG/SW_107</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Get all users assigned to role</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IF_VALID_DATES</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR1</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_ROLE</PARAMETER>
+       <TYP>AGR_NAME</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>OT_USERS</PARAMETER>
+       <DBSTRUCT>/PSYNG/BC_BNAME</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IF_VALID_DATES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Check role is within validity dates</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_ROLE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Role Name</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>OT_USERS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User IDs</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_108</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Get all users from role derivation family</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IF_VALID_DATES</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR1</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_ROLE</PARAMETER>
+       <TYP>AGR_NAME</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>OT_USERS</PARAMETER>
+       <DBSTRUCT>/PSYNG/BC_BNAME</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IF_VALID_DATES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Check role is within validity dates</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_ROLE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Role name</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>OT_USERS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User IDs</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

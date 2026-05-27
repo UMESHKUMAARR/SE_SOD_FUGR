@@ -1,0 +1,946 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>SW: Non-generated roles</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>/PSYNG/LSW_SOD_OBJS2TOP</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/SAPLSW_SOD_OBJS2</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>/PSYNG/SW_GET_NG_ROLE_DATA</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SW: Get Non-Generated Role Data</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>AGR_NAME</PARAMETER>
+       <DBFIELD>AGR_DEFINE-AGR_NAME</DBFIELD>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>BNAME</PARAMETER>
+       <DBFIELD>USR02-BNAME</DBFIELD>
+       <OPTIONAL>X</OPTIONAL>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>REM_EXECUTION</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR01</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>RFCDEST</PARAMETER>
+       <DBFIELD>RFCDES-RFCDEST</DBFIELD>
+       <OPTIONAL>X</OPTIONAL>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ROLETCODE</PARAMETER>
+       <DBSTRUCT>/PSYNG/USERTCODE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ROLEPROF</PARAMETER>
+       <DBSTRUCT>/PSYNG/USERPROF</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ROLEAUTH</PARAMETER>
+       <DBSTRUCT>/PSYNG/USERAUTH</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>FUNCTTRAN</PARAMETER>
+       <DBSTRUCT>/PSYNG/FUNCTTRAN</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>FAOBJ</PARAMETER>
+       <DBSTRUCT>/PSYNG/FAOBJ2</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>AGR_NAME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Role Name</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>BNAME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User name in user master record</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>REM_EXECUTION</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Remote flag (X = remote, &apos; &apos; = local)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RFCDEST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Logical destination (specified in function call)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ROLETCODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User&apos;s Executable Transaction Codes</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ROLEPROF</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User&apos;s profiles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ROLEAUTH</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User&apos;s Authorization Data</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>FUNCTTRAN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Functions and Transactions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>FAOBJ</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Object Definition</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_GET_TCODE_AUTH_NG</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Security Weaver: Tcode Auth Data (for non-generated roles)</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>REM_EXECUTION</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR01</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>RFCDEST</PARAMETER>
+       <DBFIELD>RFCDES-RFCDEST</DBFIELD>
+       <OPTIONAL>X</OPTIONAL>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>AGR_NAME</PARAMETER>
+       <TYP>AGR_DEFINE-AGR_NAME</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>TCD</PARAMETER>
+       <DBSTRUCT>/PSYNG/PSSWTCD</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>FAOBJ</PARAMETER>
+       <DBSTRUCT>/PSYNG/FAOBJ2</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>FUNCTTRAN</PARAMETER>
+       <DBSTRUCT>/PSYNG/FUNCTTRAN</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>TCDAUT</PARAMETER>
+       <DBSTRUCT>/PSYNG/PSSWTCDAUT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>UNIQUEAUTHS</PARAMETER>
+       <DBSTRUCT>/PSYNG/UNIQUEAUTHS</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>REM_EXECUTION</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Remote flag (X = remote, &apos; &apos; = local)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RFCDEST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Logical destination (specified in function call)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>AGR_NAME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Role Name</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>TCD</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Transaction Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>FAOBJ</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Object Definition</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>FUNCTTRAN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Functions and Transactions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>TCDAUT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Tcode Auth</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>UNIQUEAUTHS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Unique auths</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_READ_ALL_CA_DETAILS</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SW Read All Critical Authorizations Information</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>VRSIO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>SWAUDC_FM</PARAMETER>
+       <DBSTRUCT>/PSYNG/SWAUDC2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>SWAUDHDR_FM</PARAMETER>
+       <DBSTRUCT>/PSYNG/SWAUDHDR</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>NOT_AUTHORIZED_TO_READ_ALL</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>SWAUDC_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Critical Auths details</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>SWAUDHDR_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Critical Auths Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NOT_AUTHORIZED_TO_READ_ALL</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>Not authorized to read all Critical Authorizations</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_READ_SOD_MATRIX_ORG</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SW Read SOD Matrix</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>ORGCHECK</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR1</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>VRSIO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_CONFIG_SET</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SECONFID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_ORPHAN_FUNCTIONS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>CONFLICT_FM</PARAMETER>
+       <DBSTRUCT>/PSYNG/CONFLICT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>CONFDET_FM</PARAMETER>
+       <DBSTRUCT>/PSYNG/CONFDET</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>FUNCTTRAN_FM</PARAMETER>
+       <DBSTRUCT>/PSYNG/FUNCTTRAN</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>FAOBJ_FM</PARAMETER>
+       <DBSTRUCT>/PSYNG/FAOBJ2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>SPCONFS_FM</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SEL_OPTS_CONID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>BUS_AREA_FM</PARAMETER>
+       <TYPES>O</TYPES>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SW_SEL_OPTS_BUS_AREA</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IMP_FM</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SEL_OPTS_IMP</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>COWNER_FM</PARAMETER>
+       <TYPES>O</TYPES>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SW_SEL_OPTS_CONFOWNER</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>CONTID_FM</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SEL_OPTS_CONTID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>SWSODORGM_FM</PARAMETER>
+       <DBSTRUCT>/PSYNG/SWSODORGM</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ORG_FM</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SEL_OPTS_ORG</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_RISK</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_RISK</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FUNCTIONS</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_FUNID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>ORGCHECK</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Single-character flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_CONFIG_SET</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Configuration Set ID</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_ORPHAN_FUNCTIONS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Include functions that are not in any SOD conflict</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CONFLICT_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Conflict Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CONFDET_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Conflict Details</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>FUNCTTRAN_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Functions and Transactions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>FAOBJ_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Object Definition</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>SPCONFS_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Conflict ID (/PSYNG/CONFLICT_ID)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>BUS_AREA_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Application Areas (/PSYNG/BUS_AREA)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IMP_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Sensitivity Levels (/PSYNG/IMPORTANCE)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>COWNER_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Conflict Owner (/PSYNG/OWNER)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CONTID_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Mitigation Control (/PSYNG/PROPCONTID)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>SWSODORGM_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Organizational Values</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ORG_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Org level abb (/PSYNG/DORG_ABB)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_RISK</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES structure for Risk Scenario</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FUNCTIONS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for Functions</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_SOD_BY_NON_GEN_ROLE</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SW: SODs by non-generated roles</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>AGR_NAME_FM</PARAMETER>
+       <TYP>AGR_DEFINE-AGR_NAME</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>MATRIX_RFC</PARAMETER>
+       <DBFIELD>RFCDES-RFCDEST</DBFIELD>
+       <OPTIONAL>X</OPTIONAL>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>VRSIO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>R1STOUTPUT</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SOD_R1STOUTPUT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>INVALID_MATRIX_RFC</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>AGR_NAME_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Role Name</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MATRIX_RFC</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RFC Dest. to use to read SOD Matrix</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>R1STOUTPUT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Scan 1stoutput Role (FMs only)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>INVALID_MATRIX_RFC</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>Invalid RFC For fetching SOD Matrix</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+   <I18N_TPOOL>
+    <item>
+     <LANGUAGE>D</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Analyse fertig</ENTRY>
+       <LENGTH>14</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Schritt 3/4</ENTRY>
+       <LENGTH>12</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Proznt abgschlssn</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>F</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Analysis Complete</ENTRY>
+       <LENGTH>73</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Step 3 of 4:</ENTRY>
+       <LENGTH>12</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>percent complete.</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>H</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Analyse fertig</ENTRY>
+       <LENGTH>73</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Schritt 3/4</ENTRY>
+       <LENGTH>12</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Prozent fertig.</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>I</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Analysis Complete</ENTRY>
+       <LENGTH>73</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Step 3 of 4:</ENTRY>
+       <LENGTH>12</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>percent complete.</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>N</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Analysis Complete</ENTRY>
+       <LENGTH>73</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Step 3 of 4:</ENTRY>
+       <LENGTH>12</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>percent complete.</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>P</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Análise Completa</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Passo 3 de 4</ENTRY>
+       <LENGTH>12</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>percent.completo.</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>S</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Análisis completo</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Paso 3 de 4</ENTRY>
+       <LENGTH>11</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>porcentaje completado</ENTRY>
+       <LENGTH>21</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>V</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Analysis Complete</ENTRY>
+       <LENGTH>73</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Step 3 of 4:</ENTRY>
+       <LENGTH>12</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>percent complete.</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>Z</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Analysis Complete</ENTRY>
+       <LENGTH>73</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Step 3 of 4:</ENTRY>
+       <LENGTH>12</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>percent complete.</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+   </I18N_TPOOL>
+   <LONGTEXTS__-PSYNG_-SW_GET_NG_ROLE_DATA>
+    <item>
+     <DOKIL>
+      <ID>FU</ID>
+      <OBJECT>/PSYNG/SW_GET_NG_ROLE_DATA</OBJECT>
+      <LANGU>D</LANGU>
+      <TYP>T</TYP>
+      <VERSION>0001</VERSION>
+      <TXTLINES>00007</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SW_GET_NG_ROLE_DATA</TDNAME>
+      <TDID>FU</TDID>
+      <TDSPRAS>D</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00001</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;FUNCTIONALITY&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;EXAMPLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;HINTS&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;FURTHER_SOURCES_OF_INF&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Bei Remote-Ausführung des FBs sollten die Tabellen die RFC-Destination</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>des rufenden Mandanten enthalten. Dadurch  werden die gelieferten Daten</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>der Benutzerberechtigung hinzugefügt, als wären sie lokal zugeordnet.</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>FU</ID>
+      <OBJECT>/PSYNG/SW_GET_NG_ROLE_DATA</OBJECT>
+      <LANGU>E</LANGU>
+      <TYP>T</TYP>
+      <VERSION>0002</VERSION>
+      <MASTERLANG>X</MASTERLANG>
+      <TXTLINES>00007</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SW_GET_NG_ROLE_DATA</TDNAME>
+      <TDID>FU</TDID>
+      <TDSPRAS>E</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00002</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;FUNCTIONALITY&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;EXAMPLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;HINTS&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;FURTHER_SOURCES_OF_INF&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>If this FM is executed in remotely, then the tables should contain RFC</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>destination of calling client.  This way the returned data will be added</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>to the user&apos;s authorization as if it was locally assigned.</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+   </LONGTEXTS__-PSYNG_-SW_GET_NG_ROLE_DATA>
+   <LONGTEXTS__-PSYNG_-SW_GET_TCODE_AUTH_NG>
+    <item>
+     <DOKIL>
+      <ID>FU</ID>
+      <OBJECT>/PSYNG/SW_GET_TCODE_AUTH_NG</OBJECT>
+      <LANGU>D</LANGU>
+      <TYP>T</TYP>
+      <VERSION>0001</VERSION>
+      <TXTLINES>00008</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SW_GET_TCODE_AUTH_NG</TDNAME>
+      <TDID>FU</TDID>
+      <TDSPRAS>D</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00001</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;FUNCTIONALITY&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;EXAMPLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;HINTS&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;FURTHER_SOURCES_OF_INF&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Bei Remote-Ausführung dieses FBs (derzeit nur bei Remote-Simulation der</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Rollenzuordn. zur Benutzer-ID) sollten die Tabellen die RFC-Destination</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>des rufenden Mandanten enthalten. Dadurch werden die gelieferten Daten</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>der Benutzerberechtigung hinzugefügt, als wären sie lokal zugeordnet.</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>FU</ID>
+      <OBJECT>/PSYNG/SW_GET_TCODE_AUTH_NG</OBJECT>
+      <LANGU>E</LANGU>
+      <TYP>T</TYP>
+      <VERSION>0002</VERSION>
+      <MASTERLANG>X</MASTERLANG>
+      <TXTLINES>00008</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SW_GET_TCODE_AUTH_NG</TDNAME>
+      <TDID>FU</TDID>
+      <TDSPRAS>E</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00002</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;FUNCTIONALITY&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;EXAMPLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;HINTS&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;FURTHER_SOURCES_OF_INF&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>If this FM is executed in remotely (currently only in remote simulation</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>of role assignment to USER ID), then the tables should contain RFC</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>destination of calling client. This way the returned data will be added</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>to the user&apos;s authorization as if it was locally assigned.</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+   </LONGTEXTS__-PSYNG_-SW_GET_TCODE_AUTH_NG>
+  </asx:values>
+ </asx:abap>
+</abapGit>

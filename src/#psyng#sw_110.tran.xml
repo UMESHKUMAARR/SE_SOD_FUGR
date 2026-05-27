@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_TRAN" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TSTC>
+    <TCODE>/PSYNG/SW_110</TCODE>
+    <CINFO>Ag==</CINFO>
+   </TSTC>
+   <TSTCC>
+    <TCODE>/PSYNG/SW_110</TCODE>
+    <S_WEBGUI>1</S_WEBGUI>
+    <S_WIN32>X</S_WIN32>
+    <S_PLATIN>X</S_PLATIN>
+   </TSTCC>
+   <TSTCT>
+    <SPRSL>E</SPRSL>
+    <TCODE>/PSYNG/SW_110</TCODE>
+    <TTEXT>Download data for web reporting</TTEXT>
+   </TSTCT>
+   <TSTCP>
+    <TCODE>/PSYNG/SW_110</TCODE>
+    <PARAM>/*START_REPORT D_SREPOVARI-REPORTTYPE=;D_SREPOVARI-REPORT=/PSYNG/SW_110;D_SREPOVARI-EXTDREPORT=;D_SREPOVARI-VARIANT=;D_SREPOVARI-NOSELSCRN=;</PARAM>
+   </TSTCP>
+   <I18N_TPOOL>
+    <TSTCT>
+     <SPRSL>D</SPRSL>
+     <TTEXT>Download Daten für Web-Reporting</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>F</SPRSL>
+     <TTEXT>Download data for web reporting</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>I</SPRSL>
+     <TTEXT>Download data for web reporting</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>N</SPRSL>
+     <TTEXT>Download data for web reporting</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>P</SPRSL>
+     <TTEXT>Download de dados para relatório web</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>S</SPRSL>
+     <TTEXT>Descargar datos para informes web</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>V</SPRSL>
+     <TTEXT>Download data for web reporting</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>Z</SPRSL>
+     <TTEXT>Download data for web reporting</TTEXT>
+    </TSTCT>
+   </I18N_TPOOL>
+  </asx:values>
+ </asx:abap>
+</abapGit>

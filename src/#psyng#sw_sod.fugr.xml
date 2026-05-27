@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>SW: SOD</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>/PSYNG/LSW_SODF01</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/LSW_SODTOP</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/SAPLSW_SOD</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>/PSYNG/INVISIBLE</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SW: Make Buttons Invisible</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>SWPROGRAM</PARAMETER>
+       <DBFIELD>/PSYNG/SWINVISBL-SWPROGRAM</DBFIELD>
+       <OPTIONAL>X</OPTIONAL>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>RETURN</PARAMETER>
+       <DBFIELD>BAPIRETURN</DBFIELD>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>SWPROGRAM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>ABAP program name</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return parameter</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_008</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SW: SOD Scan with Roles</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>VRSIO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>ENH_FM</PARAMETER>
+       <DEFAULT>&apos;&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_USERID</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SEL_OPTS_XUBNAME</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CONID</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_CONID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SIMULATION_ROLE</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_AGR_NAME</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_RESULTS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SOD_RESULTS</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_REMOTE_ROLE_SIMU</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SOD_REMOTE_ROLES</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ENH_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Enhanced SOD Ruleset</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_USERID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options User ID (XUBNAME)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for Conflict IDs</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SIMULATION_ROLE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for Roles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RESULTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Results</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return parameter</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_REMOTE_ROLE_SIMU</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Remote Role Simulation</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_INVISIBLE</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SW: Make Buttons Invisible</SHORT_TEXT>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_VISIBLE</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SW: Make Buttons visible</SHORT_TEXT>
+    </item>
+   </FUNCTIONS>
+   <I18N_TPOOL>
+    <item>
+     <LANGUAGE>D</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Alle SOD-Konflikte; Ben. hat SAP_ALL-Profil</ENTRY>
+       <LENGTH>43</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Programm in Security Weaver bereits unsichtbar</ENTRY>
+       <LENGTH>46</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>F</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>All SOD conflicts; User has SAP_ALL Profile</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Program Already Invisible in Security Weaver</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>H</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Alle SOD Konflikte; Benutzer hat SAP_ALL Profil</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Programm in Security Weaver schon unsichtbar</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>I</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>All SOD conflicts; User has SAP_ALL Profile</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Program Already Invisible in Security Weaver</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>N</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>All SOD conflicts; User has SAP_ALL Profile</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Program Already Invisible in Security Weaver</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>P</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Todos os conflitos SOD; Usuário tem perfil SAP_ALL</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Programa Já Invisível em Securiy Weaver</ENTRY>
+       <LENGTH>39</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>S</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Todos los conflictos SOD; el usuario tiene el perfil SAP_ALL</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Programa ya invisible en Security Weaver</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>V</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>All SOD conflicts; User has SAP_ALL Profile</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Program Already Invisible in Security Weaver</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>Z</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>All SOD conflicts; User has SAP_ALL Profile</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Program Already Invisible in Security Weaver</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+   </I18N_TPOOL>
+  </asx:values>
+ </asx:abap>
+</abapGit>

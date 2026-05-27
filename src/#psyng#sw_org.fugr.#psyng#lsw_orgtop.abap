@@ -1,0 +1,2 @@
+FUNCTION-POOL /PSYNG/SW_ORG.                "MESSAGE-ID ..
+

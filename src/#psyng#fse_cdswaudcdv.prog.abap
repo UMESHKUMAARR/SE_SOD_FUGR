@@ -1,0 +1,12 @@
+
+DATA: UPD_ICDTXT_SWAUD           TYPE C.
+DATA: BEGIN OF ICDTXT_SWAUD           OCCURS 20.
+        INCLUDE STRUCTURE CDTXT.
+DATA: END OF ICDTXT_SWAUD          .
+
+TABLES: */PSYNG/SWAUDC2                , /PSYNG/SWAUDC2                .
+DATA: UPD_PSYNG_SWAUDC2                  TYPE C.
+
+TABLES: */PSYNG/SWAUDHDR               , /PSYNG/SWAUDHDR               .
+DATA: UPD_PSYNG_SWAUDHDR                 TYPE C.
+

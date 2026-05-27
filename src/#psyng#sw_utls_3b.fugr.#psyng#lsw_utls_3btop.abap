@@ -1,0 +1,2 @@
+FUNCTION-POOL /PSYNG/SW_UTLS_3B.            "MESSAGE-ID ..
+CLASS /psyng/sw_cl_constants DEFINITION LOAD.

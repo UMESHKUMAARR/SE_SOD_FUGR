@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SUSO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TOBJ>
+    <OBJCT>Y&amp;SW_MSU2</OBJCT>
+    <FIEL1>ACTVT</FIEL1>
+    <FIEL2>CLASS</FIEL2>
+    <FIEL3>Y&amp;SW_BNAME</FIEL3>
+    <FIEL4>Y&amp;SW_CNTID</FIEL4>
+    <FIEL5>Y&amp;SW_COMP</FIEL5>
+    <FIEL6>Y&amp;SW_CONID</FIEL6>
+    <FIEL7>Y&amp;SW_VRSIO</FIEL7>
+    <OCLSS>Y&amp;SW</OCLSS>
+   </TOBJ>
+   <TOBJT>
+    <LANGU>E</LANGU>
+    <OBJECT>Y&amp;SW_MSU2</OBJECT>
+    <TTEXT>Security Weaver - SOD MC Assignments to Users - By Usergroup</TTEXT>
+   </TOBJT>
+   <TOBJVORFLG>
+    <OBJCT>Y&amp;SW_MSU2</OBJCT>
+   </TOBJVORFLG>
+   <TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_MSU2</BROBJ>
+     <ACTVT>01</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_MSU2</BROBJ>
+     <ACTVT>02</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_MSU2</BROBJ>
+     <ACTVT>03</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_MSU2</BROBJ>
+     <ACTVT>06</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_MSU2</BROBJ>
+     <ACTVT>22</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_MSU2</BROBJ>
+     <ACTVT>23</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_MSU2</BROBJ>
+     <ACTVT>24</ACTVT>
+    </TACTZ>
+   </TACTZ>
+  </asx:values>
+ </asx:abap>
+</abapGit>

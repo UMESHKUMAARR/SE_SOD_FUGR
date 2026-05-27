@@ -1,0 +1,60 @@
+*----------------------------------------------------------------------*
+*   INCLUDE /PSYNG/SW_141_CL1                                          *
+*----------------------------------------------------------------------*
+
+*---------------------------------------------------------------------*
+*       CLASS lcl_event_handler DEFINITION
+*---------------------------------------------------------------------*
+*       ........                                                      *
+*---------------------------------------------------------------------*
+CLASS lcl_event_handler DEFINITION .
+  PUBLIC SECTION .
+    METHODS:
+*--To add new functional buttons to the ALV toolbar
+      handle_toolbar FOR EVENT toolbar OF cl_gui_alv_grid
+        IMPORTING e_object e_interactive,
+
+        handle_before_user_command
+                    FOR EVENT before_user_command OF cl_gui_alv_grid
+        IMPORTING e_ucomm,
+*-- Button click
+      button_click
+                    FOR EVENT button_click OF cl_gui_alv_grid
+        IMPORTING es_col_id es_row_no,
+
+*--Hotspot click control
+  handle_hotspot_click
+  FOR EVENT hotspot_click OF cl_gui_alv_grid
+  IMPORTING e_row_id e_column_id es_row_no.
+
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+*---------------------------------------------------------------------*
+*       CLASS lcl_event_handler IMPLEMENTATION
+*---------------------------------------------------------------------*
+*       ........                                                      *
+*---------------------------------------------------------------------*
+CLASS lcl_event_handler IMPLEMENTATION.
+*--Handle Toolbar
+  METHOD handle_toolbar.
+*    PERFORM handle_toolbar USING e_object e_interactive .
+  ENDMETHOD.
+
+*--Handle Before User Command
+  METHOD handle_before_user_command .
+  ENDMETHOD.
+
+*--Handle Hotspot Click
+  METHOD handle_hotspot_click .
+    PERFORM handle_hotspot_click USING e_row_id e_column_id es_row_no.
+  ENDMETHOD .
+
+  METHOD button_click.
+    PERFORM button_click USING es_col_id es_row_no.
+  ENDMETHOD.
+ENDCLASS.
+
+DATA: gr_event_handler  TYPE REF TO  lcl_event_handler,
+      gr_event_handler_101  TYPE REF TO  lcl_event_handler.

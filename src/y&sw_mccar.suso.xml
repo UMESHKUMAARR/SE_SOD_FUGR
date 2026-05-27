@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SUSO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TOBJ>
+    <OBJCT>Y&amp;SW_MCCAR</OBJCT>
+    <FIEL1>ACTVT</FIEL1>
+    <FIEL2>Y&amp;SW_VRSIO</FIEL2>
+    <FIEL3>Y&amp;SW_SWAUD</FIEL3>
+    <FIEL4>Y&amp;SW_CNTID</FIEL4>
+    <FIEL5>ACT_GROUP</FIEL5>
+    <OCLSS>Y&amp;SW</OCLSS>
+   </TOBJ>
+   <TOBJT>
+    <LANGU>E</LANGU>
+    <OBJECT>Y&amp;SW_MCCAR</OBJECT>
+    <TTEXT>Security Weaver - Conflict Repository - SOD MC Cri Auth Role</TTEXT>
+   </TOBJT>
+   <TOBJVORFLG>
+    <OBJCT>Y&amp;SW_MCCAR</OBJCT>
+   </TOBJVORFLG>
+   <TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_MCCAR</BROBJ>
+     <ACTVT>01</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_MCCAR</BROBJ>
+     <ACTVT>02</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_MCCAR</BROBJ>
+     <ACTVT>03</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_MCCAR</BROBJ>
+     <ACTVT>06</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_MCCAR</BROBJ>
+     <ACTVT>21</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_MCCAR</BROBJ>
+     <ACTVT>22</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_MCCAR</BROBJ>
+     <ACTVT>DL</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_MCCAR</BROBJ>
+     <ACTVT>UL</ACTVT>
+    </TACTZ>
+   </TACTZ>
+  </asx:values>
+ </asx:abap>
+</abapGit>

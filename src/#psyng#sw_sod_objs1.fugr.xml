@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>SW: SOD Objects 1</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>/PSYNG/LSW_SOD_OBJS1TOP</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/SAPLSW_SOD_OBJS1</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>/PSYNG/SW_DASH_AUTH_ENV</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SW: Dashboard - User Auth Environment</SHORT_TEXT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>T_AUTH_FM</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>T_AUTH_SOD_FM</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>A_AUTH_USER_FM</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>A_AUTH_USER_SOD_FM</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>T_AUTH_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Total Authorizations</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_AUTH_SOD_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Total Authorizations (SOD relavant)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>A_AUTH_USER_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Average Authorizations per User</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>A_AUTH_USER_SOD_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Average Authorizations per User (SOD relavant)</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_DASH_CONF_REPO_SUMM</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SW: Dashboard - Conflict Repository Summary</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/CONFLICT-VRSIO</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>T_CONFLICTS_FM</PARAMETER>
+       <TYP>F</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>T_FUNCTIONS_FM</PARAMETER>
+       <TYP>F</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>T_CRI_TCODE_FM</PARAMETER>
+       <TYP>F</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>T_CRI_AUTH_FM</PARAMETER>
+       <TYP>F</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>A_FUN_CON_FM</PARAMETER>
+       <TYP>F</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>A_TCODE_FUN_FM</PARAMETER>
+       <TYP>F</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>A_VAL_TCODE_FM</PARAMETER>
+       <TYP>F</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_CONFLICTS_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Total Conflicts</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_FUNCTIONS_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Total Functions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_CRI_TCODE_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Total Critical Tcodes</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_CRI_AUTH_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Total Critical Authorizations</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>A_FUN_CON_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Average Functions per Conflict</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>A_TCODE_FUN_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Average Tcode per Function</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>A_VAL_TCODE_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Average Object Values per Tcode</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_DASH_SOD_ENV</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SW: Dashboard - SOD Environment</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>VRSIO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>NM_H_CONFS_FM</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>NM_M_CONFS_FM</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>NM_L_CONFS_FM</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>NM_H_USER_CONF_FM</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>NM_M_USER_CONF_FM</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>NM_L_USER_CONF_FM</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>NMT_USERS_WSOD_FM</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>M_H_CONFS_FM</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>M_M_CONFS_FM</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>M_L_CONFS_FM</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>OLDEST_SCAN_DATE</PARAMETER>
+       <TYP>D</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NM_H_CONFS_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Not Mitigated: High level SOD issues</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NM_M_CONFS_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Not Mitigated: Medium level SOD issues</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NM_L_CONFS_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Not Mitigated: Low level SOD issues</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NM_H_USER_CONF_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Not Mitigated: Users with High level Conflicts</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NM_M_USER_CONF_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Not Mitigated: Users with Medium level Conflicts</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NM_L_USER_CONF_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Not Mitigated: Users with Low level Conflicts</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NMT_USERS_WSOD_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Not Mitigated: Users with atleast 1 conflict</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>M_H_CONFS_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Mitigated: High level SOD issues</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>M_M_CONFS_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Mitigated: Medium level SOD issues</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>M_L_CONFS_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Mitigated: Low level SOD issues</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>OLDEST_SCAN_DATE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>The oldest SCAN date</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_DASH_USER_ENV</FUNCNAME>
+     <SHORT_TEXT>SW: Dashboard - User Environment</SHORT_TEXT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>T_USERS_FM</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>T_DIA_USERS_FM</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>T_NONDIA_USERS_FM</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>DIA_LOCKED</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>DIA_EXPIRED</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>T_USERS_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Total Users</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_DIA_USERS_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Total Dialog Users</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_NONDIA_USERS_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Total Non-Dialog Users</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DIA_LOCKED</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Locked Dialog Users</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DIA_EXPIRED</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Expired Dialog users</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_DASH_USER_SUMM</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SW: Dashboard - User Summary</SHORT_TEXT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>DIA_USERS_FM</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>USR_CRI_AUTH_FM</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>AVG_CRI_AUTH_FM</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>USR_CRI_TCODE_FM</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>AVG_CRI_TCODE_FM</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>DIA_USERS_FM</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>USR_CRI_AUTH_FM</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>AVG_CRI_AUTH_FM</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>USR_CRI_TCODE_FM</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>AVG_CRI_TCODE_FM</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_SOD_UPDATE_STAT</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>/PSYNG/SW_SOD_UPDATE_STAT</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>OBJECTCOUNT_FM</PARAMETER>
+       <TYP>I</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>CONCOUNT_FM</PARAMETER>
+       <TYP>I</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>BYOBJECT</PARAMETER>
+       <TYP>CHAR10</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>OBJECTCOUNT_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Object Counter</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CONCOUNT_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Conflict Counter</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>BYOBJECT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>By USER or ROLE</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

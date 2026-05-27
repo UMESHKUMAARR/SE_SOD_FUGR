@@ -1,0 +1,1103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>SW : Function group for Historical Graph</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>/PSYNG/LSW_GRAPHTOP</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/SAPLSW_GRAPH</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>/PSYNG/SW_043</FUNCNAME>
+     <SHORT_TEXT>SW: Compress and store SOD header summary</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>VARIFY</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>CHAR1</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>DELETE_FIRST</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>CHAR1</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>SYSID</PARAMETER>
+       <DEFAULT>SY-SYSID</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/PSYNG/SYSTEM</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>VRSIO</PARAMETER>
+       <DEFAULT>&apos;000&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>RECORDS_UNCOMP</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>SIZE_UNCOMP</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>RECORDS_COMP</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>SIZE_COMP</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>VARIFICATION_RESULT</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>C</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_LOCHDR</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_LOCHDR</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>NO_DATA_TO_COMPRESS</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>COMPRESS_FAILURE</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>UNSUCCESSFUL_ENTRY_TO_COMPRESS</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>UNSUCCESSFUL_DECOMPRESSION</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>COMPRESSED_DATA_NOT_SAME</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>VARIFY</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>At end, varify stored compressed data is same as actual</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DELETE_FIRST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>First delete existing data for selected month, then insert</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>SYSID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>System id</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RECORDS_UNCOMP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Number of records uncompressed</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>SIZE_UNCOMP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Size of uncompressed data</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RECORDS_COMP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Number of records compressed</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>SIZE_COMP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Size of compressed data</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>VARIFICATION_RESULT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SAME / DIFFERENT / NOT_VARIFIED see long text</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_LOCHDR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Central Header Summary Local for child systems</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NO_DATA_TO_COMPRESS</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>No history data to compress</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>COMPRESS_FAILURE</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>Compress failure</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>UNSUCCESSFUL_ENTRY_TO_COMPRESS</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>Unsucessful data entry into compressed table</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>UNSUCCESSFUL_DECOMPRESSION</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>Unsucessful decompression</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>COMPRESSED_DATA_NOT_SAME</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>Saved compressed data NOT same as saved actual data</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_044</FUNCNAME>
+     <SHORT_TEXT>SW: Compress and store SOD Central Conflict Summary</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>VARIFY</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>CHAR1</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>DELETE_FIRST</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>CHAR1</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>SYSID</PARAMETER>
+       <DEFAULT>SY-SYSID</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/PSYNG/SYSTEM</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>VRSIO</PARAMETER>
+       <DEFAULT>&apos;000&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>RECORDS_UNCOMP</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>SIZE_UNCOMP</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>RECORDS_COMP</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>SIZE_COMP</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>VARIFICATION_RESULT</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>C</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_LOCCON</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_LOCCON</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>NO_DATA_TO_COMPRESS</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>COMPRESS_FAILURE</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>UNSUCCESSFUL_ENTRY_TO_COMPRESS</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>UNSUCCESSFUL_DECOMPRESSION</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>COMPRESSED_DATA_NOT_SAME</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>VARIFY</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>At end, varify stored compressed data is same as actual</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DELETE_FIRST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>First delete existing data for selected month, then insert</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>SYSID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>System id</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RECORDS_UNCOMP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Number of records uncompressed</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>SIZE_UNCOMP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Size of uncompressed data</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RECORDS_COMP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Number of records compressed</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>SIZE_COMP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Size of compressed data</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>VARIFICATION_RESULT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SAME / DIFFERENT / NOT_VARIFIED see long text</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_LOCCON</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Central Conflict Summary Local for child systems</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NO_DATA_TO_COMPRESS</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>No history data to compress</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>COMPRESS_FAILURE</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>Compress failure</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>UNSUCCESSFUL_ENTRY_TO_COMPRESS</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>Unsucessful data entry into compressed table</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>UNSUCCESSFUL_DECOMPRESSION</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>Unsucessful decompression</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>COMPRESSED_DATA_NOT_SAME</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>Saved compressed data NOT same as saved actual data</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_045</FUNCNAME>
+     <SHORT_TEXT>SW : Read Compressed SOD Header Summary</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_START_DATE</PARAMETER>
+       <DEFAULT>SY-DATUM</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>DATS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_END_DATE</PARAMETER>
+       <DEFAULT>SY-DATUM</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>DATS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_SYSID</PARAMETER>
+       <DEFAULT>SY-SYSID</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/PSYNG/SYSTEM</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <DEFAULT>&apos;000&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ET_LOCHDR</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_LOCHDR</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_ORGNR</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_ORGNR</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>UNSUCCESSFUL_DECOMPRESSION</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_START_DATE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Field of type DATS</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_END_DATE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Field of type DATS</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_SYSID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>System id</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_LOCHDR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Central Header Summary Local for child systems</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ORGNR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for Organization number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>UNSUCCESSFUL_DECOMPRESSION</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>Unsucessful decompression</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_046</FUNCNAME>
+     <SHORT_TEXT>SW : Read Compressed SOD Central Conflict Summary</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_START_DATE</PARAMETER>
+       <DEFAULT>SY-DATUM</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>DATS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_END_DATE</PARAMETER>
+       <DEFAULT>SY-DATUM</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>DATS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_SYSID</PARAMETER>
+       <DEFAULT>SY-SYSID</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/PSYNG/SYSTEM</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <DEFAULT>&apos;000&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ET_LOCCON</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_LOCCON</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_ORGNR</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_ORGNR</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CONID</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_CONID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>UNSUCCESSFUL_DECOMPRESSION</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_START_DATE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Field of type DATS</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_END_DATE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Field of type DATS</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_SYSID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>System id</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_LOCCON</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Central Header Summary Local for child systems</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ORGNR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for Organization number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for Conflict IDs</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>UNSUCCESSFUL_DECOMPRESSION</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>Unsucessful decompression</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+   <I18N_TPOOL>
+    <item>
+     <LANGUAGE>D</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Keine zu komprimierenden Kopfübersichtsdaten</ENTRY>
+       <LENGTH>44</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Starte Komprimierungsprozess.</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Komprimierungsfehler; wird beendet.</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>Komprimierung erfolgreich. Größe:</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Daten erfolgr. in komprimierte Tabelle geladen</ENTRY>
+       <LENGTH>46</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>006</KEY>
+       <ENTRY>Daten NICHT in komprimiertes Tabellenformat geladen, Abbruch</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>009</KEY>
+       <ENTRY>Gesicherte kompr. Daten gleich gesich. Istdaten</ENTRY>
+       <LENGTH>47</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>010</KEY>
+       <ENTRY>Gesicherte kompr. Daten NICHT gleich gesich.Istdatn, Abbruch</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>011</KEY>
+       <ENTRY>Dekomprimierung fehlerhaft; Abbr.</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>012</KEY>
+       <ENTRY>Dekomprimierung erfolgreich!</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>F</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>006</KEY>
+       <ENTRY>Unsucessful data entry into compressed table format, exiting</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>009</KEY>
+       <ENTRY>Saved compressed data same as saved actual data</ENTRY>
+       <LENGTH>47</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>010</KEY>
+       <ENTRY>Saved compressed data NOT same as saved actual data, exiting</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>011</KEY>
+       <ENTRY>Unsucessful decompression, exiting</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>012</KEY>
+       <ENTRY>Succesfully Decompressioned!</ENTRY>
+       <LENGTH>75</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>No SOD header summary data to compress</ENTRY>
+       <LENGTH>75</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Starting the compression process.</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Compress failure, exiting.</ENTRY>
+       <LENGTH>75</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>Compress success. Size:</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Sucessfully entered data into compressed table</ENTRY>
+       <LENGTH>46</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>H</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>012</KEY>
+       <ENTRY>Dekomprimierung erfolgreich!</ENTRY>
+       <LENGTH>75</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>010</KEY>
+       <ENTRY>Gesicherte komprim. Daten ungleich den aktuellen, beenden</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>009</KEY>
+       <ENTRY>Gesicherte komprim. Daten gleich den aktuellen</ENTRY>
+       <LENGTH>47</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>006</KEY>
+       <ENTRY>Daten NICHT in komprimiertes Tabellenformat geladen, Abbruch</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Daten erfolgr. in komprimierte Tabelle geladen</ENTRY>
+       <LENGTH>46</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>Komprimierung erfolgreich. Größe:</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Komprimierungsfehler, beenden.</ENTRY>
+       <LENGTH>75</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Starte Komprimierungsprozess.</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Keine zu komprimierende SOD Kopf Datenzusammenfassung</ENTRY>
+       <LENGTH>75</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>I</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>006</KEY>
+       <ENTRY>Unsucessful data entry into compressed table format, exiting</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>009</KEY>
+       <ENTRY>Saved compressed data same as saved actual data</ENTRY>
+       <LENGTH>47</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>010</KEY>
+       <ENTRY>Saved compressed data NOT same as saved actual data, exiting</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>011</KEY>
+       <ENTRY>Unsucessful decompression, exiting</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>012</KEY>
+       <ENTRY>Succesfully Decompressioned!</ENTRY>
+       <LENGTH>75</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>No SOD header summary data to compress</ENTRY>
+       <LENGTH>75</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Starting the compression process.</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Compress failure, exiting.</ENTRY>
+       <LENGTH>75</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>Compress success. Size:</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Sucessfully entered data into compressed table</ENTRY>
+       <LENGTH>46</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>N</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>006</KEY>
+       <ENTRY>Unsucessful data entry into compressed table format, exiting</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>009</KEY>
+       <ENTRY>Saved compressed data same as saved actual data</ENTRY>
+       <LENGTH>47</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>010</KEY>
+       <ENTRY>Saved compressed data NOT same as saved actual data, exiting</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>011</KEY>
+       <ENTRY>Unsucessful decompression, exiting</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>012</KEY>
+       <ENTRY>Succesfully Decompressioned!</ENTRY>
+       <LENGTH>75</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>No SOD header summary data to compress</ENTRY>
+       <LENGTH>75</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Starting the compression process.</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Compress failure, exiting.</ENTRY>
+       <LENGTH>75</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>Compress success. Size:</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Sucessfully entered data into compressed table</ENTRY>
+       <LENGTH>46</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>P</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Nenhum sumário SOD disponível</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Iniciando processo de compressão.</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Compress failure, exiting.</ENTRY>
+       <LENGTH>26</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>Compressão com sucesso. Tamanho:</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Dados inseridos c/sucesso na tabela comprimida</ENTRY>
+       <LENGTH>46</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>006</KEY>
+       <ENTRY>Unsucessful data entry into compressed table format, exiting</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>009</KEY>
+       <ENTRY>Dados comprimidos equivalem ao dado completo</ENTRY>
+       <LENGTH>44</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>010</KEY>
+       <ENTRY>Saved compressed data NOT same as saved actual data, exiting</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>011</KEY>
+       <ENTRY>Unsucessful decompression, exiting</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>012</KEY>
+       <ENTRY>Descomprimido com Sucesso!</ENTRY>
+       <LENGTH>26</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>S</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>No hay datos de resumen de cabecera SOD para comprimir</ENTRY>
+       <LENGTH>54</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Iniciando el proceso de compresión</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Fallo de compresión, saliendo.</ENTRY>
+       <LENGTH>30</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>Comprimir con éxito. Tamaño:</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Datos introducidos correctamente en la tabla comprimida</ENTRY>
+       <LENGTH>55</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>006</KEY>
+       <ENTRY>Entrada de datos en formato de tabla comprimida fallida, finalizando</ENTRY>
+       <LENGTH>68</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>009</KEY>
+       <ENTRY>Datos comprimidos guardados iguales a los datos reales guardados</ENTRY>
+       <LENGTH>64</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>010</KEY>
+       <ENTRY>Los datos comprimidos guardados NO son los mismos que los datos reales guardados.</ENTRY>
+       <LENGTH>81</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>011</KEY>
+       <ENTRY>Descompresión fallida, salir</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>012</KEY>
+       <ENTRY>Descomprimido con éxito</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>V</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>006</KEY>
+       <ENTRY>Unsucessful data entry into compressed table format, exiting</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>009</KEY>
+       <ENTRY>Saved compressed data same as saved actual data</ENTRY>
+       <LENGTH>47</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>010</KEY>
+       <ENTRY>Saved compressed data NOT same as saved actual data, exiting</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>011</KEY>
+       <ENTRY>Unsucessful decompression, exiting</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>012</KEY>
+       <ENTRY>Succesfully Decompressioned!</ENTRY>
+       <LENGTH>75</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>No SOD header summary data to compress</ENTRY>
+       <LENGTH>75</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Starting the compression process.</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Compress failure, exiting.</ENTRY>
+       <LENGTH>75</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>Compress success. Size:</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Sucessfully entered data into compressed table</ENTRY>
+       <LENGTH>46</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>Z</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>006</KEY>
+       <ENTRY>Unsucessful data entry into compressed table format, exiting</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>009</KEY>
+       <ENTRY>Saved compressed data same as saved actual data</ENTRY>
+       <LENGTH>47</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>010</KEY>
+       <ENTRY>Saved compressed data NOT same as saved actual data, exiting</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>011</KEY>
+       <ENTRY>Unsucessful decompression, exiting</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>012</KEY>
+       <ENTRY>Succesfully Decompressioned!</ENTRY>
+       <LENGTH>75</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>No SOD header summary data to compress</ENTRY>
+       <LENGTH>75</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Starting the compression process.</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Compress failure, exiting.</ENTRY>
+       <LENGTH>75</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>Compress success. Size:</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Sucessfully entered data into compressed table</ENTRY>
+       <LENGTH>46</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+   </I18N_TPOOL>
+  </asx:values>
+ </asx:abap>
+</abapGit>

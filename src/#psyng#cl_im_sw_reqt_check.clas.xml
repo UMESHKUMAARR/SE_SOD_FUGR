@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>/PSYNG/CL_IM_SW_REQT_CHECK</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Imp. class for BAdI imp. /PSYNG/SW_REQT_CHECK</DESCRIPT>
+    <STATE>1</STATE>
+    <FIXPT>X</FIXPT>
+   </VSEOCLASS>
+   <DESCRIPTIONS_CLASS>
+    <SEOCLASSTX>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Impl. Klasse für BAdI-Implementierung /PSYNG/SW_REQT_CHECK</DESCRIPT>
+    </SEOCLASSTX>
+    <SEOCLASSTX>
+     <LANGU>F</LANGU>
+     <DESCRIPT>Imp. class for BAdI imp. /PSYNG/SW_REQT_CHECK</DESCRIPT>
+    </SEOCLASSTX>
+    <SEOCLASSTX>
+     <LANGU>I</LANGU>
+     <DESCRIPT>Imp. class for BAdI imp. /PSYNG/SW_REQT_CHECK</DESCRIPT>
+    </SEOCLASSTX>
+    <SEOCLASSTX>
+     <LANGU>N</LANGU>
+     <DESCRIPT>Imp. class for BAdI imp. /PSYNG/SW_REQT_CHECK</DESCRIPT>
+    </SEOCLASSTX>
+    <SEOCLASSTX>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Imp. class para BAdI imp. /PSYNG/SW_REQT_CHECK</DESCRIPT>
+    </SEOCLASSTX>
+    <SEOCLASSTX>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Clase imp. para BAdI imp. /PSYNG/SW_REQT_CHECK</DESCRIPT>
+    </SEOCLASSTX>
+    <SEOCLASSTX>
+     <LANGU>V</LANGU>
+     <DESCRIPT>Imp. class for BAdI imp. /PSYNG/SW_REQT_CHECK</DESCRIPT>
+    </SEOCLASSTX>
+    <SEOCLASSTX>
+     <LANGU>Z</LANGU>
+     <DESCRIPT>Imp. class for BAdI imp. /PSYNG/SW_REQT_CHECK</DESCRIPT>
+    </SEOCLASSTX>
+   </DESCRIPTIONS_CLASS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

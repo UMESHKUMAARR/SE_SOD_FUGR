@@ -1,0 +1,1417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>SW: SOD System-Wide Analysis by Role 2</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>/PSYNG/LSW_SOD_OBJS6F01</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/LSW_SOD_OBJS6TOP</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/SAPLSW_SOD_OBJS6</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>/PSYNG/FUNC_ROLE_ANALYSIS</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SW : SOD Analysis by Role (System Wide)</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>VRSIO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>ORG_CHECK</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>ENH_FM</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_RCHDATF</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>MENU_DATE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_RCHDATT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>MENU_DATE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_SIMU_RFC</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>RFCDEST</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>XSTB_FM</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_LOCAL_SOD</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_ADVANCED_ROLE_SIMU</PARAMETER>
+       <DEFAULT>&apos; &apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_SHONOSOD</PARAMETER>
+       <DEFAULT>&apos;&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_COMPOSITE_ROLES</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_SINGLE_ROLES</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_SHOMIT</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_ASSIGNED_ROLES</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_CONFIG_SET</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SECONFID</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>O_TOTALROLES</PARAMETER>
+       <TYP>INT4</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>RETURN</PARAMETER>
+       <DBFIELD>BAPIRETURN</DBFIELD>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_ROLES</PARAMETER>
+       <TYPES>O</TYPES>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SW_SEL_OPTS_AGR_NAME</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_ROLE_BA</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_BUSAREA_ROLE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_ROLES_SIMU</PARAMETER>
+       <TYPES>O</TYPES>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SW_SEL_OPTS_AGR_NAME</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FUNC</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SEL_OPTS_CONID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_OWNER</PARAMETER>
+       <TYPES>O</TYPES>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SW_SEL_OPTS_CONFOWNER</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_BUSAREA</PARAMETER>
+       <TYPES>O</TYPES>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SW_SEL_OPTS_BUS_AREA</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>OT_ROUTPUT</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_OUT_ROUTPUT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>OT_ROUTPUT_SUM</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_OUT_ROUTPUT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CONFLICT</PARAMETER>
+       <DBSTRUCT>/PSYNG/CONFLICT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CONFDET</PARAMETER>
+       <DBSTRUCT>/PSYNG/CONFDET</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FUNCTIONS</PARAMETER>
+       <DBSTRUCT>/PSYNG/FUNCTION</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FUNCTTRAN</PARAMETER>
+       <DBSTRUCT>/PSYNG/FUNCTTRAN</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FAOBJ</PARAMETER>
+       <DBSTRUCT>/PSYNG/FAOBJ2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SWSODORGM</PARAMETER>
+       <DBSTRUCT>/PSYNG/SWSODORGM</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_TCODES</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_PAR_TCODE_OUTPUT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FUNCTRAN_NO_ENH</PARAMETER>
+       <DBSTRUCT>/PSYNG/FUNCTTRAN</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SIMUROLE_AUTH</PARAMETER>
+       <DBSTRUCT>/PSYNG/ROLEAUTH</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SIMUROLE_TCODE</PARAMETER>
+       <DBSTRUCT>/PSYNG/ROLETCODE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SIMUROLE_TCDAUT</PARAMETER>
+       <DBSTRUCT>/PSYNG/PSSWTCDAUT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_RISK</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_RISK</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_ADVANCED_ROLE_SIMU</PARAMETER>
+       <DBSTRUCT>AGR_1251</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SIMU_ROLE_REMOVAL</PARAMETER>
+       <TYPES>O</TYPES>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SW_ROLE_REMOVAL_SIMU</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_SIMU_REMOVED_ROLES</PARAMETER>
+       <TYPES>O</TYPES>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SW_REMOVED_ROLES_ROLE</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_MITIGATIONS</PARAMETER>
+       <TYPES>O</TYPES>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/MITIGATION_ASSIGNMENT</TYP>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ORG_CHECK</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>org level check</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ENH_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Include dynamic ruleset enhancement</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_RCHDATF</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Role change date from</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_RCHDATT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Role change date to</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_SIMU_RFC</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Destination table for Remote Function Call</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>XSTB_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Don&apos;t update SCAN table</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_LOCAL_SOD</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Use Local SOD Matrix</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_ADVANCED_ROLE_SIMU</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Advanced Role simulation active</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_SHONOSOD</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Show roles without conflict</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_COMPOSITE_ROLES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Analyze Composite roles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_SINGLE_ROLES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Analyze Single Roles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_SHOMIT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Include mitigated conflicts</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_ASSIGNED_ROLES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Analyze only assigned roles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_CONFIG_SET</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Configuration Set ID</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>O_TOTALROLES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>nr of roles analyzed</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return parameter</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ROLES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Role Name (AGR_NAME)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ROLE_BA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for Business Area for role</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ROLES_SIMU</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Role Name (for simulation)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FUNC</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Conflict ID (/PSYNG/CONFLICT_ID)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_OWNER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Conflict ID (/PSYNG/CONFLICT_ID)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_BUSAREA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Sensitivity Levels (/PSYNG/IMPORTANCE)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>OT_ROUTPUT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Role SOD Results output (Conflicts &amp; functions)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>OT_ROUTPUT_SUM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Role SOD Results output (Only Conflicts)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return parameter</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONFLICT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Conflict Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONFDET</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Conflict Details</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FUNCTIONS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Function Definition</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FUNCTTRAN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Functions and Transactions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FAOBJ</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Object Definition - obsolete as of  version 2.4</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SWSODORGM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW SOD Organizational Values Matrix</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_TCODES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Transaction Code Texts</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FUNCTRAN_NO_ENH</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW : tcodes without enhancement</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SIMUROLE_AUTH</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Role Authorization Data</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SIMUROLE_TCODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Role Executable Transaction Codes</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SIMUROLE_TCDAUT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Auths required in order to execute each tcode (for FMs)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_RISK</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES structure for Risk Scenario</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ADVANCED_ROLE_SIMU</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Advanced Role Simulation Details</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SIMU_ROLE_REMOVAL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Role removal Simulation</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_SIMU_REMOVED_ROLES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW : Roles removed from composite during Simulation</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MITIGATIONS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Assignment to Users including RFCDES</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_036</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SW : SOD Analysis by Role (System Wide)</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>VRSIO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>ORG_CHECK</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>ENH_FM</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_RCHDATF</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>MENU_DATE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_RCHDATT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>MENU_DATE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_SIMU_RFC</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>RFCDEST</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>XSTB_FM</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_BYSIMU</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_LOCAL_SOD</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_ADVANCED_ROLE_SIMU</PARAMETER>
+       <DEFAULT>&apos; &apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_SHONOSOD</PARAMETER>
+       <DEFAULT>&apos;&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_COMPOSITE_ROLES</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_SINGLE_ROLES</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_SHOMIT</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_ASSIGNED_ROLES</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_ABAP</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_NABAP</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_CFG_SET</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SECONFID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_ORG_FIELD</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>O_TOTALROLES</PARAMETER>
+       <TYP>INT4</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>RETURN</PARAMETER>
+       <DBFIELD>BAPIRETURN</DBFIELD>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_ROLES</PARAMETER>
+       <TYPES>O</TYPES>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SW_SEL_OPTS_AGR_NAME</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_ROLES_SIMU</PARAMETER>
+       <TYPES>O</TYPES>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SW_SEL_OPTS_AGR_NAME</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CONFS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SEL_OPTS_CONID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SENS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SEL_OPTS_IMP</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>OT_ROUTPUT</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_OUT_ROUTPUT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>OT_ROUTPUT_SUM</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_OUT_ROUTPUT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CONFLICT</PARAMETER>
+       <DBSTRUCT>/PSYNG/CONFLICT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CONFDET</PARAMETER>
+       <DBSTRUCT>/PSYNG/CONFDET</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FUNCTTRAN</PARAMETER>
+       <DBSTRUCT>/PSYNG/FUNCTTRAN</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FAOBJ</PARAMETER>
+       <DBSTRUCT>/PSYNG/FAOBJ2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SWSODORGM</PARAMETER>
+       <DBSTRUCT>/PSYNG/SWSODORGM</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_TCODES</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_PAR_TCODE_OUTPUT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FUNCTRAN_NO_ENH</PARAMETER>
+       <DBSTRUCT>/PSYNG/FUNCTTRAN</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SIMUROLE_AUTH</PARAMETER>
+       <DBSTRUCT>/PSYNG/ROLEAUTH</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SIMUROLE_TCODE</PARAMETER>
+       <DBSTRUCT>/PSYNG/ROLETCODE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SIMUROLE_TCDAUT</PARAMETER>
+       <DBSTRUCT>/PSYNG/PSSWTCDAUT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_RISK</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_RISK</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_ADVANCED_ROLE_SIMU</PARAMETER>
+       <DBSTRUCT>AGR_1251</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SIMU_ROLE_REMOVAL</PARAMETER>
+       <TYPES>O</TYPES>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SW_ROLE_REMOVAL_SIMU</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_SIMU_REMOVED_ROLES</PARAMETER>
+       <TYPES>O</TYPES>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SW_REMOVED_ROLES_ROLE</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_MITIGATIONS</PARAMETER>
+       <TYPES>O</TYPES>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/MITIGATION_ASSIGNMENT</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_APPL</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_APPL</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SYSID</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_SYSID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_ORGLVL</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_DORG_ABB</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_ROLE_BA</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_BUSAREA_ROLE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FAOBJ_ORG</PARAMETER>
+       <DBSTRUCT>/PSYNG/FAOBJ2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ORG_CHECK</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>org level check</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ENH_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Include dynamic ruleset enhancement</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_RCHDATF</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Role change date from</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_RCHDATT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Role change date to</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_SIMU_RFC</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Destination table for Remote Function Call</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>XSTB_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Don&apos;t update SCAN table</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_BYSIMU</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Add simulated roles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_LOCAL_SOD</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Use Local SOD Matrix</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_ADVANCED_ROLE_SIMU</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Advanced Role simulation active</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_SHONOSOD</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Show roles without conflict</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_COMPOSITE_ROLES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Analyze Composite roles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_SINGLE_ROLES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Analyze Single Roles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_SHOMIT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Include mitigated conflicts</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_ASSIGNED_ROLES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Analyze only assigned roles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_ABAP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_NABAP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_CFG_SET</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Configuration Set ID</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_ORG_FIELD</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>O_TOTALROLES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>nr of roles analyzed</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return parameter</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ROLES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Role Name (AGR_NAME)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ROLES_SIMU</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Role Name (for simulation)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONFS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Conflict ID (/PSYNG/CONFLICT_ID)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SENS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Sensitivity Levels (/PSYNG/IMPORTANCE)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>OT_ROUTPUT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Role SOD Results output (Conflicts &amp; functions)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>OT_ROUTPUT_SUM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Role SOD Results output (Only Conflicts)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return parameter</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONFLICT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Conflict Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONFDET</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Conflict Details</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FUNCTTRAN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Functions and Transactions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FAOBJ</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Object Definition - obsolete as of  version 2.4</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SWSODORGM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW SOD Organizational Values Matrix</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_TCODES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Transaction Code Texts</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FUNCTRAN_NO_ENH</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW : tcodes without enhancement</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SIMUROLE_AUTH</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Role Authorization Data</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SIMUROLE_TCODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Role Executable Transaction Codes</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SIMUROLE_TCDAUT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Auths required in order to execute each tcode (for FMs)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_RISK</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES structure for Risk Scenario</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ADVANCED_ROLE_SIMU</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Advanced Role Simulation Details</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SIMU_ROLE_REMOVAL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Role removal Simulation</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_SIMU_REMOVED_ROLES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW : Roles removed from composite during Simulation</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MITIGATIONS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Assignment to Users including RFCDES</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_APPL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for Application</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SYSID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for System ID</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ORGLVL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Range for Org Level Abbreviation</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ROLE_BA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for Business Area for role</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FAOBJ_ORG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Object Definition</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_066</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SW : Role selection on remote system</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_RCHDATF</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>MENU_DATE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_RCHDATT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>MENU_DATE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_COMPOSITE_ROLES</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_SINGLE_ROLES</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_ASSIGNED_ROLES</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_ROLES</PARAMETER>
+       <TYPES>O</TYPES>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SW_SEL_OPTS_AGR_NAME</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_ROLES</PARAMETER>
+       <DBSTRUCT>AGR_DEFINE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CHILDROLES</PARAMETER>
+       <DBSTRUCT>AGR_AGRS</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_RCHDATF</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Date of menu generation</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_RCHDATT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Date of menu generation</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_COMPOSITE_ROLES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Analyze Composite roles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_SINGLE_ROLES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Analyze Single Roles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_ASSIGNED_ROLES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Analyze assigned roles only</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ROLES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Role Name (AGR_NAME)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_ROLES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Role definition</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CHILDROLES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Roles in composite role</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_075</FUNCNAME>
+     <SHORT_TEXT>SW : Sample FM for user exit SW_REM_ROLE_FILTER</SHORT_TEXT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>T_RESULTS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_OUT_ROUTPUT</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>T_RESULTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Role SOD Results output (summary)</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_097</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SW : Read Role Mitigation assignments</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ET_MCROLE</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCROLE</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_MCCAROLE</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCCAROLE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MCROLE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Assignmen to role</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MCCAROLE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Assignment to Cri Auth Roles</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+   <I18N_TPOOL>
+    <item>
+     <LANGUAGE>D</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Simuliert. Rolle nicht vorhndn:</ENTRY>
+       <LENGTH>31</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>077</KEY>
+       <ENTRY>Keine auf SOD-Matrix basier. SOD-Schwachst. in SW definiert für</ENTRY>
+       <LENGTH>63</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>079</KEY>
+       <ENTRY>Keine auf SOD-Matrix basier. Funktionen in SW definiert für</ENTRY>
+       <LENGTH>59</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>F</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Simulated role does not exist :</ENTRY>
+       <LENGTH>31</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>077</KEY>
+       <ENTRY>No SOD issues based on SOD matrix defined in Security Weaver on</ENTRY>
+       <LENGTH>63</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>H</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Simulierte Rolle nicht vorh.:</ENTRY>
+       <LENGTH>31</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>077</KEY>
+       <ENTRY>Keine SOD Issues für die in Security Weaver def. SOD Matrix</ENTRY>
+       <LENGTH>63</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>I</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Simulated role does not exist :</ENTRY>
+       <LENGTH>31</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>077</KEY>
+       <ENTRY>No SOD issues based on SOD matrix defined in Security Weaver on</ENTRY>
+       <LENGTH>63</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>N</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Simulated role does not exist :</ENTRY>
+       <LENGTH>31</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>077</KEY>
+       <ENTRY>No SOD issues based on SOD matrix defined in Security Weaver on</ENTRY>
+       <LENGTH>63</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>P</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Perfil simulado não existe</ENTRY>
+       <LENGTH>26</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>077</KEY>
+       <ENTRY>Nenhuma restrição baseada na matriz SOD definida pela SW em</ENTRY>
+       <LENGTH>59</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>079</KEY>
+       <ENTRY>Nenhuma função baseada na matriz SOD definida pela SW em</ENTRY>
+       <LENGTH>56</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>S</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Rol simulado no existe :</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>077</KEY>
+       <ENTRY>No hay problemas SOD basados en la matriz SOD definida en Security Weaver en</ENTRY>
+       <LENGTH>76</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>079</KEY>
+       <ENTRY>No hay funciones basadas en la matriz SOD definida en Security Weaver en</ENTRY>
+       <LENGTH>72</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>V</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Simulated role does not exist :</ENTRY>
+       <LENGTH>31</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>077</KEY>
+       <ENTRY>No SOD issues based on SOD matrix defined in Security Weaver on</ENTRY>
+       <LENGTH>63</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>Z</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Simulated role does not exist :</ENTRY>
+       <LENGTH>31</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>077</KEY>
+       <ENTRY>No SOD issues based on SOD matrix defined in Security Weaver on</ENTRY>
+       <LENGTH>63</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+   </I18N_TPOOL>
+   <LONGTEXTS__-PSYNG_-SW_075>
+    <item>
+     <DOKIL>
+      <ID>FU</ID>
+      <OBJECT>/PSYNG/SW_075</OBJECT>
+      <LANGU>D</LANGU>
+      <TYP>T</TYP>
+      <VERSION>0001</VERSION>
+      <TXTLINES>00007</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SW_075</TDNAME>
+      <TDID>FU</TDID>
+      <TDSPRAS>D</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00001</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;FUNCTIONALITY&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>*--Dies ist eine Beispielimplementierung eines FBs zum User-Exit</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>*  in der SOD-Analyse der Rolle.  Die Verwendung des User-Exits lässt</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>*  sich über den KonfigParameter SW_REM_ROLE_FILTER konfigurieren.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;EXAMPLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;HINTS&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;FURTHER_SOURCES_OF_INF&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>FU</ID>
+      <OBJECT>/PSYNG/SW_075</OBJECT>
+      <LANGU>E</LANGU>
+      <TYP>T</TYP>
+      <VERSION>0002</VERSION>
+      <MASTERLANG>X</MASTERLANG>
+      <TXTLINES>00007</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SW_075</TDNAME>
+      <TDID>FU</TDID>
+      <TDSPRAS>E</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00002</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;FUNCTIONALITY&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>*--This is a sample implementation of a function module for user exit</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>*  in the role sod analysis.  The use of this user exit can be</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>*  configured using configuration parameter SW_REM_ROLE_FILTER</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;EXAMPLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;HINTS&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;FURTHER_SOURCES_OF_INF&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+   </LONGTEXTS__-PSYNG_-SW_075>
+  </asx:values>
+ </asx:abap>
+</abapGit>

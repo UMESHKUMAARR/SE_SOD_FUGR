@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_TRAN" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TSTC>
+    <TCODE>/PSYNG/SW_AUTO_ORG</TCODE>
+    <CINFO>Ag==</CINFO>
+   </TSTC>
+   <TSTCC>
+    <TCODE>/PSYNG/SW_AUTO_ORG</TCODE>
+    <S_WEBGUI>1</S_WEBGUI>
+    <S_WIN32>X</S_WIN32>
+    <S_PLATIN>X</S_PLATIN>
+   </TSTCC>
+   <TSTCT>
+    <SPRSL>E</SPRSL>
+    <TCODE>/PSYNG/SW_AUTO_ORG</TCODE>
+    <TTEXT>Auto Org Determination</TTEXT>
+   </TSTCT>
+   <TSTCP>
+    <TCODE>/PSYNG/SW_AUTO_ORG</TCODE>
+    <PARAM>/*START_REPORT D_SREPOVARI-REPORTTYPE=;D_SREPOVARI-REPORT=/PSYNG/SW_AUTO_ORG;D_SREPOVARI-EXTDREPORT=;D_SREPOVARI-VARIANT=;D_SREPOVARI-NOSELSCRN=;</PARAM>
+   </TSTCP>
+   <I18N_TPOOL>
+    <TSTCT>
+     <SPRSL>D</SPRSL>
+     <TTEXT>Automatische Org.-Ermittlung</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>P</SPRSL>
+     <TTEXT>Determinação Org Automática</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>S</SPRSL>
+     <TTEXT>Auto Org Determination</TTEXT>
+    </TSTCT>
+   </I18N_TPOOL>
+  </asx:values>
+ </asx:abap>
+</abapGit>

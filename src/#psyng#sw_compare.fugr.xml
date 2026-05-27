@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>SE : Tools to Compare Ranges</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>/PSYNG/LSW_COMPAREF01</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/LSW_COMPARETOP</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/SAPLSW_COMPARE</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>/PSYNG/SW_COMPARE_RANGES</FUNCNAME>
+     <SHORT_TEXT>Compare sod with auth ranges</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>AUTH_FROM</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>AUTH_TO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>SOD_FROM</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>SOD_TO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_BUFFER_SIZE</PARAMETER>
+       <DEFAULT>0</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>I</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>MATCH</PARAMETER>
+       <TYP>FLAG</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_COMPARE</PARAMETER>
+       <DBSTRUCT>/PSYNG/AUTH_COMPARE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>AUTH_FROM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Range for authorisation</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>AUTH_TO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Range for authorisation</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>SOD_FROM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Parameter value</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>SOD_TO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Parameter value</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_BUFFER_SIZE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Buffer comparison</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MATCH</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>do both ranges match?</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_COMPARE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Pairs of Low and High Values for auth and SOD</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

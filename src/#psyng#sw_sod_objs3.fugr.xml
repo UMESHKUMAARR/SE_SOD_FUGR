@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>SW: SOD analysis by roles</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>/PSYNG/LSW_SOD_OBJS3TOP</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/SAPLSW_SOD_OBJS3</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>/PSYNG/SW_009</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SW: SOD analysis by role (with simulation)</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>FM_BYSIMU</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR1</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>FM_SHO_CON_ROL_DET</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR1</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>VRSIO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_ENHANC</PARAMETER>
+       <DEFAULT>&apos; &apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>FM_ROLE</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_AGR_NAME</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>FM_SIMULATION_ROLE</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_AGR_NAME</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>FM_SPCONFS</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_CONID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>FM_R1STOUTPUT</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_OUT_R1STOUTPUT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>FM_ROUTDET3</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_OUT_ROUTDET</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>FM_BYSIMU</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Simulation flag (&apos;X&apos; or &apos;&apos;)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>FM_SHO_CON_ROL_DET</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Show just conflict&apos;s role details</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_ENHANC</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Use enhanced ruleset</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>FM_ROLE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Roles to analyze</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>FM_SIMULATION_ROLE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Simulation roles to add</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>FM_SPCONFS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Specific Conflict IDs</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>FM_R1STOUTPUT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Results for Role (sumary)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>FM_ROUTDET3</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Role SOD Results output (details)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return parameter</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

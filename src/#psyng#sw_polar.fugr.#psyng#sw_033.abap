@@ -1,0 +1,23 @@
+FUNCTION /psyng/sw_033.
+*"----------------------------------------------------------------------
+*"*"Local Interface:
+*"  IMPORTING
+*"     VALUE(I_VRSIO) TYPE  /PSYNG/SODVRSIO OPTIONAL
+*"     VALUE(I_ENHANC) TYPE  FLAG DEFAULT ' '
+*"     VALUE(I_ORGCHK) TYPE  FLAG OPTIONAL
+*"     VALUE(I_PROC) TYPE  NUMC4 OPTIONAL
+*"     VALUE(I_UPP) TYPE  I DEFAULT 5
+*"     VALUE(I_COMBOS) TYPE  FLAG DEFAULT ''
+*"  EXPORTING
+*"     REFERENCE(L_COUNT) TYPE  I
+*"  TABLES
+*"      ET_POLAR STRUCTURE  /PSYNG/SW_ROLE_POLAR
+*"      IT_USER STRUCTURE  /PSYNG/RANGE_BNAME OPTIONAL
+*"      IT_USRGRP STRUCTURE  /PSYNG/RANGE_CLASS OPTIONAL
+*"      ET_COMBOS STRUCTURE  /PSYNG/SW_ROLE_POLAR_COMBO OPTIONAL
+*"      ET_COMBO_USERS STRUCTURE  /PSYNG/SW_ROLE_POLAR_COMBO_USR
+*"       OPTIONAL
+*"----------------------------------------------------------------------
+MESSAGE e002(/psyng/sw) WITH 'Function Module /PSYNG/SW_033 is obsolete'.
+
+ENDFUNCTION.

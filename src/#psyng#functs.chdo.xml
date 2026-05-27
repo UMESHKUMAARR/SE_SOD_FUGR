@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CHDO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <CHDO>
+    <REPORTS_GENERATED>
+     <TCDRPS>
+      <OBJECT>/PSYNG/FUNCTS</OBJECT>
+      <REPORTNAME>/PSYNG/FUNCTS</REPORTNAME>
+      <TEXTCASE>X</TEXTCASE>
+      <ARBGEB>CD</ARBGEB>
+      <FEHLERNR>600</FEHLERNR>
+      <FGRP>/PSYNG/SE_CDFUN</FGRP>
+      <PREFIX>/PSYNG/Y</PREFIX>
+      <UPDATE_FLG>2</UPDATE_FLG>
+     </TCDRPS>
+    </REPORTS_GENERATED>
+    <OBJECTS>
+     <TCDOBS>
+      <OBJECT>/PSYNG/FUNCTS</OBJECT>
+      <TABNAME>/PSYNG/FUNCTION</TABNAME>
+      <DOCUDEL>X</DOCUDEL>
+     </TCDOBS>
+     <TCDOBS>
+      <OBJECT>/PSYNG/FUNCTS</OBJECT>
+      <TABNAME>/PSYNG/FUNCTTRAN</TABNAME>
+      <DOCUDEL>X</DOCUDEL>
+     </TCDOBS>
+    </OBJECTS>
+    <OBJECTS_TEXT>
+     <TCDOBTS>
+      <SPRAS>D</SPRAS>
+      <OBJECT>/PSYNG/FUNCTS</OBJECT>
+      <OBTEXT>SE: Änderungsbeleg - Objekt für alle Functions-IDs</OBTEXT>
+     </TCDOBTS>
+     <TCDOBTS>
+      <SPRAS>E</SPRAS>
+      <OBJECT>/PSYNG/FUNCTS</OBJECT>
+      <OBTEXT>SE: Change document Object for all Function IDs</OBTEXT>
+     </TCDOBTS>
+     <TCDOBTS>
+      <SPRAS>P</SPRAS>
+      <OBJECT>/PSYNG/FUNCTS</OBJECT>
+      <OBTEXT>SE: Objetos Documentos de Mudanças para todas as Funções</OBTEXT>
+     </TCDOBTS>
+     <TCDOBTS>
+      <SPRAS>S</SPRAS>
+      <OBJECT>/PSYNG/FUNCTS</OBJECT>
+      <OBTEXT>SE: Cambiar documento Objeto para todos los IDs de Función</OBTEXT>
+     </TCDOBTS>
+    </OBJECTS_TEXT>
+   </CHDO>
+  </asx:values>
+ </asx:abap>
+</abapGit>

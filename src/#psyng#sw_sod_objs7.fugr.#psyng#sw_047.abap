@@ -1,0 +1,61 @@
+*----------------------------------------------------------------------*
+* Function Module :  /PSYNG/SW_047                                     *
+* AUTHOR  : Security Weaver LLC
+*----------------------------------------------------------------------*
+*
+* COPYRIGHTS Security Weaver LLC
+*
+* WARNING:
+* THIS COMPUTER PROGRAM IS PROTECTED BY COPYRIGHT LAW AND INTERNATIONAL
+* TREATIES. UNAUTHORIZED REPRODUCTION OR DISTRIBUTION IS STRICTLY
+* PROHIBITED AND MAY RESULT IN SEVERE CIVIL AND CRIMINAL PENALTIES AND
+* WILL BE PROSECUTED TO THE MAXIMUM EXTENT POSSIBLE UNDER THE LAW.
+*&---------------------------------------------------------------------*
+
+FUNCTION /psyng/sw_047.
+*"----------------------------------------------------------------------
+*"*"Local Interface:
+*"  IMPORTING
+*"     VALUE(I_VRSIO) TYPE  /PSYNG/SODVRSIO OPTIONAL
+*"     VALUE(I_DETAILS) TYPE  FLAG DEFAULT ' '
+*"     VALUE(I_VALIDUSER) TYPE  FLAG DEFAULT 'X'
+*"     VALUE(I_UPDTSCANTBLE) TYPE  FLAG DEFAULT ' '
+*"     VALUE(I_ENHANCE) TYPE  FLAG DEFAULT ''
+*"     VALUE(I_LOCAL_CA) TYPE  FLAG DEFAULT 'X'
+*"     VALUE(I_ALLUG) TYPE  FLAG DEFAULT ''
+*"     VALUE(I_SHOWCOMP) TYPE  FLAG DEFAULT 'X'
+*"     VALUE(I_ERROLES) TYPE  FLAG DEFAULT ''
+*"     VALUE(I_FR_DATE) TYPE  SY-DATUM OPTIONAL
+*"     VALUE(I_TO_DATE) TYPE  SY-DATUM OPTIONAL
+*"     VALUE(I_MATRIX_RFC) TYPE  RFCDEST OPTIONAL
+*"  EXPORTING
+*"     VALUE(O_NR_USERS_ANALYZED) TYPE  I
+*"  TABLES
+*"      IT_BNAME STRUCTURE  /PSYNG/RANGE_BNAME OPTIONAL
+*"      IT_SWAUDID STRUCTURE  /PSYNG/RANGE_SWAUDID OPTIONAL
+*"      IT_CLASS STRUCTURE  /PSYNG/RANGE_CLASS OPTIONAL
+*"      O_OUTPUT STRUCTURE  /PSYNG/OUTPUT OPTIONAL
+*"      O_OUTPUTDET STRUCTURE  /PSYNG/SW_CA_OUTPUTDET OPTIONAL
+*"      IT_SWAUDC STRUCTURE  /PSYNG/SWAUDC2 OPTIONAL
+*"      IT_SWAUDHDR STRUCTURE  /PSYNG/SWAUDHDR OPTIONAL
+*"      IT_SIMU_ROLE_RFC STRUCTURE  /PSYNG/SW_SOD_REMOTE_ROLES OPTIONAL
+*"      ET_RETURN STRUCTURE  BAPIRET2 OPTIONAL
+*"----------------------------------------------------------------------
+
+*--> BOC PN 11269 - ATC fixes - HBHALLA - 21/01/25
+    CONSTANTS: lc_fname TYPE rs38l_fnam
+    VALUE '/PSYNG/SW_047'.
+*  S_RFC AUTHORITY CHECK
+    AUTHORITY-CHECK OBJECT 'S_RFC'
+          ID 'RFC_TYPE' FIELD 'FUNC'
+          ID 'RFC_NAME' FIELD lc_fname
+          ID 'ACTVT' FIELD '16'.
+    IF sy-subrc <> 0.
+      MESSAGE e089(/psyng/sw) WITH lc_fname.
+    ENDIF.
+
+*--> EOC PN 11269 - ATC fixes - HBHALLA - 21/01/25
+
+*--This function module is obsolete, instead, use /PSYNG/SW_CA_SCAN_FUNC.
+"#EC NEEDED
+ENDFUNCTION.

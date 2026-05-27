@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Separation Enforcer-SOD Matrix Org Level</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>/PSYNG/LSW_ORGTOP</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/SAPLSW_ORG</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>/PSYNG/SW_CREATE_SOD_FUNCTIONS</FUNCNAME>
+     <SHORT_TEXT>Create SOD Functions</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_COPY_EXISITING_FUN</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_SOURCE_VRSIO</PARAMETER>
+       <DEFAULT>000</DEFAULT>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/PSYNG/FUNCTION-VRSIO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_TARGET_VRSIO</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/PSYNG/FUNCTION-VRSIO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_VAR_ELEMENT_PREFIX</PARAMETER>
+       <DEFAULT>&apos;/PSYNG/$&apos;</DEFAULT>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/PSYNG/SE_VAREL</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_VAR_ELEMENT_VERSION</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/PSYNG/VE_VRSIO</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_VAR_ELEMENT_GROUP</PARAMETER>
+       <DBSTRUCT>/PSYNG/ORGFIELD</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FUNCTION</PARAMETER>
+       <DBSTRUCT>/PSYNG/FUNCTION</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FUNCTTRAN</PARAMETER>
+       <DBSTRUCT>/PSYNG/FUNCTTRAN</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FAOBJ</PARAMETER>
+       <DBSTRUCT>/PSYNG/FAOBJ2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_OBJECTS</PARAMETER>
+       <DBSTRUCT>TOBJ</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_TEXTS</PARAMETER>
+       <DBSTRUCT>/PSYNG/TEXTS</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FIELDS</PARAMETER>
+       <DBSTRUCT>/PSYNG/ORGFIELD</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_COPY_EXISITING_FUN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_SOURCE_VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_TARGET_VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_VAR_ELEMENT_PREFIX</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Variable Element Name</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_VAR_ELEMENT_VERSION</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Variable Elements Rules Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_VAR_ELEMENT_GROUP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE ; Org value field with org identifier</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FUNCTION</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Function Definition</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FUNCTTRAN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Functions and Transactions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FAOBJ</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Object Definition</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_OBJECTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Authorization Objects</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_TEXTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Security Table Texts</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FIELDS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE ; Org value field with org identifier</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_ORG_LVL_RES_MOD</FUNCNAME>
+     <SHORT_TEXT>/SIE/ORG_LEVEL_CHECK_ARE</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IF_ORG_CHECK</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_SUMMARY</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_ORGLVL</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_DORG_ABB</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_MAPPED_USERS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_USER_MAPPING</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FUNCTIONS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_OUTPUT_ORG</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_DETAILS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_OUTPUTDET3</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IF_ORG_CHECK</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Org Level Check enabled</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_SUMMARY</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD User Summary Analysis</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ORGLVL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Range for Org Level Abbreviation</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_MAPPED_USERS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW : Structure for cross system user mapping</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FUNCTIONS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW : Function scan output with org level</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_DETAILS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW : Table containing SOD details (for fm /psyng/sw_081)</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_SOD_BY_ORG</FUNCNAME>
+     <SHORT_TEXT>SW: Create SOD Matrix by Org Level</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_SOURCE_VRSIO</PARAMETER>
+       <DEFAULT>000</DEFAULT>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/PSYNG/FUNCTION-VRSIO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_TARGET_VRSIO</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/PSYNG/FUNCTION-VRSIO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_VAR_ELEMENT_PREFIX</PARAMETER>
+       <DEFAULT>&apos;/PSYNG/$&apos;</DEFAULT>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/PSYNG/SE_VAREL</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_VAR_ELEMENT_VERSION</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>/PSYNG/VE_VRSIO</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>E_ERROR</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>BAPIFLAGX</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>E_MSG1</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>SYMSGV</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>E_MSG2</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>SYMSGV</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>E_MSG3</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>SYMSGV</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>E_MSG4</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>SYMSGV</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_VAR_ELEMENT_GROUP</PARAMETER>
+       <DBSTRUCT>/PSYNG/ORGFIELD</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FIELDS</PARAMETER>
+       <DBSTRUCT>/PSYNG/ORGFIELD</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_SOURCE_VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_TARGET_VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Central SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_VAR_ELEMENT_PREFIX</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Variable Element Name Prefix</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_VAR_ELEMENT_VERSION</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Variable Elements Rules Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_ERROR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Checkbox (X or Space)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_MSG1</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Messages, message variables</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_MSG2</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Messages, message variables</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_MSG3</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Messages, message variables</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_MSG4</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Messages, message variables</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_VAR_ELEMENT_GROUP</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FIELDS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE ; Org value field with org identifier</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

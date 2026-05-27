@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SOBJ" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <SWOTDI>
+    <SWOTDI>
+     <OBJTYPE>/PSYNG/SEM</OBJTYPE>
+     <INTERFACE>IFSAP</INTERFACE>
+     <EDITORDER>0001</EDITORDER>
+    </SWOTDI>
+   </SWOTDI>
+   <SWOTOL>
+    <SWOTOL>
+     <OBJTYPE>/PSYNG/SEM</OBJTYPE>
+     <AREA>HLB0009009</AREA>
+     <AREACLASS>04</AREACLASS>
+     <MAINENTRY>X</MAINENTRY>
+    </SWOTOL>
+   </SWOTOL>
+   <TOJTB>
+    <TOJTB>
+     <NAME>/PSYNG/SEM</NAME>
+     <ACTIVE>X</ACTIVE>
+     <ACTIVELANG>E</ACTIVELANG>
+     <PROGNAME>/PSYNG/SW_131</PROGNAME>
+     <EDITELEM>SEMITIGATION</EDITELEM>
+     <EPRIMETHOD>Display</EPRIMETHOD>
+     <APPLIC>*</APPLIC>
+     <CREA_REL>46C</CREA_REL>
+     <CHAN_REL>46C</CHAN_REL>
+     <VERSION>46C</VERSION>
+     <OBJTYPECLS>01</OBJTYPECLS>
+     <MODELONLY>R</MODELONLY>
+     <REL_REL>46C</REL_REL>
+    </TOJTB>
+   </TOJTB>
+   <TOJTT>
+    <TOJTT>
+     <NAME>/PSYNG/SEM</NAME>
+     <LANGUAGE>E</LANGUAGE>
+     <NTEXT>SE Mitigation Object for Attachment</NTEXT>
+     <STEXT>SE Mitigation</STEXT>
+    </TOJTT>
+   </TOJTT>
+  </asx:values>
+ </asx:abap>
+</abapGit>

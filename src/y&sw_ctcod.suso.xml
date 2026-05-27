@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SUSO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TOBJ>
+    <OBJCT>Y&amp;SW_CTCOD</OBJCT>
+    <FIEL1>ACTVT</FIEL1>
+    <FIEL2>Y&amp;SW_VRSIO</FIEL2>
+    <OCLSS>Y&amp;SW</OCLSS>
+    <CONVERSION>X</CONVERSION>
+   </TOBJ>
+   <TOBJT>
+    <LANGU>E</LANGU>
+    <OBJECT>Y&amp;SW_CTCOD</OBJECT>
+    <TTEXT>Security Weaver - Conflict Repository - Critical Transaction</TTEXT>
+   </TOBJT>
+   <TOBJVORFLG>
+    <OBJCT>Y&amp;SW_CTCOD</OBJCT>
+   </TOBJVORFLG>
+   <TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_CTCOD</BROBJ>
+     <ACTVT>01</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_CTCOD</BROBJ>
+     <ACTVT>02</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_CTCOD</BROBJ>
+     <ACTVT>03</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_CTCOD</BROBJ>
+     <ACTVT>04</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_CTCOD</BROBJ>
+     <ACTVT>06</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_CTCOD</BROBJ>
+     <ACTVT>21</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_CTCOD</BROBJ>
+     <ACTVT>DL</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>Y&amp;SW_CTCOD</BROBJ>
+     <ACTVT>UL</ACTVT>
+    </TACTZ>
+   </TACTZ>
+  </asx:values>
+ </asx:abap>
+</abapGit>

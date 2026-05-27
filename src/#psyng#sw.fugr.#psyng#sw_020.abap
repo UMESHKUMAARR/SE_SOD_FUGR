@@ -1,0 +1,33 @@
+FUNCTION /psyng/sw_020.
+*"----------------------------------------------------------------------
+*"*"Local Interface:
+*"  IMPORTING
+*"     VALUE(ANALYSISTYPE) TYPE  /PSYNG/SW_STAT1-ANALYSISTYPE DEFAULT
+*"       'SODSCAN'
+*"     VALUE(EXEDATE) TYPE  /PSYNG/SW_STAT1-EXEDATE OPTIONAL
+*"     VALUE(EXETIME) TYPE  /PSYNG/SW_STAT1-EXETIME OPTIONAL
+*"     VALUE(NUMBER_USERS) TYPE  /PSYNG/SW_STAT1-NUMBER_USERS
+*"     VALUE(RUNTIME) TYPE  /PSYNG/SW_STAT1-RUNTIME
+*"     VALUE(NUMBER_CONFLICTS) TYPE  /PSYNG/SW_STAT1-NUMBER_CONFLICTS
+*"     VALUE(PARALLEL_WP) TYPE  /PSYNG/SW_STAT1-PARALLEL_WP
+*"  EXCEPTIONS
+*"      ALL_VALUES_NOT_SPECIFIED
+*"      UNSUPPORTED_ANALYSIS_TYPE
+*"----------------------------------------------------------------------
+* Obsolete Since SE4.4PS2
+
+*BOC:UMITTAL CVA scan fix 27/02/2026
+CONSTANTS: lc_fname TYPE rs38l_fnam
+        VALUE '/PSYNG/SW_020'.
+*  S_RFC AUTHORITY CHECK
+  AUTHORITY-CHECK OBJECT 'S_RFC'
+        ID 'RFC_TYPE' FIELD 'FUNC'
+        ID 'RFC_NAME' FIELD lc_fname
+        ID 'ACTVT' FIELD '16'.
+  IF sy-subrc <> 0.
+    MESSAGE s089(/psyng/sw) WITH lc_fname
+    DISPLAY LIKE 'E'.
+    EXIT.
+  ENDIF.
+*EOC:UMITTAL CVA scan fix 27/02/2026
+ENDFUNCTION.

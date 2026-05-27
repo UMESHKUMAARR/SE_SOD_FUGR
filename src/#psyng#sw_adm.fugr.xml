@@ -1,0 +1,6510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>SW: Administrative Overview</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>/PSYNG/LSW_ADMF01</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/LSW_ADMTOP</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/SAPLSW_ADM</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>/PSYNG/SW_126</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SE : SOD Matrix detail for functions, propose mitigaions, tcode texts</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_FUNCTION</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_PROPOSE_MITIGATION</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_TEXTS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_TCODES</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_CONFDET</PARAMETER>
+       <DBSTRUCT>/PSYNG/CONFDET</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_FUNCTION</PARAMETER>
+       <DBSTRUCT>/PSYNG/DA_FUNCTION</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CONFLICTS</PARAMETER>
+       <DBSTRUCT>/PSYNG/CONFLICT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CONPMIT</PARAMETER>
+       <DBSTRUCT>/PSYNG/CONPMIT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_TEXTS</PARAMETER>
+       <DBSTRUCT>/PSYNG/TEXTS</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_MCHDR</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCHDR</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FUNCTTRAN</PARAMETER>
+       <DBSTRUCT>/PSYNG/FUNCTTRAN</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_TSTCT</PARAMETER>
+       <DBSTRUCT>TSTCT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_FUNCTION</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>function</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_PROPOSE_MITIGATION</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>propose mitigations for conflicts</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_TEXTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_TCODES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONFDET</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Conflict Details</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_FUNCTION</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>DA : Structure for function header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONFLICTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Conflict Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CONPMIT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW : Conflict Proposed Mitigations</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_TEXTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Security Table Texts</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MCHDR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FUNCTTRAN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Functions and Transactions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_TSTCT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Transaction Code Texts</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_129</FUNCNAME>
+     <SHORT_TEXT>SE - Find FM&apos;s with specific parameters</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_REFERENCE_FM</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FUNCNAME</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_PARAMS</PARAMETER>
+       <DBSTRUCT>FUPARAREF</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_FUNCTIONS</PARAMETER>
+       <DBSTRUCT>FUPARAREF</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_REFERENCE_FM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Find FM&apos;s with the same signature</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_PARAMS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Parameters of function modules</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_FUNCTIONS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Parameters of function modules</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_130</FUNCNAME>
+     <SHORT_TEXT>Save SE buttons and tabs</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_SWBUTTABS</PARAMETER>
+       <DBFIELD>/PSYNG/SWBUTTABS</DBFIELD>
+       <REFERENCE>X</REFERENCE>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>RETURN</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>BAPIRETURN</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_SWBUTTABS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Buttons and Tabs that can be hidden</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Parameter</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_ADM_COCKPIT_OVERVIEW</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Cockpit overview</SHORT_TEXT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>E_HEADER</PARAMETER>
+       <TYP>/PSYNG/SWADMOVW</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>E_HEADER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Administrator Cockpit</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_ADM_REFRESH_OVRVIEW</FUNCNAME>
+     <SHORT_TEXT>Refresh Admin overview</SHORT_TEXT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EF_SUCCESS</PARAMETER>
+       <TYP>FLAG</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_SYSTEM</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_SYSID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>EF_SUCCESS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SYSTEM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for System ID</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return parameter</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_CGFSET_DTL</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Configuration sets</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_CFGSET_ID</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SECONFID</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ET_CFGSET</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_CONFIGSET</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_VERSIO</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_SOD_VERSION</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CFGSET_RANGE</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_REQUESTID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_CFGSET_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Configuration Set ID</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CFGSET</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Configuration set</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_VERSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for System ID</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CFGSET_RANGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW RM : Range for request ID</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_CUSTMER_AUDIT_INFO</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Customer Audit report info</SHORT_TEXT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>E_AUDIT_INFO</PARAMETER>
+       <TYP>/PSYNG/SW_SYS_AUDIT_INFO</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ET_SOD_ST</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SOD_ST</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>E_AUDIT_INFO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General System audit info</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_SOD_ST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Stats</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_DIAGNOSTIC_INFO</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>performance diagnostic</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_SODVRSIO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SWSODVERS-VRSIO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_GENERAL_INFO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_CPU_PERFORMANCE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_MATRIX_OBJECT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_SECURITY_ENVIROMENT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_TABLES_SIZE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_SE_TABLES_SIZE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_TRANSPORT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_SOD_MATRIX_INFO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_MAXUSERS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>I</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>E_SERVER</PARAMETER>
+       <DBFIELD>MSXXLIST-NAME</DBFIELD>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>E_CPU_CALCULATION</PARAMETER>
+       <DBFIELD>/PSYNG/SW_CPU_CALCU_INFO</DBFIELD>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>E_MATRIX_CAL</PARAMETER>
+       <DBFIELD>/PSYNG/SW_CAL_SODMATRIX</DBFIELD>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>E_SEC_INFO</PARAMETER>
+       <DBFIELD>/PSYNG/SW_SECURITY_INFO</DBFIELD>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>E_AGR_COUNT</PARAMETER>
+       <TYP>/PSYNG/LONGTEXTFIELD</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>E_USR_COUNT</PARAMETER>
+       <TYP>/PSYNG/LONGTEXTFIELD</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>E_PSYNG_COUNT</PARAMETER>
+       <TYP>/PSYNG/LONGTEXTFIELD</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>E_CONFIG_COUNT</PARAMETER>
+       <TYP>/PSYNG/LONGTEXTFIELD</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>E_MIT_COUNT</PARAMETER>
+       <TYP>/PSYNG/LONGTEXTFIELD</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>E_RES_COUNT</PARAMETER>
+       <TYP>/PSYNG/LONGTEXTFIELD</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>E_SOD_PERFORMANCE</PARAMETER>
+       <TYP>/PSYNG/SW_SOD_PERFORMANCE_CAL</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EF_NOT_AUTH</PARAMETER>
+       <TYP>FLAG</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EF_ORACLE</PARAMETER>
+       <TYP>FLAG</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ET_AGR_TAB</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_TABLE_TEXT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_USR_TAB</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_TABLE_TEXT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_PSYNG_TAB</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_TABLE_TEXT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CONFIG_TAB</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_TABLE_TEXT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_MIT_TAB</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_TABLE_TEXT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_RES_TAB</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_TABLE_TEXT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_SW_TR</PARAMETER>
+       <DBSTRUCT>E07T</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_SODVRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_GENERAL_INFO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_CPU_PERFORMANCE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_MATRIX_OBJECT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_SECURITY_ENVIROMENT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_TABLES_SIZE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_SE_TABLES_SIZE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_TRANSPORT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_SOD_MATRIX_INFO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_MAXUSERS</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_SERVER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Server name</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_CPU_CALCULATION</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>cpu calculation</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_MATRIX_CAL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE- diagnostics matrix calculation info</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_SEC_INFO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Security Environment</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_AGR_COUNT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Number of Role tables</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_USR_COUNT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Number of User tables</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_PSYNG_COUNT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Number of SOD tables</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_CONFIG_COUNT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Number of Config Set Tables</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_MIT_COUNT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Number of Mitigation Tables</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_RES_COUNT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Number of Stored Result Tables</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_SOD_PERFORMANCE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - SOD performance calculation for diagnostics report</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EF_NOT_AUTH</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Authorization for reading system info</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EF_ORACLE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>If database is Oracle</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_AGR_TAB</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - table_calculations</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_USR_TAB</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - table_calculations</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_PSYNG_TAB</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - table_calculations</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CONFIG_TAB</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - table_calculations</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MIT_TAB</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - table_calculations</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RES_TAB</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - table_calculations</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_SW_TR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Change &amp; Transport System: Short Texts for Requests/Tasks</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_GET_CHANGE_HISTORY</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Get history of change documents</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IF_FUNCT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_CONID</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_CONT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_USERID</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_CLASS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_AUDID</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_CAROLE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_ROLE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_CAUTH</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_CTCODE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_CROLE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_CPROF</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_CONF</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_DATE</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SEL_OPTS_DATE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_BNAME</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SEL_OPTS_XUBNAME</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CDHDR</PARAMETER>
+       <DBSTRUCT>CDHDR</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CDPOS</PARAMETER>
+       <DBSTRUCT>CDPOS</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IF_FUNCT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Get changes in Functions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_CONID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Get changes in Conflicts</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_CONT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Get changes in Mitigation Controls</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_USERID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Get changes in User assignments</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_CLASS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Get changes in User group assignments</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_AUDID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Get changes in Mitigated Authorization</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_CAROLE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Get changes in Critical auth assgnmnts -roles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_ROLE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Get changes in Role assignments</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_CAUTH</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Get changes in Critical Authorization</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_CTCODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Get changes in Criitical Transaction Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_CROLE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Get changes in Criitical Roles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_CPROF</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Get changes in Criitical Profiles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_CONF</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Get changes in Configuration Parameters</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_DATE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Date (DATS)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_BNAME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options User ID (XUBNAME)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CDHDR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Change document header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CDPOS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Change document items</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_GET_DYNCFG</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>To read dynamic enhancement configuration</SHORT_TEXT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_CALLING_TCODE</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_TCODE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CALLED_TCODE</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_TCODE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CALLING_TCODES</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_EXCLTX</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CALLED_TCODES</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_EXCDTX</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IT_CALLING_TCODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES for calling tcode</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CALLED_TCODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES for called tcode</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CALLING_TCODES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW : Calling Transactions filter for dyn. SOD Matrix enh.</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CALLED_TCODES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW : Called Transactions to exclude from SOD Matrix enh.</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_GET_OTHER_CONFIG</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>To read dynamic enhancement configuration</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IF_READ_BUSAREA</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_READ_SUBAREA</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_READ_RISK</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_READ_SYS_TYPE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_READ_SYS_CAT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_BUSAREA</PARAMETER>
+       <TYPES>O</TYPES>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SW_SEL_OPTS_BUS_AREA</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SUBAREA</PARAMETER>
+       <TYPES>O</TYPES>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SW_SEL_OPTS_SUB_AREA</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_RISK</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_RISK</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SYS_TYPE</PARAMETER>
+       <TYPES>O</TYPES>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SW_SEL_OPTS_SYS_TYPE</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SYS_CAT</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SEL_OPTS_SYS_CAT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_BUSAREA</PARAMETER>
+       <DBSTRUCT>/PSYNG/BUSAREA</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_SUBAREA</PARAMETER>
+       <DBSTRUCT>/PSYNG/BUS_PROCE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_RISK</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_RISK</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_SYS_TYPE</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SYSTYP</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_SYS_CAT</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SYSCAT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IF_READ_BUSAREA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_READ_SUBAREA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_READ_RISK</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_READ_SYS_TYPE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_READ_SYS_CAT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_BUSAREA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Application Areas (/PSYNG/BUS_AREA)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SUBAREA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options Process Areas (/PSYNG/BUS_PROCESS)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_RISK</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES structure for Risk Scenario</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SYS_TYPE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options System Types (/PSYNG/SYSTEMTYPE)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SYS_CAT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options System Category(/PSYNG/SYSTEMCATEGORY)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_BUSAREA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Application Areas</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_SUBAREA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Business Process</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RISK</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE: Risk Scenario</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_SYS_TYPE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW :  System Types for RFC Destinations to be used in SE</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_SYS_CAT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW:  System Category for RFC Destinations to be used in SE</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_GET_REL_FUNCTIONS</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Get relevant functions of conflicts</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_CONID</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_CONID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CONFDET</PARAMETER>
+       <DBSTRUCT>/PSYNG/CONFDET</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for Conflict IDs</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CONFDET</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Conflict Details</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_PARAMETERS_INFO</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SE Configurations parameter</SHORT_TEXT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_PARAM</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_PARAM</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CONFIG</PARAMETER>
+       <DBSTRUCT>/PSYNG/SE_CONFIG_PARAM</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_VALUELIST</PARAMETER>
+       <TYPES>O</TYPES>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SE_CONFIG_PARAM_LIST</TYP>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IT_PARAM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Parameters range</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CONFIG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Parameters range</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_VALUELIST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE : Configuration parameter with possible values</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_REMOTE_SEARCH_HELPS</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Search helps for config distribution objects</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/VRSIO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_VRSIO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_FUNCTION</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_CONFLICT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_CRIT_AUTH</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_CUS_CON</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_CRIT_TCODE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_CRIT_ROLE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_CRIT_PROF</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_CONFIG</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_RULE_VERSIONS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_ELEMENTS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_CALLED_TCODES</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_CALLING_TCODES</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_SETID</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_BUSAREA</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_RISK</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_MCHDR</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_SUBAREA</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_SYS_TYPE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_SYS_CAT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>E_AUTH_CHECK</PARAMETER>
+       <TYP>FLAG</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_VEVRS</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_SE_VE_VRSIO</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_VRSIO</PARAMETER>
+       <DBSTRUCT>/PSYNG/SWSODVERS</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_FUNCTION</PARAMETER>
+       <DBSTRUCT>/PSYNG/FUNCTION</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CONFLICT</PARAMETER>
+       <DBSTRUCT>/PSYNG/CONFLICT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CRIT_AUTH</PARAMETER>
+       <DBSTRUCT>/PSYNG/SWAUDHDR</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CUS_CON</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_CUSCON</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CRIT_TCODE</PARAMETER>
+       <DBSTRUCT>/PSYNG/CRI_TCODES_F4</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CRIT_ROLE</PARAMETER>
+       <DBSTRUCT>/PSYNG/CRI_ROLES_F4</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CRIT_PROF</PARAMETER>
+       <DBSTRUCT>/PSYNG/CRI_PROF_F4</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CONFIG</PARAMETER>
+       <DBSTRUCT>/PSYNG/SWCONFIG</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_RULE_VERSIONS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_VARVR</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_ELEMENTS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_VAREL</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CALLED_TCODES</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_EXCDTX</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_CALLING_TCODES</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_EXCLTX</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_SETID</PARAMETER>
+       <DBSTRUCT>/PSYNG/SETID_F4</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_BUSAREA</PARAMETER>
+       <DBSTRUCT>/PSYNG/BUSAREA</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_RISK</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_RISK</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_MCHDR</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCHDR</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_SUBAREA</PARAMETER>
+       <DBSTRUCT>/PSYNG/BUS_PROCE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_SYS_TYPE</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SYSTYP</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_SYS_CAT</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SYSCAT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Central SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Fetch versions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_FUNCTION</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Fetch functions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_CONFLICT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Fetch Conflicts</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_CRIT_AUTH</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Fetch Critical Authorizations</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_CUS_CON</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Fetch Custom Conflicts</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_CRIT_TCODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Fetch Critical Transactions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_CRIT_ROLE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Fetch Critical Roles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_CRIT_PROF</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Fetch Critical Profiles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_CONFIG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Fetch Configuration parameters</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_RULE_VERSIONS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Fetch rule versions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_ELEMENTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Fetch variable elements</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_CALLED_TCODES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Fetch called tcodes</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_CALLING_TCODES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Fetch calling tcodes</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_SETID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Fetch Set ID</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_BUSAREA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Fetch Application Area</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_RISK</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Fetch Risk Scenario</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_MCHDR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Fetch Mitigating Conflicts Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_SUBAREA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Fetch Process Areas</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_SYS_TYPE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Fetch System Types</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_SYS_CAT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Fetch System Categories</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_AUTH_CHECK</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_VEVRS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for Variable element rules version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Matrix Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_FUNCTION</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Function Definition</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CONFLICT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Conflict Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CRIT_AUTH</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Critical Auths Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CUS_CON</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Custom Conflicts</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CRIT_TCODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Structure for F4 help of critical transactions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CRIT_ROLE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Structure for F4 help of critical roles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CRIT_PROF</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Structure for F4 help of critical profiles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CONFIG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Security Weaver Configuration</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RULE_VERSIONS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE -  Variable Element  - Rule Versions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_ELEMENTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Separations Enforcer : Variable Element Rules</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CALLED_TCODES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW : Called Transactions to exclude from SOD Matrix enh.</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CALLING_TCODES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW : Calling Transactions filter for dyn. SOD Matrix enh.</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_SETID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Structure for F4 help of Configuration Set ID</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_BUSAREA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Application Areas</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RISK</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE: Risk Scenario</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MCHDR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_SUBAREA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Business Process</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_SYS_TYPE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW :  System Types for RFC Destinations to be used in SE</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_SYS_CAT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW:  System Category for RFC Destinations to be used in SE</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_SAVE_CONFIG</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SE:  Save SEConfiguration</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IF_DELETE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_TEST</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_CONFIG_SCREEN_CALL</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_CONFIG</PARAMETER>
+       <DBSTRUCT>/PSYNG/SE_CONFIG_PARAM</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IF_DELETE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Delete all configuration parameters</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_TEST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Test run</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_CONFIG_SCREEN_CALL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Called from Config parameter screen</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONFIG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Input Configuration parameter table</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return parameter</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_SAVE_CONFIG_SET</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SE : Save Variable Elements Rules</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IF_DELETE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_TEST</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_VAREL</PARAMETER>
+       <DBSTRUCT>/PSYNG/SWCFGVE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SYSTEMS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SWCFGSYS</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_ORG</PARAMETER>
+       <DBSTRUCT>/PSYNG/SWCFGOE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_ELEMENTS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SWCFSEL</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CONFIG_HEADER</PARAMETER>
+       <DBSTRUCT>/PSYNG/SWCFGSET</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IF_DELETE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Delete configuration set objects</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_TEST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_VAREL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Configuration Set - Variable Element Values</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SYSTEMS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE- Configuration Set - Systems</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ORG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Configuration Set - Org Element Values</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ELEMENTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Configuration Set - Org Element Values</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONFIG_HEADER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Configuration Set - Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return parameter</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_SAVE_DYNCFG</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>To save dynamic enhancement configuration</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IF_DELETE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_TEST</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_CALLING_TCODES</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_EXCLTX</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CALLED_TCODES</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_EXCDTX</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IF_DELETE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Delete all dynamic enhancement configuration</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_TEST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CALLING_TCODES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW : Calling Transactions filter for dyn. SOD Matrix enh.</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CALLED_TCODES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW : Called Transactions to exclude from SOD Matrix enh.</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return parameter</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_SAVE_OTHER_CONFIG</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>To save dynamic enhancement configuration</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IF_DELETE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_TEST</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_BUSAREA</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_SUBAREA</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_RISK</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_SYS_TYPE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_SYS_CAT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_BUSAREA</PARAMETER>
+       <DBSTRUCT>/PSYNG/BUSAREA</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SUBAREA</PARAMETER>
+       <DBSTRUCT>/PSYNG/BUS_PROCE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_RISK</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_RISK</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SYS_TYPE</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SYSTYP</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SYS_CAT</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SYSCAT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IF_DELETE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Delete all dynamic enhancement configuration</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_TEST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_BUSAREA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_SUBAREA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_RISK</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_SYS_TYPE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_SYS_CAT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_BUSAREA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Application Areas</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SUBAREA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Business Process</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_RISK</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE: Risk Scenario</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SYS_TYPE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW :  System Types for RFC Destinations to be used in SE</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SYS_CAT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW:  System Category for RFC Destinations to be used in SE</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return parameter</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_SOD_MATRIX_COUNT_DTL</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Matrix overview count</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ET_COUNTINFO</PARAMETER>
+       <TYPES>O</TYPES>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SW_SOD_OVERVIEW_COUNT</TYP>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_COUNTINFO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Overview</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_TRANSFER_MATRIX</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Copy matrix version</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_SWSODVERS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SWSODVERS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_TVHEAD</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_TFUNCT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_TCONID</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_TTCODE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_TAUDID</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_TAGRNM</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_TPROF</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_TCSCON</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_FNFLTR</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_CNFLTR</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_CTFLTR</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_CAFLTR</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_TORGO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_TEST</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_APPEND</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_DELETE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_MATRIX</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_MITIGATION</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_MITUSR</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_USRGRP</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_ASSROL</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_AUTUSR</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_AUTROL</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_MIT_TEXT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/MC_USERTEXT_TT</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_FUNCTION</PARAMETER>
+       <DBSTRUCT>/PSYNG/FUNCTION</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FUNCTTRAN</PARAMETER>
+       <DBSTRUCT>/PSYNG/FUNCTTRAN</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FAOBJ</PARAMETER>
+       <DBSTRUCT>/PSYNG/FAOBJ2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CONFLICT</PARAMETER>
+       <DBSTRUCT>/PSYNG/CONFLICT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CONFDET</PARAMETER>
+       <DBSTRUCT>/PSYNG/CONFDET</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CRITCODES</PARAMETER>
+       <DBSTRUCT>/PSYNG/CRITCODES</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SWAUDHDR</PARAMETER>
+       <DBSTRUCT>/PSYNG/SWAUDHDR</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SWAUDC</PARAMETER>
+       <DBSTRUCT>/PSYNG/SWAUDC2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CRIROLES</PARAMETER>
+       <DBSTRUCT>/PSYNG/CRIROLES</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CRIPROF</PARAMETER>
+       <DBSTRUCT>/PSYNG/CRIPROF</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_TEXTS</PARAMETER>
+       <DBSTRUCT>/PSYNG/TEXTS</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CUSCON</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_CUSCON</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CONOWNER</PARAMETER>
+       <DBSTRUCT>/PSYNG/CONOWNER</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CONFIL</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SYSCON</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FUNFIL</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SYSFUN</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_TCODEFIL</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SYSTCD</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_AUTHFIL</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SYSCA</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SWSODORGO</PARAMETER>
+       <DBSTRUCT>/PSYNG/SWSODORGO</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_MCHDR</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCHDR</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_MCRVWHDR</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCRVWHDR</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_MCUSER</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCUSER</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_MCUSRGRP</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCUSRGRP</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_MCROLE</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCROLE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_MCCAROLE</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCCAROLE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_MCCAUSER</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCCAUSER</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_MCTRAN</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCTRAN</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_MCREPID</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCREPID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_MCAUDITOR</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCAUDITOR</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_MCTEXT</PARAMETER>
+       <DBSTRUCT>/PSYNG/MCRVWTXT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_SWSODVERS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Version Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_TVHEAD</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Transfer Version Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_TFUNCT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Transfer functions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_TCONID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Transfer Conflicts</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_TTCODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Transfer Critical Transactions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_TAUDID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Transfer Critical Authorizations</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_TAGRNM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Transfer Critical Roles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_TPROF</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Transfer Critical Profiles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_TCSCON</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Transfer Custom Conflicts</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_FNFLTR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Transfer function filters</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_CNFLTR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Transfer conflict filter</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_CTFLTR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Transfer critical transaction filter</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_CAFLTR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Transfer critical authorization filter</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_TORGO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Transfer Custom Org logic</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_TEST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Test run</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_APPEND</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Append flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_DELETE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Delete Version Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_MATRIX</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_MITIGATION</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Delete mitigation assignment</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_MITUSR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_USRGRP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_ASSROL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_AUTUSR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_AUTROL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_MIT_TEXT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Table type for Mitigation Justification</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FUNCTION</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Function Definition</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FUNCTTRAN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Functions and Transactions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FAOBJ</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Object Definition</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONFLICT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Conflict Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONFDET</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Conflict Details</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CRITCODES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Critical Tcodes</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SWAUDHDR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Critical Auths Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SWAUDC</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Critical Auths Values</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CRIROLES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Critical Roles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CRIPROF</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Critical Profiles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_TEXTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Security Table Texts</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CUSCON</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Custom Conflicts</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONOWNER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Conflict Owners</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONFIL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Separations Enforcer : Conflict System Filters</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FUNFIL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Separations Enforcer : Function System Filters</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_TCODEFIL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Separations Enforcer : Critcal Tcode System Filters</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_AUTHFIL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Separations Enforcer : Critical Auth. System Filters</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SWSODORGO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Override Configuration for Org Level Analysis for SOD</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_MCHDR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_MCRVWHDR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE: Mitigating Controls Review Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_MCUSER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Assignment to Users</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_MCUSRGRP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Assignment to User Group</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_MCROLE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Assignment to Roles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_MCCAROLE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Assignment to Cri Auth Roles</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_MCCAUSER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Assignment to Cri Auth Users</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_MCTRAN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Transactions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_MCREPID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Reports</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_MCAUDITOR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Mitigating Controls Auditors</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_MCTEXT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Mitigation Justification Text</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return parameter</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_VALIDATE_CONFIG</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SE:  Validate SE Configuration</SHORT_TEXT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_CONFIG</PARAMETER>
+       <DBSTRUCT>/PSYNG/SE_CONFIG_PARAM</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IT_CONFIG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Input Configuration parameter table</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return parameter</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_VE_RULES_READ</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SE : Read Variable Elements Rules</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IF_VE_HDR</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_VE_VRSIO</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_SE_VE_VRSIO</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_VAREL</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_SE_VAREL</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_VE_RULE_VER</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_VARVR</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_VE_RULES</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_VAREL</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IF_VE_HDR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Version Header Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_VE_VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for Variable element rules version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_VAREL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Range for variable objects</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_VE_RULE_VER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE -  Variable Element  - Rule Versions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_VE_RULES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Separations Enforcer : Variable Element Rules</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_VE_RULES_SAVE</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>SE : Save Variable Elements Rules</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IF_DELETE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_TEST</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_VE_RULE_VER</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_VARVR</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_VE_RULES</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_VAREL</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IF_DELETE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Delete all variable element rules</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_TEST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_VE_RULE_VER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE -  Variable Element  - Rule Versions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_VE_RULES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Separations Enforcer : Variable Element Rules</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return parameter</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_VRSIO_COUNT</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Remote vrsio count along with cfgset &amp; stored result</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_HEADER_INFO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_DETAIL_INFO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_REFRESH_CHECK</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>E_OVERVIEW</PARAMETER>
+       <TYP>/PSYNG/SWADMOVW</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EF_SUCCESS</PARAMETER>
+       <TYP>FLAG</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_DETAIL</PARAMETER>
+       <DBSTRUCT>/PSYNG/SWADMOVW</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SYSTEM</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_SYSID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_HEADER_INFO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_DETAIL_INFO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_REFRESH_CHECK</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_OVERVIEW</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Administrator Cockpit</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EF_SUCCESS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return parameter</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_DETAIL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Administrator Cockpit</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SYSTEM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for System ID</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+   <I18N_TPOOL>
+    <item>
+     <LANGUAGE>D</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Gesamtzahl Benutzer</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Anzahl gültige &amp; Dialogbenutzer</ENTRY>
+       <LENGTH>31</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>Gesamtzahl Rollen</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Anz. Benutzer mit mind. 1 zugeord. Rolle</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>006</KEY>
+       <ENTRY>Anzahl Benutzer ohne Rolle</ENTRY>
+       <LENGTH>26</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>007</KEY>
+       <ENTRY>Anz. der mind. 1 Benutzer zugeordn. Rollen</ENTRY>
+       <LENGTH>42</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>008</KEY>
+       <ENTRY>Anz. nicht zugeord. Rollen</ENTRY>
+       <LENGTH>26</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>009</KEY>
+       <ENTRY>Gesamtzahl Profile</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>010</KEY>
+       <ENTRY>Anzahl Benutzer mit mind. 1 zugeord. Profil</ENTRY>
+       <LENGTH>43</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>011</KEY>
+       <ENTRY>Anzahl Benutzer ohne zugeordn. Profil</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>012</KEY>
+       <ENTRY>Anz. der mind. 1 Benutzer zugeordneten Profile</ENTRY>
+       <LENGTH>46</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>013</KEY>
+       <ENTRY>Anz. nicht zugeordn. Profile</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>014</KEY>
+       <ENTRY>Gesamtzahl Berechtigungen</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>015</KEY>
+       <ENTRY>Anzahl der mind. 1 Benutzer zugeordn. Berechtigungen</ENTRY>
+       <LENGTH>52</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>016</KEY>
+       <ENTRY>Anz. nicht zugeordn. Berechtigungen</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>017</KEY>
+       <ENTRY>Gesamtzahl Sammelrollen</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>018</KEY>
+       <ENTRY>Anzahl der mind. 1 Benutzer zugeordneten Sammelrollen</ENTRY>
+       <LENGTH>53</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>019</KEY>
+       <ENTRY>Anz. nicht zugeordneter Sammelrollen</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>020</KEY>
+       <ENTRY>Gesamtzahl Einzelrollen</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>021</KEY>
+       <ENTRY>Anzahl Einzelrollen mit Zuordng zu mind. 1 Benutzer</ENTRY>
+       <LENGTH>51</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>022</KEY>
+       <ENTRY>Anz. nicht zugeordn. Einzelrollen</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>023</KEY>
+       <ENTRY>Gesamtzahl übergeordn. Einzelrollen</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>024</KEY>
+       <ENTRY>Anz. übergeord. Einzelrollen mit Zuordng zu mind. 1 Bntzr</ENTRY>
+       <LENGTH>57</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>025</KEY>
+       <ENTRY>Anz. nicht zugeordn. überg. Einzelrollen</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>026</KEY>
+       <ENTRY>Gesamtzahl abgeleitete Rollen</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>027</KEY>
+       <ENTRY>Anzahl der abgeleiteten Rollen für mind. 1 Benutzer</ENTRY>
+       <LENGTH>51</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>028</KEY>
+       <ENTRY>Anz. nicht zugeordn. abgel. Rollen</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>030</KEY>
+       <ENTRY>Durchs. Anz. abgel. Rollen pro überg. Rolle</ENTRY>
+       <LENGTH>43</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>031</KEY>
+       <ENTRY>Durchs. Anz. von Einzelrollen pro Sammelrolle</ENTRY>
+       <LENGTH>45</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>032</KEY>
+       <ENTRY>Durchs. Anz. Rollen pro Ben.</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>033</KEY>
+       <ENTRY>Durchs. Anz. Profile pro Ben.</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>034</KEY>
+       <ENTRY>Durchs. Anz. von Berecht. pro Benutzer</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>035</KEY>
+       <ENTRY>Durchs. Anz. Profile pro Rolle</ENTRY>
+       <LENGTH>30</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>036</KEY>
+       <ENTRY>Durchs. Anz. von Rollen zugeordn. Transakt. (im Menü)</ENTRY>
+       <LENGTH>53</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>037</KEY>
+       <ENTRY>Durchs. Anzahl von Berecht. pro Rolle</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>038</KEY>
+       <ENTRY>SOD-Matrixversion</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>039</KEY>
+       <ENTRY>Gesamtanzahl d. Konflikte</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>040</KEY>
+       <ENTRY>Anzahl aktiver Konflikte</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>041</KEY>
+       <ENTRY>Durchs. Anz. von Funkt. pro Konflikt</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>042</KEY>
+       <ENTRY>Anzahl Funktionen</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>043</KEY>
+       <ENTRY>Durchs. Anz. Transaktionscodes pro Funktion</ENTRY>
+       <LENGTH>43</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>044</KEY>
+       <ENTRY>Anzahl eindeutiger Transaktionscodes</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>045</KEY>
+       <ENTRY>Anzahl eindeutiger Funktion-Transaktion-Kombinat.</ENTRY>
+       <LENGTH>49</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>046</KEY>
+       <ENTRY>Durchs. Anz. von Objekten pro Transakt. aus Tab. FAOBJ2</ENTRY>
+       <LENGTH>55</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>047</KEY>
+       <ENTRY>Durchs. Anz. von Sätzen pro Objekt aus Tab. FAOBJ2</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>048</KEY>
+       <ENTRY>Anz. eindeutiger Berechtigungsobjekte</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>049</KEY>
+       <ENTRY>Anz. eindeutiger Funktion-TCode-Objekt-Kombinat.</ENTRY>
+       <LENGTH>48</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>055</KEY>
+       <ENTRY>Gesamtzahl AGR*-Tabellen</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>058</KEY>
+       <ENTRY>Gesamtzahl US*-Tabellen</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>060</KEY>
+       <ENTRY>Gesamtzahl SOD-Matrixtabellen</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>062</KEY>
+       <ENTRY>Gesamtanzahl Systemberechtigungen für Objekte in der Matrix</ENTRY>
+       <LENGTH>59</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>063</KEY>
+       <ENTRY>Anzahl Einzelprofile mit mind. 1 Berechtigung f. beliebiges Objekt in Matrix</ENTRY>
+       <LENGTH>76</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>064</KEY>
+       <ENTRY>Anzahl Rollen mit mind. 1 Berechtigung für beliebiges Objekt in Matrix</ENTRY>
+       <LENGTH>70</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>074</KEY>
+       <ENTRY>Gesamtlaufzeit:</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>075</KEY>
+       <ENTRY>Mikrosekund.</ENTRY>
+       <LENGTH>12</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>076</KEY>
+       <ENTRY>Mit Ergbn. auswhln: /PSYNG/FAOBJ2. Ergebnisse:</ENTRY>
+       <LENGTH>46</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>077</KEY>
+       <ENTRY>. Ausführungszeit:</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>078</KEY>
+       <ENTRY>Aggregatsauswahl: Join von /PSYNG/FAOBJ2 mit UST10S. Ergebn.:</ENTRY>
+       <LENGTH>61</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>080</KEY>
+       <ENTRY>Anz. /PSYNG/FAOBJ. Ergebn.:</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>081</KEY>
+       <ENTRY>Mit Ergebnssn auswhln: UST04.Result:</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>085</KEY>
+       <ENTRY>Analys.</ENTRY>
+       <LENGTH>7</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>086</KEY>
+       <ENTRY>Ben.; Ausführungszeit:</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>089</KEY>
+       <ENTRY>Konfl. gefunden in</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>091</KEY>
+       <ENTRY> Ben. in 4 Gruppen.</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>095</KEY>
+       <ENTRY>Sekundn</ENTRY>
+       <LENGTH>7</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>096</KEY>
+       <ENTRY>Minuten</ENTRY>
+       <LENGTH>7</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>097</KEY>
+       <ENTRY>Std.</ENTRY>
+       <LENGTH>4</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>100</KEY>
+       <ENTRY> Ben.</ENTRY>
+       <LENGTH>5</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>101</KEY>
+       <ENTRY>Gesamtzahl Konfigurationssettabellen</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>102</KEY>
+       <ENTRY>Anzahl Mitigationstabellen</ENTRY>
+       <LENGTH>26</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>103</KEY>
+       <ENTRY>Gesamtzahl SOD-Ergebnisspeicher-Tabellen</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E01</KEY>
+       <ENTRY>SOD-Version anlegen</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E02</KEY>
+       <ENTRY>SOD-Version löschen</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E03</KEY>
+       <ENTRY>Versionskopf sollte bei Eingabe markiert werden, da Version nicht im Zielsyst. existiert</ENTRY>
+       <LENGTH>88</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E04</KEY>
+       <ENTRY>Version im Zielsys.als nicht editierbar gekennz.</ENTRY>
+       <LENGTH>48</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E05</KEY>
+       <ENTRY>Fehlende Berechtigung zum Löschen kritischer Transaktionen</ENTRY>
+       <LENGTH>58</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E06</KEY>
+       <ENTRY>Fehlende Berechtigung zum Löschen der Funktion</ENTRY>
+       <LENGTH>46</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E07</KEY>
+       <ENTRY>Fehlende Berecht. zum Löschen von Konflikten</ENTRY>
+       <LENGTH>44</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E08</KEY>
+       <ENTRY>Fehlende Berechtigung zum Löschen kritischer Berechtigungen</ENTRY>
+       <LENGTH>59</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E09</KEY>
+       <ENTRY>Fehlende Berecht. zum Löschen kdSpez. Konflikte</ENTRY>
+       <LENGTH>47</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E10</KEY>
+       <ENTRY>Fehlende Berechtigung zum Löschen krit. Rollen</ENTRY>
+       <LENGTH>46</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E11</KEY>
+       <ENTRY>Fehlende Berecht. zum Löschen kritischer Profile</ENTRY>
+       <LENGTH>48</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E12</KEY>
+       <ENTRY>Fehlende Berecht. zum Hinzufügen von FktObj.</ENTRY>
+       <LENGTH>44</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E13</KEY>
+       <ENTRY>Fehlende Berecht. zum Hinzuf. v. Konfliktobj.</ENTRY>
+       <LENGTH>45</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E14</KEY>
+       <ENTRY>Fehlende Berecht. zum Hinzufügen krit. Transakt.</ENTRY>
+       <LENGTH>48</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E15</KEY>
+       <ENTRY>Fehlende Berechtigung zum Hinzufügen krit. Berecht.</ENTRY>
+       <LENGTH>51</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E16</KEY>
+       <ENTRY>Fehlende Berecht. zum Hinzuf. krit. Rollen</ENTRY>
+       <LENGTH>42</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E17</KEY>
+       <ENTRY>Fehlende Berecht. zum Hinzufügen krit. Profile</ENTRY>
+       <LENGTH>46</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E18</KEY>
+       <ENTRY>Fehl. Berech. zum Hinzuf. kundSpez. Konflik.</ENTRY>
+       <LENGTH>44</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E19</KEY>
+       <ENTRY>Konfigurationsparameter ändern</ENTRY>
+       <LENGTH>30</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E20</KEY>
+       <ENTRY>Variable Elemente ändern</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E21</KEY>
+       <ENTRY>Konfigurationsset ändern</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E22</KEY>
+       <ENTRY>In Konfig.-Set verw.SOD-Version existiert nicht in Zielsystem</ENTRY>
+       <LENGTH>61</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E23</KEY>
+       <ENTRY>Regelversionskopf sollte bei Eingabe markiert sein, da Regelversion im Zielsystem nicht existiert</ENTRY>
+       <LENGTH>97</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E24</KEY>
+       <ENTRY>System existiert in RFC-Destinat. nicht</ENTRY>
+       <LENGTH>39</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E25</KEY>
+       <ENTRY>Eintrag nicht gesichert</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O01</KEY>
+       <ENTRY>Kritische Transakt.</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O02</KEY>
+       <ENTRY>Fkt.-ID</ENTRY>
+       <LENGTH>7</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O03</KEY>
+       <ENTRY>Konflikt-ID</ENTRY>
+       <LENGTH>11</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O04</KEY>
+       <ENTRY>Berechtigungsobjekt-ID</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O05</KEY>
+       <ENTRY>KundSpez Konfl.-ID</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O06</KEY>
+       <ENTRY>VE-Regelversion</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O07</KEY>
+       <ENTRY>VE-Name</ENTRY>
+       <LENGTH>7</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O08</KEY>
+       <ENTRY>Aufruf. Transaktionen</ENTRY>
+       <LENGTH>21</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O09</KEY>
+       <ENTRY>Aufgerufene TCodes</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O10</KEY>
+       <ENTRY>Konfigurationsset-ID</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O11</KEY>
+       <ENTRY>Variables Element mit Wert</ENTRY>
+       <LENGTH>26</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O12</KEY>
+       <ENTRY>System-ID</ENTRY>
+       <LENGTH>9</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O13</KEY>
+       <ENTRY>Org.-Element mit Wert</ENTRY>
+       <LENGTH>21</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O14</KEY>
+       <ENTRY>Elementauswahl</ENTRY>
+       <LENGTH>14</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O15</KEY>
+       <ENTRY>SOD-Version</ENTRY>
+       <LENGTH>11</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O16</KEY>
+       <ENTRY>Krit. Rolle</ENTRY>
+       <LENGTH>11</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O17</KEY>
+       <ENTRY>Krit. Profil</ENTRY>
+       <LENGTH>12</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O18</KEY>
+       <ENTRY>Konfliktsystemfilter</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O19</KEY>
+       <ENTRY>Funktions-Systemfilter</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O20</KEY>
+       <ENTRY>TCode-Systemfilter</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O21</KEY>
+       <ENTRY>Ber. Systemfilter</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O22</KEY>
+       <ENTRY>Feldname/Parameterwert</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O23</KEY>
+       <ENTRY>Applikationsber.</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O24</KEY>
+       <ENTRY>Prozessbereiche</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O25</KEY>
+       <ENTRY>Risikoszenar.</ENTRY>
+       <LENGTH>13</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O26</KEY>
+       <ENTRY>Systemtyp</ENTRY>
+       <LENGTH>9</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O27</KEY>
+       <ENTRY>Systemkategorie</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O28</KEY>
+       <ENTRY>Beschreib.</ENTRY>
+       <LENGTH>10</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>P03</KEY>
+       <ENTRY>Kein benannter Text in Parametern gepflegt</ENTRY>
+       <LENGTH>42</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>P04</KEY>
+       <ENTRY>Funktionsbaustein ist nicht vorhanden oder besitzt keine korrekte Signatur</ENTRY>
+       <LENGTH>74</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>P05</KEY>
+       <ENTRY>Kein veröffentlichtes Konfigurationsset zu dieser SOD-Matrixversion vorhanden.</ENTRY>
+       <LENGTH>78</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>P06</KEY>
+       <ENTRY>Kein benannter Beleg in Parametern gepflegt</ENTRY>
+       <LENGTH>43</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>P07</KEY>
+       <ENTRY>Aktueller Wert ist in S010 definiert</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>P08</KEY>
+       <ENTRY>Aktueller Wert ist in SE61 definiert</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>P09</KEY>
+       <ENTRY>RFC-Destination ist nicht vorhanden.</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S01</KEY>
+       <ENTRY>FktObjekte erfolgreich hinzugefügt</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S02</KEY>
+       <ENTRY>Konfliktobjekte erfolgr. hinzugef.</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S03</KEY>
+       <ENTRY>Krit. Transaktion erfolgr. hinzugefügt</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S04</KEY>
+       <ENTRY>Krit. Berecht. erfolgreich hinzugefügt</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S05</KEY>
+       <ENTRY>Krit. Rolle erfolgr. hinzugefügt</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S06</KEY>
+       <ENTRY>Krit. Profil erfolgr. hinzugefügt</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S07</KEY>
+       <ENTRY>KundSpez Konflikt erfolgr. hinzug.</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S08</KEY>
+       <ENTRY>Konfliktsystemfilter erfolgr. hinzugefügt</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S09</KEY>
+       <ENTRY>Funktions-Systemfilter wurden hinzugefügt</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S10</KEY>
+       <ENTRY>Systemfilter f. krit. TCode erfolgr. hinzugefügt</ENTRY>
+       <LENGTH>48</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S11</KEY>
+       <ENTRY>Systemfilter krit. Berecht. erfolgreich hinzugefügt</ENTRY>
+       <LENGTH>51</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S12</KEY>
+       <ENTRY>Versionskopf erfolgreich geändert</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S13</KEY>
+       <ENTRY>Version erfolgreich vollständ. gelöscht</ENTRY>
+       <LENGTH>39</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S14</KEY>
+       <ENTRY>ohne unautorisierte Objekte</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S15</KEY>
+       <ENTRY>Konfigurationsparameter erfolgr. hinzugef.</ENTRY>
+       <LENGTH>42</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S16</KEY>
+       <ENTRY>Alle Konfigurationsparameter erfolgr. gelöscht.</ENTRY>
+       <LENGTH>47</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S17</KEY>
+       <ENTRY>Version erfolgreich gelöscht</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S18</KEY>
+       <ENTRY>Regelkopf variabler Elemente erfolgreich gelöscht</ENTRY>
+       <LENGTH>49</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S19</KEY>
+       <ENTRY>Regeln variable Elemente erfolgr. gelöscht</ENTRY>
+       <LENGTH>42</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S20</KEY>
+       <ENTRY>Regelkopf variabler Elemente erfolgreich geändert</ENTRY>
+       <LENGTH>49</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S21</KEY>
+       <ENTRY>Regeln variabl.Elemente erfolgr.hinzugef.</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S22</KEY>
+       <ENTRY>Regeln variabler Elemente erfolgr. geändert</ENTRY>
+       <LENGTH>43</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S23</KEY>
+       <ENTRY>Aufrufende TCodes gelöscht</ENTRY>
+       <LENGTH>26</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S24</KEY>
+       <ENTRY>Aufgerufene TCodes gelöscht</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S25</KEY>
+       <ENTRY>Aufrufende TCodes hinzugefügt</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S26</KEY>
+       <ENTRY>Aufrufende TCodes geändert</ENTRY>
+       <LENGTH>26</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S27</KEY>
+       <ENTRY>Aufgerufene TCodes hinzugefügt</ENTRY>
+       <LENGTH>30</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S28</KEY>
+       <ENTRY>Aufgerufene TCodes geändert</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S29</KEY>
+       <ENTRY>Variable Elementwerte erfolgreich gelöscht</ENTRY>
+       <LENGTH>42</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S30</KEY>
+       <ENTRY>Konfigurationssetsysteme erfolgreich gelöscht</ENTRY>
+       <LENGTH>45</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S31</KEY>
+       <ENTRY>Org.-Elementwerte erfolgreich gelöscht</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S32</KEY>
+       <ENTRY>Elementauswahl wurde gelöscht</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S33</KEY>
+       <ENTRY>Konfigurationssetkopf erfolgreich geändert</ENTRY>
+       <LENGTH>42</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S34</KEY>
+       <ENTRY>Konfigurationssetkopf erfolgr. hinzugefügt</ENTRY>
+       <LENGTH>42</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S35</KEY>
+       <ENTRY>Variable Elementwerte erfolgreich geändert</ENTRY>
+       <LENGTH>42</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S36</KEY>
+       <ENTRY>Variable Elementwerte erfolgr. hinzugefügt</ENTRY>
+       <LENGTH>42</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S37</KEY>
+       <ENTRY>Konfigurationssetsysteme erfolgreich geändert</ENTRY>
+       <LENGTH>45</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S38</KEY>
+       <ENTRY>Konfigurationssetsysteme erfolgr. hinzugef.</ENTRY>
+       <LENGTH>43</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S39</KEY>
+       <ENTRY>Org.-Elementwerte erfolgreich geändert</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S40</KEY>
+       <ENTRY>Org.-Elementwerte erfolgrch hinzugef.</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S41</KEY>
+       <ENTRY>Elementauswahl wurde geändert</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S42</KEY>
+       <ENTRY>Elementauswahl wurde hinzugefügt</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S43</KEY>
+       <ENTRY>Versionskopf erfolgr. hinzugefügt</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S44</KEY>
+       <ENTRY>Funktionsobjekte erfolgreich geändert</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S45</KEY>
+       <ENTRY>Konfliktobjekte erfolgreich geändert</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S46</KEY>
+       <ENTRY>Kritische Transaktion erfolgreich geändert</ENTRY>
+       <LENGTH>42</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S47</KEY>
+       <ENTRY>Kritische Berechtigung erfolgreich geändert</ENTRY>
+       <LENGTH>43</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S48</KEY>
+       <ENTRY>Kritische Rolle erfolgr. geändert</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S49</KEY>
+       <ENTRY>Kritisches Profil erfolgreich geändert</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S50</KEY>
+       <ENTRY>KundSpez. Konflikt erfolgr. geändert</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S51</KEY>
+       <ENTRY>Konfliktsystemfilter erfolgreich geändert</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S52</KEY>
+       <ENTRY>Funktions-Systemfilter wurden geändert</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S53</KEY>
+       <ENTRY>Systemfilter für krit. TCode erfolgreich geändert</ENTRY>
+       <LENGTH>49</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S54</KEY>
+       <ENTRY>Systemfilter kritischer Berechtigungen erfolgreich geändert</ENTRY>
+       <LENGTH>59</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S55</KEY>
+       <ENTRY>Konfigurationsparameter erfolgreich geändert</ENTRY>
+       <LENGTH>44</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S56</KEY>
+       <ENTRY>Quell-Konfig.-Set &amp;1 in Ziel m.neuem Konfig.-Set &amp;2 verschob.</ENTRY>
+       <LENGTH>61</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S57</KEY>
+       <ENTRY>Ben.def. Org.-Logik erfolgr. hinz.</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S58</KEY>
+       <ENTRY>Ben.def. Org.-Logik erfolgr. geändert</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S59</KEY>
+       <ENTRY>Applikationsbereich erfolgreich gelöscht</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S60</KEY>
+       <ENTRY>Prozessbereich erfolgreich gelöscht</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S61</KEY>
+       <ENTRY>Risikoszenario erfolgreich gelöscht</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S62</KEY>
+       <ENTRY>Applikationsbereich erfolgreich hinzugefügt</ENTRY>
+       <LENGTH>43</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S63</KEY>
+       <ENTRY>Applikationsbereich erfolgreich geändert</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S64</KEY>
+       <ENTRY>Prozessbereich erfolgreich hinzugefügt</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S65</KEY>
+       <ENTRY>Prozessbereich erfolgreich geändert</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S66</KEY>
+       <ENTRY>Risikoszenario erfolgreich hinzugefügt</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S67</KEY>
+       <ENTRY>Risikoszenario erfolgreich geändert</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S68</KEY>
+       <ENTRY>Systemtyp erfolgreich gelöscht</ENTRY>
+       <LENGTH>30</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S69</KEY>
+       <ENTRY>Systemkategorie erfolgreich gelöscht</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S70</KEY>
+       <ENTRY>Systemtyp erfolgreich hinzugefügt</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S71</KEY>
+       <ENTRY>Systemtyp erfolgreich geändert</ENTRY>
+       <LENGTH>30</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S72</KEY>
+       <ENTRY>Systemkategorie erfolgreich hinzugefügt</ENTRY>
+       <LENGTH>39</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S73</KEY>
+       <ENTRY>Systemkategorie erfolgreich geändert</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S74</KEY>
+       <ENTRY>Eintrag gesichert</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>W01</KEY>
+       <ENTRY>Kein Konfig.-Parameter ausgewählt</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>P</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>P08</KEY>
+       <ENTRY>valor atual é definida em SE61</ENTRY>
+       <LENGTH>30</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>P09</KEY>
+       <ENTRY>RFC destino não existe.</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S01</KEY>
+       <ENTRY>Objetos função adicionados sucesso</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S02</KEY>
+       <ENTRY>ObjetosConflito adicionados sucesso</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S03</KEY>
+       <ENTRY>Transaç#o Crítica adicionado sucesso</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S04</KEY>
+       <ENTRY>Autorização Crítica adicionada sucesso</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S05</KEY>
+       <ENTRY>Perfis Crít. adicionado sucesso</ENTRY>
+       <LENGTH>31</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S06</KEY>
+       <ENTRY>Perfil Crítico adicionado sucesso</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S07</KEY>
+       <ENTRY>Cust.Conflito adicionado sucesso</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S08</KEY>
+       <ENTRY>ConflitoFiltro Sistema adicionados sucesso</ENTRY>
+       <LENGTH>42</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S09</KEY>
+       <ENTRY>Filtros Sistema Função adicionados sucesso</ENTRY>
+       <LENGTH>42</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S10</KEY>
+       <ENTRY>Trans. Crít. Filtros-Sistema adicionado sucesso</ENTRY>
+       <LENGTH>47</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S11</KEY>
+       <ENTRY>Autorização Crítica Filtros-Sistema adicionada sucesso</ENTRY>
+       <LENGTH>54</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S12</KEY>
+       <ENTRY>Versão modificado com sucesso</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S13</KEY>
+       <ENTRY>Versão excluído com sucesso</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S14</KEY>
+       <ENTRY>exceto objetos não auth.</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S15</KEY>
+       <ENTRY>Parâmetros Config. adicionado com sucesso</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S16</KEY>
+       <ENTRY>Td parâmetros configuração excluídos com sucesso</ENTRY>
+       <LENGTH>48</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S17</KEY>
+       <ENTRY>Versão excluído com sucesso</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S18</KEY>
+       <ENTRY>VarElemento regras cabeçalho excluídos com êxito</ENTRY>
+       <LENGTH>48</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S19</KEY>
+       <ENTRY>VarElemento regras excluído com sucesso</ENTRY>
+       <LENGTH>39</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S20</KEY>
+       <ENTRY>VarElemento regras cabeçalho modificado com sucesso</ENTRY>
+       <LENGTH>51</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S21</KEY>
+       <ENTRY>VarElemento regras adicionado com sucesso</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S22</KEY>
+       <ENTRY>VarElemento regras modificada com sucesso</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S23</KEY>
+       <ENTRY>Execut.Trans. excluídos com sucesso</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>P07</KEY>
+       <ENTRY>valor atual é definida em S010</ENTRY>
+       <LENGTH>30</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O08</KEY>
+       <ENTRY>ExecutandoTransaçãoes</ENTRY>
+       <LENGTH>21</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O09</KEY>
+       <ENTRY>Transaçãoes execut.</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O10</KEY>
+       <ENTRY>ID de Configuraç#o</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O11</KEY>
+       <ENTRY>Elemento variável com valor</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O12</KEY>
+       <ENTRY>IDSistema</ENTRY>
+       <LENGTH>9</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O13</KEY>
+       <ENTRY>Org elemento com valor</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O14</KEY>
+       <ENTRY>SeleçãoElementos</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O15</KEY>
+       <ENTRY>Versão SOD</ENTRY>
+       <LENGTH>10</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O16</KEY>
+       <ENTRY>Perf.Críticos</ENTRY>
+       <LENGTH>13</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O17</KEY>
+       <ENTRY>Perfil Crítico</ENTRY>
+       <LENGTH>14</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O18</KEY>
+       <ENTRY>ConflitoFiltro Sistema</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O19</KEY>
+       <ENTRY>Filtros Sistema Funç#o</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O20</KEY>
+       <ENTRY>Filtro de Trn/Sist</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O21</KEY>
+       <ENTRY>Auth.Filtro Sistema</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O22</KEY>
+       <ENTRY>DescriCampo/Val. Parâmetros</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O23</KEY>
+       <ENTRY>Área de Aplicação</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O24</KEY>
+       <ENTRY>Área de processo</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O25</KEY>
+       <ENTRY>Cenário de Risco</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O26</KEY>
+       <ENTRY>Tipo sist.</ENTRY>
+       <LENGTH>10</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O27</KEY>
+       <ENTRY>Categor.Sist.</ENTRY>
+       <LENGTH>13</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O28</KEY>
+       <ENTRY>Descrição</ENTRY>
+       <LENGTH>9</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>P03</KEY>
+       <ENTRY>Nenhum texto com o nome mantido em parâmetros</ENTRY>
+       <LENGTH>45</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>P04</KEY>
+       <ENTRY>O módulo de função não existe ou não possui a assinatura correta.</ENTRY>
+       <LENGTH>65</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>P05</KEY>
+       <ENTRY>Sem Publicado configuração Set existe para este Matrix Versão SOD.</ENTRY>
+       <LENGTH>66</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>P06</KEY>
+       <ENTRY>No documento com o nome mantido em parâmetros</ENTRY>
+       <LENGTH>45</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S24</KEY>
+       <ENTRY>Tran.Execut. excluídos com sucesso</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S51</KEY>
+       <ENTRY>ConflitoFiltro Sistema  modificados sucesso</ENTRY>
+       <LENGTH>43</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S52</KEY>
+       <ENTRY>Filtros Sistema Função modificados sucesso</ENTRY>
+       <LENGTH>42</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S53</KEY>
+       <ENTRY>Trans. Crít. Filtros-Sistema modificado sucesso</ENTRY>
+       <LENGTH>47</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S54</KEY>
+       <ENTRY>Autorização Crítica Filtros-Sistema modificada sucesso</ENTRY>
+       <LENGTH>54</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S55</KEY>
+       <ENTRY>Parâmetros Config. modificado com sucesso</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S56</KEY>
+       <ENTRY>Source config. set &amp;1 moved to target with new config. set &amp;2</ENTRY>
+       <LENGTH>61</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S57</KEY>
+       <ENTRY>Customizados Org Lógica adicionado</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S58</KEY>
+       <ENTRY>CustomOrgLóg. modificada com sucesso</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S59</KEY>
+       <ENTRY>Área de Aplicaç#o excluída com sucesso</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S60</KEY>
+       <ENTRY>Processar Área excluído com sucesso</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S61</KEY>
+       <ENTRY>Risco Cenário excluído com sucesso</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S62</KEY>
+       <ENTRY>Área de Aplicaç#o adicionada com sucesso</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S63</KEY>
+       <ENTRY>Área de Aplicaç#o modificada com sucesso</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S64</KEY>
+       <ENTRY>Processar Área adicionado com sucesso</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S65</KEY>
+       <ENTRY>Processar Área modificado com sucesso</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S66</KEY>
+       <ENTRY>Risco Cenário adicionado com sucesso</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S67</KEY>
+       <ENTRY>Risco Cenário modificado com sucesso</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S68</KEY>
+       <ENTRY>Tipo de sistema excluído com sucesso</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S69</KEY>
+       <ENTRY>Categoria do sistema excluída com sucesso</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S70</KEY>
+       <ENTRY>Tipo de sistema adicionado com sucesso</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S71</KEY>
+       <ENTRY>Tipo de sistema modificado com sucesso</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S72</KEY>
+       <ENTRY>Categoria de sistema adicionada com sucesso</ENTRY>
+       <LENGTH>43</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S73</KEY>
+       <ENTRY>Categoria de sistema modificada com sucesso</ENTRY>
+       <LENGTH>43</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S74</KEY>
+       <ENTRY>entrada guardada</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>W01</KEY>
+       <ENTRY>Nenhum parâmetro de selecionado</ENTRY>
+       <LENGTH>31</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S50</KEY>
+       <ENTRY>Cust.Conflito modificado sucesso</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S25</KEY>
+       <ENTRY>Execut.Trans. adicionados sucesso</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S26</KEY>
+       <ENTRY>Execut.Trans. modificados sucesso</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S27</KEY>
+       <ENTRY>Tran.Execut. adicionados sucesso</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S28</KEY>
+       <ENTRY>Tran.Execut. modificados sucesso</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S29</KEY>
+       <ENTRY>VarElemento regras ??excluído com sucesso</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S30</KEY>
+       <ENTRY>Configurações Sistema excluído sucesso</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S31</KEY>
+       <ENTRY>OrgElementos excluído com sucesso</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S32</KEY>
+       <ENTRY>Seleção Elementos excluídos com sucesso</ENTRY>
+       <LENGTH>39</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S33</KEY>
+       <ENTRY>Cabeçalho Configurações modificado sucesso</ENTRY>
+       <LENGTH>42</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S34</KEY>
+       <ENTRY>Cabeçalho Configurações adicionado sucesso</ENTRY>
+       <LENGTH>42</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S35</KEY>
+       <ENTRY>VarElementos ??modificado com sucesso</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S36</KEY>
+       <ENTRY>VarElementos ??adicionado com sucesso</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S37</KEY>
+       <ENTRY>Configurações Sistema modificado sucesso</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S38</KEY>
+       <ENTRY>Configurações Sistema adicionado sucesso</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S39</KEY>
+       <ENTRY>OrgElementos modificada com êxito</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S40</KEY>
+       <ENTRY>OrgElementos adicionado com sucesso</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S41</KEY>
+       <ENTRY>Seleção Elementos modificada sucesso</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S42</KEY>
+       <ENTRY>Seleção Elementos adicionado sucesso</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S43</KEY>
+       <ENTRY>Versão adicionado com sucesso</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S44</KEY>
+       <ENTRY>Objetos função modificados sucesso</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S45</KEY>
+       <ENTRY>Objetos Conflito modificados sucesso</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S46</KEY>
+       <ENTRY>Transaç#o Crítica modificado sucesso</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S47</KEY>
+       <ENTRY>Autorização Crítica modificada sucesso</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S48</KEY>
+       <ENTRY>Perfis Críticos modificado sucesso</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S49</KEY>
+       <ENTRY>Perfil Crítico modificado sucesso</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>028</KEY>
+       <ENTRY>Número de Perfis Deriv. não assoc.</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>030</KEY>
+       <ENTRY>Número Médio de Perfis Derivados por Pai</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>031</KEY>
+       <ENTRY>Número Médio de Perfis Simples por Composto</ENTRY>
+       <LENGTH>43</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>032</KEY>
+       <ENTRY>NúmeroMédio de Perfis por User</ENTRY>
+       <LENGTH>30</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>033</KEY>
+       <ENTRY>Número Médio de Perfis por Usuár</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>034</KEY>
+       <ENTRY>Número Médio de Autorizações por Usuár</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>035</KEY>
+       <ENTRY>NúmeroMédioPrfs.Técnicos p.Role</ENTRY>
+       <LENGTH>31</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>036</KEY>
+       <ENTRY>Número Médio de Transações Associadas a Perfis (no menu</ENTRY>
+       <LENGTH>55</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>037</KEY>
+       <ENTRY>Número Médio de Autorizações por Perfi</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>038</KEY>
+       <ENTRY>Versão Matriz SOD</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>039</KEY>
+       <ENTRY>Número de Conflitos total</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>040</KEY>
+       <ENTRY>Número de Conflitos ativos</ENTRY>
+       <LENGTH>26</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>041</KEY>
+       <ENTRY>Número Médio de Funções por Conflito</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>042</KEY>
+       <ENTRY>Número de Funções</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>043</KEY>
+       <ENTRY>Número Médio de Transações por Função</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>044</KEY>
+       <ENTRY>Número de Transações unicas</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>045</KEY>
+       <ENTRY>Número de Funções-Transações combinadas</ENTRY>
+       <LENGTH>39</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>046</KEY>
+       <ENTRY>Número Médio de objetos por transação da tabela FAOBJ2</ENTRY>
+       <LENGTH>54</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>047</KEY>
+       <ENTRY>NúmeroMédio de registros por Objetos tabela FAOBJ2</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>048</KEY>
+       <ENTRY>Número Autorizações de Objetos unicas</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>049</KEY>
+       <ENTRY>Número de Funções-Transações-Objetos unicos</ENTRY>
+       <LENGTH>43</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>055</KEY>
+       <ENTRY>Total no of  AGR* tables</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>058</KEY>
+       <ENTRY>Total no of   US* Tables</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>060</KEY>
+       <ENTRY>Total no of SOD Matrix Tables</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>062</KEY>
+       <ENTRY>Número de Autorizações de sistema total p.objetos na Matriz</ENTRY>
+       <LENGTH>59</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>027</KEY>
+       <ENTRY>Número de Perfis Deriv. assoc. a ao menos 1 usuário</ENTRY>
+       <LENGTH>51</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Total number of Users</ENTRY>
+       <LENGTH>21</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Total number of valid &amp; dialog Users</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>Total number of Roles</ENTRY>
+       <LENGTH>21</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Número usrs.assoc a pelo menos um perfil</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>006</KEY>
+       <ENTRY>Número de usuários sem perfi</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>007</KEY>
+       <ENTRY>Número de Perfis assoc a ao menos 1 usuário</ENTRY>
+       <LENGTH>43</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>008</KEY>
+       <ENTRY>Número de Perfis não assoc</ENTRY>
+       <LENGTH>26</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>009</KEY>
+       <ENTRY>Total number of Profiles</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>010</KEY>
+       <ENTRY>Número usuários assoc. a pelo menos 1perfil</ENTRY>
+       <LENGTH>43</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>011</KEY>
+       <ENTRY>Número usuários não assoc a perfil algum</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>012</KEY>
+       <ENTRY>Número de Perfis assoc a ao menos 1 usuário</ENTRY>
+       <LENGTH>43</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>013</KEY>
+       <ENTRY>Número de Perfis Técnicos não</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>014</KEY>
+       <ENTRY>Total number of Authorizations</ENTRY>
+       <LENGTH>30</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>015</KEY>
+       <ENTRY>Número de Autorizações associadas a ao menos 1 usuár</ENTRY>
+       <LENGTH>52</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>016</KEY>
+       <ENTRY>Número de Autorizações não associad</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>017</KEY>
+       <ENTRY>Total number of Composite Roles</ENTRY>
+       <LENGTH>31</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>018</KEY>
+       <ENTRY>Número Perfis Comp. associadas a ao menos 1 usuário</ENTRY>
+       <LENGTH>51</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>019</KEY>
+       <ENTRY>Número de Perfis Compostos não assoc</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>020</KEY>
+       <ENTRY>Total number of Single Roles</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>021</KEY>
+       <ENTRY>Número de Perfis Simples associados a pelo 1 usuári</ENTRY>
+       <LENGTH>51</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>022</KEY>
+       <ENTRY>Número Perfis Simples não assoc</ENTRY>
+       <LENGTH>31</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>023</KEY>
+       <ENTRY>Total number of Single Parent Roles</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>024</KEY>
+       <ENTRY>Número de Perfis Pai Simples associados a pelo 1 usuário</ENTRY>
+       <LENGTH>56</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>025</KEY>
+       <ENTRY>Número de Perfis Pai Simples não associad</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>026</KEY>
+       <ENTRY>Total number of Derived Roles</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>063</KEY>
+       <ENTRY>Número de Perfis S. com pelo menos 1 Autorização para algum Objeto na Matriz</ENTRY>
+       <LENGTH>76</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E08</KEY>
+       <ENTRY>Missing authorization to delete Critical Authorization</ENTRY>
+       <LENGTH>54</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E09</KEY>
+       <ENTRY>Missing authorization to delete Custom Conflict</ENTRY>
+       <LENGTH>47</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E10</KEY>
+       <ENTRY>Missing authorization to delete Critical Roles</ENTRY>
+       <LENGTH>46</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E11</KEY>
+       <ENTRY>Missing authorization to delete Critical Profiles</ENTRY>
+       <LENGTH>49</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E12</KEY>
+       <ENTRY>Missing authorization to add Function Objects</ENTRY>
+       <LENGTH>45</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E13</KEY>
+       <ENTRY>Missing authorization to add Conflict Objects</ENTRY>
+       <LENGTH>45</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E14</KEY>
+       <ENTRY>Missing authorization to add Critical Transactions</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E15</KEY>
+       <ENTRY>Missing authorization to add Critical Authorization</ENTRY>
+       <LENGTH>51</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E16</KEY>
+       <ENTRY>Missing authorization to add Critical Roles</ENTRY>
+       <LENGTH>43</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E17</KEY>
+       <ENTRY>Missing authorization to add Critical Profiles</ENTRY>
+       <LENGTH>46</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E18</KEY>
+       <ENTRY>Missing authorization to add Custom Conflict</ENTRY>
+       <LENGTH>44</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E19</KEY>
+       <ENTRY>mudar Parâmetros de Configuração</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E20</KEY>
+       <ENTRY>mudar Elementos Var.</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E21</KEY>
+       <ENTRY>mudar Conjunto de Config</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E22</KEY>
+       <ENTRY>Versão usado na ConfigConjunto não existem no sistema destino</ENTRY>
+       <LENGTH>61</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E23</KEY>
+       <ENTRY>Regras Versão cabeçalho deve ser assinalada na entrada porque a  não existe no sistema destino</ENTRY>
+       <LENGTH>94</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E24</KEY>
+       <ENTRY>Sistema não existem no Destino RFC</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E25</KEY>
+       <ENTRY>Entrada não salva</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O01</KEY>
+       <ENTRY>Transação Crítica</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O02</KEY>
+       <ENTRY>ID Função</ENTRY>
+       <LENGTH>9</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O03</KEY>
+       <ENTRY>Conflito</ENTRY>
+       <LENGTH>8</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O04</KEY>
+       <ENTRY>ID Objeto Autorizaç#o</ENTRY>
+       <LENGTH>21</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O05</KEY>
+       <ENTRY>Cust.Conflito Id</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O06</KEY>
+       <ENTRY>Versão Regra VE</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O07</KEY>
+       <ENTRY>VE Nome</ENTRY>
+       <LENGTH>7</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E07</KEY>
+       <ENTRY>Missing authorization to delete Conflict</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>064</KEY>
+       <ENTRY>Número Perfis c/pelo menos uma autorização para algum Objeto na Matriz</ENTRY>
+       <LENGTH>70</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>074</KEY>
+       <ENTRY>Total Run Time :</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>075</KEY>
+       <ENTRY>microsegundo</ENTRY>
+       <LENGTH>12</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>076</KEY>
+       <ENTRY>Selecão c/resultados:/PSYNG/FAOBJ2.Resultados:</ENTRY>
+       <LENGTH>46</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>077</KEY>
+       <ENTRY>. Execution time :</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>078</KEY>
+       <ENTRY>Aggregate select: /PSYNG/FAOBJ2 joined wt UST10S. Resultados:</ENTRY>
+       <LENGTH>61</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>080</KEY>
+       <ENTRY>Contador /PSYNG/FAOBJ.Result</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>081</KEY>
+       <ENTRY>Seleção c/resultados:UST04.Result:</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>085</KEY>
+       <ENTRY>Analisad</ENTRY>
+       <LENGTH>8</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>086</KEY>
+       <ENTRY>Tempo de execução usrs</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>089</KEY>
+       <ENTRY>ConflitosEncont.em</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>091</KEY>
+       <ENTRY>usuários em 4 grupo</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>095</KEY>
+       <ENTRY>seconds</ENTRY>
+       <LENGTH>7</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>096</KEY>
+       <ENTRY>minutos</ENTRY>
+       <LENGTH>7</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>097</KEY>
+       <ENTRY>horas</ENTRY>
+       <LENGTH>5</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>100</KEY>
+       <ENTRY>users.</ENTRY>
+       <LENGTH>6</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>101</KEY>
+       <ENTRY>Total no of Configuration Set Tables</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>102</KEY>
+       <ENTRY>Total no of Mitigation Tables</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>103</KEY>
+       <ENTRY>Total no of SOD Results Storage Tables</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E01</KEY>
+       <ENTRY>criar Vers#o SOD</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E02</KEY>
+       <ENTRY>Apagar Versões SOD</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E03</KEY>
+       <ENTRY>Versão cabeçalho deve ser entrada porque a versão não existe no sistema de destino</ENTRY>
+       <LENGTH>82</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E04</KEY>
+       <ENTRY>Versão é marcado não editável no sistema destino</ENTRY>
+       <LENGTH>48</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E05</KEY>
+       <ENTRY>Missing authorization to delete Critical Transactions</ENTRY>
+       <LENGTH>53</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E06</KEY>
+       <ENTRY>Missing authorization to delete Function</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>S</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>P08</KEY>
+       <ENTRY>el valor actual está definido en SE61</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>P09</KEY>
+       <ENTRY>El destino RFC no existe.</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S01</KEY>
+       <ENTRY>Función Objetos añadidos con éxito</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S02</KEY>
+       <ENTRY>Objetos en conflicto añadidos correctamente</ENTRY>
+       <LENGTH>43</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S03</KEY>
+       <ENTRY>Transacción crítica añadida correctamente</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S04</KEY>
+       <ENTRY>Autorización crítica añadida correctamente</ENTRY>
+       <LENGTH>42</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S05</KEY>
+       <ENTRY>Rol crítico añadido correctamente</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S06</KEY>
+       <ENTRY>Perfil crítico añadido correctamente</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S07</KEY>
+       <ENTRY>Conflicto personalizado añadido correctamente</ENTRY>
+       <LENGTH>45</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S08</KEY>
+       <ENTRY>Filtros del sistema de conflictos añadidos correctamente</ENTRY>
+       <LENGTH>56</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S09</KEY>
+       <ENTRY>Filtros del sistema de funciones añadidos correctamente</ENTRY>
+       <LENGTH>55</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S10</KEY>
+       <ENTRY>Se han añadido correctamente los filtros críticos del sistema de Transacción</ENTRY>
+       <LENGTH>76</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S11</KEY>
+       <ENTRY>Se han añadido correctamente los filtros críticos del sistema de autorización</ENTRY>
+       <LENGTH>77</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S12</KEY>
+       <ENTRY>Cabecera de versión modificada correctamente</ENTRY>
+       <LENGTH>44</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S13</KEY>
+       <ENTRY>Versión completamente eliminada con éxito</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S14</KEY>
+       <ENTRY>excepto objetos no autorizados</ENTRY>
+       <LENGTH>30</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S15</KEY>
+       <ENTRY>Parámetro de configuración añadido correctamente</ENTRY>
+       <LENGTH>48</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S16</KEY>
+       <ENTRY>Todos los parámetros de configuración eliminados correctamente</ENTRY>
+       <LENGTH>62</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S17</KEY>
+       <ENTRY>Versión eliminada correctamente</ENTRY>
+       <LENGTH>31</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S18</KEY>
+       <ENTRY>Cabecera de reglas de elementos variables eliminada correctamente</ENTRY>
+       <LENGTH>65</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S19</KEY>
+       <ENTRY>Elemento variable reglas borrado correctamente</ENTRY>
+       <LENGTH>46</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S20</KEY>
+       <ENTRY>Cabecera de reglas de elementos variables modificada correctamente</ENTRY>
+       <LENGTH>66</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S21</KEY>
+       <ENTRY>Reglas de elementos variables añadidas correctamente</ENTRY>
+       <LENGTH>52</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S22</KEY>
+       <ENTRY>Reglas de elementos variables modificadas correctamente</ENTRY>
+       <LENGTH>55</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S23</KEY>
+       <ENTRY>Transacción de llamada eliminada con éxito</ENTRY>
+       <LENGTH>42</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>P07</KEY>
+       <ENTRY>el valor actual está definido en S010</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O08</KEY>
+       <ENTRY>Transacciones de llamada</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O09</KEY>
+       <ENTRY>Transacciones llamadas</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O10</KEY>
+       <ENTRY>ID del conjunto de configuración</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O11</KEY>
+       <ENTRY>Variable Elemento con valor</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O12</KEY>
+       <ENTRY>ID del sistema</ENTRY>
+       <LENGTH>14</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O13</KEY>
+       <ENTRY>Org Elemento con valor</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O14</KEY>
+       <ENTRY>Selección de elementos</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O15</KEY>
+       <ENTRY>Versión SOD</ENTRY>
+       <LENGTH>11</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O16</KEY>
+       <ENTRY>Rol crítico</ENTRY>
+       <LENGTH>11</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O17</KEY>
+       <ENTRY>Perfil crítico</ENTRY>
+       <LENGTH>14</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O18</KEY>
+       <ENTRY>Conflicto Filtro del sistema</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O19</KEY>
+       <ENTRY>Función Filtro del sistema</ENTRY>
+       <LENGTH>26</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O20</KEY>
+       <ENTRY>Filtro del sistema de Transacción</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O21</KEY>
+       <ENTRY>Aut. Filtro de sistema</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O22</KEY>
+       <ENTRY>Nombre de campo / Valor de parámetro</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O23</KEY>
+       <ENTRY>Área de aplicación</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O24</KEY>
+       <ENTRY>Área de proceso</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O25</KEY>
+       <ENTRY>Escenario de riesgo</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O26</KEY>
+       <ENTRY>Tipo de sistema</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O27</KEY>
+       <ENTRY>Categorías de sistemas</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O28</KEY>
+       <ENTRY>Descripción</ENTRY>
+       <LENGTH>11</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>P03</KEY>
+       <ENTRY>No se mantiene texto con nombre en los parámetros</ENTRY>
+       <LENGTH>49</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>P04</KEY>
+       <ENTRY>El módulo de función no existe o no tiene la firma correcta.</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>P05</KEY>
+       <ENTRY>No existe ningún conjunto de configuración publicado para esta versión de matriz SOD.</ENTRY>
+       <LENGTH>85</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>P06</KEY>
+       <ENTRY>Ningún documento con nombre actualizado en parámetros</ENTRY>
+       <LENGTH>53</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S24</KEY>
+       <ENTRY>Códigos T de llamada eliminados correctamente</ENTRY>
+       <LENGTH>45</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S51</KEY>
+       <ENTRY>Filtros del sistema de conflictos modificados correctamente</ENTRY>
+       <LENGTH>59</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S52</KEY>
+       <ENTRY>Filtros del sistema de funciones modificados correctamente</ENTRY>
+       <LENGTH>58</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S53</KEY>
+       <ENTRY>Filtros críticos del sistema de Transacción modificados con éxito</ENTRY>
+       <LENGTH>65</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S54</KEY>
+       <ENTRY>Filtros críticos del sistema de autorización modificados correctamente</ENTRY>
+       <LENGTH>70</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S55</KEY>
+       <ENTRY>Parámetro de configuración modificado correctamente</ENTRY>
+       <LENGTH>51</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S56</KEY>
+       <ENTRY>Conjunto config. de origen &amp;1 movido a destino con nuevo conjunto config. &amp;2</ENTRY>
+       <LENGTH>76</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S57</KEY>
+       <ENTRY>Org Logic personalizado añadido correctamente</ENTRY>
+       <LENGTH>45</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S58</KEY>
+       <ENTRY>Custom Org Logic modificada correctamente</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S59</KEY>
+       <ENTRY>Área de aplicación eliminada correctamente</ENTRY>
+       <LENGTH>42</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S60</KEY>
+       <ENTRY>Área de proceso eliminada correctamente</ENTRY>
+       <LENGTH>39</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S61</KEY>
+       <ENTRY>Escenario de riesgo eliminado correctamente</ENTRY>
+       <LENGTH>43</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S62</KEY>
+       <ENTRY>Área de Aplicación añadida con éxito</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S63</KEY>
+       <ENTRY>Área de Aplicación modificada con éxito</ENTRY>
+       <LENGTH>39</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S64</KEY>
+       <ENTRY>Área de proceso añadida correctamente</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S65</KEY>
+       <ENTRY>Área de proceso modificada correctamente</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S66</KEY>
+       <ENTRY>Escenario de riesgo añadido correctamente</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S67</KEY>
+       <ENTRY>Escenario de riesgo modificado correctamente</ENTRY>
+       <LENGTH>44</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S68</KEY>
+       <ENTRY>Tipo de sistema eliminado correctamente</ENTRY>
+       <LENGTH>39</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S69</KEY>
+       <ENTRY>Categoría de Sistema eliminada con éxito</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S70</KEY>
+       <ENTRY>Tipo de sistema añadido correctamente</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S71</KEY>
+       <ENTRY>Tipo de sistema modificado correctamente</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S72</KEY>
+       <ENTRY>Categoría del sistema añadida con éxito</ENTRY>
+       <LENGTH>39</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S73</KEY>
+       <ENTRY>Categoría del sistema modificada correctamente</ENTRY>
+       <LENGTH>46</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S74</KEY>
+       <ENTRY>Entrada guardada</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>W01</KEY>
+       <ENTRY>No se ha seleccionado ningún parámetro de configuración</ENTRY>
+       <LENGTH>55</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S50</KEY>
+       <ENTRY>Conflicto personalizado modificado con éxito</ENTRY>
+       <LENGTH>44</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S25</KEY>
+       <ENTRY>Transacción de llamada añadida correctamente</ENTRY>
+       <LENGTH>44</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S26</KEY>
+       <ENTRY>Transacción de llamada modificada con éxito</ENTRY>
+       <LENGTH>43</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S27</KEY>
+       <ENTRY>Transacción de llamada añadida con éxito</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S28</KEY>
+       <ENTRY>Transacción modificada con éxito</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S29</KEY>
+       <ENTRY>Valores de elementos variables eliminados correctamente</ENTRY>
+       <LENGTH>55</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S30</KEY>
+       <ENTRY>Sistemas de conjuntos de configuración eliminados correctamente</ENTRY>
+       <LENGTH>63</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S31</KEY>
+       <ENTRY>Valores de elementos org borrados con éxito</ENTRY>
+       <LENGTH>43</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S32</KEY>
+       <ENTRY>Elemento Selección eliminado correctamente</ENTRY>
+       <LENGTH>42</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S33</KEY>
+       <ENTRY>Configuration Set Header modificado correctamente</ENTRY>
+       <LENGTH>49</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S34</KEY>
+       <ENTRY>Configuration Set Header añadido correctamente</ENTRY>
+       <LENGTH>46</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S35</KEY>
+       <ENTRY>Valores de elementos variables modificados correctamente</ENTRY>
+       <LENGTH>56</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S36</KEY>
+       <ENTRY>Valores de elementos variables añadidos correctamente</ENTRY>
+       <LENGTH>53</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S37</KEY>
+       <ENTRY>Conjunto de configuración Sistemas modificado correctamente</ENTRY>
+       <LENGTH>59</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S38</KEY>
+       <ENTRY>Configuration Set Systems añadido correctamente</ENTRY>
+       <LENGTH>47</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S39</KEY>
+       <ENTRY>Valores de los elementos org modificados correctamente</ENTRY>
+       <LENGTH>54</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S40</KEY>
+       <ENTRY>Valores de elementos org añadidos correctamente</ENTRY>
+       <LENGTH>47</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S41</KEY>
+       <ENTRY>Selección de elementos modificada con éxito</ENTRY>
+       <LENGTH>43</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S42</KEY>
+       <ENTRY>Selección de elementos añadida correctamente</ENTRY>
+       <LENGTH>44</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S43</KEY>
+       <ENTRY>Encabezado de versión añadido correctamente</ENTRY>
+       <LENGTH>43</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S44</KEY>
+       <ENTRY>Objetos de función modificados correctamente</ENTRY>
+       <LENGTH>44</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S45</KEY>
+       <ENTRY>Objetos en conflicto modificados correctamente</ENTRY>
+       <LENGTH>46</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S46</KEY>
+       <ENTRY>Transacción crítica modificada correctamente</ENTRY>
+       <LENGTH>44</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S47</KEY>
+       <ENTRY>Autorización crítica modificada correctamente</ENTRY>
+       <LENGTH>45</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S48</KEY>
+       <ENTRY>Rol crítico modificado con éxito</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>S49</KEY>
+       <ENTRY>Perfil crítico modificado con éxito</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>028</KEY>
+       <ENTRY>Número de Roles derivados no asignados</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>030</KEY>
+       <ENTRY>Número medio de Roles derivados por Rol principal</ENTRY>
+       <LENGTH>49</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>031</KEY>
+       <ENTRY>Media de Roles individuales por Rol compuesto</ENTRY>
+       <LENGTH>45</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>032</KEY>
+       <ENTRY>Media de Roles por Usuario.</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>033</KEY>
+       <ENTRY>Nº medio de perfiles por usuario</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>034</KEY>
+       <ENTRY>Nº medio de autorizaciones por usuario</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>035</KEY>
+       <ENTRY>Media de perfiles por Rol</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>036</KEY>
+       <ENTRY>Nº medio de transacciones asignadas a Roles (en el menú)</ENTRY>
+       <LENGTH>56</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>037</KEY>
+       <ENTRY>Nº medio de autorizaciones por Rol</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>038</KEY>
+       <ENTRY>Versión de SOD Matrix</ENTRY>
+       <LENGTH>21</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>039</KEY>
+       <ENTRY>Número total de conflictos</ENTRY>
+       <LENGTH>26</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>040</KEY>
+       <ENTRY>Número de conflictos activos</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>041</KEY>
+       <ENTRY>Número medio de funciones por conflicto</ENTRY>
+       <LENGTH>39</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>042</KEY>
+       <ENTRY>Número de funciones</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>043</KEY>
+       <ENTRY>Nº medio de códigos de transacción por función</ENTRY>
+       <LENGTH>46</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>044</KEY>
+       <ENTRY>Número de códigos de transacción únicos</ENTRY>
+       <LENGTH>39</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>045</KEY>
+       <ENTRY>Número de combinaciones únicas Función-Transacción</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>046</KEY>
+       <ENTRY>Nº medio de objetos por transacción de la tabla FAOBJ2</ENTRY>
+       <LENGTH>54</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>047</KEY>
+       <ENTRY>Nº medio de registros por objeto de la tabla FAOBJ2</ENTRY>
+       <LENGTH>51</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>048</KEY>
+       <ENTRY>Número de objetos de autorización únicos</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>049</KEY>
+       <ENTRY>Número de combinaciones únicas Función-Código-Objeto</ENTRY>
+       <LENGTH>52</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>055</KEY>
+       <ENTRY>Nº total de tablas AGR</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>058</KEY>
+       <ENTRY>Nº total de tablas US</ENTRY>
+       <LENGTH>21</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>060</KEY>
+       <ENTRY>Nº total de tablas de matriz SOD</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>062</KEY>
+       <ENTRY>Número total de autorizaciones del sistema para objetos de la matriz</ENTRY>
+       <LENGTH>68</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>027</KEY>
+       <ENTRY>Número de Roles derivados asignados al menos a 1 usuario</ENTRY>
+       <LENGTH>56</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Número total de usuarios</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Número total de usuarios válidos y en diálogo</ENTRY>
+       <LENGTH>45</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>Número total de Roles</ENTRY>
+       <LENGTH>21</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Número de usuarios asignados al menos a 1 Rol</ENTRY>
+       <LENGTH>45</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>006</KEY>
+       <ENTRY>Número de usuarios sin Rol</ENTRY>
+       <LENGTH>26</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>007</KEY>
+       <ENTRY>Número de Roles asignados al menos a 1 usuario</ENTRY>
+       <LENGTH>46</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>008</KEY>
+       <ENTRY>Número de Roles sin asignar</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>009</KEY>
+       <ENTRY>Número total de perfiles</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>010</KEY>
+       <ENTRY>Número de usuarios asignados al menos a 1 perfil</ENTRY>
+       <LENGTH>48</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>011</KEY>
+       <ENTRY>Número de usuarios sin perfil asignado</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>012</KEY>
+       <ENTRY>Número de perfiles asignados al menos a 1 usuario</ENTRY>
+       <LENGTH>49</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>013</KEY>
+       <ENTRY>Número de perfiles no asignados</ENTRY>
+       <LENGTH>31</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>014</KEY>
+       <ENTRY>Número total de autorizaciones</ENTRY>
+       <LENGTH>30</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>015</KEY>
+       <ENTRY>Número de autorizaciones asignadas al menos a 1 usuario</ENTRY>
+       <LENGTH>55</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>016</KEY>
+       <ENTRY>Número de autorizaciones sin asignar</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>017</KEY>
+       <ENTRY>Número total de Roles compuestos</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>018</KEY>
+       <ENTRY>Número de Roles Compuestos asignados al menos a 1 usuario</ENTRY>
+       <LENGTH>57</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>019</KEY>
+       <ENTRY>Número de Roles compuestos sin asignar</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>020</KEY>
+       <ENTRY>Número total de Roles Únicos</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>021</KEY>
+       <ENTRY>Número de Roles Únicos asignados al menos a 1 usuario</ENTRY>
+       <LENGTH>53</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>022</KEY>
+       <ENTRY>Número de Roles simples no asignados</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>023</KEY>
+       <ENTRY>Número total de Roles Monoparentales</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>024</KEY>
+       <ENTRY>Número de Roles Monoparentales asignados al menos a 1 usuario</ENTRY>
+       <LENGTH>61</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>025</KEY>
+       <ENTRY>Número de Roles Monoparentales no asignados</ENTRY>
+       <LENGTH>43</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>026</KEY>
+       <ENTRY>Número total de Roles derivados</ENTRY>
+       <LENGTH>31</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>063</KEY>
+       <ENTRY>Número de perfiles S. con al menos 1 autorización para cualquier objeto de la matriz</ENTRY>
+       <LENGTH>84</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E08</KEY>
+       <ENTRY>Falta autorización para eliminar Autorización crítica</ENTRY>
+       <LENGTH>53</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E09</KEY>
+       <ENTRY>Falta autorización para eliminar Conflicto Personalizado</ENTRY>
+       <LENGTH>56</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E10</KEY>
+       <ENTRY>Falta autorización para eliminar Roles Críticos</ENTRY>
+       <LENGTH>47</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E11</KEY>
+       <ENTRY>Falta autorización para eliminar Perfiles Críticos</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E12</KEY>
+       <ENTRY>Falta autorización para añadir Objetos de Función</ENTRY>
+       <LENGTH>49</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E13</KEY>
+       <ENTRY>Falta autorización para añadir Objetos de Conflicto</ENTRY>
+       <LENGTH>51</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E14</KEY>
+       <ENTRY>Falta autorización para añadir transacciones críticas</ENTRY>
+       <LENGTH>53</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E15</KEY>
+       <ENTRY>Falta autorización para añadir autorizaciones críticas</ENTRY>
+       <LENGTH>54</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E16</KEY>
+       <ENTRY>Falta autorización para añadir Roles Críticos</ENTRY>
+       <LENGTH>45</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E17</KEY>
+       <ENTRY>Falta autorización para añadir perfiles críticos</ENTRY>
+       <LENGTH>48</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E18</KEY>
+       <ENTRY>Falta autorización para añadir conflictos personalizados</ENTRY>
+       <LENGTH>56</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E19</KEY>
+       <ENTRY>Cambiar parámetros de configuración</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E20</KEY>
+       <ENTRY>Cambiar elementos variables</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E21</KEY>
+       <ENTRY>Cambiar conjunto de configuración</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E22</KEY>
+       <ENTRY>La versión SOD utilizada en el conjunto de configuración no existe en el sistema de destino</ENTRY>
+       <LENGTH>91</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E23</KEY>
+       <ENTRY>El encabezado de la versión de las reglas debe marcarse en la entrada porque la versión de las reglas no existe en el sistema de destino</ENTRY>
+       <LENGTH>136</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E24</KEY>
+       <ENTRY>El sistema no existe en los destinos RFC</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E25</KEY>
+       <ENTRY>Entrada no guardada</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O01</KEY>
+       <ENTRY>Transacción crítica</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O02</KEY>
+       <ENTRY>Función ID</ENTRY>
+       <LENGTH>10</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O03</KEY>
+       <ENTRY>ID de conflicto</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O04</KEY>
+       <ENTRY>ID de objeto de autorización</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O05</KEY>
+       <ENTRY>ID de conflicto personalizado</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O06</KEY>
+       <ENTRY>Versión de la regla VE</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>O07</KEY>
+       <ENTRY>Nombre VE</ENTRY>
+       <LENGTH>9</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E07</KEY>
+       <ENTRY>Falta autorización para eliminar Conflicto</ENTRY>
+       <LENGTH>42</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>064</KEY>
+       <ENTRY>Número de Roles con al menos 1 Autorización para cualquier Objeto en la Matriz</ENTRY>
+       <LENGTH>78</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>074</KEY>
+       <ENTRY>Tiempo total de ejecución :</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>075</KEY>
+       <ENTRY>microsegundos</ENTRY>
+       <LENGTH>13</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>076</KEY>
+       <ENTRY>Seleccionar con resultados : /PSYNG/FAOBJ2. Resultados :</ENTRY>
+       <LENGTH>56</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>077</KEY>
+       <ENTRY>. Tiempo de ejecución :</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>078</KEY>
+       <ENTRY>Selección agregada : /PSYNG/FAOBJ2 unido con UST10S. Resultados:</ENTRY>
+       <LENGTH>64</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>080</KEY>
+       <ENTRY>Recuento /PSYNG/FAOBJ. Resultado :</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>081</KEY>
+       <ENTRY>Seleccionar con resultados : UST04.Resultado :</ENTRY>
+       <LENGTH>46</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>085</KEY>
+       <ENTRY>Analizado</ENTRY>
+       <LENGTH>9</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>086</KEY>
+       <ENTRY>usuarios. Tiempo de ejecución :</ENTRY>
+       <LENGTH>31</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>089</KEY>
+       <ENTRY>conflictos encontrados en</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>091</KEY>
+       <ENTRY>usuarios en 4 grupos.</ENTRY>
+       <LENGTH>21</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>095</KEY>
+       <ENTRY>segundos</ENTRY>
+       <LENGTH>8</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>096</KEY>
+       <ENTRY>minutos</ENTRY>
+       <LENGTH>7</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>097</KEY>
+       <ENTRY>horas</ENTRY>
+       <LENGTH>5</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>100</KEY>
+       <ENTRY>usuarios.</ENTRY>
+       <LENGTH>9</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>101</KEY>
+       <ENTRY>Nº total de tablas de configuración</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>102</KEY>
+       <ENTRY>Nº total de tablas de mitigación</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>103</KEY>
+       <ENTRY>Nº total de tablas de almacenamiento de resultados SOD</ENTRY>
+       <LENGTH>54</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E01</KEY>
+       <ENTRY>crear versión SOD</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E02</KEY>
+       <ENTRY>eliminar versión SOD</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E03</KEY>
+       <ENTRY>La cabecera de versión debe marcarse en la entrada porque la versión no existe en el sistema de destino</ENTRY>
+       <LENGTH>103</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E04</KEY>
+       <ENTRY>La versión está marcada como no editable en el sistema de destino</ENTRY>
+       <LENGTH>65</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E05</KEY>
+       <ENTRY>Falta autorización para eliminar transacciones críticas</ENTRY>
+       <LENGTH>55</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E06</KEY>
+       <ENTRY>Falta autorización para suprimir funciones</ENTRY>
+       <LENGTH>42</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+   </I18N_TPOOL>
+  </asx:values>
+ </asx:abap>
+</abapGit>

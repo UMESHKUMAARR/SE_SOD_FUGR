@@ -1,0 +1,725 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_PROG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROGDIR>
+    <NAME>/PSYNG/SW_ROLES_MATRIX</NAME>
+    <SUBC>1</SUBC>
+    <SECU>SW_SE</SECU>
+    <RLOAD>E</RLOAD>
+    <FIXPT>X</FIXPT>
+    <UCCHECK>X</UCCHECK>
+   </PROGDIR>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>003</KEY>
+     <ENTRY>No Data found for the corresponding input</ENTRY>
+     <LENGTH>82</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>004</KEY>
+     <ENTRY>No execution of conflicting tcodes</ENTRY>
+     <LENGTH>68</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>B01</KEY>
+     <ENTRY>Date Range for Transaction History</ENTRY>
+     <LENGTH>50</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>B02</KEY>
+     <ENTRY>Role and User Selection</ENTRY>
+     <LENGTH>50</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>B03</KEY>
+     <ENTRY>1 Month</ENTRY>
+     <LENGTH>7</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>B04</KEY>
+     <ENTRY>6 Months</ENTRY>
+     <LENGTH>8</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>B05</KEY>
+     <ENTRY>1 Year</ENTRY>
+     <LENGTH>6</LENGTH>
+    </item>
+    <item>
+     <ID>R</ID>
+     <ENTRY>Role Violation Matrix</ENTRY>
+     <LENGTH>21</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>DATES</KEY>
+     <ENTRY>Dates</ENTRY>
+     <LENGTH>13</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>P_VRSIO</KEY>
+     <ENTRY>SOD matrix Version</ENTRY>
+     <LENGTH>26</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>S_CLASS</KEY>
+     <ENTRY>User group</ENTRY>
+     <LENGTH>18</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>S_ROLES</KEY>
+     <ENTRY>Role Names</ENTRY>
+     <LENGTH>18</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>S_USERS</KEY>
+     <ENTRY>Users</ENTRY>
+     <LENGTH>13</LENGTH>
+    </item>
+   </TPOOL>
+   <I18N_TPOOL>
+    <item>
+     <LANGUAGE>D</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Keine Daten zu entsprech. Eingab. gefund.</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>Keine Ausführung widersprüchlicher TCodes</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>B01</KEY>
+       <ENTRY>Datumsbereich für Transaktionshistorie</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>B02</KEY>
+       <ENTRY>Rollen- und Benutzerauswahl</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>B03</KEY>
+       <ENTRY>1 Monat</ENTRY>
+       <LENGTH>7</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>B04</KEY>
+       <ENTRY>6 Monate</ENTRY>
+       <LENGTH>8</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>B05</KEY>
+       <ENTRY>1 Jahr</ENTRY>
+       <LENGTH>6</LENGTH>
+      </item>
+      <item>
+       <ID>R</ID>
+       <ENTRY>Rollenverletzungs-Matrix</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>DATES</KEY>
+       <ENTRY>Daten</ENTRY>
+       <LENGTH>13</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>P_VRSIO</KEY>
+       <ENTRY>SOD-Matrixversion</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>S_CLASS</KEY>
+       <ENTRY>Ben.-Grp.</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>S_ROLES</KEY>
+       <ENTRY>Rollennamen</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>S_USERS</KEY>
+       <ENTRY>Ben.</ENTRY>
+       <LENGTH>12</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>P</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>B01</KEY>
+       <ENTRY>Intervalo de Datas para Histórico de Transações</ENTRY>
+       <LENGTH>47</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>B02</KEY>
+       <ENTRY>Seleção de Perfil e Usuário</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>B03</KEY>
+       <ENTRY>1 Mês</ENTRY>
+       <LENGTH>5</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>B04</KEY>
+       <ENTRY>6 Meses</ENTRY>
+       <LENGTH>7</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>B05</KEY>
+       <ENTRY>1 Ano</ENTRY>
+       <LENGTH>5</LENGTH>
+      </item>
+      <item>
+       <ID>R</ID>
+       <ENTRY>Matriz de Violação de Perfil</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>DATES</KEY>
+       <ENTRY>Datas:</ENTRY>
+       <LENGTH>14</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>ROLE</KEY>
+       <ENTRY>Perfil</ENTRY>
+       <LENGTH>14</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>USERS</KEY>
+       <ENTRY>Usuários</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>VRSIO</KEY>
+       <ENTRY>Versão da Matriz SOD</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>S</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>No se han encontrado datos para la entrada correspondiente</ENTRY>
+       <LENGTH>58</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>No ejecución de Transacciones conflictivas</ENTRY>
+       <LENGTH>42</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>B01</KEY>
+       <ENTRY>Intervalo de fechas para el historial de transacci</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>B02</KEY>
+       <ENTRY>Selección de Roles y Usuarios</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>B03</KEY>
+       <ENTRY>1 Mes</ENTRY>
+       <LENGTH>5</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>B04</KEY>
+       <ENTRY>6 Meses</ENTRY>
+       <LENGTH>7</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>B05</KEY>
+       <ENTRY>1 año</ENTRY>
+       <LENGTH>5</LENGTH>
+      </item>
+      <item>
+       <ID>R</ID>
+       <ENTRY>Matriz de Violación de Roles</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>DATES</KEY>
+       <ENTRY>Fechas</ENTRY>
+       <LENGTH>14</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>P_VRSIO</KEY>
+       <ENTRY>Matriz SOD Versión</ENTRY>
+       <LENGTH>26</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>S_CLASS</KEY>
+       <ENTRY>Grupo de usuarios</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>S_ROLES</KEY>
+       <ENTRY>Nombres de Rol</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>S_USERS</KEY>
+       <ENTRY>Usuarios</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+   </I18N_TPOOL>
+   <LONGTEXTS>
+    <item>
+     <DOKIL>
+      <ID>RE</ID>
+      <OBJECT>/PSYNG/SW_ROLES_MATRIX</OBJECT>
+      <LANGU>D</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0001</VERSION>
+      <TXTLINES>00039</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SW_ROLES_MATRIX</TDNAME>
+      <TDID>RE</TDID>
+      <TDSPRAS>D</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00001</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;TITLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Rollenverletzungs-Matrix</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PURPOSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Dieser Report ermittelt die korrekten Rollen aus dem Selektionsbild.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Danach bestimmt er aus den ausgeführten TAs, die in den Rollen definiert</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>sind, ob eine SOD-Verletz. zum jeweil. Benutzer vorliegt. Die Farben in</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>der ALV-Reportliste kennzeichnen die Benutzeraktionen wie folgt:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,Rot = TCode ausgeführt; SOD-Verletzung liegt vor</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,Grün = TCode nicht ausgeführt&lt;(&gt;;&lt;)&gt; Benutzer hat entsprech. Zugriff</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,keine Farbe = Ben. hat Zugriff; ausgeführt/nicht ausgeführt &lt;(&gt;;&lt;)&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>keine SOD-Verletzung.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Der Report zeigt anhand der Transaktionsarchivdaten die RFC-Destination,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>die Ben.-ID, den vollst. Benutzernamen, das verwendete Terminal/PC, die</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Anzahl der Interaktionen, den Datentyp, den TCode und die TA-Beschreib.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>an. Über einen zusätzlichen Aufriss können zudem die ausgeführ. Schritte</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>in der TA bestimmt werden, um etwaige Verletzungen zu beheben. Außerdem</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>ist eine Datums-/Zeiterfassung zu jedem Transaktionsschritt verfügbar.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;SELECTION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Nehmen Sie die Auswahl für den Report vor:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,Daten:  Zeitraum für Reporting ist konfigurierbar, oder es können</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>feste Werte über Datumstasten mit folgenden Optionen gewählt werden: 1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Monat, 6 Monate oder 1 Jahr.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,SOD-Matrixversion: Wählen Sie die passende Version für Ihre</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Reporting-Anforderungen aus dem Aktionsmenü aus.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,Rolle: Filtern Sie die Berichtsausgabeliste durch Auswahl nur jener</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Rollen, die beim Reporting berücksichtigt werden sollen.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,Benutzergruppe(n): Bestimmt die zu berücksichtigenden Benutzergruppen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>beim Reportingprozess.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,Ben.-ID(s): Bestimmt die Anzahl der Benutzer, für die</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>das Reporting erfolgt.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;OUTPUT&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,Rolle: Kennzeichnet die auf dem Selektionsbild festgelegte Rolle.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,, SOD-Konflikt-ID:  Bezieht sich auf die in der Selektion festgelegte</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>SOD-Matrixversion; ist begrenzt auf die Konflikt-IDs, die auf dem</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Dialogfenster.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,Beschreibung: Kennzeichnet die definierte Konflikt-ID-Beschreibung.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,Funktions-ID: Legt die Funktions-ID für die Geschäftsprozessfunktion</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>fest.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,Beschreibung: Bestimmt die beim Anlegen der Funktion definierte</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Beschreibung.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,Schweregrad: Kritisch, Hoch, Mittel und Niedrig</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,Transaktion: Diese SAP-Transaktion wurde in der Dialogsitzung</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>unter den Konten zum Benutzernamen ausgeführt.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>RE</ID>
+      <OBJECT>/PSYNG/SW_ROLES_MATRIX</OBJECT>
+      <LANGU>E</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0002</VERSION>
+      <MASTERLANG>X</MASTERLANG>
+      <TXTLINES>00039</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SW_ROLES_MATRIX</TDNAME>
+      <TDID>RE</TDID>
+      <TDSPRAS>E</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00002</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;TITLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Role Violation Matrix</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PURPOSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>This report will determine the correct set of roles from the selection</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>screen. Then it will choose from the executed transactions defined in</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>these roles if any SOD violation occurred for each user. The ALV report</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>list colors indicated the following user action conditions.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,Red  = tcode was executed and in SOD violation</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,Green  = tcode not executed&lt;(&gt;,&lt;)&gt; but the user has access to do so</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,No Color = User has access may or may not have been executed&lt;(&gt;,&lt;)&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>but no SOD violation.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Using transactional archive data, the report will display the RFC</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>destination, User ID, full username, Terminal or PC used, number of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>interactions data type, transaction code, and the transaction</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>description. Additional drill-down can also determine the steps taken</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>within the transaction to resolve potential violations. We also have the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>date and time recordings for each transactional step.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;SELECTION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Enter the selection for the report:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,Dates:  time range for reporting could be customized or use the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>determined values from the date buttons that provide the options for 1</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Month, 6 Months, or 1 Year date ranges.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,SOD matrix version: pick the version suitable for your reporting</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>needs from the pull-down.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,Role: filter the report output list by selecting only these roles to</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>be considered for reporting.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,User Group(s): this will determine which user groups to be considered</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>for the reporting process.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,User ID(s): this will determine the number of users that will be</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>reported on.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;OUTPUT&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,Role: indicates the role that was defined from the selection screen.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,SOD Conflict ID:  relating the SOD matrix version defined in the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>selection and limited to the conflict IDs indicated in the selection</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>screen.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,Description: this indicated the defined conflict id description.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,Function ID: defines the function ID related to the business</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>processing function.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,Description: determines the description defined when this function</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>was created.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,Severity: Critical, High, Medium, and Low</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>·,,Transaction: This SAP transaction was executed in the dialog session</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>under the username accounts.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+   </LONGTEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

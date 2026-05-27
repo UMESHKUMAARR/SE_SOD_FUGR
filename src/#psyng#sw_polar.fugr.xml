@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>OBSOLETE -  Polar analysis</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>/PSYNG/LSW_POLARF01</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/LSW_POLARTOP</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/SAPLSW_POLAR</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>/PSYNG/SW_032</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>OBSOLETE - SW : SOD Analysis : Role Polar</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_ENHANC</PARAMETER>
+       <DEFAULT>&apos; &apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_ORGCHK</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_COMBOS</PARAMETER>
+       <DEFAULT>&apos;&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_USER</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_BNAME</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_POLAR</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_ROLE_POLAR</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_COMBOS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_ROLE_POLAR_COMBO</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_COMBO_USERS</PARAMETER>
+       <TYPES>O</TYPES>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SW_ROLE_POLAR_COMBO_USR</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CONFLICT</PARAMETER>
+       <DBSTRUCT>/PSYNG/CONFLICT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CONFDET</PARAMETER>
+       <DBSTRUCT>/PSYNG/CONFDET</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FUNCTTRAN</PARAMETER>
+       <DBSTRUCT>/PSYNG/FUNCTTRAN</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_FAOBJ</PARAMETER>
+       <DBSTRUCT>/PSYNG/FAOBJ2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SWSODORGM</PARAMETER>
+       <DBSTRUCT>/PSYNG/SWSODORGM</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_TCODES</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_PAR_TCODE_OUTPUT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_ENHANC</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Use enhanced ruleset</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_ORGCHK</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Org Level Analysis</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_COMBOS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Include role combinations</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_USER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for User IDs</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_POLAR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW : Role polar number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_COMBOS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW : Role polar number for role combos</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_COMBO_USERS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW : Role polar number for role combos - users</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONFLICT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Conflict Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONFDET</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Conflict Details</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FUNCTTRAN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Functions and Transactions</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FAOBJ</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Object Definition</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SWSODORGM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW SOD Organizational Values Matrix</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_TCODES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Called tcodes with Parameter Tcodes</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_033</FUNCNAME>
+     <SHORT_TEXT>OBSOLETE - SW : Polar Analysis in parallel</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SODVRSIO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_ENHANC</PARAMETER>
+       <DEFAULT>&apos; &apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_ORGCHK</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_PROC</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>NUMC4</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_UPP</PARAMETER>
+       <DEFAULT>5</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>I</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_COMBOS</PARAMETER>
+       <DEFAULT>&apos;&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>L_COUNT</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>I</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ET_POLAR</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_ROLE_POLAR</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_USER</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_BNAME</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_USRGRP</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_CLASS</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_COMBOS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_ROLE_POLAR_COMBO</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_COMBO_USERS</PARAMETER>
+       <TYPES>O</TYPES>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SW_ROLE_POLAR_COMBO_USR</TYP>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_VRSIO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOD Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_ENHANC</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Use enhanced ruleset</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_ORGCHK</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Org Level Analysis</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_PROC</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nr of processes</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_UPP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nr of users per process</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_COMBOS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Include role combinations</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>L_COUNT</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_POLAR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW : Role polar number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_USER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for User IDs</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_USRGRP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for User group</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_COMBOS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW : Role polar number for role combos</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_COMBO_USERS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW : Role polar number for role combos - users</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_050</FUNCNAME>
+     <SHORT_TEXT>OBSOLETE - SW : recursively create role combinations</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_START_IDX</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>SYTABIX</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_POLAR</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_ROLE_POLAR</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_COMBINATION</PARAMETER>
+       <TYP>STANDARD TABLE</TYP>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_START_IDX</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Internal table, current line index</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_POLAR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW : Role polar number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_COMBINATION</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+   <I18N_TPOOL>
+    <item>
+     <LANGUAGE>D</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Angefordrt:</ENTRY>
+       <LENGTH>11</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY> Prozesse.  Verfügbare Prozesse:</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>035</KEY>
+       <ENTRY>Polaranalyse Fortschr.</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>F</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Requested :</ENTRY>
+       <LENGTH>11</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY> processes.  Available processes :</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>035</KEY>
+       <ENTRY>Polar Analysis progress</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>H</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Gewünscht:</ENTRY>
+       <LENGTH>11</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Prozesse.  Verfügbare Prozesse :</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>I</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Requested :</ENTRY>
+       <LENGTH>11</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY> processes.  Available processes :</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>035</KEY>
+       <ENTRY>Polar Analysis progress</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>N</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Requested :</ENTRY>
+       <LENGTH>11</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY> processes.  Available processes :</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>035</KEY>
+       <ENTRY>Polar Analysis progress</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>P</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Requis.:</ENTRY>
+       <LENGTH>8</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY> processos.  Pocessos disponíveis:</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>035</KEY>
+       <ENTRY>Progresso Análise Polar</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>S</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Solicitado :</ENTRY>
+       <LENGTH>12</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>procesos. Procesos disponibles :</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>035</KEY>
+       <ENTRY>Progreso del Análisis Polar</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>V</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Requested :</ENTRY>
+       <LENGTH>11</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY> processes.  Available processes :</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>035</KEY>
+       <ENTRY>Polar Analysis progress</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>Z</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Requested :</ENTRY>
+       <LENGTH>11</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY> processes.  Available processes :</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>035</KEY>
+       <ENTRY>Polar Analysis progress</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+   </I18N_TPOOL>
+  </asx:values>
+ </asx:abap>
+</abapGit>

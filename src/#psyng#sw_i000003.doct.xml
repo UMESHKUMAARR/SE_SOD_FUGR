@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DOCT" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DOC>
+    <item>
+     <DOKIL>
+      <ID>TX</ID>
+      <OBJECT>/PSYNG/SW_I000003</OBJECT>
+      <LANGU>E</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0004</VERSION>
+      <MASTERLANG>X</MASTERLANG>
+      <TXTLINES>00023</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SW_I000003</TDNAME>
+      <TDID>TX</TDID>
+      <TDSPRAS>E</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00004</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Current situation:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>You are about to export data for over 50 roles.  This will result in a</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>large amount of data and typically result in a much longer execution</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>time for the report.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Possible limitations:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Your SAP systems incorporate a maximum runtime limitation of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>[rdisp/max_wprun_time] seconds.  If a report execution is longer than</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>[rdisp/max_wprun_time] seconds, the SAP system will cancel the report</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>and create a short dump.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Your SAP systems also incorporate a limitation on the amount of memory</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>(temporary storage) each report can use while it is running.  If the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>volume of data that the report needs to display (or process) requires</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>more memory than what is configured, the SAP system will cancel the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>report and create a short dump.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>These SAP System  limitations  are normal, and do apply to reports</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>executed from Separations Enforcer (SE).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Recommendations:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Security Weaver recommends to select only those nodes that you want to</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>export.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>If export is required for multiple roles and conflicts, then export the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>data report in smaller batches of roles.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&lt;ZH&gt;Would you like to continue running the report given the possible</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>limitations?&lt;/&gt;</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+   </DOC>
+  </asx:values>
+ </asx:abap>
+</abapGit>

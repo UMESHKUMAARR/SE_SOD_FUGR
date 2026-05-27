@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CHDO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <CHDO>
+    <REPORTS_GENERATED>
+     <TCDRPS>
+      <OBJECT>/PSYNG/SWAUD</OBJECT>
+      <REPORTNAME>/PSYNG/SWAUD</REPORTNAME>
+      <TEXTCASE>X</TEXTCASE>
+      <ARBGEB>CD</ARBGEB>
+      <FEHLERNR>600</FEHLERNR>
+      <FGRP>/PSYNG/SE_CDSWAUD</FGRP>
+      <PREFIX>/PSYNG/Y</PREFIX>
+      <UPDATE_FLG>2</UPDATE_FLG>
+     </TCDRPS>
+    </REPORTS_GENERATED>
+    <OBJECTS>
+     <TCDOBS>
+      <OBJECT>/PSYNG/SWAUD</OBJECT>
+      <TABNAME>/PSYNG/SWAUDC2</TABNAME>
+      <DOCUDEL>X</DOCUDEL>
+      <DOCUD_NOIF>X</DOCUD_NOIF>
+     </TCDOBS>
+     <TCDOBS>
+      <OBJECT>/PSYNG/SWAUD</OBJECT>
+      <TABNAME>/PSYNG/SWAUDHDR</TABNAME>
+      <DOCUDEL>X</DOCUDEL>
+      <DOCUD_NOIF>X</DOCUD_NOIF>
+     </TCDOBS>
+    </OBJECTS>
+    <OBJECTS_TEXT>
+     <TCDOBTS>
+      <SPRAS>D</SPRAS>
+      <OBJECT>/PSYNG/SWAUD</OBJECT>
+      <OBTEXT>SE: Änderungsbeleg für kritische Berechtigungen</OBTEXT>
+     </TCDOBTS>
+     <TCDOBTS>
+      <SPRAS>E</SPRAS>
+      <OBJECT>/PSYNG/SWAUD</OBJECT>
+      <OBTEXT>SE: Change Document for Critical authorizations</OBTEXT>
+     </TCDOBTS>
+     <TCDOBTS>
+      <SPRAS>P</SPRAS>
+      <OBJECT>/PSYNG/SWAUD</OBJECT>
+      <OBTEXT>SE: Documentos de Mudanças para Autorizações Críticas</OBTEXT>
+     </TCDOBTS>
+     <TCDOBTS>
+      <SPRAS>S</SPRAS>
+      <OBJECT>/PSYNG/SWAUD</OBJECT>
+      <OBTEXT>SE: Documento de Cambio para Autorizaciones Críticas</OBTEXT>
+     </TCDOBTS>
+    </OBJECTS_TEXT>
+   </CHDO>
+  </asx:values>
+ </asx:abap>
+</abapGit>

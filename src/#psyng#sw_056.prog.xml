@@ -1,0 +1,5499 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_PROG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROGDIR>
+    <NAME>/PSYNG/SW_056</NAME>
+    <SUBC>1</SUBC>
+    <SECU>SW_SE</SECU>
+    <RLOAD>E</RLOAD>
+    <FIXPT>X</FIXPT>
+    <UCCHECK>X</UCCHECK>
+   </PROGDIR>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>001</KEY>
+     <ENTRY>Enhancing Performance for mass selection</ENTRY>
+     <LENGTH>41</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>002</KEY>
+     <ENTRY>Number of Parallel Processes to use (4 max; see documentation)</ENTRY>
+     <LENGTH>62</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>003</KEY>
+     <ENTRY>Specific server</ENTRY>
+     <LENGTH>15</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>004</KEY>
+     <ENTRY>This Server Only</ENTRY>
+     <LENGTH>17</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>005</KEY>
+     <ENTRY>Update SCAN table</ENTRY>
+     <LENGTH>17</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>011</KEY>
+     <ENTRY>CAUTION</ENTRY>
+     <LENGTH>10</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>012</KEY>
+     <ENTRY>Processing may TIME OUT if large amount of data are selected.</ENTRY>
+     <LENGTH>61</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>013</KEY>
+     <ENTRY>In that case, it is recommended to run report in background:</ENTRY>
+     <LENGTH>61</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>014</KEY>
+     <ENTRY>Schedule Background Job</ENTRY>
+     <LENGTH>23</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>015</KEY>
+     <ENTRY>View Jobs (SM37)</ENTRY>
+     <LENGTH>19</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>016</KEY>
+     <ENTRY>Information</ENTRY>
+     <LENGTH>13</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>017</KEY>
+     <ENTRY>System</ENTRY>
+     <LENGTH>6</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>018</KEY>
+     <ENTRY>Organization Unit SoD Project Mangr.</ENTRY>
+     <LENGTH>37</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>019</KEY>
+     <ENTRY>List of AREs covered</ENTRY>
+     <LENGTH>25</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>100</KEY>
+     <ENTRY>Date of analysis</ENTRY>
+     <LENGTH>17</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>101</KEY>
+     <ENTRY>Time of analysis</ENTRY>
+     <LENGTH>16</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>102</KEY>
+     <ENTRY>Number of users analyzed</ENTRY>
+     <LENGTH>24</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>103</KEY>
+     <ENTRY>Number of users with conflicts in</ENTRY>
+     <LENGTH>33</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>104</KEY>
+     <ENTRY>Number of users with conflicts overall</ENTRY>
+     <LENGTH>38</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>105</KEY>
+     <ENTRY>ALL</ENTRY>
+     <LENGTH>5</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>106</KEY>
+     <ENTRY>Rule</ENTRY>
+     <LENGTH>5</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>107</KEY>
+     <ENTRY>Type</ENTRY>
+     <LENGTH>4</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>109</KEY>
+     <ENTRY># of viol. inc. ALL</ENTRY>
+     <LENGTH>50</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>110</KEY>
+     <ENTRY>% of  users  with conflict</ENTRY>
+     <LENGTH>28</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>111</KEY>
+     <ENTRY>Avg.  viol. per affected user</ENTRY>
+     <LENGTH>37</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>120</KEY>
+     <ENTRY>SOD matrix version</ENTRY>
+     <LENGTH>18</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>121</KEY>
+     <ENTRY>SW version :</ENTRY>
+     <LENGTH>13</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>123</KEY>
+     <ENTRY>Max. nr of users to analyze at once</ENTRY>
+     <LENGTH>37</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>124</KEY>
+     <ENTRY>Cross System Analysis</ENTRY>
+     <LENGTH>22</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>125</KEY>
+     <ENTRY>Choose a server</ENTRY>
+     <LENGTH>17</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>126</KEY>
+     <ENTRY>Only 4 Parallel Processes allowed</ENTRY>
+     <LENGTH>70</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>127</KEY>
+     <ENTRY>Server:</ENTRY>
+     <LENGTH>15</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>128</KEY>
+     <ENTRY>does not exist; check name</ENTRY>
+     <LENGTH>27</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>129</KEY>
+     <ENTRY>Security Weaver: Sys-Wide Scan</ENTRY>
+     <LENGTH>32</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>130</KEY>
+     <ENTRY>Dynamically created</ENTRY>
+     <LENGTH>23</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>131</KEY>
+     <ENTRY>Total:</ENTRY>
+     <LENGTH>8</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>132</KEY>
+     <ENTRY>SOD Overview for enhanced ruleset</ENTRY>
+     <LENGTH>38</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>162</KEY>
+     <ENTRY>Only analyze users that exist in local system</ENTRY>
+     <LENGTH>45</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>E01</KEY>
+     <ENTRY>Verify RFC destination configured in SW_056_RFC_DEST parameter</ENTRY>
+     <LENGTH>62</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>E02</KEY>
+     <ENTRY>RFC destination does not exist</ENTRY>
+     <LENGTH>30</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>E03</KEY>
+     <ENTRY>RFC destination not equal to configured value in</ENTRY>
+     <LENGTH>48</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>E04</KEY>
+     <ENTRY>parameter SW_056_RFC_DEST</ENTRY>
+     <LENGTH>25</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>E10</KEY>
+     <ENTRY>Unable to create variant</ENTRY>
+     <LENGTH>50</LENGTH>
+    </item>
+    <item>
+     <ID>R</ID>
+     <ENTRY>SW: System-Wide Conflict Summary</ENTRY>
+     <LENGTH>32</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>XUSRRFC</KEY>
+     <ENTRY>Remote System(s)</ENTRY>
+     <LENGTH>24</LENGTH>
+    </item>
+   </TPOOL>
+   <I18N_TPOOL>
+    <item>
+     <LANGUAGE>D</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Performance-Verbess. für Massenselektion</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Anzahl nutzbarer parallelr Prozesse (max. 4; s. Dokumentation)</ENTRY>
+       <LENGTH>62</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Spezif. Server</ENTRY>
+       <LENGTH>14</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>Nur dieser Server</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>SCAN-Tab. aktual.</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>011</KEY>
+       <ENTRY>ACHTUNG</ENTRY>
+       <LENGTH>7</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>012</KEY>
+       <ENTRY>TIMEOUT bei Verarbtg mögl., wenn große Datenmenge ausgw. ist.</ENTRY>
+       <LENGTH>61</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>013</KEY>
+       <ENTRY>Hierbei ist die Hintergrundausführung des Reports ratsam:</ENTRY>
+       <LENGTH>57</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>014</KEY>
+       <ENTRY>Hintergrundjob einplan.</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>015</KEY>
+       <ENTRY>JobAnsicht(SM37)</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>016</KEY>
+       <ENTRY>Information</ENTRY>
+       <LENGTH>11</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>017</KEY>
+       <ENTRY>System</ENTRY>
+       <LENGTH>6</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>018</KEY>
+       <ENTRY>Org.-Einheit - SoD-Projektmanager</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>019</KEY>
+       <ENTRY>Liste berücksicht. AREs</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>100</KEY>
+       <ENTRY>Analysedatum</ENTRY>
+       <LENGTH>12</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>101</KEY>
+       <ENTRY>Analysezeit</ENTRY>
+       <LENGTH>11</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>102</KEY>
+       <ENTRY>Anz. analysiertr Benutzr</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>103</KEY>
+       <ENTRY>Anzahl Benutzer mit Konflikten in</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>104</KEY>
+       <ENTRY>Anzahl aller Benutzer mit Konflikten</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>105</KEY>
+       <ENTRY>Alle</ENTRY>
+       <LENGTH>4</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>106</KEY>
+       <ENTRY>Regel</ENTRY>
+       <LENGTH>5</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>107</KEY>
+       <ENTRY>Typ</ENTRY>
+       <LENGTH>3</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>109</KEY>
+       <ENTRY>Anz. Verletzungen inkl. ALL</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>110</KEY>
+       <ENTRY>% von Benutzern mit Konflikt</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>111</KEY>
+       <ENTRY>Durchschn. Verletz. pro betroff. Ben.</ENTRY>
+       <LENGTH>44</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>120</KEY>
+       <ENTRY>SOD-Matrixversion</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>121</KEY>
+       <ENTRY>SW-Version</ENTRY>
+       <LENGTH>10</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>123</KEY>
+       <ENTRY>Max. Anz. gleichzeit. zu analys. Ben.</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>124</KEY>
+       <ENTRY>Systemübergr. Analyse</ENTRY>
+       <LENGTH>21</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>125</KEY>
+       <ENTRY>Server wählen</ENTRY>
+       <LENGTH>13</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>126</KEY>
+       <ENTRY>Nur 4 parallele Prozesse erlaubt</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>127</KEY>
+       <ENTRY>Server</ENTRY>
+       <LENGTH>6</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>128</KEY>
+       <ENTRY>exist. nicht; Namen prüfen</ENTRY>
+       <LENGTH>26</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>129</KEY>
+       <ENTRY>Security Weaver: Systemwtr Scan</ENTRY>
+       <LENGTH>31</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>130</KEY>
+       <ENTRY>Dynamisch erstellt</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>131</KEY>
+       <ENTRY>Anzahl:</ENTRY>
+       <LENGTH>7</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>132</KEY>
+       <ENTRY>SOD-Übersicht f. erweitertes Regelwerk</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>162</KEY>
+       <ENTRY>Nur Benutzer im lokalen System analysieren</ENTRY>
+       <LENGTH>42</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E01</KEY>
+       <ENTRY>Verifiziere RFC-Destinat. konfig. in Parameter SW_056_RFC_DEST</ENTRY>
+       <LENGTH>62</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E02</KEY>
+       <ENTRY>RFC-Destination nicht vorhandn</ENTRY>
+       <LENGTH>30</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E03</KEY>
+       <ENTRY>RFC-Dest. entspricht nicht dem konfig. Wert in</ENTRY>
+       <LENGTH>46</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E04</KEY>
+       <ENTRY>Parameter SW_056_RFC_DEST</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E10</KEY>
+       <ENTRY>Variante kann nicht angelegt werden</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>R</ID>
+       <ENTRY>SW: Übersicht systemweite Konflikte</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>XUSRRFC</KEY>
+       <ENTRY>Remote-System(e)</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>F</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>125</KEY>
+       <ENTRY>Choose a server</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>126</KEY>
+       <ENTRY>Only 4 Parallel Processes allowed</ENTRY>
+       <LENGTH>70</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>127</KEY>
+       <ENTRY>Server:</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>128</KEY>
+       <ENTRY>does not exist; check name</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>129</KEY>
+       <ENTRY>Security Weaver: Sys-Wide Scan</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>124</KEY>
+       <ENTRY>Cross System Analysis</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>110</KEY>
+       <ENTRY>% of  users  with conflict</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>111</KEY>
+       <ENTRY>Avg.  viol. per affected user</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>120</KEY>
+       <ENTRY>SOD matrix version</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>121</KEY>
+       <ENTRY>SW version</ENTRY>
+       <LENGTH>10</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>123</KEY>
+       <ENTRY>Max. nr of users to analyze at once</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E03</KEY>
+       <ENTRY>RFC destination not equal to configured value in</ENTRY>
+       <LENGTH>48</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E04</KEY>
+       <ENTRY>parameter SW_056_RFC_DEST</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E10</KEY>
+       <ENTRY>Unable to create variant</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+      <item>
+       <ID>R</ID>
+       <ENTRY>SW: System-Wide Conflict Summary</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>XUSRRFC</KEY>
+       <ENTRY>Remote System(s)</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E02</KEY>
+       <ENTRY>RFC destination does not exist</ENTRY>
+       <LENGTH>30</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>130</KEY>
+       <ENTRY>Dynamically created</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>131</KEY>
+       <ENTRY>Total:</ENTRY>
+       <LENGTH>8</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>132</KEY>
+       <ENTRY>SOD Overview for enhanced ruleset</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>162</KEY>
+       <ENTRY>Only analyze users that exist in local system</ENTRY>
+       <LENGTH>45</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E01</KEY>
+       <ENTRY>Verify RFC destination configured in SW_056_RFC_DEST parameter</ENTRY>
+       <LENGTH>62</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>109</KEY>
+       <ENTRY># of viol. inc. ALL</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>012</KEY>
+       <ENTRY>Processing may TIME OUT if large amount of data are selected.</ENTRY>
+       <LENGTH>61</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>013</KEY>
+       <ENTRY>In that case, it is recommended to run report in background:</ENTRY>
+       <LENGTH>61</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>014</KEY>
+       <ENTRY>Schedule Background Job</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>015</KEY>
+       <ENTRY>View Jobs (SM37)</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>016</KEY>
+       <ENTRY>Information</ENTRY>
+       <LENGTH>13</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>011</KEY>
+       <ENTRY>CAUTION</ENTRY>
+       <LENGTH>10</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Enhancing Performance for mass selection</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Number of Parallel Processes to use (4 max; see documentation)</ENTRY>
+       <LENGTH>62</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Specific server</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>This Server Only</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Update SCAN table</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>103</KEY>
+       <ENTRY>Number of users with conflicts in</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>104</KEY>
+       <ENTRY>Number of users with conflicts overall</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>105</KEY>
+       <ENTRY>ALL</ENTRY>
+       <LENGTH>5</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>106</KEY>
+       <ENTRY>Rule</ENTRY>
+       <LENGTH>5</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>107</KEY>
+       <ENTRY>Type</ENTRY>
+       <LENGTH>4</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>102</KEY>
+       <ENTRY>Number of users analyzed</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>017</KEY>
+       <ENTRY>System</ENTRY>
+       <LENGTH>6</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>018</KEY>
+       <ENTRY>Organization Unit SoD Project Mangr.</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>019</KEY>
+       <ENTRY>List of AREs covered</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>100</KEY>
+       <ENTRY>Date of analysis</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>101</KEY>
+       <ENTRY>Time of analysis</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>H</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>124</KEY>
+       <ENTRY>Systemübergr. Analyse</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>125</KEY>
+       <ENTRY>Server wählen</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>126</KEY>
+       <ENTRY>Nur 4 Parallelprozesse erlaubt</ENTRY>
+       <LENGTH>70</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>127</KEY>
+       <ENTRY>Server:</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>128</KEY>
+       <ENTRY>nicht vorh.; Namen prüfen.</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>109</KEY>
+       <ENTRY>Anz. Verletzungen inkl. ALL</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>110</KEY>
+       <ENTRY>% Benutzer mit Konflikt</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>120</KEY>
+       <ENTRY>SOD Matrix Version</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>121</KEY>
+       <ENTRY>SW Version</ENTRY>
+       <LENGTH>10</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>123</KEY>
+       <ENTRY>Max. Anz. auf einmal zu analys. Ben.</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>129</KEY>
+       <ENTRY>Sec. Weaver: Systemweiter Scan</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E03</KEY>
+       <ENTRY>RFC Ziel entspricht nicht dem konfig. Wert in</ENTRY>
+       <LENGTH>48</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E04</KEY>
+       <ENTRY>Parameter SW_056_RFC_DEST</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E10</KEY>
+       <ENTRY>Variante kann nicht erzeugt werden</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+      <item>
+       <ID>R</ID>
+       <ENTRY>SW: Systemweite Konflikt-Übersicht</ENTRY>
+       <LENGTH>34</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>XUSRRFC</KEY>
+       <ENTRY>Remote System(e)</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>130</KEY>
+       <ENTRY>Dynamisch erstellt</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>131</KEY>
+       <ENTRY>Anzahl:</ENTRY>
+       <LENGTH>8</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>132</KEY>
+       <ENTRY>SOD Übersicht f. erweitertes Regelwerk</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E01</KEY>
+       <ENTRY>Verifiziere RFC Ziel konfig. in SW_056_RFC_DEST Parameter</ENTRY>
+       <LENGTH>62</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E02</KEY>
+       <ENTRY>RFC Ziel nicht vorhanden</ENTRY>
+       <LENGTH>30</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>107</KEY>
+       <ENTRY>Typ</ENTRY>
+       <LENGTH>4</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>011</KEY>
+       <ENTRY>ACHTUNG</ENTRY>
+       <LENGTH>10</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>012</KEY>
+       <ENTRY>Mögliches Time-out bei der Verarbeitung großer Datenmengen.</ENTRY>
+       <LENGTH>61</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>013</KEY>
+       <ENTRY>Dann wird empfohlen, den Report im Hintergrund auszuführen:</ENTRY>
+       <LENGTH>61</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>014</KEY>
+       <ENTRY>Background Job planen</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>015</KEY>
+       <ENTRY>Job-Auswahl (SM37)</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Verbessere Performanz für Massenselektion</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Anz. nutzbarer Parallelprozesse (4 maximal; s. Dokumentation)</ENTRY>
+       <LENGTH>62</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Spezif. Server</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>Nur dieser Server</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Schreibe SCAN Tab</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>016</KEY>
+       <ENTRY>Information</ENTRY>
+       <LENGTH>13</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>102</KEY>
+       <ENTRY>Anz. analysierter Ben.</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>103</KEY>
+       <ENTRY>Anz. Benutzer mit Konflikten in</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>104</KEY>
+       <ENTRY>Anz. Benutzer mit Konflikten insgesamt</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>105</KEY>
+       <ENTRY>ALLE</ENTRY>
+       <LENGTH>5</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>106</KEY>
+       <ENTRY>Regel</ENTRY>
+       <LENGTH>5</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>017</KEY>
+       <ENTRY>System</ENTRY>
+       <LENGTH>6</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>018</KEY>
+       <ENTRY>Organisatioseinheit SOD Projektmgr.</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>019</KEY>
+       <ENTRY>Liste abgedeckter AREs</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>100</KEY>
+       <ENTRY>Analysedatum</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>101</KEY>
+       <ENTRY>Analysezeit</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>I</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>125</KEY>
+       <ENTRY>Choose a server</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>126</KEY>
+       <ENTRY>Only 4 Parallel Processes allowed</ENTRY>
+       <LENGTH>70</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>127</KEY>
+       <ENTRY>Server:</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>128</KEY>
+       <ENTRY>does not exist; check name</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>129</KEY>
+       <ENTRY>Security Weaver: Sys-Wide Scan</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>124</KEY>
+       <ENTRY>Cross System Analysis</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>110</KEY>
+       <ENTRY>% of  users  with conflict</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>111</KEY>
+       <ENTRY>Avg.  viol. per affected user</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>120</KEY>
+       <ENTRY>SOD matrix version</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>121</KEY>
+       <ENTRY>SW version</ENTRY>
+       <LENGTH>10</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>123</KEY>
+       <ENTRY>Max. nr of users to analyze at once</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E03</KEY>
+       <ENTRY>RFC destination not equal to configured value in</ENTRY>
+       <LENGTH>48</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E04</KEY>
+       <ENTRY>parameter SW_056_RFC_DEST</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E10</KEY>
+       <ENTRY>Unable to create variant</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+      <item>
+       <ID>R</ID>
+       <ENTRY>SW: System-Wide Conflict Summary</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>XUSRRFC</KEY>
+       <ENTRY>Remote System(s)</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E02</KEY>
+       <ENTRY>RFC destination does not exist</ENTRY>
+       <LENGTH>30</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>130</KEY>
+       <ENTRY>Dynamically created</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>131</KEY>
+       <ENTRY>Total:</ENTRY>
+       <LENGTH>8</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>132</KEY>
+       <ENTRY>SOD Overview for enhanced ruleset</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>162</KEY>
+       <ENTRY>Only analyze users that exist in local system</ENTRY>
+       <LENGTH>45</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E01</KEY>
+       <ENTRY>Verify RFC destination configured in SW_056_RFC_DEST parameter</ENTRY>
+       <LENGTH>62</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>109</KEY>
+       <ENTRY># of viol. inc. ALL</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>012</KEY>
+       <ENTRY>Processing may TIME OUT if large amount of data are selected.</ENTRY>
+       <LENGTH>61</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>013</KEY>
+       <ENTRY>In that case, it is recommended to run report in background:</ENTRY>
+       <LENGTH>61</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>014</KEY>
+       <ENTRY>Schedule Background Job</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>015</KEY>
+       <ENTRY>View Jobs (SM37)</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>016</KEY>
+       <ENTRY>Information</ENTRY>
+       <LENGTH>13</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>011</KEY>
+       <ENTRY>CAUTION</ENTRY>
+       <LENGTH>10</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Enhancing Performance for mass selection</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Number of Parallel Processes to use (4 max; see documentation)</ENTRY>
+       <LENGTH>62</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Specific server</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>This Server Only</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Update SCAN table</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>103</KEY>
+       <ENTRY>Number of users with conflicts in</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>104</KEY>
+       <ENTRY>Number of users with conflicts overall</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>105</KEY>
+       <ENTRY>ALL</ENTRY>
+       <LENGTH>5</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>106</KEY>
+       <ENTRY>Rule</ENTRY>
+       <LENGTH>5</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>107</KEY>
+       <ENTRY>Type</ENTRY>
+       <LENGTH>4</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>102</KEY>
+       <ENTRY>Number of users analyzed</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>017</KEY>
+       <ENTRY>System</ENTRY>
+       <LENGTH>6</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>018</KEY>
+       <ENTRY>Organization Unit SoD Project Mangr.</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>019</KEY>
+       <ENTRY>List of AREs covered</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>100</KEY>
+       <ENTRY>Date of analysis</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>101</KEY>
+       <ENTRY>Time of analysis</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>N</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>125</KEY>
+       <ENTRY>Choose a server</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>126</KEY>
+       <ENTRY>Only 4 Parallel Processes allowed</ENTRY>
+       <LENGTH>70</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>127</KEY>
+       <ENTRY>Server:</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>128</KEY>
+       <ENTRY>does not exist; check name</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>129</KEY>
+       <ENTRY>Security Weaver: Sys-Wide Scan</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>124</KEY>
+       <ENTRY>Cross System Analysis</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>110</KEY>
+       <ENTRY>% of  users  with conflict</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>111</KEY>
+       <ENTRY>Avg.  viol. per affected user</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>120</KEY>
+       <ENTRY>SOD matrix version</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>121</KEY>
+       <ENTRY>SW version</ENTRY>
+       <LENGTH>10</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>123</KEY>
+       <ENTRY>Max. nr of users to analyze at once</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E03</KEY>
+       <ENTRY>RFC destination not equal to configured value in</ENTRY>
+       <LENGTH>48</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E04</KEY>
+       <ENTRY>parameter SW_056_RFC_DEST</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E10</KEY>
+       <ENTRY>Unable to create variant</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+      <item>
+       <ID>R</ID>
+       <ENTRY>SW: System-Wide Conflict Summary</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>XUSRRFC</KEY>
+       <ENTRY>Remote System(s)</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E02</KEY>
+       <ENTRY>RFC destination does not exist</ENTRY>
+       <LENGTH>30</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>130</KEY>
+       <ENTRY>Dynamically created</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>131</KEY>
+       <ENTRY>Total:</ENTRY>
+       <LENGTH>8</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>132</KEY>
+       <ENTRY>SOD Overview for enhanced ruleset</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>162</KEY>
+       <ENTRY>Only analyze users that exist in local system</ENTRY>
+       <LENGTH>45</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E01</KEY>
+       <ENTRY>Verify RFC destination configured in SW_056_RFC_DEST parameter</ENTRY>
+       <LENGTH>62</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>109</KEY>
+       <ENTRY># of viol. inc. ALL</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>012</KEY>
+       <ENTRY>Processing may TIME OUT if large amount of data are selected.</ENTRY>
+       <LENGTH>61</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>013</KEY>
+       <ENTRY>In that case, it is recommended to run report in background:</ENTRY>
+       <LENGTH>61</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>014</KEY>
+       <ENTRY>Schedule Background Job</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>015</KEY>
+       <ENTRY>View Jobs (SM37)</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>016</KEY>
+       <ENTRY>Information</ENTRY>
+       <LENGTH>13</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>011</KEY>
+       <ENTRY>CAUTION</ENTRY>
+       <LENGTH>10</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Enhancing Performance for mass selection</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Number of Parallel Processes to use (4 max; see documentation)</ENTRY>
+       <LENGTH>62</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Specific server</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>This Server Only</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Update SCAN table</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>103</KEY>
+       <ENTRY>Number of users with conflicts in</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>104</KEY>
+       <ENTRY>Number of users with conflicts overall</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>105</KEY>
+       <ENTRY>ALL</ENTRY>
+       <LENGTH>5</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>106</KEY>
+       <ENTRY>Rule</ENTRY>
+       <LENGTH>5</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>107</KEY>
+       <ENTRY>Type</ENTRY>
+       <LENGTH>4</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>102</KEY>
+       <ENTRY>Number of users analyzed</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>017</KEY>
+       <ENTRY>System</ENTRY>
+       <LENGTH>6</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>018</KEY>
+       <ENTRY>Organization Unit SoD Project Mangr.</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>019</KEY>
+       <ENTRY>List of AREs covered</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>100</KEY>
+       <ENTRY>Date of analysis</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>101</KEY>
+       <ENTRY>Time of analysis</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>P</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>110</KEY>
+       <ENTRY>% de  usuários com conflito</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>111</KEY>
+       <ENTRY>Média violações por usuário afetado</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>120</KEY>
+       <ENTRY>Versão Matriz SOD</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>121</KEY>
+       <ENTRY>SW versão</ENTRY>
+       <LENGTH>9</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>123</KEY>
+       <ENTRY>Mx.Nr.usrs.p/processo p/análise p/vez</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>124</KEY>
+       <ENTRY>Análise Mtpls Sistemas</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>125</KEY>
+       <ENTRY>Selecione servid.</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>126</KEY>
+       <ENTRY>Até 4 Processos Paralelos permitidos</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>127</KEY>
+       <ENTRY>Servidor:</ENTRY>
+       <LENGTH>9</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>128</KEY>
+       <ENTRY>não existe; verificar nome</ENTRY>
+       <LENGTH>26</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>129</KEY>
+       <ENTRY>Security Weaver: Sys-Wide Scan</ENTRY>
+       <LENGTH>30</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>130</KEY>
+       <ENTRY>Criado Dinamicamente</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>131</KEY>
+       <ENTRY>Total:</ENTRY>
+       <LENGTH>6</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>132</KEY>
+       <ENTRY>Visão Geral SOD para regras estendidas</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>162</KEY>
+       <ENTRY>Apenas análise usrs existentes sistema local</ENTRY>
+       <LENGTH>44</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E01</KEY>
+       <ENTRY>Verificar Destino RFC configurado no parâmetro SW_056_RFC_DEST</ENTRY>
+       <LENGTH>62</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E02</KEY>
+       <ENTRY>Destino RFC não existe</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E03</KEY>
+       <ENTRY>Destino RFC não é igual ao valor config.em</ENTRY>
+       <LENGTH>42</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E04</KEY>
+       <ENTRY>parâmetro SW_056_RFC_DEST</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E10</KEY>
+       <ENTRY>Impossível criar variante</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>R</ID>
+       <ENTRY>SW: Resumo Conflitos System-Wide</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>XUSRRFC</KEY>
+       <ENTRY>Sistema(s) Remoto(s)</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>109</KEY>
+       <ENTRY># de viol. inc. ALL</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Aumentando Performance p/seleção em massa</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Número de Processos Paralelos p/uso (4 máx; ver documentação)</ENTRY>
+       <LENGTH>61</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Serv.Específico</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>Só este Servidor</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Atualizar tb SCAN</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>011</KEY>
+       <ENTRY>ATENÇÃO</ENTRY>
+       <LENGTH>7</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>012</KEY>
+       <ENTRY>Process.pode dar TIME OUT se muitos dados forem selecionados.</ENTRY>
+       <LENGTH>61</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>013</KEY>
+       <ENTRY>In that case, it is recommended to run report in background:</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>014</KEY>
+       <ENTRY>Agendar Proc.Background</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>015</KEY>
+       <ENTRY>Ver procs (SM37)</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>016</KEY>
+       <ENTRY>Informação</ENTRY>
+       <LENGTH>10</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>017</KEY>
+       <ENTRY>Sist.</ENTRY>
+       <LENGTH>5</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>018</KEY>
+       <ENTRY>Unidade Organizacional de SOD</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>019</KEY>
+       <ENTRY>Listagem de AREs coberta</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>100</KEY>
+       <ENTRY>Data de análise</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>101</KEY>
+       <ENTRY>Hora de análise</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>102</KEY>
+       <ENTRY>Número usuários analisad</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>103</KEY>
+       <ENTRY>Número usuários com conflitos em</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>104</KEY>
+       <ENTRY>Número de usuários com conflitos</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>105</KEY>
+       <ENTRY>Todos</ENTRY>
+       <LENGTH>5</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>106</KEY>
+       <ENTRY>Regra</ENTRY>
+       <LENGTH>5</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>107</KEY>
+       <ENTRY>Tipo</ENTRY>
+       <LENGTH>4</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>S</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>110</KEY>
+       <ENTRY>% de usuarios con conflicto</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>111</KEY>
+       <ENTRY>Promedio de infracciones por usuario</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>120</KEY>
+       <ENTRY>Versión de la matr</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>121</KEY>
+       <ENTRY>Versión SW</ENTRY>
+       <LENGTH>10</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>123</KEY>
+       <ENTRY>Número máximo de usuarios para analiz</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>124</KEY>
+       <ENTRY>Análisis de sistemas c</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>125</KEY>
+       <ENTRY>Elegir un servido</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>126</KEY>
+       <ENTRY>Sólo 4 procesos paralelos permitidos</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>127</KEY>
+       <ENTRY>Servidor</ENTRY>
+       <LENGTH>8</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>128</KEY>
+       <ENTRY>no existe; comprobar nombre</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>129</KEY>
+       <ENTRY>Security Weaver: Exploración de</ENTRY>
+       <LENGTH>31</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>130</KEY>
+       <ENTRY>Creado dinámicamente</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>131</KEY>
+       <ENTRY>Total</ENTRY>
+       <LENGTH>5</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>132</KEY>
+       <ENTRY>Resumen SOD para conjunto de reglas me</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>162</KEY>
+       <ENTRY>Sólo analizar los usuarios que existen en el</ENTRY>
+       <LENGTH>44</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E01</KEY>
+       <ENTRY>Verificar el destino RFC configurado en el parámetro SW_056_RF</ENTRY>
+       <LENGTH>62</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E02</KEY>
+       <ENTRY>El destino RFC no existe</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E03</KEY>
+       <ENTRY>Destino RFC no igual al valor configurado en</ENTRY>
+       <LENGTH>44</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E04</KEY>
+       <ENTRY>parámetro SW_056_RFC_DEST</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E10</KEY>
+       <ENTRY>No se puede crear variante</ENTRY>
+       <LENGTH>26</LENGTH>
+      </item>
+      <item>
+       <ID>R</ID>
+       <ENTRY>SW: Resumen de conflictos en todo el sistema</ENTRY>
+       <LENGTH>44</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>XUSRRFC</KEY>
+       <ENTRY>Sistema(s) remoto(s)</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>109</KEY>
+       <ENTRY># de viol. inc. TODOS</ENTRY>
+       <LENGTH>21</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Mejora del rendimiento para la selección</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Número de procesos paralelos a utilizar (4 máx.; consulte la d</ENTRY>
+       <LENGTH>62</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Servidor especí</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>Sólo este servido</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Actualizar tabla</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>011</KEY>
+       <ENTRY>PRECAUCIÓN</ENTRY>
+       <LENGTH>10</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>012</KEY>
+       <ENTRY>El procesamiento puede TIEMPO DE ESPERA si se selecciona una</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>013</KEY>
+       <ENTRY>En ese caso, se recomienda ejecutar el informe en segundo pla</ENTRY>
+       <LENGTH>61</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>014</KEY>
+       <ENTRY>Programar job de fondo</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>015</KEY>
+       <ENTRY>Ver Jobs (SM37)</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>016</KEY>
+       <ENTRY>Información</ENTRY>
+       <LENGTH>11</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>017</KEY>
+       <ENTRY>Sistem</ENTRY>
+       <LENGTH>6</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>018</KEY>
+       <ENTRY>Organización Unidad SoD Proyecto Mang</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>019</KEY>
+       <ENTRY>Lista de ARE cubiertas</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>100</KEY>
+       <ENTRY>Fecha de análisis</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>101</KEY>
+       <ENTRY>Tiempo de anális</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>102</KEY>
+       <ENTRY>Número de usuarios anali</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>103</KEY>
+       <ENTRY>Número de usuarios con conflictos</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>104</KEY>
+       <ENTRY>Número de usuarios con conflictos en g</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>105</KEY>
+       <ENTRY>TODOS</ENTRY>
+       <LENGTH>5</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>106</KEY>
+       <ENTRY>Regla</ENTRY>
+       <LENGTH>5</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>107</KEY>
+       <ENTRY>Tipo</ENTRY>
+       <LENGTH>4</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>V</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>125</KEY>
+       <ENTRY>Choose a server</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>126</KEY>
+       <ENTRY>Only 4 Parallel Processes allowed</ENTRY>
+       <LENGTH>70</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>127</KEY>
+       <ENTRY>Server:</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>128</KEY>
+       <ENTRY>does not exist; check name</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>129</KEY>
+       <ENTRY>Security Weaver: Sys-Wide Scan</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>124</KEY>
+       <ENTRY>Cross System Analysis</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>110</KEY>
+       <ENTRY>% of  users  with conflict</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>111</KEY>
+       <ENTRY>Avg.  viol. per affected user</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>120</KEY>
+       <ENTRY>SOD matrix version</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>121</KEY>
+       <ENTRY>SW version</ENTRY>
+       <LENGTH>10</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>123</KEY>
+       <ENTRY>Max. nr of users to analyze at once</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E03</KEY>
+       <ENTRY>RFC destination not equal to configured value in</ENTRY>
+       <LENGTH>48</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E04</KEY>
+       <ENTRY>parameter SW_056_RFC_DEST</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E10</KEY>
+       <ENTRY>Unable to create variant</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+      <item>
+       <ID>R</ID>
+       <ENTRY>SW: System-Wide Conflict Summary</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>XUSRRFC</KEY>
+       <ENTRY>Remote System(s)</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E02</KEY>
+       <ENTRY>RFC destination does not exist</ENTRY>
+       <LENGTH>30</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>130</KEY>
+       <ENTRY>Dynamically created</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>131</KEY>
+       <ENTRY>Total:</ENTRY>
+       <LENGTH>8</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>132</KEY>
+       <ENTRY>SOD Overview for enhanced ruleset</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>162</KEY>
+       <ENTRY>Only analyze users that exist in local system</ENTRY>
+       <LENGTH>45</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E01</KEY>
+       <ENTRY>Verify RFC destination configured in SW_056_RFC_DEST parameter</ENTRY>
+       <LENGTH>62</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>109</KEY>
+       <ENTRY># of viol. inc. ALL</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>012</KEY>
+       <ENTRY>Processing may TIME OUT if large amount of data are selected.</ENTRY>
+       <LENGTH>61</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>013</KEY>
+       <ENTRY>In that case, it is recommended to run report in background:</ENTRY>
+       <LENGTH>61</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>014</KEY>
+       <ENTRY>Schedule Background Job</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>015</KEY>
+       <ENTRY>View Jobs (SM37)</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>016</KEY>
+       <ENTRY>Information</ENTRY>
+       <LENGTH>13</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>011</KEY>
+       <ENTRY>CAUTION</ENTRY>
+       <LENGTH>10</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Enhancing Performance for mass selection</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Number of Parallel Processes to use (4 max; see documentation)</ENTRY>
+       <LENGTH>62</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Specific server</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>This Server Only</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Update SCAN table</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>103</KEY>
+       <ENTRY>Number of users with conflicts in</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>104</KEY>
+       <ENTRY>Number of users with conflicts overall</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>105</KEY>
+       <ENTRY>ALL</ENTRY>
+       <LENGTH>5</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>106</KEY>
+       <ENTRY>Rule</ENTRY>
+       <LENGTH>5</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>107</KEY>
+       <ENTRY>Type</ENTRY>
+       <LENGTH>4</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>102</KEY>
+       <ENTRY>Number of users analyzed</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>017</KEY>
+       <ENTRY>System</ENTRY>
+       <LENGTH>6</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>018</KEY>
+       <ENTRY>Organization Unit SoD Project Mangr.</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>019</KEY>
+       <ENTRY>List of AREs covered</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>100</KEY>
+       <ENTRY>Date of analysis</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>101</KEY>
+       <ENTRY>Time of analysis</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>Z</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>125</KEY>
+       <ENTRY>Choose a server</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>126</KEY>
+       <ENTRY>Only 4 Parallel Processes allowed</ENTRY>
+       <LENGTH>70</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>127</KEY>
+       <ENTRY>Server:</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>128</KEY>
+       <ENTRY>does not exist; check name</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>129</KEY>
+       <ENTRY>Security Weaver: Sys-Wide Scan</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>124</KEY>
+       <ENTRY>Cross System Analysis</ENTRY>
+       <LENGTH>22</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>110</KEY>
+       <ENTRY>% of  users  with conflict</ENTRY>
+       <LENGTH>28</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>111</KEY>
+       <ENTRY>Avg.  viol. per affected user</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>120</KEY>
+       <ENTRY>SOD matrix version</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>121</KEY>
+       <ENTRY>SW version</ENTRY>
+       <LENGTH>10</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>123</KEY>
+       <ENTRY>Max. nr of users to analyze at once</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E03</KEY>
+       <ENTRY>RFC destination not equal to configured value in</ENTRY>
+       <LENGTH>48</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E04</KEY>
+       <ENTRY>parameter SW_056_RFC_DEST</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E10</KEY>
+       <ENTRY>Unable to create variant</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+      <item>
+       <ID>R</ID>
+       <ENTRY>SW: System-Wide Conflict Summary</ENTRY>
+       <LENGTH>32</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>XUSRRFC</KEY>
+       <ENTRY>Remote System(s)</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E02</KEY>
+       <ENTRY>RFC destination does not exist</ENTRY>
+       <LENGTH>30</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>130</KEY>
+       <ENTRY>Dynamically created</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>131</KEY>
+       <ENTRY>Total:</ENTRY>
+       <LENGTH>8</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>132</KEY>
+       <ENTRY>SOD Overview for enhanced ruleset</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>162</KEY>
+       <ENTRY>Only analyze users that exist in local system</ENTRY>
+       <LENGTH>45</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>E01</KEY>
+       <ENTRY>Verify RFC destination configured in SW_056_RFC_DEST parameter</ENTRY>
+       <LENGTH>62</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>109</KEY>
+       <ENTRY># of viol. inc. ALL</ENTRY>
+       <LENGTH>50</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>012</KEY>
+       <ENTRY>Processing may TIME OUT if large amount of data are selected.</ENTRY>
+       <LENGTH>61</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>013</KEY>
+       <ENTRY>In that case, it is recommended to run report in background:</ENTRY>
+       <LENGTH>61</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>014</KEY>
+       <ENTRY>Schedule Background Job</ENTRY>
+       <LENGTH>23</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>015</KEY>
+       <ENTRY>View Jobs (SM37)</ENTRY>
+       <LENGTH>19</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>016</KEY>
+       <ENTRY>Information</ENTRY>
+       <LENGTH>13</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>011</KEY>
+       <ENTRY>CAUTION</ENTRY>
+       <LENGTH>10</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Enhancing Performance for mass selection</ENTRY>
+       <LENGTH>41</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Number of Parallel Processes to use (4 max; see documentation)</ENTRY>
+       <LENGTH>62</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Specific server</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>This Server Only</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Update SCAN table</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>103</KEY>
+       <ENTRY>Number of users with conflicts in</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>104</KEY>
+       <ENTRY>Number of users with conflicts overall</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>105</KEY>
+       <ENTRY>ALL</ENTRY>
+       <LENGTH>5</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>106</KEY>
+       <ENTRY>Rule</ENTRY>
+       <LENGTH>5</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>107</KEY>
+       <ENTRY>Type</ENTRY>
+       <LENGTH>4</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>102</KEY>
+       <ENTRY>Number of users analyzed</ENTRY>
+       <LENGTH>24</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>017</KEY>
+       <ENTRY>System</ENTRY>
+       <LENGTH>6</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>018</KEY>
+       <ENTRY>Organization Unit SoD Project Mangr.</ENTRY>
+       <LENGTH>37</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>019</KEY>
+       <ENTRY>List of AREs covered</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>100</KEY>
+       <ENTRY>Date of analysis</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>101</KEY>
+       <ENTRY>Time of analysis</ENTRY>
+       <LENGTH>16</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+   </I18N_TPOOL>
+   <LONGTEXTS>
+    <item>
+     <DOKIL>
+      <ID>RE</ID>
+      <OBJECT>/PSYNG/SW_056</OBJECT>
+      <LANGU>D</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0002</VERSION>
+      <TXTLINES>00069</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SW_056</TDNAME>
+      <TDID>RE</TDID>
+      <TDSPRAS>D</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00002</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;TITLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>Report &quot;SOD - Übersicht systemweite Konflikte&quot;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PURPOSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Dieser Report stellt einen systemweiten SOD-Report als Übersicht dar.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Die Ausgabe wird nach Applikationsbereichen (FI, HR, MM) kategorisiert.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Die Namen der berücksichtigten Firmen (AREs) lassen sich kennzeichnen.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;INTEGRATION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PREREQUISITES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;FEATURES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;SELECTION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>System: System-ID</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Projektmanager: Geben Sie den Namen des Projektmanagers ein (optional)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Liste berücksicht. AREs: Kennzeichnung aller Firmen (AREs), die in</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>der Ausgabe berücksichtigt werden</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Anzahl nutzbarer paralleler Workprozesse (max. 4): Ein Workprozess ist</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>das techn. &quot;Arbeitstier&quot; des SAP-Sys.; es verarb. Endbenutzeranfragen.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>Da diese Analyse für sehr große Datenmengen vorgesehen ist,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>kann deren Verarbeitung in Security Weaver aufgeteilt werden und</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>parallel erfolgen. Dadurch kann SW den Systemspeicher und die</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Rechenleistung besser nutzen, sodass sich die Performance der Analyse</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>verbessert. Derzeit dürfen in SW max. vier aufeinanderfolg. Workproz.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>verwendet werden. Diese Anzahl (4) soll dafür sorgen, dass der Benutzer</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>nicht alle verfügb. Systemressourcen beansprucht. Die Anzahl ist zzt.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>nicht konfigurierbar.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>SW initiiert basierend auf der vom Benutzer ausgewählten Prozessanzahl</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>die Parallelverarbeitung auf allen verfügbaren Applikationsservern zum</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Zweck des Lastausgleichs. Wenn z.B. vier Workproz. ausgewählt werden und</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>zwei Applikationsserver verfügbar sind, initiiert SW jeweils zwei</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Workprozesse auf jedem der zwei Applikationsserver.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Achtung: Auch wenn sich vier auf mehrere ApplServer verteilte Workproz.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>nicht erheblich auf das System auswirken dürften, sind in manchen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Umgebungen schon vier Workprozesse zu viel für die Parallelnutzung durch</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Einzelbenutzer. Wenden Sie sich an Ihr SAP Core Technical Infrastructure</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Support Team (allg. als &quot;SAP-Basis-Team&quot; bekannt), um die Anzahl der</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Workprozesse zu bestimmen, die parallel genutzt werden können/sollten.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Alternativ kann die passende Anzahl durch das Ausführen von Testanalysen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>mit kleinen Datenmengen bestimmt werden, bei denen die Ausführungszeit</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>und Auslastung im Gesamtsystem überwacht wird.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Spezif. Server (für Parallelverarb.): Wenn SW die Analyse auf einem</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>spezif. Anwendungsserver ausführen soll, können Sie den Server hier</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>angeben. Dies ist sinnvoll, wenn Sie den Server zum Ausführen der</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Analyse kennen oder ein Server für die entsprechenden Analysetypen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>vorgesehen ist. Bei Angabe eines bestimmten Servers initiiert SW keine</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Workprozesse auf anderen Anwendungsservern, sondern startet die</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Workprozesse ausschließlich auf dem angegebenen Server.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Nur dieser Serv.: Beim Wählen dieser Drucktaste wird der</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>spezifische Server mit dem Namen des lokalen Servers belegt.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Max. Anz. gleichzeit. zu analys. Ben.: Geben Sie die max. Anzahl der</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>gleichzeitig zu analysierenden Benutzer an</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>SCAN-Tab.aktual.: Bei markiertem Ankreuzfeld aktualisiert SW die</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Scan-Tabelle.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>Hintergrundverarb.:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Da die Verarbeitung von Massendaten wahrscheinlich zu einem Timeout</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Ihrer Session und einem Kurzdump führen würde, bietet SW eine intuitive</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Funktion zum Einplanen eines Hintergrundjobs für solche umfangreichen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Analysen.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Hintergrundjob einplan.: Mit dieser Drucktaste starten Sie den</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Assistenten für Hintergrundjobs; er führt Sie schrittweise durch die</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Einplanung des Hintergrundjobs.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>Sie können im Assistenten alle Felder ändern und anpassen, aber</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>weder den Programmnamen noch die Variante ändern.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>Hinweis: Die Drucktaste fehlt, wenn der Benutzer für Hintergrundjobs</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>keine Administratorrechte besitzt (Berechtigungsobjekt S_BTCH_ADM).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Job-Ansicht (SM37): Mit dieser Drucktaste gelangen Sie in die TA SM37,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>wo Sie Ihre Jobs überwachen können. Sie benötigen Zugriff auf die TA</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>SM37.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;STANDARD_VARIANTS&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;OUTPUT&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>&lt;ZU&gt;Spalten &lt;/&gt;,,&lt;ZU&gt;- Beschreibung&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>Regel ,,- SOD-Konflikt-ID</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>Typ ,,- Applikationsbereich, unter den der Konflikt fällt</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>Anz. Verletzungen inkl. ALL ,,- Anzahl der Verletz. des SOD-Konflikts</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>% von Benutzern mit Konflikt ,,-Prozentsatz der Benutzer mit dem</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>angegebenen Konflikt</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;ACTIVITIES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;EXAMPLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>RE</ID>
+      <OBJECT>/PSYNG/SW_056</OBJECT>
+      <LANGU>E</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0002</VERSION>
+      <MASTERLANG>X</MASTERLANG>
+      <TXTLINES>00069</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SW_056</TDNAME>
+      <TDID>RE</TDID>
+      <TDSPRAS>E</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00002</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;TITLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>SOD System-Wide Conflict Summary Report</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PURPOSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>The purpose of this report is to show a system-wide SOD report at a</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>summary level. The output will be categorized by Application Areas (i.e.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>FI, HR, MM). The names of covered companies (AREs) can be indicated.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;INTEGRATION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PREREQUISITES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;FEATURES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;SELECTION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>System: The system ID</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Project Manager: Enter the name of the Project Manager (optional)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>List of AREs covered: Indicate any companies (AREs) that are covered in</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>this output</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Number of Parallel Work Process to Use (4 max): A &quot;Work Process&quot; is the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>SAP system&apos;s technical workhorse that processes end-users&apos; requests.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>Since this analysis is intended to run for massive amounts of data,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Security Weaver allows processing of this to be split into pieces and</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>run in parallel. This will allow SW to make better use of system memory</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>and processing power, which will enhance the performance of this</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analysis. Currently, SW allows maximum of 4 consecutive work processes</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>to be used. This number, 4, is intended to prevent the user from taking</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>over all the system&apos;s available resources. Currently this number is not</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>configurable.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>SW takes the number of processes selected by user and initiates the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>parallel processing on all available application servers, for load</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>balancing. For example, if user selects 4 work processes and there are 2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>application servers, SW will initiate 2 work processes on each of the 2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>application servers.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Caution: Although 4 work processes spread across multiple application</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>servers should not be much impact to the system. However, in some</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>environments even 4 work processes are too many to be used by one person</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>in parallel. Please consult with your SAP Core Technical Infrastructure</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Support Team (commonly referred to as the &quot;SAP BASIS Team&quot;) to identify</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>the number of work process that you could/should use in parallel.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Another way to help identify the right number is to run few &quot;sample&quot;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analyses in small quantities to monitor the execution time and load on</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>the overall system.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Specific server (for Parallel Processing): If you would like SW to run</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>the analysis on any one specific Application Server, you can specify</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>that server here. This is useful when you know the server to run the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analysis or when a server has been designated to run these types of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analyses. If a specific server is selected, SW will not initiate any</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>work processes on other application servers; it will only start the work</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>processes on the server that is specified.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>This Server Only: You can click on this button and it will populate the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Specific Server with the local server name.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Max nr of users to analyze at once: Indicate the maximum number of users</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>to analyze at once</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Update SCAN table: If this check-box is selected, SW will update the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>scan table.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>Background processing:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Since processing mass amounts of data would most likely cause your</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>session to Time-Out and create a Short Dump, SW provides you an</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>intuitive functionality to schedule a background job for these large</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analyses.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Schedule Background Job: Hit this button to start the background job</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>wizard, which will guide you, step-by-step, in scheduling the background</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>job.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>You can modify and adjust all fields in the background job wizard, but</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>do not change program name and variant.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>Note: This button will not appear if the user lacks background job</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>administrativeprivileges (authorization object S_BTCH_ADM).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>View Jobs (SM37): This button will take you to transaction SM37, in</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>which you can monitor your jobs. You will need access to transaction</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>SM37.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;STANDARD_VARIANTS&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;OUTPUT&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>&lt;ZU&gt;Columns &lt;/&gt;,,&lt;ZU&gt;-Description&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>Rule ,,-SOD conflict ID</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>Type ,,-The application area the conflict falls under</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE># of viol. inc. ALL ,,-The number of violations of the SOD conflict</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>% of users with conflict ,,-Percentage of users with the specified</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>conflict</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;ACTIVITIES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;EXAMPLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>RE</ID>
+      <OBJECT>/PSYNG/SW_056</OBJECT>
+      <LANGU>F</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0002</VERSION>
+      <TXTLINES>00066</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SW_056</TDNAME>
+      <TDID>RE</TDID>
+      <TDSPRAS>F</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00002</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;TITLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>SOD System-Wide Conflict Summary Report</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PURPOSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>The purpose of this report is to show a system-wide SOD report at a</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>summary level. The output will be categorized by Application Areas (i.e.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>FI, HR, MM). The names of covered companies (AREs) can be indicated.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;INTEGRATION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PREREQUISITES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;FEATURES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;SELECTION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>System: The system ID</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Project Manager: Enter the name of the Project Manager (optional)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>List of AREs covered: Indicate any companies (AREs) that are covered in</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>this output</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Number of Parallel Work Process to Use (4 max): A &quot;Work Process&quot; is the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>SAP system&apos;s technical workhorse that processes end-users&apos; requests.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>Since this analysis is intended to run for massive amounts of data,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Security Weaver allows processing of this to be split into pieces and</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>run in parallel. This will allow SW to make better use of system memory</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>and processing power, which will enhance the performance of this</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analysis. Currently, SW allows maximum of 4 consecutive work processes</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>to be used. This number, 4, is intended to prevent the user from taking</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>over all the system&apos;s available resources. Currently this number is not</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>configurable.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>SW takes the number of processes selected by user and initiates the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>parallel processing on all available application servers, for load</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>balancing. For example, if user selects 4 work processes and there are 2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>application servers, SW will initiate 2 work processes on each of the 2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>application servers.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Caution: Although 4 work processes spread across multiple application</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>servers should not be much impact to the system. However, in some</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>environments even 4 work processes are too many to be used by one person</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>in parallel. Please consult with your SAP Core Technical Infrastructure</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Support Team (commonly referred to as the &quot;SAP BASIS Team&quot;) to identify</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>the number of work process that you could/should use in parallel.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Another way to help identify the right number is to run few &quot;sample&quot;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analyses in small quantities to monitor the execution time and load on</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>the overall system.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Specific server (for Parallel Processing): If you would like SW to run</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>the analysis on any one specific Application Server, you can specify</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>that server here. This is useful when you know the server to run the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analysis or when a server has been designated to run these types of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analyses. If a specific server is selected, SW will not initiate any</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>work processes on other application servers; it will only start the work</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>processes on the server that is specified.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>This Server Only: You can click on this button and it will populate the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Specific Server with the local server name.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Max nr of users to analyze at once: Indicate the maximum number of users</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>to analyze at once</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Update SCAN table: If this check-box is selected, SW will update the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>scan table.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>Background processing:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Since processing mass amounts of data would most likely cause your</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>session to Time-Out and create a Short Dump, SW provides you an</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>intuitive functionality to schedule a background job for these large</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analyses.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Schedule Background Job: Hit this button to start the background job</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>wizard, which will guide you, step-by-step, in scheduling the background</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>job.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>You can modify and adjust all fields in the background job wizard, but</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>do not change program name and variant.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>Note: This button will not appear if the user lacks background job</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>administrativeprivileges (authorization object S_BTCH_ADM).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>View Jobs (SM37): This button will take you to transaction SM37, in</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>which you can monitor your jobs. You will need access to transaction</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>SM37.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;STANDARD_VARIANTS&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;OUTPUT&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>&lt;ZU&gt;Columns &lt;/&gt;,,&lt;ZU&gt;-Description&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>Rule ,,-SOD conflict ID</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>Type ,,-The application area the conflict falls under</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE># of viol. inc. ALL ,,-The number of violations of the SOD conflict</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>% of users with conflict ,,-Percentage of users with the specified</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>conflict</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;ACTIVITIES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;EXAMPLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>RE</ID>
+      <OBJECT>/PSYNG/SW_056</OBJECT>
+      <LANGU>I</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0002</VERSION>
+      <TXTLINES>00066</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SW_056</TDNAME>
+      <TDID>RE</TDID>
+      <TDSPRAS>I</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00002</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;TITLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>SOD System-Wide Conflict Summary Report</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PURPOSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>The purpose of this report is to show a system-wide SOD report at a</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>summary level. The output will be categorized by Application Areas (i.e.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>FI, HR, MM). The names of covered companies (AREs) can be indicated.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;INTEGRATION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PREREQUISITES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;FEATURES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;SELECTION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>System: The system ID</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Project Manager: Enter the name of the Project Manager (optional)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>List of AREs covered: Indicate any companies (AREs) that are covered in</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>this output</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Number of Parallel Work Process to Use (4 max): A &quot;Work Process&quot; is the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>SAP system&apos;s technical workhorse that processes end-users&apos; requests.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>Since this analysis is intended to run for massive amounts of data,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Security Weaver allows processing of this to be split into pieces and</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>run in parallel. This will allow SW to make better use of system memory</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>and processing power, which will enhance the performance of this</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analysis. Currently, SW allows maximum of 4 consecutive work processes</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>to be used. This number, 4, is intended to prevent the user from taking</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>over all the system&apos;s available resources. Currently this number is not</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>configurable.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>SW takes the number of processes selected by user and initiates the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>parallel processing on all available application servers, for load</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>balancing. For example, if user selects 4 work processes and there are 2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>application servers, SW will initiate 2 work processes on each of the 2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>application servers.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Caution: Although 4 work processes spread across multiple application</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>servers should not be much impact to the system. However, in some</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>environments even 4 work processes are too many to be used by one person</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>in parallel. Please consult with your SAP Core Technical Infrastructure</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Support Team (commonly referred to as the &quot;SAP BASIS Team&quot;) to identify</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>the number of work process that you could/should use in parallel.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Another way to help identify the right number is to run few &quot;sample&quot;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analyses in small quantities to monitor the execution time and load on</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>the overall system.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Specific server (for Parallel Processing): If you would like SW to run</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>the analysis on any one specific Application Server, you can specify</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>that server here. This is useful when you know the server to run the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analysis or when a server has been designated to run these types of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analyses. If a specific server is selected, SW will not initiate any</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>work processes on other application servers; it will only start the work</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>processes on the server that is specified.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>This Server Only: You can click on this button and it will populate the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Specific Server with the local server name.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Max nr of users to analyze at once: Indicate the maximum number of users</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>to analyze at once</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Update SCAN table: If this check-box is selected, SW will update the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>scan table.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>Background processing:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Since processing mass amounts of data would most likely cause your</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>session to Time-Out and create a Short Dump, SW provides you an</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>intuitive functionality to schedule a background job for these large</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analyses.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Schedule Background Job: Hit this button to start the background job</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>wizard, which will guide you, step-by-step, in scheduling the background</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>job.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>You can modify and adjust all fields in the background job wizard, but</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>do not change program name and variant.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>Note: This button will not appear if the user lacks background job</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>administrativeprivileges (authorization object S_BTCH_ADM).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>View Jobs (SM37): This button will take you to transaction SM37, in</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>which you can monitor your jobs. You will need access to transaction</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>SM37.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;STANDARD_VARIANTS&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;OUTPUT&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>&lt;ZU&gt;Columns &lt;/&gt;,,&lt;ZU&gt;-Description&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>Rule ,,-SOD conflict ID</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>Type ,,-The application area the conflict falls under</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE># of viol. inc. ALL ,,-The number of violations of the SOD conflict</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>% of users with conflict ,,-Percentage of users with the specified</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>conflict</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;ACTIVITIES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;EXAMPLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>RE</ID>
+      <OBJECT>/PSYNG/SW_056</OBJECT>
+      <LANGU>N</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0002</VERSION>
+      <TXTLINES>00066</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SW_056</TDNAME>
+      <TDID>RE</TDID>
+      <TDSPRAS>N</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00002</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;TITLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>SOD System-Wide Conflict Summary Report</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PURPOSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>The purpose of this report is to show a system-wide SOD report at a</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>summary level. The output will be categorized by Application Areas (i.e.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>FI, HR, MM). The names of covered companies (AREs) can be indicated.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;INTEGRATION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PREREQUISITES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;FEATURES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;SELECTION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>System: The system ID</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Project Manager: Enter the name of the Project Manager (optional)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>List of AREs covered: Indicate any companies (AREs) that are covered in</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>this output</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Number of Parallel Work Process to Use (4 max): A &quot;Work Process&quot; is the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>SAP system&apos;s technical workhorse that processes end-users&apos; requests.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>Since this analysis is intended to run for massive amounts of data,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Security Weaver allows processing of this to be split into pieces and</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>run in parallel. This will allow SW to make better use of system memory</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>and processing power, which will enhance the performance of this</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analysis. Currently, SW allows maximum of 4 consecutive work processes</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>to be used. This number, 4, is intended to prevent the user from taking</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>over all the system&apos;s available resources. Currently this number is not</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>configurable.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>SW takes the number of processes selected by user and initiates the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>parallel processing on all available application servers, for load</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>balancing. For example, if user selects 4 work processes and there are 2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>application servers, SW will initiate 2 work processes on each of the 2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>application servers.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Caution: Although 4 work processes spread across multiple application</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>servers should not be much impact to the system. However, in some</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>environments even 4 work processes are too many to be used by one person</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>in parallel. Please consult with your SAP Core Technical Infrastructure</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Support Team (commonly referred to as the &quot;SAP BASIS Team&quot;) to identify</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>the number of work process that you could/should use in parallel.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Another way to help identify the right number is to run few &quot;sample&quot;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analyses in small quantities to monitor the execution time and load on</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>the overall system.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Specific server (for Parallel Processing): If you would like SW to run</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>the analysis on any one specific Application Server, you can specify</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>that server here. This is useful when you know the server to run the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analysis or when a server has been designated to run these types of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analyses. If a specific server is selected, SW will not initiate any</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>work processes on other application servers; it will only start the work</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>processes on the server that is specified.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>This Server Only: You can click on this button and it will populate the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Specific Server with the local server name.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Max nr of users to analyze at once: Indicate the maximum number of users</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>to analyze at once</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Update SCAN table: If this check-box is selected, SW will update the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>scan table.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>Background processing:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Since processing mass amounts of data would most likely cause your</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>session to Time-Out and create a Short Dump, SW provides you an</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>intuitive functionality to schedule a background job for these large</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analyses.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Schedule Background Job: Hit this button to start the background job</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>wizard, which will guide you, step-by-step, in scheduling the background</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>job.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>You can modify and adjust all fields in the background job wizard, but</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>do not change program name and variant.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>Note: This button will not appear if the user lacks background job</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>administrativeprivileges (authorization object S_BTCH_ADM).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>View Jobs (SM37): This button will take you to transaction SM37, in</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>which you can monitor your jobs. You will need access to transaction</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>SM37.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;STANDARD_VARIANTS&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;OUTPUT&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>&lt;ZU&gt;Columns &lt;/&gt;,,&lt;ZU&gt;-Description&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>Rule ,,-SOD conflict ID</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>Type ,,-The application area the conflict falls under</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE># of viol. inc. ALL ,,-The number of violations of the SOD conflict</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>% of users with conflict ,,-Percentage of users with the specified</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>conflict</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;ACTIVITIES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;EXAMPLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>RE</ID>
+      <OBJECT>/PSYNG/SW_056</OBJECT>
+      <LANGU>P</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0002</VERSION>
+      <TXTLINES>00066</TXTLINES>
+      <DOKSTATE>R</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SW_056</TDNAME>
+      <TDID>RE</TDID>
+      <TDSPRAS>P</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00002</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;TITLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>SOD System-Wide Conflict Summary Report</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PURPOSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>The purpose of this report is to show a system-wide SOD report at a</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>summary level. The output will be categorized by Application Areas (i.e.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>FI, HR, MM). The names of covered companies (AREs) can be indicated.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;INTEGRATION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PREREQUISITES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;FEATURES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;SELECTION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>System: The system ID</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Project Manager: Enter the name of the Project Manager (optional)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>List of AREs covered: Indicate any companies (AREs) that are covered in</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>this output</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Number of Parallel Work Process to Use (4 max): A &quot;Work Process&quot; is the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>SAP system&apos;s technical workhorse that processes end-users&apos; requests.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>Since this analysis is intended to run for massive amounts of data,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Security Weaver allows processing of this to be split into pieces and</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>run in parallel. This will allow SW to make better use of system memory</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>and processing power, which will enhance the performance of this</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analysis. Currently, SW allows maximum of 4 consecutive work processes</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>to be used. This number, 4, is intended to prevent the user from taking</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>over all the system&apos;s available resources. Currently this number is not</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>configurable.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>SW takes the number of processes selected by user and initiates the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>parallel processing on all available application servers, for load</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>balancing. For example, if user selects 4 work processes and there are 2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>application servers, SW will initiate 2 work processes on each of the 2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>application servers.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Caution: Although 4 work processes spread across multiple application</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>servers should not be much impact to the system. However, in some</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>environments even 4 work processes are too many to be used by one person</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>in parallel. Please consult with your SAP Core Technical Infrastructure</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Support Team (commonly referred to as the &quot;SAP BASIS Team&quot;) to identify</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>the number of work process that you could/should use in parallel.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Another way to help identify the right number is to run few &quot;sample&quot;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analyses in small quantities to monitor the execution time and load on</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>the overall system.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Specific server (for Parallel Processing): If you would like SW to run</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>the analysis on any one specific Application Server, you can specify</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>that server here. This is useful when you know the server to run the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analysis or when a server has been designated to run these types of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analyses. If a specific server is selected, SW will not initiate any</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>work processes on other application servers; it will only start the work</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>processes on the server that is specified.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>This Server Only: You can click on this button and it will populate the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Specific Server with the local server name.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Max nr of users to analyze at once: Indicate the maximum number of users</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>to analyze at once</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Update SCAN table: If this check-box is selected, SW will update the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>scan table.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>Background processing:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Since processing mass amounts of data would most likely cause your</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>session to Time-Out and create a Short Dump, SW provides you an</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>intuitive functionality to schedule a background job for these large</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analyses.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Schedule Background Job: Hit this button to start the background job</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>wizard, which will guide you, step-by-step, in scheduling the background</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>job.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>You can modify and adjust all fields in the background job wizard, but</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>do not change program name and variant.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>Note: This button will not appear if the user lacks background job</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>administrativeprivileges (authorization object S_BTCH_ADM).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>View Jobs (SM37): This button will take you to transaction SM37, in</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>which you can monitor your jobs. You will need access to transaction</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>SM37.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;STANDARD_VARIANTS&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;OUTPUT&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>&lt;ZU&gt;Columns &lt;/&gt;,,&lt;ZU&gt;-Description&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>Rule ,,-SOD conflict ID</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>Type ,,-The application area the conflict falls under</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE># of viol. inc. ALL ,,-The number of violations of the SOD conflict</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>% of users with conflict ,,-Percentage of users with the specified</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>conflict</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;ACTIVITIES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;EXAMPLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>RE</ID>
+      <OBJECT>/PSYNG/SW_056</OBJECT>
+      <LANGU>S</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0002</VERSION>
+      <TXTLINES>00066</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SW_056</TDNAME>
+      <TDID>RE</TDID>
+      <TDSPRAS>S</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00002</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;TITLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>SOD System-Wide Conflict Summary Report</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PURPOSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>The purpose of this report is to show a system-wide SOD report at a</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>summary level. The output will be categorized by Application Areas (i.e.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>FI, HR, MM). The names of covered companies (AREs) can be indicated.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;INTEGRATION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PREREQUISITES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;FEATURES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;SELECTION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>System: The system ID</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Project Manager: Enter the name of the Project Manager (optional)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>List of AREs covered: Indicate any companies (AREs) that are covered in</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>this output</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Number of Parallel Work Process to Use (4 max): A &quot;Work Process&quot; is the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>SAP system&apos;s technical workhorse that processes end-users&apos; requests.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>Since this analysis is intended to run for massive amounts of data,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Security Weaver allows processing of this to be split into pieces and</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>run in parallel. This will allow SW to make better use of system memory</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>and processing power, which will enhance the performance of this</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analysis. Currently, SW allows maximum of 4 consecutive work processes</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>to be used. This number, 4, is intended to prevent the user from taking</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>over all the system&apos;s available resources. Currently this number is not</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>configurable.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>SW takes the number of processes selected by user and initiates the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>parallel processing on all available application servers, for load</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>balancing. For example, if user selects 4 work processes and there are 2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>application servers, SW will initiate 2 work processes on each of the 2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>application servers.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Caution: Although 4 work processes spread across multiple application</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>servers should not be much impact to the system. However, in some</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>environments even 4 work processes are too many to be used by one person</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>in parallel. Please consult with your SAP Core Technical Infrastructure</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Support Team (commonly referred to as the &quot;SAP BASIS Team&quot;) to identify</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>the number of work process that you could/should use in parallel.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Another way to help identify the right number is to run few &quot;sample&quot;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analyses in small quantities to monitor the execution time and load on</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>the overall system.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Specific server (for Parallel Processing): If you would like SW to run</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>the analysis on any one specific Application Server, you can specify</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>that server here. This is useful when you know the server to run the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analysis or when a server has been designated to run these types of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analyses. If a specific server is selected, SW will not initiate any</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>work processes on other application servers; it will only start the work</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>processes on the server that is specified.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>This Server Only: You can click on this button and it will populate the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Specific Server with the local server name.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Max nr of users to analyze at once: Indicate the maximum number of users</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>to analyze at once</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Update SCAN table: If this check-box is selected, SW will update the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>scan table.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>Background processing:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Since processing mass amounts of data would most likely cause your</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>session to Time-Out and create a Short Dump, SW provides you an</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>intuitive functionality to schedule a background job for these large</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analyses.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Schedule Background Job: Hit this button to start the background job</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>wizard, which will guide you, step-by-step, in scheduling the background</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>job.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>You can modify and adjust all fields in the background job wizard, but</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>do not change program name and variant.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>Note: This button will not appear if the user lacks background job</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>administrativeprivileges (authorization object S_BTCH_ADM).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>View Jobs (SM37): This button will take you to transaction SM37, in</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>which you can monitor your jobs. You will need access to transaction</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>SM37.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;STANDARD_VARIANTS&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;OUTPUT&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>&lt;ZU&gt;Columns &lt;/&gt;,,&lt;ZU&gt;-Description&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>Rule ,,-SOD conflict ID</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>Type ,,-The application area the conflict falls under</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE># of viol. inc. ALL ,,-The number of violations of the SOD conflict</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>% of users with conflict ,,-Percentage of users with the specified</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>conflict</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;ACTIVITIES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;EXAMPLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>RE</ID>
+      <OBJECT>/PSYNG/SW_056</OBJECT>
+      <LANGU>V</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0002</VERSION>
+      <TXTLINES>00066</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SW_056</TDNAME>
+      <TDID>RE</TDID>
+      <TDSPRAS>V</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00002</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;TITLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>SOD System-Wide Conflict Summary Report</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PURPOSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>The purpose of this report is to show a system-wide SOD report at a</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>summary level. The output will be categorized by Application Areas (i.e.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>FI, HR, MM). The names of covered companies (AREs) can be indicated.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;INTEGRATION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PREREQUISITES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;FEATURES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;SELECTION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>System: The system ID</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Project Manager: Enter the name of the Project Manager (optional)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>List of AREs covered: Indicate any companies (AREs) that are covered in</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>this output</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Number of Parallel Work Process to Use (4 max): A &quot;Work Process&quot; is the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>SAP system&apos;s technical workhorse that processes end-users&apos; requests.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>Since this analysis is intended to run for massive amounts of data,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Security Weaver allows processing of this to be split into pieces and</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>run in parallel. This will allow SW to make better use of system memory</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>and processing power, which will enhance the performance of this</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analysis. Currently, SW allows maximum of 4 consecutive work processes</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>to be used. This number, 4, is intended to prevent the user from taking</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>over all the system&apos;s available resources. Currently this number is not</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>configurable.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>SW takes the number of processes selected by user and initiates the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>parallel processing on all available application servers, for load</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>balancing. For example, if user selects 4 work processes and there are 2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>application servers, SW will initiate 2 work processes on each of the 2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>application servers.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Caution: Although 4 work processes spread across multiple application</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>servers should not be much impact to the system. However, in some</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>environments even 4 work processes are too many to be used by one person</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>in parallel. Please consult with your SAP Core Technical Infrastructure</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Support Team (commonly referred to as the &quot;SAP BASIS Team&quot;) to identify</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>the number of work process that you could/should use in parallel.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Another way to help identify the right number is to run few &quot;sample&quot;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analyses in small quantities to monitor the execution time and load on</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>the overall system.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Specific server (for Parallel Processing): If you would like SW to run</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>the analysis on any one specific Application Server, you can specify</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>that server here. This is useful when you know the server to run the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analysis or when a server has been designated to run these types of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analyses. If a specific server is selected, SW will not initiate any</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>work processes on other application servers; it will only start the work</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>processes on the server that is specified.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>This Server Only: You can click on this button and it will populate the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Specific Server with the local server name.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Max nr of users to analyze at once: Indicate the maximum number of users</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>to analyze at once</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Update SCAN table: If this check-box is selected, SW will update the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>scan table.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>Background processing:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Since processing mass amounts of data would most likely cause your</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>session to Time-Out and create a Short Dump, SW provides you an</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>intuitive functionality to schedule a background job for these large</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analyses.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Schedule Background Job: Hit this button to start the background job</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>wizard, which will guide you, step-by-step, in scheduling the background</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>job.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>You can modify and adjust all fields in the background job wizard, but</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>do not change program name and variant.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>Note: This button will not appear if the user lacks background job</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>administrativeprivileges (authorization object S_BTCH_ADM).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>View Jobs (SM37): This button will take you to transaction SM37, in</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>which you can monitor your jobs. You will need access to transaction</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>SM37.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;STANDARD_VARIANTS&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;OUTPUT&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>&lt;ZU&gt;Columns &lt;/&gt;,,&lt;ZU&gt;-Description&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>Rule ,,-SOD conflict ID</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>Type ,,-The application area the conflict falls under</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE># of viol. inc. ALL ,,-The number of violations of the SOD conflict</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>% of users with conflict ,,-Percentage of users with the specified</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>conflict</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;ACTIVITIES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;EXAMPLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>RE</ID>
+      <OBJECT>/PSYNG/SW_056</OBJECT>
+      <LANGU>Z</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0002</VERSION>
+      <TXTLINES>00066</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SW_056</TDNAME>
+      <TDID>RE</TDID>
+      <TDSPRAS>Z</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00002</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;TITLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>SOD System-Wide Conflict Summary Report</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PURPOSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>The purpose of this report is to show a system-wide SOD report at a</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>summary level. The output will be categorized by Application Areas (i.e.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>FI, HR, MM). The names of covered companies (AREs) can be indicated.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;INTEGRATION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PREREQUISITES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;FEATURES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;SELECTION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>System: The system ID</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Project Manager: Enter the name of the Project Manager (optional)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>List of AREs covered: Indicate any companies (AREs) that are covered in</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>this output</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Number of Parallel Work Process to Use (4 max): A &quot;Work Process&quot; is the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>SAP system&apos;s technical workhorse that processes end-users&apos; requests.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>Since this analysis is intended to run for massive amounts of data,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Security Weaver allows processing of this to be split into pieces and</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>run in parallel. This will allow SW to make better use of system memory</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>and processing power, which will enhance the performance of this</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analysis. Currently, SW allows maximum of 4 consecutive work processes</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>to be used. This number, 4, is intended to prevent the user from taking</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>over all the system&apos;s available resources. Currently this number is not</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>configurable.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>SW takes the number of processes selected by user and initiates the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>parallel processing on all available application servers, for load</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>balancing. For example, if user selects 4 work processes and there are 2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>application servers, SW will initiate 2 work processes on each of the 2</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>application servers.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Caution: Although 4 work processes spread across multiple application</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>servers should not be much impact to the system. However, in some</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>environments even 4 work processes are too many to be used by one person</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>in parallel. Please consult with your SAP Core Technical Infrastructure</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Support Team (commonly referred to as the &quot;SAP BASIS Team&quot;) to identify</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>the number of work process that you could/should use in parallel.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Another way to help identify the right number is to run few &quot;sample&quot;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analyses in small quantities to monitor the execution time and load on</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>the overall system.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Specific server (for Parallel Processing): If you would like SW to run</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>the analysis on any one specific Application Server, you can specify</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>that server here. This is useful when you know the server to run the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analysis or when a server has been designated to run these types of</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analyses. If a specific server is selected, SW will not initiate any</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>work processes on other application servers; it will only start the work</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>processes on the server that is specified.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>This Server Only: You can click on this button and it will populate the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Specific Server with the local server name.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Max nr of users to analyze at once: Indicate the maximum number of users</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>to analyze at once</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Update SCAN table: If this check-box is selected, SW will update the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>scan table.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>Background processing:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Since processing mass amounts of data would most likely cause your</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>session to Time-Out and create a Short Dump, SW provides you an</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>intuitive functionality to schedule a background job for these large</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>analyses.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Schedule Background Job: Hit this button to start the background job</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>wizard, which will guide you, step-by-step, in scheduling the background</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>job.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>You can modify and adjust all fields in the background job wizard, but</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>do not change program name and variant.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>BL</TDFORMAT>
+       <TDLINE>Note: This button will not appear if the user lacks background job</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>administrativeprivileges (authorization object S_BTCH_ADM).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>View Jobs (SM37): This button will take you to transaction SM37, in</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>which you can monitor your jobs. You will need access to transaction</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>SM37.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;STANDARD_VARIANTS&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;OUTPUT&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>&lt;ZU&gt;Columns &lt;/&gt;,,&lt;ZU&gt;-Description&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>Rule ,,-SOD conflict ID</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>Type ,,-The application area the conflict falls under</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE># of viol. inc. ALL ,,-The number of violations of the SOD conflict</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>T1</TDFORMAT>
+       <TDLINE>% of users with conflict ,,-Percentage of users with the specified</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>conflict</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;ACTIVITIES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;EXAMPLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+   </LONGTEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

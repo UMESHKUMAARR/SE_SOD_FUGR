@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DOCT" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DOC>
+    <item>
+     <DOKIL>
+      <ID>TX</ID>
+      <OBJECT>/PSYNG/SE_VAREL_DOC</OBJECT>
+      <LANGU>D</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0001</VERSION>
+      <TXTLINES>00041</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SE_VAREL_DOC</TDNAME>
+      <TDID>TX</TDID>
+      <TDSPRAS>D</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00001</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Dokumentation für variable Elemente</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Ziel der Funktion</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Beim Pflegen der Werte für ein Berechtigungsfeld in einer SOD-Funktion</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>muss in manchen Fällen die gleiche Werteliste</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>für das gleiche Feld in mehreren Funktionen und für mehrere</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Transaktionscodes gepflegt werden.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Bei Änderungen an der Liste (durch Ändern, Löschen oder Hinzufügen eines</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Wertes) muss die Änderung an allen diesen Orten erfolgen.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Mit den variablen Elementen können Sie die Wertelisten</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>zentral mithilfe bestimmter Regeln pflegen; diese werden dann in</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>alle Stellen der SOD-Matrix übernommen, an denen sie verwendet werden.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>Variable Elemente pflegen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Wählen Sie im Konfigurationsbereich auf dem Register &quot;Sonstiges&quot; die</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Drucktaste &quot;Variable Elemente in Funktionen&quot;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Der Name eines variablen Elements muss immer mit &quot;/PSYNG/$&quot; beginnen;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>nach dem $-Zeichen folgt der Identifikator zu einem spez. var. Element.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U3</TDFORMAT>
+       <TDLINE>&lt;ZU&gt;Beispiel: Bewegungsart&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>In diesem einfachen Beispiel wird in der Liste ein Bereich zum</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Feld BWART gepflegt.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Das Feld &quot;Bewegungsart&quot; (BWART) wird in Berechtigungsobjekten der</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Funktions-ID FM01 (Warenausgang/-bewegung) verwendet.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Bei allen TCodes besitzt dieses Feld den Wertebereich 200 - 299.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Für diesen Bereich kann ein variables Element namens</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>&quot;/PSYNG/$BWART_A&quot; wie folgt gepflegt werden:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Name variabl. Element = /PSYNG/$BWART_A</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>RFC-Destination = leer (oder gültige RFC-Destination, in der das</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>variable Element angewendet werden soll)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Wertemenge = 001</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Berecht.-Feld = BWART</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Feldname = BWART</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Untergrenze = 200</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Obergrenze = 999</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Um das variable Element in der SOD-Matrix verwenden zu können, wird der</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>für BWART in der Funktion FM01 definierte Bereich durch den Namen des</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>variablen Elements ersetzt.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>Wenn der Bereich später von 200 - 999 in 200 - 399 geändert werden soll,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>muss diese Änderung lediglich am var. Element /PSYNG/$BWART_A erfolgen;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>sie wird in jede Funktion übernommen, die dieses var. Element verwendet.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>Im &lt;ZH&gt;&lt;ZK&gt;&lt;ZU&gt;SE-Benutzerleitfaden, Anhang 7.10 - Variable</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Elemente &lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;ZU&gt;in Funktionen&lt;/&gt; finden Sie weitere Beispiele und</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Screenshots.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>TX</ID>
+      <OBJECT>/PSYNG/SE_VAREL_DOC</OBJECT>
+      <LANGU>E</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0006</VERSION>
+      <MASTERLANG>X</MASTERLANG>
+      <TXTLINES>00041</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>/PSYNG/SE_VAREL_DOC</TDNAME>
+      <TDID>TX</TDID>
+      <TDSPRAS>E</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00006</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Variable Elements Documentation</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Objective of Functionality</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>When maintaining the values for an authorization field in an SOD</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Function, in some cases the same list of values needs to be maintained</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>for the same field in multiple functions and for multiple transaction</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>codes.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>When the list changes (a value changed, deleted or a new one is added),</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>this means the change has to be made in all of these locations.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>With the variable elements functionality, you can maintain these lists</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>of values centrally, using specific rules, and these will then be</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>applied everywhere in the SOD matrix where they are used.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>Maintain Variable Elements</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>In the &quot;Misc&quot; tab, in the configuration section, use the &quot;Variable</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Elements in Functions&quot;-buttton.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>A variable element name always needs to start with &quot;/PSYNG/$&quot;, the part</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>after the $-sign will be the identifier for a specific Variable Element.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U3</TDFORMAT>
+       <TDLINE>&lt;ZU&gt;Example: Movement Type&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>This is a simple example; in the list we simply maintain 1 range for the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>BWART field.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>The field Movement Type (BWART) is used in authorization objects  in the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Function ID FM01 -Goods Issues/Movement.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>For all transaction codes, the value range for this field is 200 - 299.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>For this range, we can maintain a Variable Element with the name</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>&quot;/PSYNG/$BWART_A&quot;, and maintain it as follows :</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Variable Element Name = /PSYNG/$BWART_A</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>RFC Destination = Blank (or a valid RFC Destination where you want this</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Variable Element applicable)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Value Set = 001</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Auth field = BWART</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Field Name = BWART</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Low Value = 200</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>High Value = 999</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>To use this Variable Element in the SOD Matrix, we replace the range</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>that we have defined for BWART in function FM01 with the name of the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Variable Element.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+       <TDLINE>If we later decide to change the range from 200 - 999 into 200-399, we</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>only need to make that change to the Variable Element /PSYNG/$BWART_A,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>and it will be applied to every function that uses this Variabe Element.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>Please refer to the &lt;ZH&gt;&lt;ZK&gt;&lt;ZU&gt;SE User Guide, Appendix 7.10 - Variable</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Elements &lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;ZU&gt;in Functions&lt;/&gt; for further examples and</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>screenshots.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>*</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+   </DOC>
+  </asx:values>
+ </asx:abap>
+</abapGit>

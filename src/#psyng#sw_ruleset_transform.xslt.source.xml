@@ -1,0 +1,169 @@
+<?sap.transform simple?>
+<tt:transform xmlns:tt="http://www.sap.com/transformation-templates" xmlns:ddic="http://www.sap.com/abapxml/types/dictionary" xmlns:def="http://www.sap.com/abapxml/types/defined">
+  <tt:root name="ROOT" type="?"/>
+  <tt:root name="POLICY_DATA" type="ddic:/PSYNG/SW_IMPORT_T"/>
+  <tt:template>
+    <POLICY_DATA>
+      <tt:loop ref=".POLICY_DATA">
+        <_-PSYNG_-SW_IMPORT>
+          <BUS_PROCESS_HEADER>
+            <tt:loop ref="BUS_PROCESS_HEADER">
+              <_-PSYNG_-SW_BUSPRO>
+                <BUSPROCID tt:value-ref="BUSPROCID"/>
+              </_-PSYNG_-SW_BUSPRO>
+            </tt:loop>
+          </BUS_PROCESS_HEADER>
+          <BUS_PROCESS_TEXT>
+            <tt:loop ref="BUS_PROCESS_TEXT">
+              <_-PSYNG_-SW_BUSPRT>
+                <BUSPROCID tt:value-ref="BUSPROCID"/>
+                <LANG tt:value-ref="LANG"/>
+                <DESCRIPTION tt:value-ref="DESCRIPTION"/>
+              </_-PSYNG_-SW_BUSPRT>
+            </tt:loop>
+          </BUS_PROCESS_TEXT>
+          <MATRIX_HEADER>
+            <tt:loop ref="MATRIX_HEADER">
+              <_-PSYNG_-SW_RULE_H>
+                <RULESETID tt:value-ref="RULESETID"/>
+                <SRC_SYSID tt:value-ref="SRC_SYSID"/>
+                <SRC_CLIENT tt:value-ref="SRC_CLIENT"/>
+                <VERSION tt:value-ref="VERSION"/>
+                <EXPORT_DATE tt:value-ref="EXPORT_DATE"/>
+                <EXPORT_TIME tt:value-ref="EXPORT_TIME"/>
+              </_-PSYNG_-SW_RULE_H>
+            </tt:loop>
+          </MATRIX_HEADER>
+          <MATRIX_TEXT>
+            <tt:loop ref="MATRIX_TEXT">
+              <_-PSYNG_-SW_RULE_T>
+                <RULESETID tt:value-ref="RULESETID"/>
+                <LANG tt:value-ref="LANG"/>
+                <DESCRIPTION tt:value-ref="DESCRIPTION"/>
+              </_-PSYNG_-SW_RULE_T>
+            </tt:loop>
+          </MATRIX_TEXT>
+          <MATRIX_DETAILS>
+            <tt:loop ref="MATRIX_DETAILS">
+              <_-PSYNG_-SW_RULE_D>
+                <RULESETID tt:value-ref="RULESETID"/>
+                <SOD_CONFLICT tt:value-ref="SOD_CONFLICT"/>
+                <ACTIVE tt:value-ref="ACTIVE"/>
+              </_-PSYNG_-SW_RULE_D>
+            </tt:loop>
+          </MATRIX_DETAILS>
+          <CONFLICT_HEADER>
+            <tt:loop ref="CONFLICT_HEADER">
+              <_-PSYNG_-SW_CONF_H>
+                <SOD_CONFLICT tt:value-ref="SOD_CONFLICT"/>
+                <CONTENT_COMP tt:value-ref="CONTENT_COMP"/>
+                <RISK_ID tt:value-ref="RISK_ID"/>
+              </_-PSYNG_-SW_CONF_H>
+            </tt:loop>
+          </CONFLICT_HEADER>
+          <CONFLICT_TEXT>
+            <tt:loop ref="CONFLICT_TEXT">
+              <_-PSYNG_-SW_CONF_T>
+                <SOD_CONFLICT tt:value-ref="SOD_CONFLICT"/>
+                <LANG tt:value-ref="LANG"/>
+                <DESCRIPTION tt:value-ref="DESCRIPTION"/>
+              </_-PSYNG_-SW_CONF_T>
+            </tt:loop>
+          </CONFLICT_TEXT>
+          <CONFLICT_DETAILS>
+            <tt:loop ref="CONFLICT_DETAILS">
+              <_-PSYNG_-SW_CONF_D>
+                <SOD_CONFLICT tt:value-ref="SOD_CONFLICT"/>
+                <SOD_FUNCTION_1 tt:value-ref="SOD_FUNCTION_1"/>
+                <SOD_FUNCTION_2 tt:value-ref="SOD_FUNCTION_2"/>
+                <SOD_FUNCTION_3 tt:value-ref="SOD_FUNCTION_3"/>
+                <SOD_FUNCTION_4 tt:value-ref="SOD_FUNCTION_4"/>
+                <SOD_FUNCTION_5 tt:value-ref="SOD_FUNCTION_5"/>
+              </_-PSYNG_-SW_CONF_D>
+            </tt:loop>
+          </CONFLICT_DETAILS>
+          <FUNCTION_HEADER>
+            <tt:loop ref="FUNCTION_HEADER">
+              <_-PSYNG_-SW_FUNC_H>
+                <SOD_FUNCTION tt:value-ref="SOD_FUNCTION"/>
+              </_-PSYNG_-SW_FUNC_H>
+            </tt:loop>
+          </FUNCTION_HEADER>
+          <FUNCTION_TEXT>
+            <tt:loop ref="FUNCTION_TEXT">
+              <_-PSYNG_-SW_FUNC_T>
+                <SOD_FUNCTION tt:value-ref="SOD_FUNCTION"/>
+                <LANG tt:value-ref="LANG"/>
+                <DESCRIPTION tt:value-ref="DESCRIPTION"/>
+              </_-PSYNG_-SW_FUNC_T>
+            </tt:loop>
+          </FUNCTION_TEXT>
+          <FUNCTION_DETAILS>
+            <tt:loop ref="FUNCTION_DETAILS">
+              <_-PSYNG_-SW_FUNC_D>
+                <SOD_FUNCTION tt:value-ref="SOD_FUNCTION"/>
+                <SEARCH_RULE tt:value-ref="SEARCH_RULE"/>
+              </_-PSYNG_-SW_FUNC_D>
+            </tt:loop>
+          </FUNCTION_DETAILS>
+          <SEARCH_RULE_HEADER>
+            <tt:loop ref="SEARCH_RULE_HEADER">
+              <_-PSYNG_-SW_AUTH_H>
+                <SEARCH_RULE tt:value-ref="SEARCH_RULE"/>
+                <CONTENT_COMP tt:value-ref="CONTENT_COMP"/>
+                <RISK_ID tt:value-ref="RISK_ID"/>
+                <ACTIVE tt:value-ref="ACTIVE"/>
+                <SINGLE_CRITICAL tt:value-ref="SINGLE_CRITICAL"/>
+                <S4HANA_INACTIVE tt:value-ref="S4HANA_INACTIVE"/>
+              </_-PSYNG_-SW_AUTH_H>
+            </tt:loop>
+          </SEARCH_RULE_HEADER>
+          <SEARCH_RULE_TEXT>
+            <tt:loop ref="SEARCH_RULE_TEXT">
+              <_-PSYNG_-SW_AUTH_T>
+                <SEARCH_RULE tt:value-ref="SEARCH_RULE"/>
+                <LANG tt:value-ref="LANG"/>
+                <DESCRIPTION tt:value-ref="DESCRIPTION"/>
+              </_-PSYNG_-SW_AUTH_T>
+            </tt:loop>
+          </SEARCH_RULE_TEXT>
+          <SEARCH_RULE_DETAILS>
+            <tt:loop ref="SEARCH_RULE_DETAILS">
+              <_-PSYNG_-SW_AUTH_D>
+                <SEARCH_RULE tt:value-ref="SEARCH_RULE"/>
+                <AUTH_GROUP tt:value-ref="AUTH_GROUP"/>
+                <OBJECT tt:value-ref="OBJECT"/>
+                <FIELD tt:value-ref="FIELD"/>
+                <NUMBER_IN_FIELD tt:value-ref="NUMBER_IN_FIELD"/>
+                <LOW tt:value-ref="LOW"/>
+                <HIGH tt:value-ref="HIGH"/>
+                <SEARCHTYPE tt:value-ref="SEARCHTYPE"/>
+              </_-PSYNG_-SW_AUTH_D>
+            </tt:loop>
+          </SEARCH_RULE_DETAILS>
+          <PROBLEM_HEADER>
+            <tt:loop ref="PROBLEM_HEADER">
+              <_-PSYNG_-SW_RISK_H>
+                <RISK_ID tt:value-ref="RISK_ID"/>
+                <SEVERITY tt:value-ref="SEVERITY"/>
+                <REPORTING_GROUP tt:value-ref="REPORTING_GROUP"/>
+                <REPORTING_SUBTYP tt:value-ref="REPORTING_SUBTYP"/>
+              </_-PSYNG_-SW_RISK_H>
+            </tt:loop>
+          </PROBLEM_HEADER>
+          <PROBLEM_TEXT>
+            <tt:loop ref="PROBLEM_TEXT">
+              <_-PSYNG_-SW_RISK_T>
+                <RISK_ID tt:value-ref="RISK_ID"/>
+                <LANG tt:value-ref="LANG"/>
+                <SHORT_DESCRIPTIO tt:value-ref="SHORT_DESCRIPTIO"/>
+                <PROBLEM_TEXT tt:value-ref="PROBLEM_TEXT"/>
+                <SOLUTION_TEXT tt:value-ref="SOLUTION_TEXT"/>
+              </_-PSYNG_-SW_RISK_T>
+            </tt:loop>
+          </PROBLEM_TEXT>
+        </_-PSYNG_-SW_IMPORT>
+      </tt:loop>
+    </POLICY_DATA>
+  </tt:template>
+</tt:transform>

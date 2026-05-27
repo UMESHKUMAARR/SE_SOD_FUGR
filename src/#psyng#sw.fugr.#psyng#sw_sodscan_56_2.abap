@@ -1,0 +1,32 @@
+FUNCTION /PSYNG/SW_SODSCAN_56_2.
+*"----------------------------------------------------------------------
+*"*"Local Interface:
+*"  TABLES
+*"      FAOBJ_FM STRUCTURE  /PSYNG/FAOBJ
+*"      IUSERS_FM STRUCTURE  USR02
+*"      SUSERAUTH_FM STRUCTURE  /PSYNG/USERAUTH
+*"      ITCDAUT_FM STRUCTURE  /PSYNG/PSSWTCDAUT
+*"      SUSERTCODE_FM STRUCTURE  /PSYNG/USERTCODE
+*"      FUNCTTRAN_FM STRUCTURE  /PSYNG/FUNCTTRAN
+*"      CONFDET_FM STRUCTURE  /PSYNG/CONFDET
+*"      OUTPUTDET_FM STRUCTURE  /PSYNG/SW_SOD_OUTDET
+*"      CONFS_FM STRUCTURE  /PSYNG/CONFDET
+*"      S1STOUTPUT_FM STRUCTURE  /PSYNG/SW_SOD_U1STOUTPUT
+*"----------------------------------------------------------------------
+*BOC:UMITTAL CVA scan fix 27/02/2026
+CONSTANTS: lc_fname TYPE rs38l_fnam
+        VALUE '/PSYNG/SW_SODSCAN_56_2'.
+*  S_RFC AUTHORITY CHECK
+  AUTHORITY-CHECK OBJECT 'S_RFC'
+        ID 'RFC_TYPE' FIELD 'FUNC'
+        ID 'RFC_NAME' FIELD lc_fname
+        ID 'ACTVT' FIELD '16'.
+  IF sy-subrc <> 0.
+    MESSAGE s089(/psyng/sw) WITH lc_fname
+    DISPLAY LIKE 'E'.
+    EXIT.
+  ENDIF.
+*EOC:UMITTAL CVA scan fix 27/02/2026
+MESSAGE e002 WITH 'Function Module /PSYNG/SW_SODSCAN_56_2 is obsolete'.
+
+ENDFUNCTION.

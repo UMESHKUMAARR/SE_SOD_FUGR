@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>/PSYNG/SW_CL_QUICKWIN</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Class for quickwin analysis</DESCRIPT>
+    <STATE>1</STATE>
+    <FIXPT>X</FIXPT>
+   </VSEOCLASS>
+   <DESCRIPTIONS_CLASS>
+    <SEOCLASSTX>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Klasse für Quickwin-Analyse</DESCRIPT>
+    </SEOCLASSTX>
+    <SEOCLASSTX>
+     <LANGU>F</LANGU>
+     <DESCRIPT>Class for quickwin analysis</DESCRIPT>
+    </SEOCLASSTX>
+    <SEOCLASSTX>
+     <LANGU>H</LANGU>
+     <DESCRIPT>Klasse für Quickwin-Analyse</DESCRIPT>
+    </SEOCLASSTX>
+    <SEOCLASSTX>
+     <LANGU>I</LANGU>
+     <DESCRIPT>Class for quickwin analysis</DESCRIPT>
+    </SEOCLASSTX>
+    <SEOCLASSTX>
+     <LANGU>N</LANGU>
+     <DESCRIPT>Class for quickwin analysis</DESCRIPT>
+    </SEOCLASSTX>
+    <SEOCLASSTX>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Classe para análise rápida</DESCRIPT>
+    </SEOCLASSTX>
+    <SEOCLASSTX>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Clase para análisis quickwin</DESCRIPT>
+    </SEOCLASSTX>
+    <SEOCLASSTX>
+     <LANGU>V</LANGU>
+     <DESCRIPT>Class for quickwin analysis</DESCRIPT>
+    </SEOCLASSTX>
+    <SEOCLASSTX>
+     <LANGU>Z</LANGU>
+     <DESCRIPT>Class for quickwin analysis</DESCRIPT>
+    </SEOCLASSTX>
+   </DESCRIPTIONS_CLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_COMBINATIONS_RECURSIVE</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Rekursive Methode zum Laden von Objekt-Rolle-Kombinationen</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_COMBINATIONS_RECURSIVE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Recursive method to get object-rolecombinations</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_COMBINATIONS_RECURSIVE</CMPNAME>
+     <LANGU>F</LANGU>
+     <DESCRIPT>Recursive method to get object-rolecombinations</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_COMBINATIONS_RECURSIVE</CMPNAME>
+     <LANGU>H</LANGU>
+     <DESCRIPT>Rekursive Methode zum Laden von Objekt-Rolle-Kombinationen</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_COMBINATIONS_RECURSIVE</CMPNAME>
+     <LANGU>I</LANGU>
+     <DESCRIPT>Recursive method to get object-rolecombinations</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_COMBINATIONS_RECURSIVE</CMPNAME>
+     <LANGU>N</LANGU>
+     <DESCRIPT>Recursive method to get object-rolecombinations</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_COMBINATIONS_RECURSIVE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Método recursivo para obter combinações objeto-perfil</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_COMBINATIONS_RECURSIVE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Método recursivo para obtener combinaciones objeto-rol</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_COMBINATIONS_RECURSIVE</CMPNAME>
+     <LANGU>V</LANGU>
+     <DESCRIPT>Recursive method to get object-rolecombinations</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_COMBINATIONS_RECURSIVE</CMPNAME>
+     <LANGU>Z</LANGU>
+     <DESCRIPT>Recursive method to get object-rolecombinations</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_CONFLICT_TCODE_GROUPS</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Transaktionsgruppen innerhalb des Konflikts laden</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_CONFLICT_TCODE_GROUPS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get Transaction groups within conflict</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_CONFLICT_TCODE_GROUPS</CMPNAME>
+     <LANGU>F</LANGU>
+     <DESCRIPT>Get Transaction groups within conflict</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_CONFLICT_TCODE_GROUPS</CMPNAME>
+     <LANGU>H</LANGU>
+     <DESCRIPT>Transaktionsgruppen innerhalb des Konflikts laden</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_CONFLICT_TCODE_GROUPS</CMPNAME>
+     <LANGU>I</LANGU>
+     <DESCRIPT>Get Transaction groups within conflict</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_CONFLICT_TCODE_GROUPS</CMPNAME>
+     <LANGU>N</LANGU>
+     <DESCRIPT>Get Transaction groups within conflict</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_CONFLICT_TCODE_GROUPS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Obter grupos de transações com conflito</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_CONFLICT_TCODE_GROUPS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Obtener grupos de transacciones dentro del conflicto</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_CONFLICT_TCODE_GROUPS</CMPNAME>
+     <LANGU>V</LANGU>
+     <DESCRIPT>Get Transaction groups within conflict</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_CONFLICT_TCODE_GROUPS</CMPNAME>
+     <LANGU>Z</LANGU>
+     <DESCRIPT>Get Transaction groups within conflict</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_COMBINATIONS_RECURSIVE</CMPNAME>
+     <SCONAME>SEARCH_TABLE</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Tabelle für Quickwin-Analyse</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_COMBINATIONS_RECURSIVE</CMPNAME>
+     <SCONAME>SEARCH_TABLE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table for quick win analysis</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_COMBINATIONS_RECURSIVE</CMPNAME>
+     <SCONAME>SEARCH_TABLE</SCONAME>
+     <LANGU>F</LANGU>
+     <DESCRIPT>Table for quick win analysis</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_COMBINATIONS_RECURSIVE</CMPNAME>
+     <SCONAME>SEARCH_TABLE</SCONAME>
+     <LANGU>H</LANGU>
+     <DESCRIPT>Tabelle für Quickwin-Analyse</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_COMBINATIONS_RECURSIVE</CMPNAME>
+     <SCONAME>SEARCH_TABLE</SCONAME>
+     <LANGU>I</LANGU>
+     <DESCRIPT>Table for quick win analysis</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_COMBINATIONS_RECURSIVE</CMPNAME>
+     <SCONAME>SEARCH_TABLE</SCONAME>
+     <LANGU>N</LANGU>
+     <DESCRIPT>Table for quick win analysis</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_COMBINATIONS_RECURSIVE</CMPNAME>
+     <SCONAME>SEARCH_TABLE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela para análise quick-win</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_COMBINATIONS_RECURSIVE</CMPNAME>
+     <SCONAME>SEARCH_TABLE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Tabla de análisis de ganancia rápida</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_COMBINATIONS_RECURSIVE</CMPNAME>
+     <SCONAME>SEARCH_TABLE</SCONAME>
+     <LANGU>V</LANGU>
+     <DESCRIPT>Table for quick win analysis</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_COMBINATIONS_RECURSIVE</CMPNAME>
+     <SCONAME>SEARCH_TABLE</SCONAME>
+     <LANGU>Z</LANGU>
+     <DESCRIPT>Table for quick win analysis</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

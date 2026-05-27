@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Count of stored result conflicts</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>/PSYNG/LSW_STORED_COUNTTOP</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/SAPLSW_STORED_COUNT</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>/PSYNG/SW_RESCOUNT_ORG_ABB</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>To see conflicts count per system per conflict per Org Area</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_AID</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SERESID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_SYS_INFO</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_COUNT_PER_SYST_ABB</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_COUNT_PER_CONF_SYST_ABB</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_SYSLIST</PARAMETER>
+       <DBSTRUCT>/PSYNG/SWRESISYS</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_COUNT_PER_SYST_ABB</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_CON_SYSTABB</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_COUNT_PER_CONF_SYST_ABB</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_CON_CONFSYSTABB</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SYSTEM</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGES_SYSID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_ORG</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_DORG_ABB</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CONID</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_CONID</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_AID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Results Storage ID</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_SYS_INFO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_COUNT_PER_SYST_ABB</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_COUNT_PER_CONF_SYST_ABB</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Parameter</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_SYSLIST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Analysis Results Set - System Index</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_COUNT_PER_SYST_ABB</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Conflicts count per system per org abb</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_COUNT_PER_CONF_SYST_ABB</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Conflicts count per conflict per system per org abb</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SYSTEM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for System ID</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ORG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Range for Org Level Abbreviation</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for Conflict IDs</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

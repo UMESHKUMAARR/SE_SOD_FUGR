@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SHI3" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TREE_HEAD>
+    <ID>/PSYNG/SW_002</ID>
+    <TYPE>BMENU</TYPE>
+    <NODE_ID>/PSYNG/SW_002_T</NODE_ID>
+    <MASTERLANG>E</MASTERLANG>
+    <BUFFERMODE>1</BUFFERMODE>
+    <BUFFERVAR>NRT</BUFFERVAR>
+   </TREE_HEAD>
+   <TREE_TITLES>
+    <TTREET>
+     <SPRAS>Z</SPRAS>
+     <ID>/PSYNG/SW_002</ID>
+     <TEXT>Historical SOD Reporting</TEXT>
+     <TEXT_CAP>HISTORICAL SOD REPORTING</TEXT_CAP>
+    </TTREET>
+    <TTREET>
+     <SPRAS>V</SPRAS>
+     <ID>/PSYNG/SW_002</ID>
+     <TEXT>Historical SOD Reporting</TEXT>
+     <TEXT_CAP>HISTORICAL SOD REPORTING</TEXT_CAP>
+    </TTREET>
+    <TTREET>
+     <SPRAS>S</SPRAS>
+     <ID>/PSYNG/SW_002</ID>
+     <TEXT>Informes históricos de SOD</TEXT>
+     <TEXT_CAP>INFORMES HISTÓRICOS DE SOD</TEXT_CAP>
+    </TTREET>
+    <TTREET>
+     <SPRAS>P</SPRAS>
+     <ID>/PSYNG/SW_002</ID>
+     <TEXT>Relatórios de Histórico SOD</TEXT>
+     <TEXT_CAP>RELATÓRIOS DE HISTÓRICO SOD</TEXT_CAP>
+    </TTREET>
+    <TTREET>
+     <SPRAS>N</SPRAS>
+     <ID>/PSYNG/SW_002</ID>
+     <TEXT>Historical SOD Reporting</TEXT>
+     <TEXT_CAP>HISTORICAL SOD REPORTING</TEXT_CAP>
+    </TTREET>
+    <TTREET>
+     <SPRAS>I</SPRAS>
+     <ID>/PSYNG/SW_002</ID>
+     <TEXT>Historical SOD Reporting</TEXT>
+     <TEXT_CAP>HISTORICAL SOD REPORTING</TEXT_CAP>
+    </TTREET>
+    <TTREET>
+     <SPRAS>F</SPRAS>
+     <ID>/PSYNG/SW_002</ID>
+     <TEXT>Historical SOD Reporting</TEXT>
+     <TEXT_CAP>HISTORICAL SOD REPORTING</TEXT_CAP>
+    </TTREET>
+    <TTREET>
+     <SPRAS>E</SPRAS>
+     <ID>/PSYNG/SW_002</ID>
+     <TEXT>Historical SOD Reporting</TEXT>
+     <TEXT_CAP>HISTORICAL SOD REPORTING</TEXT_CAP>
+    </TTREET>
+    <TTREET>
+     <SPRAS>D</SPRAS>
+     <ID>/PSYNG/SW_002</ID>
+     <TEXT>Historisches SOD-Reporting</TEXT>
+     <TEXT_CAP>Historisches SOD-Reporting</TEXT_CAP>
+    </TTREET>
+   </TREE_TITLES>
+  </asx:values>
+ </asx:abap>
+</abapGit>

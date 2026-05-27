@@ -1,0 +1,424 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>/PSYNG/SW_RULESET_IMPORT</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Class for Importing XML data from IBS system</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS_CLASS>
+    <SEOCLASSTX>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Clase para importar datos XML del sistema IBS</DESCRIPT>
+    </SEOCLASSTX>
+   </DESCRIPTIONS_CLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>ABAP_IMPORT_DATA</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW : Table Type for /PSYNG/SW_IMPORT</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ABAP_IMPORT_DATA</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW : Clase de tabla para /PSYNG/SW_IMPORT</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CHECK_ABAP_DATA_EXISTS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Checks whether ABAP data is available</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CHECK_ABAP_DATA_EXISTS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Comprueba si los datos ABAP están disponibles</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CHECK_CLASS_NAMES</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Object type name</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CHECK_CLASS_NAMES</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Nombre del tipo de objeto</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CHECK_DATA</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Checks the ABAP data based on rules</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CHECK_DATA</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Comprueba los datos ABAP basándose en reglas</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CHECK_XML_DATA_EXISTS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Checks whether XML data is available</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CHECK_XML_DATA_EXISTS</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Comprueba si hay datos XML disponibles</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CLEAR_DATABASE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Delete all intermediary Temporar DB tables</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CLEAR_DATABASE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Elimina todas las tablas intermedias de Temporar DB</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Constructor</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Constructor</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONVERT_XML_DATA</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>XML Data Conversion</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONVERT_XML_DATA</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Conversión de datos XML</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DISPLAY_LOG</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Write the Log</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DISPLAY_LOG</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Escribir el registro</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>INSERT_DATA</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Saves the ABAP data in the database tables</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>INSERT_DATA</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Guarda los datos ABAP en las tablas de la base de datos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LOGGER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Class to capture ruleset log&apos;s</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LOGGER</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Clase para capturar los registros del conjunto de reglas</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>PROCESS_DATA</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Start Processign the data</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>PROCESS_DATA</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Comienza a procesar los datos</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TRANSFORM_DATA</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Transform xml data into ABAP structure</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TRANSFORM_DATA</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Transformar datos xml en estructura ABAP</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>UPLOAD_FILE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Upload and save xml file</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>UPLOAD_FILE</CMPNAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Cargar y guardar archivo xml</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_ABAP_DATA_EXISTS</CMPNAME>
+     <SCONAME>R_EXISTS</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Boolean Variable (X=True, -=False, Space=Unknown)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_ABAP_DATA_EXISTS</CMPNAME>
+     <SCONAME>R_EXISTS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable booleana (X=Verdadero,-=Falso, Espacio=Desconocido</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_DATA</CMPNAME>
+     <SCONAME>I_ABAP_IMPORT_ENTRY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Import structure for IBS XML data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_DATA</CMPNAME>
+     <SCONAME>I_ABAP_IMPORT_ENTRY</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Estructura de importación para datos IBS XML</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_DATA</CMPNAME>
+     <SCONAME>I_NULL</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Boolean Variable (X=True, -=False, Space=Unknown)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_DATA</CMPNAME>
+     <SCONAME>R_DATA_IS_CORRECT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Boolean Variable (X=True, -=False, Space=Unknown)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_DATA</CMPNAME>
+     <SCONAME>R_DATA_IS_CORRECT</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable booleana (X=True, -=False, Space=Unknown)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_XML_DATA_EXISTS</CMPNAME>
+     <SCONAME>R_EXISTS</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Boolean Variable (X=True, -=False, Space=Unknown)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_XML_DATA_EXISTS</CMPNAME>
+     <SCONAME>R_EXISTS</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable booleana (X=True, -=False, Space=Unknown)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>CHECK_CLASS_NAMES</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Object type name</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>CHECK_CLASS_NAMES</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Nombre del tipo de objeto</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>LOGGER</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Class for Ruleset Log&apos;s</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>LOGGER</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Clase para Ruleset Log&apos;s</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_WITH_FILENAME</CMPNAME>
+     <SCONAME>INSTANCE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Class for Importing XML data from IBS system</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_WITH_FILENAME</CMPNAME>
+     <SCONAME>INSTANCE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Clase para importar datos XML del sistema IBS</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_WITH_FILENAME</CMPNAME>
+     <SCONAME>I_CHECK_CLASS_NAMES</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Object type name</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_WITH_FILENAME</CMPNAME>
+     <SCONAME>I_CHECK_CLASS_NAMES</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable booleana (X=Verdadero,-=Falso, Espacio=Desconocido</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_WITH_FILENAME</CMPNAME>
+     <SCONAME>I_CLEAR_DB_TABLES</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Boolean Variable (X=True, -=False, Space=Unknown)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_WITH_FILENAME</CMPNAME>
+     <SCONAME>I_CLEAR_DB_TABLES</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable booleana (X=True, -=False, Space=Unknown)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_WITH_FILENAME</CMPNAME>
+     <SCONAME>I_CONVERT_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Boolean Variable (X=True, -=False, Space=Unknown)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_WITH_FILENAME</CMPNAME>
+     <SCONAME>I_CONVERT_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable booleana (X=True, -=False, Space=Unknown)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_WITH_FILENAME</CMPNAME>
+     <SCONAME>I_LOGGER</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Class for Ruleset Log&apos;s</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_WITH_FILENAME</CMPNAME>
+     <SCONAME>I_LOGGER</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Clase para registros de conjuntos de reglas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_WITH_FILENAME</CMPNAME>
+     <SCONAME>I_NULL</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>&apos;X&apos;= Check for blank values , &apos; &apos; = Do not check for blank</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_WITH_FILENAME</CMPNAME>
+     <SCONAME>I_PROCESS_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Boolean Variable (X=True, -=False, Space=Unknown)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_WITH_FILENAME</CMPNAME>
+     <SCONAME>I_PROCESS_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable booleana (X=True, -=False, Space=Unknown)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_WITH_FILENAME</CMPNAME>
+     <SCONAME>I_TRANSFORM_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Boolean Variable (X=True, -=False, Space=Unknown)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_WITH_FILENAME</CMPNAME>
+     <SCONAME>I_TRANSFORM_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable booleana (X=True, -=False, Space=Unknown)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_WITH_FILENAME</CMPNAME>
+     <SCONAME>I_UPLOAD_FILE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Boolean Variable (X=True, -=False, Space=Unknown)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_WITH_FILENAME</CMPNAME>
+     <SCONAME>I_UPLOAD_FILE</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable booleana (X=True, -=False, Space=Unknown)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_WITH_FILENAME</CMPNAME>
+     <SCONAME>I_WRITE_LOG</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Boolean Variable (X=True, -=False, Space=Unknown)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_WITH_FILENAME</CMPNAME>
+     <SCONAME>I_WRITE_LOG</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable booleana (X=True, -=False, Space=Unknown)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_ABAP_DATA</CMPNAME>
+     <SCONAME>R_ABAP_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW : Table Type for /PSYNG/SW_IMPORT</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_ABAP_DATA</CMPNAME>
+     <SCONAME>R_ABAP_DATA</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW : Tipo de tabla para /PSYNG/SW_IMPORT</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_LOGGER</CMPNAME>
+     <SCONAME>R_LOGGER</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Class to capture ruleset log&apos;s</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_LOGGER</CMPNAME>
+     <SCONAME>R_LOGGER</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Clase para capturar los log&apos;s del ruleset</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>INSERT_DATA</CMPNAME>
+     <SCONAME>I_ABAP_IMPORT_ENTRY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SW: Import structure for IBS XML data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>INSERT_DATA</CMPNAME>
+     <SCONAME>I_ABAP_IMPORT_ENTRY</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>SW: Estructura de importación para datos IBS XML</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>INSERT_DATA</CMPNAME>
+     <SCONAME>R_INSERT_SUCCESSFUL</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Boolean Variable (X=True, -=False, Space=Unknown)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>INSERT_DATA</CMPNAME>
+     <SCONAME>R_INSERT_SUCCESSFUL</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable booleana (X=Verdadero,-=Falso, Espacio=Desconocido</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PROCESS_DATA</CMPNAME>
+     <SCONAME>I_CLEAR_DB_TABLES</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Boolean Variable (X=True, -=False, Space=Unknown)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PROCESS_DATA</CMPNAME>
+     <SCONAME>I_CLEAR_DB_TABLES</SCONAME>
+     <LANGU>S</LANGU>
+     <DESCRIPT>Variable booleana (X=True, -=False, Space=Unknown)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PROCESS_DATA</CMPNAME>
+     <SCONAME>I_NULL</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Boolean Variable (X=True, -=False, Space=Unknown)</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

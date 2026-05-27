@@ -1,0 +1,99 @@
+*----------------------------------------------------------------------*
+* Function Module       : /PSYNG/SW_005
+* AUTHOR                : Security Weaver LLC
+*----------------------------------------------------------------------*
+*
+* COPYRIGHTS Security Weaver LLC
+*
+* WARNING:
+* THIS COMPUTER PROGRAM IS PROTECTED BY COPYRIGHT LAW AND INTERNATIONAL
+* TREATIES. UNAUTHORIZED REPRODUCTION OR DISTRIBUTION IS STRICTLY
+* PROHIBITED AND MAY RESULT IN SEVERE CIVIL AND CRIMINAL PENALTIES AND
+* WILL BE PROSECUTED TO THE MAXIMUM EXTENT POSSIBLE UNDER THE LAW.
+*----------------------------------------------------------------------*
+FUNCTION /PSYNG/SW_005.
+*"----------------------------------------------------------------------
+*"*"Local interface:
+*"  IMPORTING
+*"     VALUE(MITIGATE) LIKE  /PSYNG/MCHDR STRUCTURE  /PSYNG/MCHDR
+*"       OPTIONAL
+*"     VALUE(DELETEFLAG) LIKE  /PSYNG/MCREPID-FREQUENCY OPTIONAL
+*"  EXPORTING
+*"     VALUE(RETURN) LIKE  BAPIRETURN STRUCTURE  BAPIRETURN
+*"  TABLES
+*"      MCREPID STRUCTURE  /PSYNG/MCREPID OPTIONAL
+*"      MCTRAN STRUCTURE  /PSYNG/MCTRAN OPTIONAL
+*"      TEXT STRUCTURE  /PSYNG/TEXTS OPTIONAL
+*"----------------------------------------------------------------------
+*BOC:UMITTAL CVA scan fix 27/02/2026
+CONSTANTS: lc_fname TYPE rs38l_fnam
+        VALUE '/PSYNG/SW_005'.
+*  S_RFC AUTHORITY CHECK
+* BOC BNAYAK CVA scan fix DT:05-05-2026
+*  AUTHORITY-CHECK OBJECT 'S_RFC'
+  AUTHORITY-CHECK OBJECT 'Y&CO_RFC'
+* EOC BNAYAK CVA scan fix DT:05-05-2026
+        ID 'RFC_TYPE' FIELD 'FUNC'
+        ID 'RFC_NAME' FIELD lc_fname
+        ID 'ACTVT' FIELD '16'.
+  IF sy-subrc <> 0.
+    MESSAGE s089(/psyng/sw) WITH lc_fname
+    DISPLAY LIKE 'E'.
+    EXIT.
+  ENDIF.
+*EOC:UMITTAL CVA scan fix 27/02/2026
+
+  TABLES: /PSYNG/MCHDR,/PSYNG/MCREPID, /PSYNG/MCTRAN, /PSYNG/TEXTS.
+
+  IF DELETEFLAG = SPACE.
+    MOVE-CORRESPONDING MITIGATE to /PSYNG/MCHDR.
+    INSERT /PSYNG/MCHDR.
+
+    IF SY-SUBRC = 0.
+
+      LOOP AT TEXT.
+        MOVE-CORRESPONDING TEXT TO /PSYNG/TEXTS.
+        /PSYNG/TEXTS-TEXTNAME = MITIGATE-CONTID.
+        /PSYNG/TEXTS-OBJECT   = 'M'.
+        /PSYNG/TEXTS-SPRAS    = sy-langu.
+        INSERT /PSYNG/TEXTS.
+      ENDLOOP.
+
+      LOOP AT MCTRAN.
+        MOVE-CORRESPONDING MCTRAN   TO /PSYNG/MCTRAN.
+        INSERT /PSYNG/MCTRAN.
+      ENDLOOP.
+
+      LOOP AT MCREPID.
+        MOVE-CORRESPONDING MCREPID   TO /PSYNG/MCREPID.
+        INSERT /PSYNG/MCREPID.
+      ENDLOOP.
+
+    ELSE.
+
+      RETURN-TYPE = 'E'.
+      RETURN-CODE = '10'.
+      RETURN-MESSAGE = TEXT-006.
+
+    ENDIF.
+  ELSE.
+    DELETE FROM /PSYNG/MCHDR
+    WHERE CONTID = MITIGATE-CONTID.
+    IF SY-SUBRC <> 0.
+      RETURN-TYPE = 'E'.
+      RETURN-CODE = '10'.
+      RETURN-MESSAGE = TEXT-006.
+    ELSE.
+      DELETE FROM /PSYNG/MCTRAN
+      WHERE CONTID = MITIGATE-CONTID.
+      DELETE FROM /PSYNG/MCREPID
+      WHERE CONTID = MITIGATE-CONTID.
+      DELETE FROM /PSYNG/TEXTS
+      where TEXTNAME = MITIGATE-CONTID
+      and   OBJECT   = 'M'
+      and   SPRAS    = sy-langu.
+    ENDIF.
+  ENDIF.
+
+
+ENDFUNCTION.

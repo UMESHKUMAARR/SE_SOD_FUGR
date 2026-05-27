@@ -1,0 +1,310 @@
+REPORT /PSYNG/CFFUNCTHIST_TO_ALV NO STANDARD PAGE HEADING.
+*----------------------------------------------------------------------*
+* PROGRAM               : /PSYNG/CFFUNCTHIST
+* AUTHOR                : Principal Synergy LLC
+* RELEASE               : 1.0
+* DATE OF RELEASE       : 10/19/2004
+* TRANSPORT REQUEST #   :
+*----------------------------------------------------------------------*
+* COPYRIGHTS Principal Synergy LLC
+*
+* WARNING:
+* THIS COMPUTER PROGRAM IS PROTECTED BY COPYRIGHT LAW AND INTERNATIONAL
+* TREATIES. UNAUTHORIZED REPRODUCTION OR DISTRIBUTION IS STRICTLY
+* PROHIBITED AND MAY RESULT IN SEVERE CIVIL AND CRIMINAL PENALTIES AND
+* WILL BE PROSECUTED TO THE MAXIMUM EXTENT POSSIBLE UNDER THE LAW.
+*
+*----------------------------------------------------------------------*
+
+TABLES: /PSYNG/HISTORY, /PSYNG/CONFLICT.
+
+*Define type pool
+TYPE-POOLS: SLIS. "Define Type-Pool
+
+*Define selection screen.
+SELECTION-SCREEN BEGIN OF BLOCK SEL WITH FRAME TITLE TEXT-001.
+SELECT-OPTIONS: CONID FOR /PSYNG/CONFLICT-CONID.
+PARAMETERS: SODVRSIO LIKE /PSYNG/CONFLICT-VRSIO.
+SELECT-OPTIONS: DATE FOR SY-DATUM.
+SELECT-OPTIONS: TIME FOR SY-UZEIT.
+SELECT-OPTIONS: USER FOR SY-UNAME.
+SELECTION-SCREEN END OF BLOCK SEL.
+
+*Define Internal Tables
+DATA: BEGIN OF LT_HIST OCCURS 0,
+      OLDVAL LIKE /PSYNG/HISTORY-OLDVAL,
+      STATUS LIKE /PSYNG/HISTORY-STATUS,
+      CREATE_USR LIKE /PSYNG/HISTORY-CREATE_USR,
+      CREATE_DAT LIKE /PSYNG/HISTORY-CREATE_DAT,
+      CREATE_TIM LIKE /PSYNG/HISTORY-CREATE_TIM,
+      END OF LT_HIST.
+
+DATA: BEGIN OF LT_TRAN OCCURS 0,
+      HDRFLD LIKE /PSYNG/HISTORY-HDRFLD,
+      OLDVAL LIKE /PSYNG/HISTORY-OLDVAL,
+      NEWVAL LIKE /PSYNG/HISTORY-NEWVAL,
+      STATUS LIKE /PSYNG/HISTORY-STATUS,
+      CREATE_USR LIKE /PSYNG/HISTORY-CREATE_USR,
+      CREATE_DAT LIKE /PSYNG/HISTORY-CREATE_DAT,
+      CREATE_TIM LIKE /PSYNG/HISTORY-CREATE_TIM,
+      END OF LT_TRAN.
+
+DATA: BEGIN OF LT_TRAN_T OCCURS 0,
+      OLDVAL LIKE /PSYNG/HISTORY-OLDVAL,
+      OLDVAL1 LIKE /PSYNG/HISTORY-OLDVAL,
+      NEWVAL LIKE /PSYNG/HISTORY-NEWVAL,
+      STATUS LIKE /PSYNG/HISTORY-STATUS,
+      CREATE_USR LIKE /PSYNG/HISTORY-CREATE_USR,
+      CREATE_DAT LIKE /PSYNG/HISTORY-CREATE_DAT,
+      CREATE_TIM LIKE /PSYNG/HISTORY-CREATE_TIM,
+      END OF LT_TRAN_T.
+
+*Define fieldcatalog
+DATA: T_FIELDCAT TYPE SLIS_T_FIELDCAT_ALV,   "Fieldcatalog
+      W_FIELDCAT TYPE SLIS_FIELDCAT_ALV,     "Fieldcatalog Workarea
+      Y_LAYOUT TYPE SLIS_LAYOUT_ALV,         "ALV Layout
+      I_KEYINFO TYPE SLIS_KEYINFO_ALV.
+
+DATA: GS_PROGRAM LIKE SY-REPID,
+      GS_VARIANT TYPE DISVARIANT.
+
+*Start of Selection
+START-OF-SELECTION.
+*BOC UMITTAL SE VF scan changes-25/11/2024
+
+AUTHORITY-CHECK OBJECT 'S_PROGRAM'
+       ID 'P_GROUP' FIELD 'SW_SE'
+       ID 'P_ACTION' FIELD 'SUBMIT'.
+  IF sy-subrc NE 0..
+    MESSAGE i108(/psyng/sw) with 'execute ' sy-repid.
+    EXIT.
+  ENDIF.
+
+*EOC UMITTAL SE VF scan changes-25/11/2024
+  PERFORM GET_DATA.
+  PERFORM BUILD_FIELDCAT.
+  PERFORM FILL_KEYINFO.
+  PERFORM DISPLAY_ALV_OUTPUT.
+
+*&---------------------------------------------------------------------*
+*&      Form  GET_DATA
+*&---------------------------------------------------------------------*
+*       text
+*----------------------------------------------------------------------*
+
+FORM GET_DATA.
+
+  SELECT OLDVAL
+         STATUS
+         CREATE_USR
+         CREATE_DAT
+         CREATE_TIM
+         FROM /PSYNG/HISTORY
+         INTO TABLE LT_HIST
+         WHERE TABNAME = '/PSYNG/CONFLICT'
+         AND OLDVAL  IN CONID
+         AND CREATE_DAT IN DATE
+         AND CREATE_TIM IN TIME
+         AND CREATE_USR IN USER
+         AND VRSIO = SODVRSIO.
+
+  IF NOT LT_HIST[] IS INITIAL.
+
+    SELECT HDRFLD
+           OLDVAL
+           NEWVAL
+           STATUS
+           CREATE_USR
+           CREATE_DAT
+           CREATE_TIM
+           FROM /PSYNG/HISTORY
+           INTO CORRESPONDING FIELDS OF TABLE LT_TRAN
+           FOR ALL ENTRIES IN LT_HIST
+           WHERE TABNAME = '/PSYNG/CONFDET'
+           AND   HDRFLD  = LT_HIST-OLDVAL
+           AND   CREATE_DAT = LT_HIST-CREATE_DAT
+           AND   CREATE_TIM = LT_HIST-CREATE_TIM
+           AND   CREATE_USR = LT_HIST-CREATE_USR
+           AND   VRSIO      = SODVRSIO.
+
+  ENDIF.
+
+  LOOP AT LT_TRAN.
+    CLEAR LT_TRAN_T.
+    MOVE-CORRESPONDING LT_TRAN TO LT_TRAN_T.
+    CLEAR: LT_TRAN_T-OLDVAL, LT_TRAN_T-OLDVAL1.
+    LT_TRAN_T-OLDVAL = LT_TRAN-HDRFLD.
+    LT_TRAN_T-OLDVAL1 = LT_TRAN-OLDVAL.
+    APPEND LT_TRAN_T.
+  ENDLOOP.
+
+ENDFORM.                    " GET_DATA
+
+*&---------------------------------------------------------------------*
+*&      Form  FILL_KEYINFO
+*&---------------------------------------------------------------------*
+*       text
+*----------------------------------------------------------------------*
+
+FORM FILL_KEYINFO.
+
+  SORT LT_TRAN_T BY OLDVAL.
+
+  I_KEYINFO-HEADER01 = 'OLDVAL'.
+
+  I_KEYINFO-ITEM01 = 'OLDVAL'.
+
+  I_KEYINFO-HEADER02 = 'CREATE_USR'.
+
+  I_KEYINFO-ITEM02 = 'CREATE_USR'.
+
+  I_KEYINFO-HEADER03 = 'CREATE_DAT'.
+
+  I_KEYINFO-ITEM03 = 'CREATE_DAT'.
+
+  I_KEYINFO-HEADER04 = 'CREATE_TIM'.
+
+  I_KEYINFO-ITEM04 = 'CREATE_TIM'.
+
+ENDFORM.                    " FILL_KEYINFO
+
+*&---------------------------------------------------------------------*
+*&      Form  BUILD_FIELDCAT
+*&---------------------------------------------------------------------*
+*       text
+*----------------------------------------------------------------------*
+
+FORM BUILD_FIELDCAT.
+
+  REFRESH T_FIELDCAT[].
+  CLEAR W_FIELDCAT.
+
+  W_FIELDCAT-FIELDNAME = 'OLDVAL'.
+  W_FIELDCAT-TABNAME   = 'LT_HIST'.
+  W_FIELDCAT-SELTEXT_L = 'Conflict'(002).
+  W_FIELDCAT-COL_POS = 1.
+  APPEND W_FIELDCAT TO T_FIELDCAT.
+  CLEAR W_FIELDCAT.
+
+  W_FIELDCAT-FIELDNAME = 'STATUS'.
+  W_FIELDCAT-TABNAME   = 'LT_HIST'.
+  W_FIELDCAT-SELTEXT_L = 'Status'(003).
+  W_FIELDCAT-COL_POS = 2.
+  APPEND W_FIELDCAT TO T_FIELDCAT.
+  CLEAR W_FIELDCAT.
+
+  W_FIELDCAT-FIELDNAME = 'CREATE_USR'.
+  W_FIELDCAT-TABNAME   = 'LT_HIST'.
+  W_FIELDCAT-SELTEXT_L = 'User'(004).
+  W_FIELDCAT-COL_POS = 3.
+  APPEND W_FIELDCAT TO T_FIELDCAT.
+  CLEAR W_FIELDCAT.
+
+  W_FIELDCAT-FIELDNAME = 'CREATE_DAT'.
+  W_FIELDCAT-TABNAME   = 'LT_HIST'.
+  W_FIELDCAT-SELTEXT_L = 'Date'(005).
+  W_FIELDCAT-COL_POS = 4.
+  APPEND W_FIELDCAT TO T_FIELDCAT.
+  CLEAR W_FIELDCAT.
+
+  W_FIELDCAT-FIELDNAME = 'CREATE_TIM'.
+  W_FIELDCAT-TABNAME   = 'LT_HIST'.
+  W_FIELDCAT-SELTEXT_L = 'Time'(006).
+  W_FIELDCAT-COL_POS = 5.
+  APPEND W_FIELDCAT TO T_FIELDCAT.
+  CLEAR W_FIELDCAT.
+
+  W_FIELDCAT-FIELDNAME = 'OLDVAL1'.
+  W_FIELDCAT-TABNAME   = 'LT_TRAN_T'.
+  W_FIELDCAT-SELTEXT_L = 'Function'(007).
+  W_FIELDCAT-COL_POS = 6.
+  APPEND W_FIELDCAT TO T_FIELDCAT.
+  CLEAR W_FIELDCAT.
+
+  W_FIELDCAT-FIELDNAME = 'STATUS'.
+  W_FIELDCAT-TABNAME   = 'LT_TRAN_T'.
+  W_FIELDCAT-SELTEXT_L = 'Status'(003).
+  W_FIELDCAT-COL_POS = 7.
+  APPEND W_FIELDCAT TO T_FIELDCAT.
+  CLEAR W_FIELDCAT.
+
+  W_FIELDCAT-FIELDNAME = 'CREATE_USR'.
+  W_FIELDCAT-TABNAME   = 'LT_TRAN_T'.
+  W_FIELDCAT-SELTEXT_L = 'User'(004).
+  W_FIELDCAT-COL_POS = 8.
+  APPEND W_FIELDCAT TO T_FIELDCAT.
+  CLEAR W_FIELDCAT.
+
+  W_FIELDCAT-FIELDNAME = 'CREATE_DAT'.
+  W_FIELDCAT-TABNAME   = 'LT_TRAN_T'.
+  W_FIELDCAT-SELTEXT_L = 'Date'(005).
+  W_FIELDCAT-COL_POS = 9.
+  APPEND W_FIELDCAT TO T_FIELDCAT.
+  CLEAR W_FIELDCAT.
+
+  W_FIELDCAT-FIELDNAME = 'CREATE_TIM'.
+  W_FIELDCAT-TABNAME   = 'LT_TRAN_T'.
+  W_FIELDCAT-SELTEXT_L = 'Time'(006).
+  W_FIELDCAT-COL_POS = 10.
+  APPEND W_FIELDCAT TO T_FIELDCAT.
+  CLEAR W_FIELDCAT.
+
+ENDFORM.                    " BUILD_FIELDCAT
+
+
+*&---------------------------------------------------------------------*
+*&      Form  DISPLAY_ALV_OUTPUT
+*&---------------------------------------------------------------------*
+*       text
+*----------------------------------------------------------------------*
+
+FORM DISPLAY_ALV_OUTPUT.
+
+  CALL FUNCTION 'REUSE_ALV_HIERSEQ_LIST_DISPLAY'
+    EXPORTING
+*   I_INTERFACE_CHECK              = ' '
+     I_CALLBACK_PROGRAM             = GS_PROGRAM
+*   I_CALLBACK_PF_STATUS_SET       = ' '
+*   I_CALLBACK_USER_COMMAND        = ' '
+*   IS_LAYOUT                      =
+     IT_FIELDCAT                    = T_FIELDCAT
+*   IT_EXCLUDING                   =
+*   IT_SPECIAL_GROUPS              =
+*   IT_SORT                        =
+*   IT_FILTER                      =
+*   IS_SEL_HIDE                    =
+*   I_SCREEN_START_COLUMN          = 0
+*   I_SCREEN_START_LINE            = 0
+*   I_SCREEN_END_COLUMN            = 0
+*   I_SCREEN_END_LINE              = 0
+*   I_DEFAULT                      = 'X'
+     I_SAVE                         = 'A'
+     IS_VARIANT                     = GS_VARIANT
+*   IT_EVENTS                      =
+*   IT_EVENT_EXIT                  =
+      I_TABNAME_HEADER               = 'LT_HIST'
+      I_TABNAME_ITEM                 = 'LT_TRAN_T'
+
+*   I_STRUCTURE_NAME_HEADER        =
+*   I_STRUCTURE_NAME_ITEM          =
+      IS_KEYINFO                     = I_KEYINFO
+*   IS_PRINT                       =
+*   IS_REPREP_ID                   =
+*   I_BUFFER_ACTIVE                =
+*   I_BYPASSING_BUFFER             =
+* IMPORTING
+*   E_EXIT_CAUSED_BY_CALLER        =
+*   ES_EXIT_CAUSED_BY_USER         =
+    TABLES
+      T_OUTTAB_HEADER                = LT_HIST[]
+      T_OUTTAB_ITEM                  = LT_TRAN_T[]
+ EXCEPTIONS
+   PROGRAM_ERROR                  = 1
+   OTHERS                         = 2.
+  IF SY-SUBRC <> 0.
+    MESSAGE ID SY-MSGID TYPE SY-MSGTY NUMBER SY-MSGNO
+         WITH SY-MSGV1 SY-MSGV2 SY-MSGV3 SY-MSGV4.
+  ENDIF.
+
+
+ENDFORM.                    " DISPLAY_ALV_OUTPUT

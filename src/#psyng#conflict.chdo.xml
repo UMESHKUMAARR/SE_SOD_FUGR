@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CHDO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <CHDO>
+    <REPORTS_GENERATED>
+     <TCDRPS>
+      <OBJECT>/PSYNG/CONFLICT</OBJECT>
+      <REPORTNAME>/PSYNG/CONFLICT</REPORTNAME>
+      <TEXTCASE>X</TEXTCASE>
+      <ARBGEB>CD</ARBGEB>
+      <FEHLERNR>600</FEHLERNR>
+      <FGRP>/PSYNG/SE_CDCON</FGRP>
+      <PREFIX>/PSYNG/Y</PREFIX>
+      <UPDATE_FLG>1</UPDATE_FLG>
+     </TCDRPS>
+    </REPORTS_GENERATED>
+    <OBJECTS>
+     <TCDOBS>
+      <OBJECT>/PSYNG/CONFLICT</OBJECT>
+      <TABNAME>/PSYNG/CONFDET</TABNAME>
+     </TCDOBS>
+     <TCDOBS>
+      <OBJECT>/PSYNG/CONFLICT</OBJECT>
+      <TABNAME>/PSYNG/CONFLICT</TABNAME>
+     </TCDOBS>
+     <TCDOBS>
+      <OBJECT>/PSYNG/CONFLICT</OBJECT>
+      <TABNAME>/PSYNG/CONOWNER</TABNAME>
+     </TCDOBS>
+     <TCDOBS>
+      <OBJECT>/PSYNG/CONFLICT</OBJECT>
+      <TABNAME>/PSYNG/CONPMIT</TABNAME>
+     </TCDOBS>
+    </OBJECTS>
+    <OBJECTS_TEXT>
+     <TCDOBTS>
+      <SPRAS>D</SPRAS>
+      <OBJECT>/PSYNG/CONFLICT</OBJECT>
+      <OBTEXT>SE: Änderungsbeleg für Konflikte</OBTEXT>
+     </TCDOBTS>
+     <TCDOBTS>
+      <SPRAS>E</SPRAS>
+      <OBJECT>/PSYNG/CONFLICT</OBJECT>
+      <OBTEXT>SE: Change document for Conflicts</OBTEXT>
+     </TCDOBTS>
+     <TCDOBTS>
+      <SPRAS>P</SPRAS>
+      <OBJECT>/PSYNG/CONFLICT</OBJECT>
+      <OBTEXT>SE: Documentos de Mudanças para Conflitos</OBTEXT>
+     </TCDOBTS>
+     <TCDOBTS>
+      <SPRAS>S</SPRAS>
+      <OBJECT>/PSYNG/CONFLICT</OBJECT>
+      <OBTEXT>SE: Documento de modificación para Conflictos</OBTEXT>
+     </TCDOBTS>
+    </OBJECTS_TEXT>
+   </CHDO>
+  </asx:values>
+ </asx:abap>
+</abapGit>
