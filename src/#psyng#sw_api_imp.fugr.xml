@@ -6,10 +6,228 @@
    <INCLUDES>
     <SOBJ_NAME>/PSYNG/LSW_API_IMPF01</SOBJ_NAME>
     <SOBJ_NAME>/PSYNG/LSW_API_IMPF02</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/LSW_API_IMPF03</SOBJ_NAME>
+    <SOBJ_NAME>/PSYNG/LSW_API_IMPF04</SOBJ_NAME>
     <SOBJ_NAME>/PSYNG/LSW_API_IMPTOP</SOBJ_NAME>
     <SOBJ_NAME>/PSYNG/SAPLSW_API_IMP</SOBJ_NAME>
    </INCLUDES>
    <FUNCTIONS>
+    <item>
+     <FUNCNAME>/PSYNG/SW_ANALY_RES_DET_BATCH</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Imp:SW All Conflicts of users from scan table-Batch-Optimizied FM</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>REQUEST_ID</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/REQUEST_ID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>BATCH_ID</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/BATCH_ID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>ANALYSIS_RUN</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/PSYNG/SERESID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_DEF_RUN</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>LOGGING_FLAG</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_EXCLUDE_MITIGATED</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_LOCAL</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_CLEAR_PREV</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_BATCH_SIZE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>INT4</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>E_ANALYSIS_RUN</PARAMETER>
+       <TYP>/PSYNG/SERESID</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ES_SOD_MATRIX</PARAMETER>
+       <DBFIELD>/PSYNG/SWSODVERS</DBFIELD>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ES_CONFIG_SET</PARAMETER>
+       <DBFIELD>/PSYNG/SWCFGSET</DBFIELD>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>RETURN</PARAMETER>
+       <DBFIELD>BAPIRETURN</DBFIELD>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>E_BATCHES_CREATED</PARAMETER>
+       <TYP>INT4</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>E_ROWS_WRITTEN</PARAMETER>
+       <TYP>INT4</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>E_USERS_PROCESSED</PARAMETER>
+       <TYP>INT4</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>USERS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_USERLIST</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_USERS</PARAMETER>
+       <DBSTRUCT>/PSYNG/USERCONCOUNT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <DBSTRUCT>BAPIRETURN</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_SYSTEMS</PARAMETER>
+       <DBSTRUCT>/PSYNG/SWCFGSYS</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_OUTPUTDET_N</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_OUTPUTDET</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>REQUEST_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Identifier of Call</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>BATCH_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Identifier of the individual batch-number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ANALYSIS_RUN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Results Storage ID</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_DEF_RUN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LOGGING_FLAG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_EXCLUDE_MITIGATED</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_LOCAL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_CLEAR_PREV</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_BATCH_SIZE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural Number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_ANALYSIS_RUN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Results Storage ID</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ES_SOD_MATRIX</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: SOD Matrix Version</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ES_CONFIG_SET</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Configuration Set - Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Parameter</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_BATCHES_CREATED</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural Number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_ROWS_WRITTEN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural Number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_USERS_PROCESSED</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural Number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>USERS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Structure for list of users</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_USERS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User conflict count</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Parameter</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_SYSTEMS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE- Configuration Set - Systems</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_OUTPUTDET_N</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Structure for stored user analysis detail results</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
     <item>
      <FUNCNAME>/PSYNG/SW_API_ANALY_RES_DET_OP</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
@@ -2723,6 +2941,151 @@
        <PARAMETER>IT_BNAMES</PARAMETER>
        <KIND>P</KIND>
        <STEXT>SW: Selection Options User ID (XUBNAME)</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>/PSYNG/SW_API_RESDET_READ_ALL</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>FM to read heavy data of stored user from staging DB table</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_AID</PARAMETER>
+       <TYP>/PSYNG/SERESID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_NR_BATCHES</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>INT4</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IF_RESET</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_BATCH_FROM</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>INT4</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_BATCH_TO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>INT4</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>E_TOTAL_ROWS</PARAMETER>
+       <TYP>INT4</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>E_TOTAL_BATCH</PARAMETER>
+       <TYP>INT4</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>E_PROCESSED_ROWS</PARAMETER>
+       <TYP>INT4</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>E_BATCHES_READ</PARAMETER>
+       <TYP>INT4</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>RETURN</PARAMETER>
+       <TYP>BAPIRETURN</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_BNAME</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_SEL_OPTS_XUBNAME</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_CONID</PARAMETER>
+       <DBSTRUCT>/PSYNG/RANGE_CONID</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_OUTPUTDET_N</PARAMETER>
+       <DBSTRUCT>/PSYNG/SW_OUTPUTDET</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <DBSTRUCT>BAPIRETURN</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_AID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SE - Results Storage ID</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_NR_BATCHES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural Number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IF_RESET</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>General Flag</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_BATCH_FROM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural Number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_BATCH_TO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural Number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_TOTAL_ROWS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural Number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_TOTAL_BATCH</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural Number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_PROCESSED_ROWS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural Number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_BATCHES_READ</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural Number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Parameter</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_BNAME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Selection Options User ID (XUBNAME)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_CONID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RANGES Structure for Conflict IDs</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_OUTPUTDET_N</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SW: Structure for stored user analysis detail results</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Parameter</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

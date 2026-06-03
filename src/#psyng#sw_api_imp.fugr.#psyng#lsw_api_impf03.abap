@@ -1,17 +1,22 @@
 *&---------------------------------------------------------------------*
-*&  Include           /PSYNG/LSW_API_IMPF02
+*&  Include           /PSYNG/LSW_API_IMPF03
 *&  Function Group    /PSYNG/SW_API_IMP
-*&  Description       SE API - Analysis Result Detail Output Optimized
+*&  Description       SE API - Batched Detail Output (DB Persistent)
 *&---------------------------------------------------------------------*
-*&  PN-17852 Performance Optimization - Phase 6 SAFE
+*&  PN-XXXXX  Batch processing with /PSYNG/SW_RESDET persistence
 *&  Author  : UMITTAL
-*&  Date    : 27.05.2026
+*&  Date    : 28.05.2026
 *&---------------------------------------------------------------------*
-
+*&  COMPLETELY INDEPENDENT FROM F02.
+*&  All classes and FORMs are self-contained with _b suffix.
+*&  F02 is untouched. No shared class or FORM references.
+*&---------------------------------------------------------------------*
 *======================================================================*
-* CLASS lcl_authdet_bulk_cache
+* CLASS lcl_authdet_bulk_cache_b
+* Own copy of lcl_authdet_bulk_cache from F02, renamed with _b suffix.
+* Fully self-contained — no reference to F02 class whatsoever.
 *======================================================================*
-CLASS lcl_authdet_bulk_cache DEFINITION.
+CLASS lcl_authdet_bulk_cache_b DEFINITION.
   PUBLIC SECTION.
 
     CLASS-METHODS init
@@ -39,7 +44,7 @@ CLASS lcl_authdet_bulk_cache DEFINITION.
 ENDCLASS.
 
 
-CLASS lcl_authdet_bulk_cache IMPLEMENTATION.
+CLASS lcl_authdet_bulk_cache_b IMPLEMENTATION.
 
   METHOD init.
 
@@ -403,9 +408,9 @@ ENDCLASS.
 
 
 *======================================================================*
-* FORM get_analy_res_users
+* FORM get_analy_res_users_b
 *======================================================================*
-FORM get_analy_res_users
+FORM get_analy_res_users_b
   TABLES
     it_users             STRUCTURE /psyng/sw_userlist
     et_return            STRUCTURE bapiret2
@@ -620,11 +625,10 @@ ENDFORM.
 
 
 *======================================================================*
-* FORM get_analy_res_conflicts
+* FORM get_analy_res_conflicts_b
 *======================================================================*
-FORM get_analy_res_conflicts
+FORM get_analy_res_conflicts_b
   TABLES
-    et_users             STRUCTURE /psyng/userconcount
     et_return            STRUCTURE bapiret2
   USING
     i_analysis_run       TYPE /psyng/seresid
@@ -636,11 +640,9 @@ FORM get_analy_res_conflicts
     et_conflict          TYPE ty_th_conflict
     et_confun            TYPE ty_tt_confun
     et_function          TYPE ty_th_function
-    lr_funindex          TYPE ty_r_funindex
-    e_result_count       TYPE i.
+    lr_funindex          TYPE ty_r_funindex.
 
-  DATA: ls_user       TYPE ty_users,
-        ls_funindex   LIKE LINE OF lr_funindex,
+  DATA: ls_funindex   LIKE LINE OF lr_funindex,
         lt_con_tmp    TYPE TABLE OF /psyng/swrescon,
         ls_con_tmp    TYPE /psyng/swrescon,
         lt_confun_tmp TYPE TABLE OF /psyng/swrescfun,
@@ -650,13 +652,6 @@ FORM get_analy_res_conflicts
           lr_uix_chunk FOR /psyng/swrescon-userindex.
 
   FIELD-SYMBOLS: <confun> TYPE /psyng/swrescfun.
-
-  LOOP AT it_user INTO ls_user.
-    et_users-uname = ls_user-bname.
-    et_users-count = ls_user-nr_conflicts.
-    ADD ls_user-nr_conflicts TO e_result_count.
-    APPEND et_users.
-  ENDLOOP.
 
   lr_uix_all[] = it_userindex[].
 
@@ -745,9 +740,9 @@ ENDFORM.
 
 
 *======================================================================*
-* FORM get_analy_res_profiles
+* FORM get_analy_res_profiles_b
 *======================================================================*
-FORM get_analy_res_profiles
+FORM get_analy_res_profiles_b
   USING
     i_analysis_run TYPE /psyng/seresid
     i_new_se_vrs   TYPE flag
@@ -913,9 +908,9 @@ ENDFORM.
 
 
 *======================================================================*
-* FORM get_analy_res_roles
+* FORM get_analy_res_roles_b
 *======================================================================*
-FORM get_analy_res_roles
+FORM get_analy_res_roles_b
   USING
     i_analysis_run TYPE /psyng/seresid
     i_new_se_vrs   TYPE flag
@@ -1099,9 +1094,11 @@ ENDFORM.
 
 
 *======================================================================*
-* FORM get_output_new_se
+* FORM get_output_new_se_b
+* FIX: if_direct_assn_only — compindex=0 skipped in comprole loop.
+* FIX: lt_dedup UNIQUE KEY includes abb.
 *======================================================================*
-FORM get_output_new_se
+FORM get_output_new_se_b
   TABLES
     lt_output             STRUCTURE /psyng/sw_outputdet
   USING
@@ -1160,60 +1157,43 @@ FORM get_output_new_se
   LOOP AT it_usercon INTO ls_usercon.
 
     IF ls_usercon-userindex <> lv_prev_uix.
-
       lv_prev_uix = ls_usercon-userindex.
-
       READ TABLE it_user INTO ls_user
         WITH TABLE KEY aid       = i_analysis_run
                        userindex = ls_usercon-userindex.
-
       IF sy-subrc = 0.
         lv_user_ok = 'X'.
       ELSE.
         CLEAR lv_user_ok.
       ENDIF.
-
     ENDIF.
 
     CHECK lv_user_ok = 'X'.
 
     IF ls_usercon-conindex <> lv_prev_con.
-
       lv_prev_con = ls_usercon-conindex.
-
       READ TABLE it_conflict INTO ls_conflict
         WITH TABLE KEY aid      = i_analysis_run
                        conindex = ls_usercon-conindex.
-
       IF sy-subrc = 0.
         lv_con_ok = 'X'.
       ELSE.
         CLEAR lv_con_ok.
       ENDIF.
-
       READ TABLE it_confun INTO ls_confun
         WITH KEY conindex = ls_usercon-conindex.
-
       IF sy-subrc = 0.
-
         lv_cur_confun = sy-tabix.
-
         WHILE lv_cur_confun GT 1.
           lv_prev = lv_cur_confun - 1.
           READ TABLE it_confun INTO ls_confun INDEX lv_prev.
-          IF sy-subrc <> 0.
-            EXIT.
-          ENDIF.
-          IF ls_confun-conindex <> ls_usercon-conindex.
-            EXIT.
-          ENDIF.
+          IF sy-subrc <> 0. EXIT. ENDIF.
+          IF ls_confun-conindex <> ls_usercon-conindex. EXIT. ENDIF.
           lv_cur_confun = lv_prev.
         ENDWHILE.
-
       ELSE.
         lv_cur_confun = 0.
       ENDIF.
-
     ENDIF.
 
     CHECK lv_con_ok = 'X'.
@@ -1230,15 +1210,11 @@ FORM get_output_new_se
     ls_output-origin    = ls_usercon-origin.
 
     LOOP AT it_confun INTO ls_confun FROM lv_cur_confun.
-
-      IF ls_confun-conindex <> ls_usercon-conindex.
-        EXIT.
-      ENDIF.
+      IF ls_confun-conindex <> ls_usercon-conindex. EXIT. ENDIF.
 
       READ TABLE it_function INTO ls_function
         WITH TABLE KEY aid      = i_analysis_run
                        funindex = ls_confun-funindex.
-
       CHECK sy-subrc = 0.
 
       ls_output-funid = ls_function-funid.
@@ -1246,55 +1222,37 @@ FORM get_output_new_se
       READ TABLE it_fprprof INTO ls_fprprof
         WITH KEY userindex = ls_usercon-userindex
                  funindex  = ls_confun-funindex.
-
-      IF sy-subrc <> 0.
-        CONTINUE.
-      ENDIF.
+      IF sy-subrc <> 0. CONTINUE. ENDIF.
 
       lv_fpr_start = sy-tabix.
-
       WHILE lv_fpr_start GT 1.
         lv_prev = lv_fpr_start - 1.
         READ TABLE it_fprprof INTO ls_fprprof INDEX lv_prev.
-        IF sy-subrc <> 0.
-          EXIT.
-        ENDIF.
+        IF sy-subrc <> 0. EXIT. ENDIF.
         IF ls_fprprof-userindex <> ls_usercon-userindex
-        OR ls_fprprof-funindex  <> ls_confun-funindex.
-          EXIT.
-        ENDIF.
+        OR ls_fprprof-funindex  <> ls_confun-funindex. EXIT. ENDIF.
         lv_fpr_start = lv_prev.
       ENDWHILE.
 
       LOOP AT it_fprprof INTO ls_fprprof FROM lv_fpr_start.
-
         IF ls_fprprof-userindex <> ls_usercon-userindex
-        OR ls_fprprof-funindex  <> ls_confun-funindex.
-          EXIT.
-        ENDIF.
+        OR ls_fprprof-funindex  <> ls_confun-funindex. EXIT. ENDIF.
 
         READ TABLE it_sysmap INTO ls_sysmap
           WITH TABLE KEY sysindex = ls_fprprof-sys.
-
         ls_output-sysid = ls_sysmap-sysid.
 
         READ TABLE it_profiles INTO ls_profiles
           WITH TABLE KEY aid       = i_analysis_run
                          profindex = ls_fprprof-profileindex.
-
         IF sy-subrc = 0.
           ls_output-profname = ls_profiles-profname.
         ELSE.
           CLEAR ls_output-profname.
         ENDIF.
 
-        CLEAR: ls_profrole,
-               ls_roles,
-               lv_comp_agr,
-               lf_direct_role,
-               lf_profauth,
-               ls_output-agr_name,
-               ls_output-comp_agr.
+        CLEAR: ls_profrole, ls_roles, lv_comp_agr, lf_direct_role,
+               lf_profauth, ls_output-agr_name, ls_output-comp_agr.
 
         READ TABLE it_profrole INTO ls_profrole
           WITH KEY profindex = ls_fprprof-profileindex.
@@ -1303,7 +1261,6 @@ FORM get_output_new_se
 
           READ TABLE it_roles INTO ls_roles
             WITH KEY roleindex = ls_profrole-roleindex.
-
           IF sy-subrc = 0.
             ls_output-agr_name = ls_roles-agr_name.
           ENDIF.
@@ -1316,62 +1273,58 @@ FORM get_output_new_se
           IF sy-subrc = 0.
 
             lv_compr_start = sy-tabix.
-
             WHILE lv_compr_start GT 1.
               lv_prev = lv_compr_start - 1.
               READ TABLE lt_comprole_pc INTO ls_comprole INDEX lv_prev.
-              IF sy-subrc <> 0.
-                EXIT.
-              ENDIF.
+              IF sy-subrc <> 0. EXIT. ENDIF.
               IF ls_comprole-userindex <> ls_usercon-userindex
-              OR ls_comprole-roleindex <> ls_profrole-roleindex.
-                EXIT.
-              ENDIF.
+              OR ls_comprole-roleindex <> ls_profrole-roleindex. EXIT.
+ENDIF.
               lv_compr_start = lv_prev.
             ENDWHILE.
 
+*           FIX: skip compindex=0 rows in comprole loop.
+*           Only composite child rows (compindex>0) set comp_agr.
+*           Direct-assignment check done separately after loop.
             LOOP AT lt_comprole_pc INTO ls_comprole FROM lv_compr_start.
-
               IF ls_comprole-userindex <> ls_usercon-userindex
-              OR ls_comprole-roleindex <> ls_profrole-roleindex.
-                EXIT.
-              ENDIF.
+              OR ls_comprole-roleindex <> ls_profrole-roleindex. EXIT.
+ENDIF.
 
               IF ls_comprole-compindex IS INITIAL
               OR ls_comprole-compindex = 0.
-
-                lf_direct_role = 'X'.
-
-              ELSE.
-
-                READ TABLE it_roles INTO ls_roles
-                  WITH KEY roleindex = ls_comprole-compindex.
-
-                IF sy-subrc = 0.
-
-                  ls_output-comp_agr = ls_roles-agr_name.
-                  lv_comp_agr        = ls_output-comp_agr.
-
-                  IF if_direct_assn_only <> 'X'.
-                    lf_direct_role = 'X'.
-                  ENDIF.
-
-                ENDIF.
-
+                CONTINUE.                      " direct marker — skip
               ENDIF.
 
+              READ TABLE it_roles INTO ls_roles
+                WITH KEY roleindex = ls_comprole-compindex.
+              IF sy-subrc = 0.
+                ls_output-comp_agr = ls_roles-agr_name.
+                lv_comp_agr        = ls_output-comp_agr.
+                IF if_direct_assn_only <> 'X'.
+                  lf_direct_role = 'X'.
+                ENDIF.
+              ENDIF.
             ENDLOOP.
 
+*           FIX: after loop, if flag=X and no composite child found,
+*           check for pure direct assignment (compindex=0 only).
+            IF if_direct_assn_only = 'X' AND lv_comp_agr IS INITIAL.
+              READ TABLE lt_comprole_pc INTO ls_comprole
+                WITH KEY userindex = ls_usercon-userindex
+                         roleindex = ls_profrole-roleindex
+                         compindex = 0.
+              IF sy-subrc = 0.
+                lf_direct_role = 'X'.
+              ENDIF.
+            ENDIF.
+
           ELSE.
-
             lf_profauth = 'X'.
-
           ENDIF.
 
         ELSE.
-
           lf_profauth = 'X'.
-
         ENDIF.
 
         IF if_direct_assn_only = 'X'
@@ -1382,7 +1335,7 @@ FORM get_output_new_se
 
         REFRESH lt_authdet.
 
-        CALL METHOD lcl_authdet_bulk_cache=>get
+        CALL METHOD lcl_authdet_bulk_cache_b=>get
           EXPORTING
             i_sys          = ls_fprprof-sys
             i_funindex     = ls_confun-funindex
@@ -1391,9 +1344,7 @@ FORM get_output_new_se
             ct_authdet     = lt_authdet.
 
         LOOP AT lt_authdet INTO ls_authdet.
-
           MOVE-CORRESPONDING ls_authdet TO ls_output.
-
           ls_output-bname     = ls_user-bname.
           ls_output-sysid     = ls_sysmap-sysid.
           ls_output-conid     = ls_conflict-conid.
@@ -1406,26 +1357,24 @@ FORM get_output_new_se
           ls_output-origin    = ls_usercon-origin.
 
           INSERT ls_output INTO TABLE lt_dedup.
-
           IF sy-subrc = 0.
             APPEND ls_output TO lt_output.
           ENDIF.
-
         ENDLOOP.
 
       ENDLOOP.
-
     ENDLOOP.
-
   ENDLOOP.
 
 ENDFORM.
 
 
 *======================================================================*
-* FORM get_output_old_se
+* FORM get_output_old_se_b
+* FIX: same comprole loop fix as get_output_new_se_b.
+* FIX: lt_dedup UNIQUE KEY includes abb.
 *======================================================================*
-FORM get_output_old_se
+FORM get_output_old_se_b
   TABLES
     lt_output             STRUCTURE /psyng/sw_outputdet
   USING
@@ -1488,60 +1437,43 @@ FORM get_output_old_se
   LOOP AT it_usercon INTO ls_usercon.
 
     IF ls_usercon-userindex <> lv_prev_uix.
-
       lv_prev_uix = ls_usercon-userindex.
-
       READ TABLE it_user INTO ls_user
         WITH TABLE KEY aid       = i_analysis_run
                        userindex = ls_usercon-userindex.
-
       IF sy-subrc = 0.
         lv_user_ok = 'X'.
       ELSE.
         CLEAR lv_user_ok.
       ENDIF.
-
     ENDIF.
 
     CHECK lv_user_ok = 'X'.
 
     IF ls_usercon-conindex <> lv_prev_con.
-
       lv_prev_con = ls_usercon-conindex.
-
       READ TABLE it_conflict INTO ls_conflict
         WITH TABLE KEY aid      = i_analysis_run
                        conindex = ls_usercon-conindex.
-
       IF sy-subrc = 0.
         lv_con_ok = 'X'.
       ELSE.
         CLEAR lv_con_ok.
       ENDIF.
-
       READ TABLE it_confun INTO ls_confun
         WITH KEY conindex = ls_usercon-conindex.
-
       IF sy-subrc = 0.
-
         lv_cur_confun = sy-tabix.
-
         WHILE lv_cur_confun GT 1.
           lv_prev = lv_cur_confun - 1.
           READ TABLE it_confun INTO ls_confun INDEX lv_prev.
-          IF sy-subrc <> 0.
-            EXIT.
-          ENDIF.
-          IF ls_confun-conindex <> ls_usercon-conindex.
-            EXIT.
-          ENDIF.
+          IF sy-subrc <> 0. EXIT. ENDIF.
+          IF ls_confun-conindex <> ls_usercon-conindex. EXIT. ENDIF.
           lv_cur_confun = lv_prev.
         ENDWHILE.
-
       ELSE.
         lv_cur_confun = 0.
       ENDIF.
-
     ENDIF.
 
     CHECK lv_con_ok = 'X'.
@@ -1558,15 +1490,11 @@ FORM get_output_old_se
     ls_output-origin    = ls_usercon-origin.
 
     LOOP AT it_confun INTO ls_confun FROM lv_cur_confun.
-
-      IF ls_confun-conindex <> ls_usercon-conindex.
-        EXIT.
-      ENDIF.
+      IF ls_confun-conindex <> ls_usercon-conindex. EXIT. ENDIF.
 
       READ TABLE it_function INTO ls_function
         WITH TABLE KEY aid      = i_analysis_run
                        funindex = ls_confun-funindex.
-
       CHECK sy-subrc = 0.
 
       ls_output-funid = ls_function-funid.
@@ -1574,63 +1502,44 @@ FORM get_output_old_se
       READ TABLE it_funprofile INTO ls_funprofile
         WITH KEY userindex = ls_usercon-userindex
                  funindex  = ls_confun-funindex.
-
-      IF sy-subrc <> 0.
-        CONTINUE.
-      ENDIF.
+      IF sy-subrc <> 0. CONTINUE. ENDIF.
 
       lv_fpr_start = sy-tabix.
-
       WHILE lv_fpr_start GT 1.
         lv_prev = lv_fpr_start - 1.
         READ TABLE it_funprofile INTO ls_funprofile INDEX lv_prev.
-        IF sy-subrc <> 0.
-          EXIT.
-        ENDIF.
+        IF sy-subrc <> 0. EXIT. ENDIF.
         IF ls_funprofile-userindex <> ls_usercon-userindex
-        OR ls_funprofile-funindex  <> ls_confun-funindex.
-          EXIT.
-        ENDIF.
+        OR ls_funprofile-funindex  <> ls_confun-funindex. EXIT. ENDIF.
         lv_fpr_start = lv_prev.
       ENDWHILE.
 
       LOOP AT it_funprofile INTO ls_funprofile FROM lv_fpr_start.
-
         IF ls_funprofile-userindex <> ls_usercon-userindex
-        OR ls_funprofile-funindex  <> ls_confun-funindex.
-          EXIT.
-        ENDIF.
+        OR ls_funprofile-funindex  <> ls_confun-funindex. EXIT. ENDIF.
 
         READ TABLE it_usrprof INTO ls_usrprof
           WITH KEY sys          = ls_funprofile-sys
                    userindex    = ls_usercon-userindex
                    profileindex = ls_funprofile-profileindex
           BINARY SEARCH.
-
         CHECK sy-subrc = 0.
 
         READ TABLE it_sysmap INTO ls_sysmap
           WITH TABLE KEY sysindex = ls_usrprof-sys.
-
         ls_output-sysid = ls_sysmap-sysid.
 
         READ TABLE it_profiles INTO ls_profiles
           WITH TABLE KEY aid       = i_analysis_run
                          profindex = ls_usrprof-profileindex.
-
         IF sy-subrc = 0.
           ls_output-profname = ls_profiles-profname.
         ELSE.
           CLEAR ls_output-profname.
         ENDIF.
 
-        CLEAR: ls_profrole,
-               ls_roles,
-               lv_comp_agr,
-               lf_direct_role,
-               lf_profauth,
-               ls_output-agr_name,
-               ls_output-comp_agr.
+        CLEAR: ls_profrole, ls_roles, lv_comp_agr, lf_direct_role,
+               lf_profauth, ls_output-agr_name, ls_output-comp_agr.
 
         READ TABLE it_profrole INTO ls_profrole
           WITH KEY profindex = ls_usrprof-profileindex.
@@ -1639,7 +1548,6 @@ FORM get_output_old_se
 
           READ TABLE it_roles INTO ls_roles
             WITH KEY roleindex = ls_profrole-roleindex.
-
           IF sy-subrc = 0.
             ls_output-agr_name = ls_roles-agr_name.
           ENDIF.
@@ -1652,64 +1560,54 @@ FORM get_output_old_se
           IF sy-subrc = 0.
 
             lv_compr_start = sy-tabix.
-
             WHILE lv_compr_start GT 1.
               lv_prev = lv_compr_start - 1.
               READ TABLE lt_comprole_pc INTO ls_comprole INDEX lv_prev.
-              IF sy-subrc <> 0.
-                EXIT.
-              ENDIF.
+              IF sy-subrc <> 0. EXIT. ENDIF.
               IF ls_comprole-userindex <> ls_usercon-userindex
-              OR ls_comprole-roleindex <> ls_profrole-roleindex.
-                EXIT.
-              ENDIF.
+              OR ls_comprole-roleindex <> ls_profrole-roleindex. EXIT.
+ENDIF.
               lv_compr_start = lv_prev.
             ENDWHILE.
 
+*           FIX: same as get_output_new_se_b
             LOOP AT lt_comprole_pc INTO ls_comprole FROM lv_compr_start.
-
               IF ls_comprole-userindex <> ls_usercon-userindex
-              OR ls_comprole-roleindex <> ls_profrole-roleindex.
-                EXIT.
-              ENDIF.
+              OR ls_comprole-roleindex <> ls_profrole-roleindex. EXIT.
+ENDIF.
 
               IF ls_comprole-compindex IS INITIAL
               OR ls_comprole-compindex = 0.
-
-                lf_direct_role = 'X'.
-
-              ELSE.
-
-                READ TABLE it_roles INTO ls_roles
-                  WITH KEY roleindex = ls_comprole-compindex.
-
-                IF sy-subrc = 0.
-
-                  ls_output-comp_agr = ls_roles-agr_name.
-                  lv_comp_agr        = ls_output-comp_agr.
-
-                  IF if_direct_assn_only <> 'X'.
-                    lf_direct_role = 'X'.
-                  ENDIF.
-
-                ENDIF.
-
+                CONTINUE.
               ENDIF.
 
+              READ TABLE it_roles INTO ls_roles
+                WITH KEY roleindex = ls_comprole-compindex.
+              IF sy-subrc = 0.
+                ls_output-comp_agr = ls_roles-agr_name.
+                lv_comp_agr        = ls_output-comp_agr.
+                IF if_direct_assn_only <> 'X'.
+                  lf_direct_role = 'X'.
+                ENDIF.
+              ENDIF.
             ENDLOOP.
 
-            CLEAR ls_output-comp_agr.
+            IF if_direct_assn_only = 'X' AND lv_comp_agr IS INITIAL.
+              READ TABLE lt_comprole_pc INTO ls_comprole
+                WITH KEY userindex = ls_usercon-userindex
+                         roleindex = ls_profrole-roleindex
+                         compindex = 0.
+              IF sy-subrc = 0.
+                lf_direct_role = 'X'.
+              ENDIF.
+            ENDIF.
 
           ELSE.
-
             lf_profauth = 'X'.
-
           ENDIF.
 
         ELSE.
-
           lf_profauth = 'X'.
-
         ENDIF.
 
         IF if_direct_assn_only = 'X'
@@ -1720,7 +1618,7 @@ FORM get_output_old_se
 
         REFRESH lt_authdet.
 
-        CALL METHOD lcl_authdet_bulk_cache=>get
+        CALL METHOD lcl_authdet_bulk_cache_b=>get
           EXPORTING
             i_sys          = ls_usrprof-sys
             i_funindex     = ls_confun-funindex
@@ -1729,9 +1627,7 @@ FORM get_output_old_se
             ct_authdet     = lt_authdet.
 
         LOOP AT lt_authdet INTO ls_authdet.
-
           MOVE-CORRESPONDING ls_authdet TO ls_output.
-
           ls_output-bname     = ls_user-bname.
           ls_output-sysid     = ls_sysmap-sysid.
           ls_output-conid     = ls_conflict-conid.
@@ -1744,59 +1640,90 @@ FORM get_output_old_se
           ls_output-origin    = ls_usercon-origin.
 
           INSERT ls_output INTO TABLE lt_dedup.
-
           IF sy-subrc = 0.
             APPEND ls_output TO lt_output.
           ENDIF.
-
         ENDLOOP.
 
       ENDLOOP.
-
     ENDLOOP.
-
   ENDLOOP.
 
 ENDFORM.
 
 
 *======================================================================*
-* FORM get_analy_res_det
+* FORM get_analy_res_det_batch
+* Master orchestrator. Conflict-capped dynamic batching.
+* Per-batch [I] progress message written to et_return after each COMMIT.
 *======================================================================*
-FORM get_analy_res_det
+FORM get_analy_res_det_batch
   TABLES
     it_users             STRUCTURE /psyng/sw_userlist
     et_users             STRUCTURE /psyng/userconcount
-    lt_output            STRUCTURE /psyng/sw_outputdet
     et_return            STRUCTURE bapiret2
   USING
     i_analysis_run       TYPE /psyng/seresid
     if_exclude_mitigated TYPE flag
     if_direct_assn_only  TYPE flag
+    i_batch_size         TYPE i
   CHANGING
     e_result_count       TYPE i.
 
-  DATA: l_new_se_vrs  TYPE flag,
-        lf_continue   TYPE flag,
-        lv_fpr_aid    TYPE /psyng/seresid,
-        lt_user       TYPE ty_th_users,
-        lr_userindex  TYPE ty_r_userindex,
-        lt_usercon    TYPE ty_tt_usercon,
-        lt_conflict   TYPE ty_th_conflict,
-        lt_confun     TYPE ty_tt_confun,
-        lt_function   TYPE ty_th_function,
-        lr_funindex   TYPE ty_r_funindex,
-        lt_fprprof    TYPE ty_tt_fprprof,
-        lt_usrprof    TYPE ty_tt_usrprof,
-        lt_funprofile TYPE ty_tt_fprprof,
-        lt_profiles   TYPE ty_th_profiles,
-        lr_profindex  TYPE ty_r_profindex,
-        lr_sys        TYPE ty_r_sys,
-        lt_profrole   TYPE ty_ts_profrole,
-        lt_roles      TYPE ty_ts_roles,
-        lt_comprole   TYPE ty_ts_comprole,
-        lt_sysmap     TYPE ty_th_sysmap.
+  DATA: l_new_se_vrs     TYPE flag,
+        lf_u_continue    TYPE flag,
+        lv_fpr_aid       TYPE /psyng/seresid,
 
+        lt_all_user      TYPE ty_th_users,
+        lr_all_uix       TYPE ty_r_userindex,
+
+        lt_user_arr      TYPE TABLE OF ty_users,
+        ls_user_arr      TYPE ty_users,
+
+        lt_batch_user    TYPE ty_th_users,
+        ls_batch_user    TYPE ty_users,
+        lr_batch_uix     TYPE ty_r_userindex,
+        ls_uix           LIKE LINE OF lr_batch_uix,
+
+        lt_usercon       TYPE ty_tt_usercon,
+        lt_conflict      TYPE ty_th_conflict,
+        lt_confun        TYPE ty_tt_confun,
+        lt_function      TYPE ty_th_function,
+        lr_funindex      TYPE ty_r_funindex,
+        lt_fprprof       TYPE ty_tt_fprprof,
+        lt_usrprof       TYPE ty_tt_usrprof,
+        lt_funprofile    TYPE ty_tt_fprprof,
+        lt_profiles      TYPE ty_th_profiles,
+        lr_profindex     TYPE ty_r_profindex,
+        lr_sys           TYPE ty_r_sys,
+        lt_profrole      TYPE ty_ts_profrole,
+        lt_roles         TYPE ty_ts_roles,
+        lt_comprole      TYPE ty_ts_comprole,
+        lt_outputdet     TYPE TABLE OF /psyng/sw_outputdet,
+
+        lt_sysmap        TYPE ty_th_sysmap,
+
+        ls_outdet        TYPE /psyng/sw_outputdet,
+        ls_db            TYPE /psyng/sw_resdet,
+        lt_insert        TYPE TABLE OF /psyng/sw_resdet,
+
+        l_total          TYPE i,
+        l_offset         TYPE i,
+        l_batch_seq      TYPE i,
+        l_safe_size      TYPE i,
+        l_conflict_cap   TYPE i,
+        l_conflict_cap_p TYPE /psyng/param,
+        l_batch_conf     TYPE i,
+        lv_row_seq       TYPE i,
+
+*       Per-batch message vars
+        lv_pb_bat        TYPE char10,
+        lv_pb_row        TYPE char20,
+        lv_pb_msg        TYPE string.
+
+*--------------------------------------------------------------------*
+* SE version
+*--------------------------------------------------------------------*
   CLEAR l_new_se_vrs.
 
   SELECT SINGLE aid
@@ -1808,144 +1735,236 @@ FORM get_analy_res_det
     l_new_se_vrs = 'X'.
   ENDIF.
 
+*--------------------------------------------------------------------*
+* Sysmap
+*--------------------------------------------------------------------*
   SELECT *
     FROM /psyng/swresisys
     INTO TABLE lt_sysmap
     WHERE aid = i_analysis_run.
 
-  lf_continue = 'X'.
+*--------------------------------------------------------------------*
+* Fetch ALL users ONCE
+*--------------------------------------------------------------------*
+  lf_u_continue = 'X'.
 
-  PERFORM get_analy_res_users
+  PERFORM get_analy_res_users_b
     TABLES
       it_users
       et_return
     USING
       i_analysis_run
     CHANGING
-      lt_user
-      lr_userindex
-      lf_continue.
+      lt_all_user
+      lr_all_uix
+      lf_u_continue.
 
-  CHECK lf_continue = 'X'.
+  CHECK lf_u_continue = 'X'.
 
-  PERFORM get_analy_res_conflicts
-    TABLES
-      et_users
-      et_return
-    USING
-      i_analysis_run
-      if_exclude_mitigated
-      lt_user
-      lr_userindex
-    CHANGING
-      lt_usercon
-      lt_conflict
-      lt_confun
-      lt_function
-      lr_funindex
-      e_result_count.
+*--------------------------------------------------------------------*
+* Populate ET_USERS and result count
+*--------------------------------------------------------------------*
+  LOOP AT lt_all_user INTO ls_user_arr.
+    et_users-uname = ls_user_arr-bname.
+    et_users-count = ls_user_arr-nr_conflicts.
+    ADD ls_user_arr-nr_conflicts TO e_result_count.
+    APPEND et_users.
+  ENDLOOP.
 
-  CHECK NOT lt_usercon[] IS INITIAL.
+*--------------------------------------------------------------------*
+* Standard table for index-based slicing
+*--------------------------------------------------------------------*
+  LOOP AT lt_all_user INTO ls_user_arr.
+    APPEND ls_user_arr TO lt_user_arr.
+  ENDLOOP.
 
-  PERFORM get_analy_res_profiles
-    USING
-      i_analysis_run
-      l_new_se_vrs
-      lt_usercon
-      lr_funindex
-      lr_userindex
-    CHANGING
-      lt_fprprof
-      lt_usrprof
-      lt_funprofile
-      lt_profiles
-      lr_profindex
-      lr_sys.
+  DESCRIBE TABLE lt_user_arr LINES l_total.
 
-  PERFORM get_analy_res_roles
-    USING
-      i_analysis_run
-      l_new_se_vrs
-      lt_fprprof
-      lt_usrprof
-      lr_userindex
-      lr_sys
-    CHANGING
-      lt_profrole
-      lt_roles
-      lt_comprole.
-
-  IF l_new_se_vrs = 'X'.
-
-    CALL METHOD lcl_authdet_bulk_cache=>init
-      EXPORTING
-        i_aid      = i_analysis_run
-        it_fprprof = lt_fprprof
-        it_sysmap  = lt_sysmap.
-
-    PERFORM get_output_new_se
-      TABLES
-        lt_output
-      USING
-        i_analysis_run
-        if_direct_assn_only
-        lt_user
-        lt_usercon
-        lt_conflict
-        lt_confun
-        lt_function
-        lt_profiles
-        lt_fprprof
-        lt_profrole
-        lt_roles
-        lt_comprole
-        lt_sysmap.
-
-  ELSE.
-
-    CALL METHOD lcl_authdet_bulk_cache=>init
-      EXPORTING
-        i_aid      = i_analysis_run
-        it_fprprof = lt_funprofile
-        it_sysmap  = lt_sysmap.
-
-    PERFORM get_output_old_se
-      TABLES
-        lt_output
-      USING
-        i_analysis_run
-        if_direct_assn_only
-        lt_user
-        lt_usercon
-        lt_conflict
-        lt_confun
-        lt_function
-        lt_profiles
-        lt_usrprof
-        lt_funprofile
-        lt_profrole
-        lt_roles
-        lt_comprole
-        lt_sysmap.
-
+  IF l_total = 0.
+    log et_return 'E' 'NOUSERS'
+      'No conflicted users found for this analysis run' '' '' ''.
+    RETURN.
   ENDIF.
 
-  SORT lt_output BY bname conid sysid funid.
+*--------------------------------------------------------------------*
+* Batch size fallback
+*--------------------------------------------------------------------*
+  l_safe_size = i_batch_size.
+  IF l_safe_size <= 0.
+    l_safe_size = 1000.
+  ENDIF.
 
-  CALL METHOD lcl_authdet_bulk_cache=>clear.
+*--------------------------------------------------------------------*
+* Conflict cap
+*--------------------------------------------------------------------*
+  se_config_param 'APIDET_CONFLICT_CAP' l_conflict_cap_p.
+  IF l_conflict_cap_p IS NOT INITIAL.
+    l_conflict_cap = l_conflict_cap_p.
+  ELSE.
+    l_conflict_cap = l_safe_size * 300.
+  ENDIF.
 
-  FREE: lt_user,
-        lt_usercon,
-        lt_conflict,
-        lt_confun,
-        lt_function,
-        lt_fprprof,
-        lt_usrprof,
-        lt_funprofile,
-        lt_profiles,
-        lt_profrole,
-        lt_roles,
-        lt_comprole,
-        lt_sysmap.
+*--------------------------------------------------------------------*
+* MAIN BATCH LOOP
+*--------------------------------------------------------------------*
+  l_offset    = 1.
+  l_batch_seq = 0.
+
+  WHILE l_offset <= l_total.
+
+    l_batch_seq = l_batch_seq + 1.
+
+    REFRESH lt_batch_user.
+    REFRESH lr_batch_uix.
+    CLEAR l_batch_conf.
+
+    LOOP AT lt_user_arr INTO ls_batch_user FROM l_offset.
+      INSERT ls_batch_user INTO TABLE lt_batch_user.
+      CLEAR ls_uix.
+      ls_uix-sign   = 'I'.
+      ls_uix-option = 'EQ'.
+      ls_uix-low    = ls_batch_user-userindex.
+      APPEND ls_uix TO lr_batch_uix.
+      ADD ls_batch_user-nr_conflicts TO l_batch_conf.
+      l_offset = l_offset + 1.
+      IF l_batch_conf >= l_conflict_cap.
+        EXIT.
+      ENDIF.
+    ENDLOOP.
+
+    CHECK NOT lt_batch_user[] IS INITIAL.
+
+    REFRESH: lt_usercon, lt_conflict, lt_confun, lt_function,
+             lr_funindex, lt_fprprof, lt_usrprof, lt_funprofile,
+             lt_profiles, lr_profindex, lr_sys, lt_profrole,
+             lt_roles, lt_comprole, lt_outputdet.
+
+    PERFORM get_analy_res_conflicts_b
+      TABLES
+        et_return
+      USING
+        i_analysis_run
+        if_exclude_mitigated
+        lt_batch_user
+        lr_batch_uix
+      CHANGING
+        lt_usercon
+        lt_conflict
+        lt_confun
+        lt_function
+        lr_funindex.
+
+    CHECK NOT lt_usercon[] IS INITIAL.
+
+    PERFORM get_analy_res_profiles_b
+      USING
+        i_analysis_run
+        l_new_se_vrs
+        lt_usercon
+        lr_funindex
+        lr_batch_uix
+      CHANGING
+        lt_fprprof
+        lt_usrprof
+        lt_funprofile
+        lt_profiles
+        lr_profindex
+        lr_sys.
+
+    PERFORM get_analy_res_roles_b
+      USING
+        i_analysis_run
+        l_new_se_vrs
+        lt_fprprof
+        lt_usrprof
+        lr_batch_uix
+        lr_sys
+      CHANGING
+        lt_profrole
+        lt_roles
+        lt_comprole.
+
+    IF l_new_se_vrs = 'X'.
+
+      CALL METHOD lcl_authdet_bulk_cache_b=>init
+        EXPORTING
+          i_aid      = i_analysis_run
+          it_fprprof = lt_fprprof
+          it_sysmap  = lt_sysmap.
+
+      PERFORM get_output_new_se_b
+        TABLES lt_outputdet
+        USING  i_analysis_run if_direct_assn_only
+               lt_batch_user lt_usercon lt_conflict lt_confun
+               lt_function lt_profiles lt_fprprof
+               lt_profrole lt_roles lt_comprole lt_sysmap.
+
+    ELSE.
+
+      CALL METHOD lcl_authdet_bulk_cache_b=>init
+        EXPORTING
+          i_aid      = i_analysis_run
+          it_fprprof = lt_funprofile
+          it_sysmap  = lt_sysmap.
+
+      PERFORM get_output_old_se_b
+        TABLES lt_outputdet
+        USING  i_analysis_run if_direct_assn_only
+               lt_batch_user lt_usercon lt_conflict lt_confun
+               lt_function lt_profiles lt_usrprof lt_funprofile
+               lt_profrole lt_roles lt_comprole lt_sysmap.
+
+    ENDIF.
+
+*   FIX: improved sort — roles, profiles, and auth details grouped
+    SORT lt_outputdet BY bname conid sysid funid agr_name comp_agr
+                         profname tcode object field von.
+
+    CALL METHOD lcl_authdet_bulk_cache_b=>clear.
+
+    IF lt_outputdet[] IS NOT INITIAL.
+
+      REFRESH lt_insert.
+      CLEAR lv_row_seq.
+      LOOP AT lt_outputdet INTO ls_outdet.
+        lv_row_seq       = lv_row_seq + 1.
+        CLEAR ls_db.
+        MOVE-CORRESPONDING ls_outdet TO ls_db.
+        ls_db-aid        = i_analysis_run.
+        ls_db-batch_seq  = l_batch_seq.
+        ls_db-row_seq    = lv_row_seq.
+        ls_db-created_on = sy-datum.
+        APPEND ls_db TO lt_insert.
+      ENDLOOP.
+
+      INSERT /psyng/sw_resdet FROM TABLE lt_insert
+        ACCEPTING DUPLICATE KEYS.
+
+      FREE lt_insert.
+
+    ENDIF.
+
+    COMMIT WORK.
+
+*   Per-batch progress message — visible in SM37 job log in real time
+    WRITE l_batch_seq TO lv_pb_bat LEFT-JUSTIFIED.
+    WRITE lv_row_seq  TO lv_pb_row LEFT-JUSTIFIED.
+    CONDENSE: lv_pb_bat, lv_pb_row.
+*   e.g. "BATCH 1  Rows: 708432"
+    CONCATENATE 'BATCH' lv_pb_bat ' Rows:' lv_pb_row
+      INTO lv_pb_msg SEPARATED BY ' '.
+   CLEAR et_return.
+   et_return-type    = 'I'.
+   et_return-message = lv_pb_msg.
+   APPEND et_return.        " et_return has header line — direct APPEND
+
+    FREE: lt_batch_user, lr_batch_uix, lt_usercon, lt_conflict,
+          lt_confun, lt_function, lr_funindex, lt_fprprof, lt_usrprof,
+          lt_funprofile, lt_profiles, lr_profindex, lr_sys,
+          lt_profrole, lt_roles, lt_comprole, lt_outputdet.
+
+  ENDWHILE.
+
+  FREE: lt_all_user, lr_all_uix, lt_user_arr, lt_sysmap.
 
 ENDFORM.

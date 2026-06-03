@@ -348,9 +348,9 @@ FORM actvtmod  USING  lt_functtran TYPE tt_fundet
     IF ls_functtran-type = 'T'.
       ls_actvtmod-actvt = ls_functtran-tcode.
     ELSEIF ls_functtran-type = 'F'.
-*      CONCATENATE c_fiori ls_functtran-fioriid INTO ls_actvtmod-actvt
-*                                               SEPARATED BY space.
-      ls_actvtmod-actvt = ls_functtran-fioriid.
+      CONCATENATE c_fiori ls_functtran-fioriid INTO ls_actvtmod-actvt
+                                               SEPARATED BY space.
+*      ls_actvtmod-actvt = ls_functtran-fioriid.
     ELSE.
 *    Do not sync authorizations of placeholder tcodes for now. decision
 *    pending
@@ -688,10 +688,10 @@ FORM grpcmp  USING    lt_functtran TYPE tt_fundet
                       lt_am TYPE tt_am
              CHANGING lt_grpcmp TYPE tt_grpcmp.
 
-   DATA:
-        ls_functtran TYPE /psyng/functtran,
-        ls_grpcmp TYPE ty_grpcmp,
-        ls_am TYPE ty_am.
+  DATA:
+       ls_functtran TYPE /psyng/functtran,
+       ls_grpcmp TYPE ty_grpcmp,
+       ls_am TYPE ty_am.
 
   CONSTANTS c_fiori TYPE string VALUE 'Fiori:'.
 
@@ -701,9 +701,9 @@ FORM grpcmp  USING    lt_functtran TYPE tt_fundet
     IF ls_functtran-type = 'T'.
       ls_grpcmp-actvt = ls_functtran-tcode.
     ELSEIF ls_functtran-type = 'F'.
-*      CONCATENATE c_fiori ls_functtran-fioriid INTO ls_grpcmp-actvt
-*                                               SEPARATED BY space.
-      ls_grpcmp-actvt = ls_functtran-fioriid.
+      CONCATENATE c_fiori ls_functtran-fioriid INTO ls_grpcmp-actvt
+                                               SEPARATED BY space.
+*      ls_grpcmp-actvt = ls_functtran-fioriid.
     ELSE.
 *--No decision on placeholder tcodes for now.
     ENDIF.
@@ -1583,28 +1583,28 @@ ENDFORM.
 *----------------------------------------------------------------------*
 FORM sync_rul_t_plc .
 
-    DATA: lt_conflict TYPE TABLE OF /psyng/conflict,
-        lt_confdet  TYPE TABLE OF /psyng/confdet,
-        lt_functtran TYPE TABLE OF /psyng/functtran,
-        lt_function TYPE TABLE OF /psyng/function,
-        lt_faobj     TYPE TABLE OF /psyng/faobj2,
-        lt_schema_csv TYPE TABLE OF ty_csv,
-        schema_b64 TYPE string,
-        lt_group_csv TYPE TABLE OF ty_csv,
-        group_b64 TYPE string,
-        lt_actmodval_csv TYPE TABLE OF ty_csv,
-        actmodval_b64 TYPE string,
-        lt_rule_csv TYPE TABLE OF ty_csv,
-        rule_b64 TYPE string,
-        lt_actvtmod_csv TYPE TABLE OF ty_csv,
-        actvtmod_b64 TYPE string,
-        lt_grpcmp_csv TYPE TABLE OF ty_csv,
-        grpcmp_b64 TYPE string,
-        l_schema_count TYPE i,
-        l_group_count TYPE i,
-        l_rule_count TYPE i,
-        l_mode_count TYPE i,
-        lt_am TYPE TABLE OF ty_am.
+  DATA: lt_conflict TYPE TABLE OF /psyng/conflict,
+      lt_confdet  TYPE TABLE OF /psyng/confdet,
+      lt_functtran TYPE TABLE OF /psyng/functtran,
+      lt_function TYPE TABLE OF /psyng/function,
+      lt_faobj     TYPE TABLE OF /psyng/faobj2,
+      lt_schema_csv TYPE TABLE OF ty_csv,
+      schema_b64 TYPE string,
+      lt_group_csv TYPE TABLE OF ty_csv,
+      group_b64 TYPE string,
+      lt_actmodval_csv TYPE TABLE OF ty_csv,
+      actmodval_b64 TYPE string,
+      lt_rule_csv TYPE TABLE OF ty_csv,
+      rule_b64 TYPE string,
+      lt_actvtmod_csv TYPE TABLE OF ty_csv,
+      actvtmod_b64 TYPE string,
+      lt_grpcmp_csv TYPE TABLE OF ty_csv,
+      grpcmp_b64 TYPE string,
+      l_schema_count TYPE i,
+      l_group_count TYPE i,
+      l_rule_count TYPE i,
+      l_mode_count TYPE i,
+      lt_am TYPE TABLE OF ty_am.
 
 *  Read sod matrix
   CALL FUNCTION '/PSYNG/SW_028'
@@ -1772,7 +1772,7 @@ FORM sync_rul_f_plc .
         no_data_found = 1
         OTHERS         = 2.
     IF sy-subrc <> 0.
-      refresh: lt_b_con, lt_b_con_txt, lt_b_con_det.
+      REFRESH: lt_b_con, lt_b_con_txt, lt_b_con_det.
     ENDIF.
 
     IF lf_success_con = 'X'.
@@ -1808,7 +1808,7 @@ FORM sync_rul_f_plc .
         no_data_found = 1
         OTHERS         = 2.
     IF sy-subrc <> 0.
-      Refresh : lt_b_fun, lt_b_fun_det, lt_b_fun_obj.
+      REFRESH : lt_b_fun, lt_b_fun_det, lt_b_fun_obj.
     ENDIF.
 
     IF lf_success_fun = 'X'.
@@ -1837,7 +1837,7 @@ FORM sync_rul_f_plc .
         no_data_found = 1
         OTHERS         = 2.
     IF sy-subrc <> 0.
-      refresh: gt_incmpobj.
+      REFRESH: gt_incmpobj.
     ENDIF.
 
 *--ALV to show incompatible objects
@@ -1990,6 +1990,16 @@ FORM parse_function  USING    lt_b_fun TYPE tt_pbridge_fun
         lv_prev_tcode TYPE tcode,
         lv_prev_am    TYPE /psyng/value.
 
+  DATA:lt_functtran2 TYPE TABLE OF /psyng/functtran
+                  WITH HEADER LINE,
+       l_fiori_ids     TYPE string,
+      BEGIN OF lt_id OCCURS 0,
+          id TYPE i,
+        END OF lt_id,
+        l_fioriid_index TYPE i,
+        l_fiori TYPE /psyng/sw_fioriid,
+        lt_functtran    TYPE TABLE OF /psyng/functtran WITH HEADER LINE.
+
   FIELD-SYMBOLS: <fs_am>  TYPE ty_am_count,
                  <fs_obj> TYPE ty_obj_count.
 
@@ -2013,31 +2023,101 @@ FORM parse_function  USING    lt_b_fun TYPE tt_pbridge_fun
     ls_fundet-functionid = ls_b_fun_det-functionid.
     TRANSLATE ls_fundet-functionid TO UPPER CASE.
     IF ls_b_fun_det-tcode CP 'Fiori*'.
-*--Store actual name of fiori id in separate variable
+
       lv_str = ls_b_fun_det-tcode.
       SPLIT lv_str AT space INTO lv_p1 lv_p2.
-*--Check for this function last fiori id index
-      CLEAR:lv_newidx, lv_lastidx.
-      LOOP AT lt_ffidx INTO ls_ffidx WHERE function =
-                                                ls_fundet-functionid .
-        lv_lastidx = ls_ffidx-fidx.
-      ENDLOOP.
-      lv_newidx = lv_lastidx + 1.
-      CONCATENATE '/PSYNG/-' lv_newidx INTO ls_fundet-tcode.
-      ls_fundet-type = 'F'.
-      ls_fundet-fioriid = lv_p2.
+      l_fiori = lv_p2.
 
-      CLEAR ls_ffidx.
-      ls_ffidx-function = ls_fundet-functionid.
-      ls_ffidx-fidx = lv_newidx.
-      APPEND ls_ffidx TO lt_ffidx.
+      SELECT * FROM /psyng/functtran INTO
+     CORRESPONDING FIELDS OF   TABLE  lt_functtran2 WHERE
+               functionid = ls_fundet-functionid
+               AND vrsio =  ls_fundet-vrsio
+               AND type  = 'F'.
+
+      LOOP AT lt_functtran2.
+        SPLIT lt_functtran2-tcode AT '-' INTO lt_functtran2-tcode
+      l_fiori_ids.
+        IF l_fiori_ids CO '0123456789'.
+          lt_id-id = l_fiori_ids.
+        ELSEIF strlen( lt_functtran2-fioriid ) > 12 .
+          lt_id-id = sy-tabix.
+        ENDIF.
+        APPEND lt_id.
+      ENDLOOP.
+      SORT lt_id DESCENDING BY id .
+      READ TABLE lt_id INDEX 1.
+      l_fioriid_index = lt_id-id.
+
+      SELECT SINGLE mandt FROM /psyng/sw_fioria INTO
+         sy-mandt WHERE fioriid = l_fiori.
+      IF sy-subrc <> 0.
+*        MESSAGE e113(/psyng/sw) WITH
+*       'Fiori Id Does not exist'(e50).
+*        Log
+
+      ELSE.
+        READ TABLE lt_functtran2 WITH KEY
+                    fioriid = l_fiori.
+        IF sy-subrc = 0.
+          ls_fundet-functionid = ls_fundet-functionid.
+          ls_fundet-vrsio = ls_fundet-vrsio.
+          ls_fundet-fioriid = l_fiori.
+          ls_fundet-tcode = lt_functtran2-tcode.
+        ELSEIF strlen( l_fiori ) > 12.
+          ls_fundet-functionid = ls_fundet-functionid.
+          ls_fundet-vrsio = ls_fundet-vrsio.
+          ls_fundet-fioriid = l_fiori.
+          ADD 1 TO l_fioriid_index.
+          l_fiori_ids = l_fioriid_index.
+          CONDENSE l_fiori_ids.
+          CONCATENATE '/PSYNG/-' l_fiori_ids INTO
+                  ls_fundet-tcode.
+        ELSE.
+          ls_fundet-functionid = ls_fundet-functionid.
+          ls_fundet-vrsio = ls_fundet-vrsio.
+          ls_fundet-fioriid = l_fiori.
+          CONCATENATE '/PSYNG/-' l_fiori INTO
+              ls_fundet-tcode.
+        ENDIF.
+        ls_fundet-type = 'F'. "Fiori
+        APPEND ls_fundet TO lt_fundet.
+      ENDIF.
+
+****COMMENT START
+*****--Store actual name of fiori id in separate variable
+****      lv_str = ls_b_fun_det-tcode.
+****      SPLIT lv_str AT space INTO lv_p1 lv_p2.
+*****--Check for this function last fiori id index
+****      CLEAR:lv_newidx, lv_lastidx.
+****      LOOP AT lt_ffidx INTO ls_ffidx WHERE function =
+****
+****ls_fundet-functionid .
+****        lv_lastidx = ls_ffidx-fidx.
+****      ENDLOOP.
+****      lv_newidx = lv_lastidx + 1.
+****      CONCATENATE '/PSYNG/-' lv_newidx INTO ls_fundet-tcode.
+****      ls_fundet-type = 'F'.
+****      ls_fundet-fioriid = lv_p2.
+****
+****      CLEAR ls_ffidx.
+****      ls_ffidx-function = ls_fundet-functionid.
+****      ls_ffidx-fidx = lv_newidx.
+****      APPEND ls_ffidx TO lt_ffidx.
+****COMMENT END
 
     ELSE.
+
+      ls_fundet-functionid = ls_fundet-functionid.
+      ls_fundet-vrsio = ls_fundet-vrsio.
       ls_fundet-tcode = ls_b_fun_det-tcode.
       ls_fundet-type = 'T'.
+      APPEND ls_fundet TO lt_fundet.
+****      ls_fundet-tcode = ls_b_fun_det-tcode.
+****      ls_fundet-type = 'T'.
     ENDIF.
-    APPEND ls_fundet TO lt_fundet.
     CLEAR ls_fundet.
+****    APPEND ls_fundet TO lt_fundet.
+****    CLEAR ls_fundet.
   ENDLOOP.
 
 *AND OR CONVERSION
@@ -2161,9 +2241,14 @@ FORM parse_function  USING    lt_b_fun TYPE tt_pbridge_fun
     ls_funobj-val_from = ls_b_fun_obj-val_from.
     ls_funobj-val_to = ls_b_fun_obj-val_to.
     CLEAR ls_obj_or.
-    READ TABLE lt_obj_or INTO ls_obj_or WITH KEY funid = ls_funobj-funid
-           tcode = ls_funobj-tcode
-           object = ls_funobj-object.
+*    READ TABLE lt_obj_or INTO ls_obj_or WITH KEY funid =
+*    ls_funobj-funid
+*           tcode = ls_funobj-tcode
+*           object = ls_funobj-object.
+    READ TABLE lt_obj_or INTO ls_obj_or
+               WITH KEY funid = ls_b_fun_obj-funid
+                   tcode = ls_b_fun_obj-tcode
+                   object = ls_b_fun_obj-object.
     IF sy-subrc = 0.
       ls_funobj-obj_or = ls_obj_or-obj_or.
     ENDIF.
@@ -2364,7 +2449,7 @@ FORM logs_click USING r_ucomm LIKE sy-ucomm
                                AND RETURN.
         ELSE.
           MESSAGE e160(/psyng/sw) WITH
-                 'Functions does not exists for pulled conflicts'(194).
+              'Functions does not exists for pulled conflicts'(194).
         ENDIF.
 
       ELSEIF lv_msg CS 'Schema'(165).
@@ -2584,10 +2669,10 @@ gt_fieldcat.
                     is_layout                         = g_layout
                     i_callback_top_of_page            = 'TOP'
                   TABLES
-                    t_outtab                          = gt_ma_pull_logs
-                  EXCEPTIONS
-                    program_error      = 1
-                    OTHERS             = 2.
+                 t_outtab                          = gt_ma_pull_logs
+               EXCEPTIONS
+                 program_error      = 1
+                 OTHERS             = 2.
         IF sy-subrc <> 0.
           MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
                   WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.

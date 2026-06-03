@@ -5479,7 +5479,11 @@ FORM validation TABLES   iconflict   STRUCTURE /psyng/conflict
           tcode      LIKE tstc-tcode,
         END OF lt_functtran.
 
-  DATA : lt_risk TYPE TABLE OF /psyng/sw_risk WITH HEADER LINE.
+  DATA : lt_risk TYPE TABLE OF /psyng/sw_risk WITH HEADER LINE,
+*Begin of Addition:HBHALLA(PN-17063)(01/06/26)
+         lt_dup_fiori TYPE TABLE OF /psyng/functtran WITH HEADER LINE,
+         ls_func TYPE /psyng/functtran.
+*End of Addition:HBHALLA(PN-17063)(01/06/26)
 
   DATA: BEGIN OF lt_tobj OCCURS 0,
           objct LIKE tobj-objct,
@@ -5719,7 +5723,55 @@ WHERE vrsio = sodvrsio.
       IF l_flg_del_dat = 'X'.
         DELETE ifuncttrans INDEX l_indx.
       ENDIF.
+
+*Begin of Addition:HBHALLA(PN-17063)(01/06/26)
+IF ifuncttrans-type = 'F' AND ifuncttrans-fioriid IS NOT INITIAL.
+ IF ifuncttrans-tcode+8 = ifuncttrans-fioriid.
+ READ TABLE lt_dup_fiori WITH KEY
+ functionid = ifuncttrans-functionid
+ tcode = ifuncttrans-tcode
+ vrsio = ifuncttrans-vrsio
+ type = ifuncttrans-type
+ fioriid = ifuncttrans-fioriid BINARY SEARCH.
+  IF sy-subrc <> 0.
+   LOOP AT ifuncttrans INTO ls_func
+   WHERE functionid = ifuncttrans-functionid
+   AND tcode <> ifuncttrans-tcode
+   AND vrsio = ifuncttrans-vrsio
+   AND type = ifuncttrans-type
+   AND fioriid = ifuncttrans-fioriid.
+      APPEND ls_func TO lt_dup_fiori.
+   ENDLOOP.
+   SORT lt_dup_fiori.
+  ENDIF.
+ ENDIF.
+ENDIF.
+*End of Addition:HBHALLA(PN-17063)(01/06/26)
+
     ENDLOOP.
+
+*Begin of Addition:HBHALLA(PN-17063)(01/06/26)
+SORT lt_dup_fiori.
+DELETE ADJACENT DUPLICATES FROM lt_dup_fiori COMPARING ALL FIELDS.
+  LOOP AT lt_dup_fiori.
+    clear l_msg.
+        CONCATENATE
+        'Duplicate Fiori Entries for'
+        lt_dup_fiori-fioriid
+        '- will be deleted'
+        INTO l_msg SEPARATED BY space.
+        PERFORM log  USING
+          fn_fund
+          'W'
+          'SOD Function ID :'(125)
+          lt_dup_fiori-functionid
+          'Tcode :'(126)
+          lt_dup_fiori-tcode
+          l_msg.
+     DELETE TABLE ifuncttrans FROM lt_dup_fiori.
+  ENDLOOP.
+*End of Addition:HBHALLA(PN-17063)(01/06/26)
+
     IF l_flg_no_dat = ' '  AND NOT ifuncttrans[] IS INITIAL.
 
       PERFORM log  USING
