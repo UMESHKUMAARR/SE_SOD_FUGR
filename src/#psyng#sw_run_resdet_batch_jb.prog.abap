@@ -27,7 +27,7 @@ SELECTION-SCREEN BEGIN OF BLOCK b2 WITH FRAME TITLE TEXT-002.
 
 PARAMETERS:
   p_exmit  TYPE flag DEFAULT space,     " Exclude mitigated conflicts
-  p_direct TYPE flag DEFAULT space,            " Direct assignments only
+*  p_direct TYPE flag DEFAULT space,           " Direct assignments only
   p_local  TYPE flag DEFAULT space,            " Local system only
   p_def    TYPE flag DEFAULT space.            " Use default run
 
@@ -91,7 +91,7 @@ START-OF-SELECTION.
 * Job log (SM37 → Job log tab) — MESSAGE s = success type, no popup
   CONCATENATE 'AID:' lv_aid_c INTO lv_line1 SEPARATED BY ' '.
   MESSAGE s002(/psyng/sw)
-    WITH 'START' lv_line1 lv_flags sy-uzeit.
+    WITH 'START:' lv_line1 lv_flags sy-uzeit.
 
 *----------------------------------------------------------------------*
 * Call FM2
@@ -103,7 +103,7 @@ START-OF-SELECTION.
       if_def_run           = p_def
       if_clear_prev        = p_clear
       if_exclude_mitigated = p_exmit
-      if_direct_assn_only  = p_direct
+*      if_direct_assn_only  = p_direct
     IMPORTING
       e_analysis_run       = lv_run
       return               = ls_return
